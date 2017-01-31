@@ -8,28 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>JS实现轮播图 | 蒋路亚</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="html代码实现&amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;
-
-    &amp;lt;div id=&amp;quot;images&amp;quot; style=&amp;quot;left: -600px;&amp;quot;&amp;gt; 
-        &amp;lt;img src=&amp;quot;images/5.jpg&amp;quot;&amp;gt;
-        &amp;lt;img src=&amp;quot;images/1.">
+  <meta name="description" content="这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西，大部分来自网络。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS实现轮播图">
 <meta property="og:url" content="http://yoursite.com/2017/01/31/Carousel-figure/index.html">
 <meta property="og:site_name" content="蒋路亚">
-<meta property="og:description" content="html代码实现&amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;
-
-    &amp;lt;div id=&amp;quot;images&amp;quot; style=&amp;quot;left: -600px;&amp;quot;&amp;gt; 
-        &amp;lt;img src=&amp;quot;images/5.jpg&amp;quot;&amp;gt;
-        &amp;lt;img src=&amp;quot;images/1.">
-<meta property="og:updated_time" content="2017-01-31T08:13:24.242Z">
+<meta property="og:description" content="这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西，大部分来自网络。">
+<meta property="og:updated_time" content="2017-01-31T08:20:58.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS实现轮播图">
-<meta name="twitter:description" content="html代码实现&amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;
-
-    &amp;lt;div id=&amp;quot;images&amp;quot; style=&amp;quot;left: -600px;&amp;quot;&amp;gt; 
-        &amp;lt;img src=&amp;quot;images/5.jpg&amp;quot;&amp;gt;
-        &amp;lt;img src=&amp;quot;images/1.">
+<meta name="twitter:description" content="这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西，大部分来自网络。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -173,9 +161,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <p>  这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西，大部分来自网络。  </p>
+<a id="more"></a>
 <h3 id="html代码实现"><a href="#html代码实现" class="headerlink" title="html代码实现"></a>html代码实现</h3><pre><code>&lt;div id=&quot;content&quot;&gt;
-
     &lt;div id=&quot;images&quot; style=&quot;left: -600px;&quot;&gt; 
         &lt;img src=&quot;images/5.jpg&quot;&gt;
         &lt;img src=&quot;images/1.jpg&quot;&gt;
@@ -195,7 +183,9 @@
     &lt;div class=&quot;btn&quot; id=&quot;btn_l&quot;&gt;&amp;lt;&lt;/div&gt;
     &lt;div class=&quot;btn&quot; id=&quot;btn_r&quot;&gt;&amp;gt;&lt;/div&gt;
 &lt;/div&gt;
-</code></pre><h3 id="css部分代码实现"><a href="#css部分代码实现" class="headerlink" title="css部分代码实现"></a>css部分代码实现</h3><h5 id="1-”content”-处设置相对位置：position-relative-图片展示为只显示一张图片，所以溢出content容器部分使用属性：overflow-hidden"><a href="#1-”content”-处设置相对位置：position-relative-图片展示为只显示一张图片，所以溢出content容器部分使用属性：overflow-hidden" class="headerlink" title="1.”content” 处设置相对位置：position:relative;图片展示为只显示一张图片，所以溢出content容器部分使用属性：overflow:hidden;"></a>1.”content” 处设置相对位置：<code>position:relative</code>;图片展示为只显示一张图片，所以溢出content容器部分使用属性：<code>overflow:hidden</code>;</h5><h5 id="2-左、右按钮部分代码："><a href="#2-左、右按钮部分代码：" class="headerlink" title="2.左、右按钮部分代码："></a>2.左、右按钮部分代码：</h5><pre><code>position: relative;  
+</code></pre><h3 id="css部分代码实现"><a href="#css部分代码实现" class="headerlink" title="css部分代码实现"></a>css部分代码实现</h3><p> 1.”content” 处设置相对位置：<code>position:relative</code>; 图片展示为只显示一张图片，所以溢出content容器部分使用属性：<code>overflow:hidden</code>;</p>
+<p> 2.左、右按钮部分代码：</p>
+<pre><code>position: relative;  
 cursor: pointer;  //鼠标移上去，显示手指妆
 height: 50px;
 width: 30px;
@@ -277,6 +267,7 @@ btn_r.onclick=function(){
     animate(-600);
 }
 </code></pre><h3 id="整个轮播图即完成"><a href="#整个轮播图即完成" class="headerlink" title="整个轮播图即完成"></a>整个轮播图即完成</h3><h2 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h2><p>firefox浏览器加载时，5张图片第一次加载时较慢，以至于加载过程中图片出现空白情况；360浏览器加载时基本没什么问题；用IE浏览器时图片右边部分和边框有部分空隙。</p>
+<p>功能实现有待完善！敬请期待</p>
 
       
 
@@ -458,11 +449,11 @@ btn_r.onclick=function(){
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
