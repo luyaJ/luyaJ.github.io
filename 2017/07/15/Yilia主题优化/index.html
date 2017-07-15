@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="luya的小博客">
 <meta property="og:description" content="过了大半年，该是要好好整理下自己的博客了。">
 <meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/catalogue.PNG">
-<meta property="og:updated_time" content="2017-07-15T14:00:17.925Z">
+<meta property="og:updated_time" content="2017-07-15T14:06:12.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yilia主题优化">
 <meta name="twitter:description" content="过了大半年，该是要好好整理下自己的博客了。">
@@ -46,7 +46,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="img/lh.jpg" class="js-avatar">
+			<img src="http://ot4r4qnml.bkt.clouddn.com/lh.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">luya</a></h1>
@@ -106,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img/lh.jpg" class="js-avatar">
+				<img src="http://ot4r4qnml.bkt.clouddn.com/lh.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">luya</h1>
@@ -210,13 +210,15 @@
       
         <p>过了大半年，该是要好好整理下自己的博客了。</p>
 <a id="more"></a>
-<h1 id="github-hexo"><a href="#github-hexo" class="headerlink" title="github+hexo"></a>github+hexo</h1><h4 id="新建文章："><a href="#新建文章：" class="headerlink" title="新建文章："></a>新建文章：</h4><pre><code>hexo new &quot;新的文章&quot;
+<h1 id="github-hexo"><a href="#github-hexo" class="headerlink" title="github+hexo"></a>github+hexo</h1><h4 id="新建文章："><a href="#新建文章：" class="headerlink" title="新建文章："></a>新建文章：</h4><pre><code>$ hexo new &quot;新的文章&quot;
 </code></pre><p>然后你就发现blog根目录下的source文件夹中的_post文件夹中多了一个 <strong>新的文章.md</strong> 文件</p>
-<h4 id="本地服务预览："><a href="#本地服务预览：" class="headerlink" title="本地服务预览："></a>本地服务预览：</h4><pre><code>hexo s  //server  （会监视文件变动并自动更新）
+<h4 id="本地服务预览："><a href="#本地服务预览：" class="headerlink" title="本地服务预览："></a>本地服务预览：</h4><pre><code>$ hexo s  //server  （会监视文件变动并自动更新）
 </code></pre><p>觉得自己的文章没问题后，就通过<code>hexo g</code> , <code>hexo d</code>生成和部署网页</p>
-<h4 id="清除缓存："><a href="#清除缓存：" class="headerlink" title="清除缓存："></a>清除缓存：</h4><pre><code>hexo clean
-</code></pre><h4 id="生成："><a href="#生成：" class="headerlink" title="生成："></a>生成：</h4><pre><code>hexo g  //generate
-</code></pre><h4 id="部署："><a href="#部署：" class="headerlink" title="部署："></a>部署：</h4><pre><code>hexo d  //deploy
+<h4 id="清除缓存："><a href="#清除缓存：" class="headerlink" title="清除缓存："></a>清除缓存：</h4><pre><code>$ hexo clean
+</code></pre><h4 id="生成："><a href="#生成：" class="headerlink" title="生成："></a>生成：</h4><pre><code>$ hexo g  //generate
+</code></pre><h4 id="部署："><a href="#部署：" class="headerlink" title="部署："></a>部署：</h4><pre><code>$ hexo d  //deploy
+</code></pre><p>上面两部可以合起来</p>
+<pre><code>$ hexo d -g
 </code></pre><p><strong><a href="https://hexo.io/themes/" target="_blank" rel="external">hexo所有主题传送门</a></strong></p>
 <p><strong><a href="https://maxiang.io/" target="_blank" rel="external">markdown语法</a></strong></p>
 <p><strong><a href="http://www.markdownpad.com/" target="_blank" rel="external">markdownPad下载</a></strong></p>
@@ -227,8 +229,8 @@
 </ul>
 <h4 id="1-安装主题"><a href="#1-安装主题" class="headerlink" title="1.安装主题"></a>1.安装主题</h4><pre><code>$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
 </code></pre><h4 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h4><p>修改hexo根目录下的<code>_config.yml</code> ： <code>theme : yilia</code></p>
-<h4 id="3-更新"><a href="#3-更新" class="headerlink" title="3.更新"></a>3.更新</h4><pre><code>cd themes/yilia
-git pull
+<h4 id="3-更新"><a href="#3-更新" class="headerlink" title="3.更新"></a>3.更新</h4><pre><code>$ cd themes/yilia
+$ git pull
 </code></pre><h3 id="上面是老东西，下面是优化"><a href="#上面是老东西，下面是优化" class="headerlink" title="上面是老东西，下面是优化"></a>上面是老东西，下面是优化</h3><h1 id="添加文章目录"><a href="#添加文章目录" class="headerlink" title="添加文章目录"></a>添加文章目录</h1><h3 id="1-添加css样式"><a href="#1-添加css样式" class="headerlink" title="1.添加css样式"></a>1.添加css样式</h3><p>打开<code>themes\yilia\source</code>下的 <code>main.2d7529.css</code>文件(这里好像名字会不一样，没关系，找到.css文件就ok了)，在里面添加代码：</p>
 <pre><code>/* 新添加的 */
 #container .show-toc-btn,#container .toc-article{display:block}
