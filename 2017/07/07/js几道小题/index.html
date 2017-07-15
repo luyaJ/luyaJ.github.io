@@ -40,23 +40,25 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: rgb(142, 140, 216)"></div>
+<div class="overlay" style="background: rgb(198,175,194)"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			<img src="http://desk.fd.zol-img.com.cn/t_s960x600c5/g5/M00/02/09/ChMkJlbKzgeIeywJAAJbBTxhktIAALJGwFYQvAAAlsd362.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">luyaJ</a></h1>
+		  <h1 class="header-author"><a href="/">luya</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">web前端</p>
+		<p class="header-subtitle">talk is cheap,show me the code</p>
 		
 
 		<nav class="header-menu">
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔/">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -68,6 +70,8 @@
             
     			
             
+    			
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
 		</nav>
@@ -82,6 +86,8 @@
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/jiangluya1217" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="mail" target="_blank" href="/1579618152@qq.com" title="mail"><i class="icon-mail"></i></a>
+		        
 			</div>
 		</nav>
 	</header>		
@@ -91,7 +97,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: rgb(142, 140, 216)"></div>
+  	<div class="overlay js-overlay" style="background: rgb(198,175,194)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -101,12 +107,14 @@
 				<img src="http://desk.fd.zol-img.com.cn/t_s960x600c5/g5/M00/02/09/ChMkJlbKzgeIeywJAAJbBTxhktIAALJGwFYQvAAAlsd362.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">luyaJ</h1>
+			  <h1 class="header-author js-header-author">luya</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>web前端<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>talk is cheap,show me the code<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
 			
 				
 			
@@ -123,6 +131,8 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/jiangluya1217" title="weibo"><i class="icon-weibo"></i></a>
 			        
+						<a class="mail" target="_blank" href="/1579618152@qq.com" title="mail"><i class="icon-mail"></i></a>
+			        
 				</div>
 			</nav>
 
@@ -130,7 +140,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -457,9 +469,18 @@ window.onload = function() {
   
 <nav id="article-nav">
   
+    <a href="/2017/07/15/test-7-15/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          test-7.15
+        
+      </div>
+    </a>
   
-    <a href="/2016/12/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+  
+    <a href="/2017/05/24/Software Test_1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">软件测试初学1</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -484,7 +505,7 @@ window.onload = function() {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 luyaJ
+    		&copy; 2017 luya
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -523,6 +544,8 @@ window.onload = function() {
       
     
       
+      
+      
     
     
 
@@ -530,11 +553,13 @@ window.onload = function() {
     
     
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
         
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -553,6 +578,18 @@ window.onload = function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
@@ -603,6 +640,10 @@ window.onload = function() {
 
     
 
+    
+    	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+    	</section>
     
   </div>
   

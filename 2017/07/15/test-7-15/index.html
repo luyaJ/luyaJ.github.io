@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>test-7.15 | luyaJ</title>
+  <title>test-7.15 | luya的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="talk is cheap,show me the code">
+  <meta name="description" content="Font-End Development">
 <meta property="og:type" content="article">
 <meta property="og:title" content="test-7.15">
 <meta property="og:url" content="http://yoursite.com/2017/07/15/test-7-15/index.html">
-<meta property="og:site_name" content="luyaJ">
-<meta property="og:description" content="talk is cheap,show me the code">
+<meta property="og:site_name" content="luya的小博客">
+<meta property="og:description" content="Font-End Development">
 <meta property="og:updated_time" content="2017-07-14T23:28:45.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test-7.15">
-<meta name="twitter:description" content="talk is cheap,show me the code">
+<meta name="twitter:description" content="Font-End Development">
   
   
     <link rel="icon" href="/favicon.png">
@@ -40,23 +40,25 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: rgb(142, 140, 216)"></div>
+<div class="overlay" style="background: rgb(198,175,194)"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			<img src="http://desk.fd.zol-img.com.cn/t_s960x600c5/g5/M00/02/09/ChMkJlbKzgeIeywJAAJbBTxhktIAALJGwFYQvAAAlsd362.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">luyaJ</a></h1>
+		  <h1 class="header-author"><a href="/">luya</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">web前端</p>
+		<p class="header-subtitle">talk is cheap,show me the code</p>
 		
 
 		<nav class="header-menu">
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔/">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -69,6 +71,8 @@
     			
             
     			
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
             
 		</nav>
 		<nav class="header-nav">
@@ -76,9 +80,13 @@
 				
 					<a class="github" target="_blank" href="https://github.com/luyaJ" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/lucyj-7/activities" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jlya" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
-					<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/88f27820179d/timeline" title="jianshu"><i class="icon-jianshu"></i></a>
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/3356caf56e13/timeline" title="jianshu"><i class="icon-jianshu"></i></a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/jiangluya1217" title="weibo"><i class="icon-weibo"></i></a>
+		        
+					<a class="mail" target="_blank" href="/1579618152@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -89,7 +97,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: rgb(142, 140, 216)"></div>
+  	<div class="overlay js-overlay" style="background: rgb(198,175,194)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -99,12 +107,14 @@
 				<img src="http://desk.fd.zol-img.com.cn/t_s960x600c5/g5/M00/02/09/ChMkJlbKzgeIeywJAAJbBTxhktIAALJGwFYQvAAAlsd362.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">luyaJ</h1>
+			  <h1 class="header-author js-header-author">luya</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>web前端<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>talk is cheap,show me the code<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
 			
 				
 			
@@ -115,9 +125,13 @@
 					
 						<a class="github" target="_blank" href="https://github.com/luyaJ" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/lucyj-7/activities" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jlya" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
-						<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/88f27820179d/timeline" title="jianshu"><i class="icon-jianshu"></i></a>
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/3356caf56e13/timeline" title="jianshu"><i class="icon-jianshu"></i></a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/jiangluya1217" title="weibo"><i class="icon-weibo"></i></a>
+			        
+						<a class="mail" target="_blank" href="/1579618152@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -126,7 +140,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -260,7 +276,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 luyaJ
+    		&copy; 2017 luya
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -299,6 +315,8 @@
       
     
       
+      
+      
     
     
 
@@ -306,11 +324,13 @@
     
     
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
         
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -335,11 +355,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -391,6 +411,10 @@
 
     
 
+    
+    	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+    	</section>
     
   </div>
   
