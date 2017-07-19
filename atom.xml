@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>luya的小博客</title>
+  <title>luyaJ的小博客</title>
   <subtitle>talk is cheap,show me the code</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -9,7 +9,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>luya</name>
+    <name>luyaJ</name>
     
   </author>
   
