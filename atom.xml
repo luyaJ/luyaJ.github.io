@@ -412,11 +412,11 @@ function division() {
   </entry>
   
   <entry>
-    <title>软件测试初学1</title>
-    <link href="http://yoursite.com/2017/05/24/Software%20Test_1/"/>
-    <id>http://yoursite.com/2017/05/24/Software Test_1/</id>
+    <title>软件测试初学</title>
+    <link href="http://yoursite.com/2017/05/24/Software%20Test/"/>
+    <id>http://yoursite.com/2017/05/24/Software Test/</id>
     <published>2017-05-23T16:00:00.000Z</published>
-    <updated>2017-07-15T09:28:57.777Z</updated>
+    <updated>2017-07-20T03:48:09.281Z</updated>
     
     <content type="html"><![CDATA[<h2 id="软件缺陷常见问题"><a href="#软件缺陷常见问题" class="headerlink" title="软件缺陷常见问题"></a>软件缺陷常见问题</h2><a id="more"></a>
 <h5 id="统一性"><a href="#统一性" class="headerlink" title="统一性"></a>统一性</h5><p>中英文问题</p>
@@ -445,6 +445,31 @@ function division() {
 <li>有效等价类</li>
 <li>无效等价类</li>
 </ol>
+<h2 id="Junit单元测试"><a href="#Junit单元测试" class="headerlink" title="Junit单元测试"></a>Junit单元测试</h2><p>测试用例不是用来证明你是对的，而是用来证明你没错。</p>
+<h5 id="入门："><a href="#入门：" class="headerlink" title="入门："></a>入门：</h5><p>1.新建一个类：</p>
+<p>File → Java Project : name (JUnit_Test) → 在src下new Package : name (JunitTest) → new class : name (Calculator) → 敲代码：</p>
+<pre><code>package JunitTest;
+public class Calculator {    
+public int add(int a,int b){
+    return a+b;
+}
+public int subtract(int a,int b){
+    return a-b;
+}
+public int multiply(int a,int b){
+    return a*b;
+}
+public int divide(int a,int b){
+    return a/b;
+}    
+}
+</code></pre><p>2.导入JUnit jar包：</p>
+<p>JUnit_Test → Build Path → Add Libraries… → JUnit → Next&gt; → Finish</p>
+<p>3.JunitTest → new : JUnit Test Case →输入测试工作区的名字 Name : (AddSubTest) , Class under test : name (Calculator) → Finish</p>
+<p>4.运行测试用例：</p>
+<p>右键 → Run AS → Junit Test → 结果显示，测试工作都运行通过</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/1.PNG" alt=""></p>
+<h4 id="第一个测试用例："><a href="#第一个测试用例：" class="headerlink" title="第一个测试用例："></a>第一个测试用例：</h4><p><img src="http://ot4r4qnml.bkt.clouddn.com/AddTest.PNG" alt=""><br><img src="http://ot4r4qnml.bkt.clouddn.com/AddTest2.PNG" alt=""></p>
 ]]></content>
     
     <summary type="html">
