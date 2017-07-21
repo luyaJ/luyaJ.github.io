@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-21T09:53:01.650Z</updated>
+  <updated>2017-07-21T09:58:50.691Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/07/21/%E7%94%A8css%E5%AE%9E%E7%8E%B0%E5%87%A0%E4%B8%AA%E5%B0%8F%E5%9B%BE%E6%A0%87/"/>
     <id>http://yoursite.com/2017/07/21/用css实现几个小图标/</id>
     <published>2017-07-21T05:25:59.000Z</published>
-    <updated>2017-07-21T09:53:01.650Z</updated>
+    <updated>2017-07-21T09:58:50.691Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-三角形"><a href="#1-三角形" class="headerlink" title="1. 三角形"></a>1. 三角形</h3><a id="more"></a>
 <p>设置一个块元素大小为0，采用<code>border</code>属性，制作如下各种图形：</p>
@@ -200,6 +200,8 @@ border-bottom-left-radius: 1em 3em;
     
     </summary>
     
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
     
   </entry>
   
