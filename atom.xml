@@ -843,7 +843,7 @@ btn_r.onclick=function(){
     <link href="http://yoursite.com/2016/12/27/hello-world/"/>
     <id>http://yoursite.com/2016/12/27/hello-world/</id>
     <published>2016-12-27T10:23:59.706Z</published>
-    <updated>2017-01-31T06:38:53.500Z</updated>
+    <updated>2017-07-21T10:03:23.691Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <a id="more"></a>
@@ -863,6 +863,8 @@ btn_r.onclick=function(){
     
     </summary>
     
+    
+      <category term="hexo+github" scheme="http://yoursite.com/tags/hexo-github/"/>
     
   </entry>
   
