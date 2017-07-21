@@ -6,18 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>软件测试初学1 | luyaJ的小博客</title>
+  <title>用css实现几个小图标 | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="软件缺陷常见问题">
+  <meta name="description" content="1. 三角形">
 <meta property="og:type" content="article">
-<meta property="og:title" content="软件测试初学1">
-<meta property="og:url" content="http://yoursite.com/2017/05/24/Software Test_1/index.html">
+<meta property="og:title" content="用css实现几个小图标">
+<meta property="og:url" content="http://yoursite.com/2017/07/21/用css实现几个小图标/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
-<meta property="og:description" content="软件缺陷常见问题">
-<meta property="og:updated_time" content="2017-07-15T09:28:57.777Z">
+<meta property="og:description" content="1. 三角形">
+<meta property="og:image" content="http://otf35fo4u.bkt.clouddn.com/zfx.png">
+<meta property="og:image" content="http://otf35fo4u.bkt.clouddn.com/jx.png">
+<meta property="og:image" content="http://otf35fo4u.bkt.clouddn.com/zfx1.png">
+<meta property="og:image" content="http://otf35fo4u.bkt.clouddn.com/sjx.png">
+<meta property="og:image" content="http://otf35fo4u.bkt.clouddn.com/momo.png">
+<meta property="og:image" content="http://otf35fo4u.bkt.clouddn.com/zgx2.png">
+<meta property="og:image" content="http://otf35fo4u.bkt.clouddn.com/arrow.png">
+<meta property="og:image" content="http://otf35fo4u.bkt.clouddn.com/star.png">
+<meta property="og:image" content="http://otf35fo4u.bkt.clouddn.com/heart.png">
+<meta property="og:image" content="http://otf35fo4u.bkt.clouddn.com/cross.png">
+<meta property="og:updated_time" content="2017-07-21T09:53:01.650Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="软件测试初学1">
-<meta name="twitter:description" content="软件缺陷常见问题">
+<meta name="twitter:title" content="用css实现几个小图标">
+<meta name="twitter:description" content="1. 三角形">
+<meta name="twitter:image" content="http://otf35fo4u.bkt.clouddn.com/zfx.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -157,20 +168,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Software Test_1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-用css实现几个小图标" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      软件测试初学1
+      用css实现几个小图标
     </h1>
   
 
         
-        <a href="/2017/05/24/Software Test_1/" class="archive-article-date">
-  	<time datetime="2017-05-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-24</time>
+        <a href="/2017/07/21/用css实现几个小图标/" class="archive-article-date">
+  	<time datetime="2017-07-21T05:25:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-21</time>
 </a>
         
       </header>
@@ -178,37 +189,204 @@
 
     <!-- 目录内容 -->
     
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-三角形"><span class="toc-number">1.</span> <span class="toc-text">1. 三角形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-陌陌轮廓"><span class="toc-number">2.</span> <span class="toc-text">2.陌陌轮廓</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-扭曲的正方形"><span class="toc-number">3.</span> <span class="toc-text">3.扭曲的正方形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-箭头"><span class="toc-number">4.</span> <span class="toc-text">4.箭头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-小星星"><span class="toc-number">5.</span> <span class="toc-text">5.小星星</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-心形"><span class="toc-number">6.</span> <span class="toc-text">6.心形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-十字架"><span class="toc-number">7.</span> <span class="toc-text">7.十字架</span></a></li></ol>
+    </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+      };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+      };
+    </script>
+    
     <!-- 目录内容结束 -->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="软件缺陷常见问题"><a href="#软件缺陷常见问题" class="headerlink" title="软件缺陷常见问题"></a>软件缺陷常见问题</h2><a id="more"></a>
-<h5 id="统一性"><a href="#统一性" class="headerlink" title="统一性"></a>统一性</h5><p>中英文问题</p>
-<h5 id="容错性"><a href="#容错性" class="headerlink" title="容错性"></a>容错性</h5><h5 id="互动性"><a href="#互动性" class="headerlink" title="互动性"></a>互动性</h5><ul>
-<li>用户输入信息有误时，按“确定”后，所有信息被清空(这种情况要避免)</li>
-<li>对于所有的删除信息在删除之前都要给出是否删除确认的提示或者放弃的提示。</li>
-<li>危险操作之前，提醒</li>
-<li>改变数据状态，提醒</li>
-<li>如填写资料有错误的时候，应该能够提示错误的位置，让用户知道到底是哪些地方输入的不正确</li>
-</ul>
-<h5 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h5><p>使用的提示信息要通俗易懂</p>
-<h5 id="兼容性："><a href="#兼容性：" class="headerlink" title="兼容性："></a>兼容性：</h5><ul>
-<li>操作系统版本</li>
-<li>屏幕分辨率</li>
-<li>网络类型(wifi,3G,4G)</li>
-</ul>
-<h5 id="易用性"><a href="#易用性" class="headerlink" title="易用性"></a>易用性</h5><p>对于要求用户大量录入信息的页面，要支持Tab键的输入，Tab键的走向要一般要遵循从做左到右，从上到下的的原则</p>
-<h5 id="安全性："><a href="#安全性：" class="headerlink" title="安全性："></a>安全性：</h5><ul>
-<li>登录网站进入其内部网页后，直接拷贝网址，然后粘贴到另一IE 窗口输入，在其他机器上看是否可以绕过登录直接访问</li>
-<li>对于需要登录的系统，在用户不操作的一定时间内，出于安全性考虑，最好要让用户重新登录才能重新使用该系统</li>
-<li>有些文件在ini等配置文件中写出了管理员口令密码等信息，而且是明文的!这是一个安全隐患</li>
-</ul>
-<p>！！！所有软件测试都是建立在业务之上的</p>
-<h2 id="等价类"><a href="#等价类" class="headerlink" title="等价类"></a>等价类</h2><p>概念：是指把程序的输入域根据等价类原则划分成若干部分，然后从每个部分中选取少数具有代表性的数据作为测试输入数据的一种方法。</p>
-<ol>
-<li>有效等价类</li>
-<li>无效等价类</li>
-</ol>
+        <h3 id="1-三角形"><a href="#1-三角形" class="headerlink" title="1. 三角形"></a>1. 三角形</h3><a id="more"></a>
+<p>设置一个块元素大小为0，采用<code>border</code>属性，制作如下各种图形：</p>
+<pre><code>//1.双色正方形
+height: 0;
+width: 0;
+border-bottom: 100px solid indianred;
+border-left: 100px solid chocolate;
+</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/zfx.png" alt="双色正方形"></p>
+<pre><code>//2.三色矩形
+border-right: 100px solid darkcyan;
+</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/jx.png" alt="三色矩形"></p>
+<pre><code>//3.四色正方形
+border-top: 100px solid plum;
+</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/zfx1.png" alt="四色正方形"></p>
+<pre><code>//4.三角形
+height: 0;
+width: 0;
+border-bottom: 100px solid indianred;
+border-left: 100px solid transparent;
+border-right: 100px solid transparent;
+</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/sjx.png" alt="三角形"></p>
+<h3 id="2-陌陌轮廓"><a href="#2-陌陌轮廓" class="headerlink" title="2.陌陌轮廓"></a>2.陌陌轮廓</h3><p>使用圆角属性制作~直接上代码</p>
+<pre><code>height: 100px;
+width: 100px;
+background: darkgoldenrod;
+border-radius: 50% 50% 0;
+</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/momo.png" alt="momo"></p>
+<p>进一步拓展，制作成小水滴：</p>
+<pre><code>height: 100px;
+width: 100px;
+background: sandybrown;
+border-radius: 50% 50% 0;
+transform: rotate(45deg);
+</code></pre><h3 id="3-扭曲的正方形"><a href="#3-扭曲的正方形" class="headerlink" title="3.扭曲的正方形"></a>3.扭曲的正方形</h3><pre><code>height: 100px;
+width: 100px;
+background: mediumslateblue;
+border-radius: 20px 12px 40px / 0.5em 3em;
+</code></pre><p>其中的<code>border-radius: 2em 1em 4em / 0.5em 3em;</code>等价于：</p>
+<pre><code>border-top-left-radius: 2em 0.5em;
+border-top-right-radius: 1em 3em;
+border-bottom-right-radius: 4em 0.5em;
+border-bottom-left-radius: 1em 3em;
+</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/zgx2.png" alt="扭曲的正方形"></p>
+<p><strong><em>注释:</em></strong> 如果省略 bottom-left，则与 top-right 相同。如果省略 bottom-right，则与 top-left 相同。如果省略 top-right，则与 top-left 相同。</p>
+<h3 id="4-箭头"><a href="#4-箭头" class="headerlink" title="4.箭头"></a>4.箭头</h3><pre><code>.demo{
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-right: 15px solid red;
+    -webkit-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+}
+.demo:after{
+    content: &quot;&quot;;
+    position: absolute;
+    border-top: 5px solid red;
+    border-radius: 20px 0 0 0;
+    top: -18px;
+    left: -10px;
+    width: 15px;
+    height: 15px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/arrow.png" alt="arrow"></p>
+<h3 id="5-小星星"><a href="#5-小星星" class="headerlink" title="5.小星星"></a>5.小星星</h3><p>思想：三个三角形拼接而成，使用<code>transform</code>调整方向。</p>
+<pre><code>.star{
+    margin: 100px 0;
+    color: red;
+    height: 0;
+    width: 0;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid darkkhaki;
+    border-left: 100px solid transparent;
+    -webkit-transform: rotate(35deg);
+    -o-transform: rotate(35deg);
+    -moz-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+}
+.star:before{
+    content: &apos;&apos;;
+    height: 0;
+    width: 0;
+    border-bottom: 80px solid darkkhaki;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    top: -56px;
+    left: -77px;
+    -webkit-transform: rotate(-35deg);
+    -moz-transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+    -o-transform: rotate(-35deg);
+}
+.star:after{
+    content: &apos;&apos;;
+    width: 0;
+    height: 0;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid darkkhaki;
+    border-left: 100px solid transparent;
+    position: absolute;
+    color: red;
+    top: 10px;
+    left: -115px;
+    -webkit-transform: rotate(-70deg);
+    -moz-transform: rotate(-70deg);
+    -ms-transform: rotate(-70deg);
+    -o-transform: rotate(-70deg);
+}
+</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/star.png" alt="star">    </p>
+<h3 id="6-心形"><a href="#6-心形" class="headerlink" title="6.心形"></a>6.心形</h3><pre><code>.heart{
+    width: 100px;
+    height: 90px;
+}
+.heart:before,
+.heart:after {
+    position: absolute;
+    content: &apos;&apos;;
+    width: 50px;
+    height: 80px;
+    background: darksalmon;
+    border-radius: 50px 50px 0 0;
+    left: 50px;
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin : 0 100%;
+}
+.heart:after{
+    left: 0;
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
+    transform-origin :100% 100%;
+}
+</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/heart.png" alt="heart">    </p>
+<h3 id="7-十字架"><a href="#7-十字架" class="headerlink" title="7.十字架"></a>7.十字架</h3><pre><code>.cross{
+    height: 100px;
+    width: 20px;
+    background: mediumseagreen;
+    margin-left: 50px;
+    position: relative;
+}
+.cross:after{
+    background: mediumseagreen;
+    content: &apos;&apos;;
+    height: 20px;
+    position: absolute;
+    width: 80px;
+    top: 30px;
+    left: -30px;
+}
+</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/cross.png" alt="cross"></p>
 
       
 
@@ -217,17 +395,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -278,7 +445,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/05/24/Software Test_1/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/21/用css实现几个小图标/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -292,18 +459,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/07/07/js几道小题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JS几道小题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/01/31/Carousel-figure/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JS实现轮播图</div>
+    <a href="/2017/07/15/Yilia主题优化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Yilia主题优化</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -413,19 +571,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo，github</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo，github</a>
               </li>
             
             <div class="clearfix"></div>
