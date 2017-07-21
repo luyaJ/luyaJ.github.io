@@ -210,7 +210,7 @@ border-bottom-left-radius: 1em 3em;
     <link href="http://yoursite.com/2017/07/15/Yilia%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/"/>
     <id>http://yoursite.com/2017/07/15/Yilia主题优化/</id>
     <published>2017-07-15T09:56:56.000Z</published>
-    <updated>2017-07-15T14:06:12.164Z</updated>
+    <updated>2017-07-21T10:01:56.533Z</updated>
     
     <content type="html"><![CDATA[<p>过了大半年，该是要好好整理下自己的博客了。</p>
 <a id="more"></a>
@@ -309,7 +309,7 @@ toc: true
     </summary>
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="hexo+github" scheme="http://yoursite.com/tags/hexo-github/"/>
     
   </entry>
   
@@ -803,7 +803,7 @@ btn_r.onclick=function(){
     <link href="http://yoursite.com/2017/01/30/github-hexo/"/>
     <id>http://yoursite.com/2017/01/30/github-hexo/</id>
     <published>2017-01-30T14:42:04.000Z</published>
-    <updated>2017-07-15T09:29:24.565Z</updated>
+    <updated>2017-07-21T10:01:40.790Z</updated>
     
     <content type="html"><![CDATA[<p>  2016年月底第一次正式开始搭建博客，在学长和另一个小伙伴的帮助下，我初次认识github+hexo，被它给吸引。寒假开始后，就在准备换主题，因为我对原始主题实在无爱，强迫症越来越严重的我，不换好主题坚持不做笔记（无奈脸）。刚刚换好主题的我，觉得之前自己用了好几个晚上都没有换好主题的自己简直是傻bi（给自己一个黑人问号），不过好在自己现在换好了主题，赶紧做笔记，谨防自己忘了。</p>
 <a id="more"></a>
@@ -834,7 +834,7 @@ btn_r.onclick=function(){
     </summary>
     
     
-      <category term="hexo，github" scheme="http://yoursite.com/tags/hexo%EF%BC%8Cgithub/"/>
+      <category term="hexo+github" scheme="http://yoursite.com/tags/hexo-github/"/>
     
   </entry>
   

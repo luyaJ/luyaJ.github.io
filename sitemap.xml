@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/07/15/Yilia%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/</loc>
+    
+    <lastmod>2017-07-21T10:01:56.533Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/01/30/github-hexo/</loc>
+    
+    <lastmod>2017-07-21T10:01:40.790Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/07/21/%E7%94%A8css%E5%AE%9E%E7%8E%B0%E5%87%A0%E4%B8%AA%E5%B0%8F%E5%9B%BE%E6%A0%87/</loc>
     
     <lastmod>2017-07-21T10:00:22.548Z</lastmod>
@@ -16,13 +30,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/07/15/Yilia%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/</loc>
-    
-    <lastmod>2017-07-15T14:06:12.164Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2017-07-15T10:16:26.689Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://yoursite.com/2017/07/07/js%E5%87%A0%E9%81%93%E5%B0%8F%E9%A2%98/</loc>
     
     <lastmod>2017-07-15T09:53:03.293Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/01/30/github-hexo/</loc>
-    
-    <lastmod>2017-07-15T09:29:24.565Z</lastmod>
     
   </url>
   
