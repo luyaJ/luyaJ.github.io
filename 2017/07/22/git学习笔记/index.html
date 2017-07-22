@@ -6,14 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | luyaJ的小博客</title>
+  <title>git学习笔记 | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="luyaJ的小博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/07/22/git学习笔记/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
+<meta property="og:description" content="Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.">
+<meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/gitinit.PNG">
+<meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/gitstatus.PNG">
+<meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/gitlog.png">
+<meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/gitreset.png">
+<meta property="og:updated_time" content="2017-07-22T02:59:22.412Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luyaJ的小博客">
+<meta name="twitter:title" content="git学习笔记">
+<meta name="twitter:description" content="Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.">
+<meta name="twitter:image" content="http://ot4r4qnml.bkt.clouddn.com/gitinit.PNG">
   
   
     <link rel="icon" href="/favicon.png">
@@ -153,36 +162,130 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-git学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/22/git学习笔记/" class="archive-article-date">
-  	<time datetime="2017-07-22T02:52:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/22/git学习笔记/">git学习笔记</a>
+    <h1 class="article-title" itemprop="name">
+      git学习笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/22/git学习笔记/" class="archive-article-date">
+  	<time datetime="2017-07-22T02:52:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-22</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建版本库-repository"><span class="toc-number">1.</span> <span class="toc-text">创建版本库(repository)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#把文件添加到版本库"><span class="toc-number">2.</span> <span class="toc-text">把文件添加到版本库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改readme-txt文件"><span class="toc-number">2.1.</span> <span class="toc-text">修改readme.txt文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#版本回退"><span class="toc-number">3.</span> <span class="toc-text">版本回退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除文件"><span class="toc-number">4.</span> <span class="toc-text">删除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传到github完整过程-–添加远程库"><span class="toc-number">5.</span> <span class="toc-text">上传到github完整过程 –添加远程库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分支管理"><span class="toc-number">6.</span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建others分支，并切换到others分支"><span class="toc-number">6.1.</span> <span class="toc-text">创建others分支，并切换到others分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看当前分支"><span class="toc-number">6.2.</span> <span class="toc-text">查看当前分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#切换回master分支"><span class="toc-number">6.3.</span> <span class="toc-text">切换回master分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并分支"><span class="toc-number">6.4.</span> <span class="toc-text">合并分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除分支"><span class="toc-number">6.5.</span> <span class="toc-text">删除分支</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">7.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+      };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+      };
+    </script>
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
+<a id="more"></a>
+<h2 id="创建版本库-repository"><a href="#创建版本库-repository" class="headerlink" title="创建版本库(repository)"></a>创建版本库(repository)</h2><p>首先在合适的地方(我选择在github/Git/usr中)，创建一个空目录：</p>
+<pre><code>$ mkdir learngit
+$ cd learngit
+$ pwd
+/usr/learngit
+</code></pre><p><code>pwd</code>命令用于显示当前目录</p>
+<p>第二步，<strong><em>初始化仓库</em></strong>，在<code>Git/usr</code>中，输入命令 <code>git  init</code>, 这样瞬间Git就把仓库建好了，而且会告诉你是一个空的仓库，此时你会看到多了一个<code>.git</code>目录</p>
+<p>如果你没有看到，那是因为这个目录被隐藏了，用<code>ls -ah</code>命令就可以看到。</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/gitinit.PNG" alt="git init命令"></p>
+<h2 id="把文件添加到版本库"><a href="#把文件添加到版本库" class="headerlink" title="把文件添加到版本库"></a>把文件添加到版本库</h2><p>先编写一个<code>readme.txt</code> 文件，内容如下</p>
+<pre><code>Git is a version control system.
+Git is free software.
+</code></pre><p>第一步，把文件添加到仓库</p>
+<pre><code>$ git add readme.txt
+</code></pre><p>第二步，把文件提交到仓库</p>
+<pre><code>$ git commit -m &quot;add readme.txt&quot;
+</code></pre><h3 id="修改readme-txt文件"><a href="#修改readme-txt文件" class="headerlink" title="修改readme.txt文件"></a>修改readme.txt文件</h3><p>接着上面的内容，继续修改readme.txt文件，改成一下内容：</p>
+<pre><code>Git is a distributed version control system.
+Git is free software.
+</code></pre><p>掌握仓库当前的状态：</p>
+<pre><code>$ git status
+</code></pre><p><img src="http://ot4r4qnml.bkt.clouddn.com/gitstatus.PNG" alt=""></p>
+<p>上图告诉我们，readme.txt被修改过,但还没有准备提交的修改</p>
+<p>如果说过了很久，你忘了自己修改了什么内容，那么使用下面的命令就可以知道了：</p>
+<pre><code>$ git diff &quot;文件名&quot;
+</code></pre><p>接下来使用之前的 <code>git add readme.txt</code> ,  <code>git commit -m &quot;add distributed&quot;</code></p>
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><p>1.查看修改的历史记录(显示是从近到远)：</p>
+<pre><code>$ git log
+</code></pre><p><img src="http://ot4r4qnml.bkt.clouddn.com/gitlog.png" alt=""></p>
+<p>也可以加上参数 <code>--pretty=oneline</code>让历史记录看起来更简单。</p>
+<p>2.退回上一个版本：</p>
+<pre><code>$ git reset --hard HEAD^
+</code></pre><p><img src="http://ot4r4qnml.bkt.clouddn.com/gitreset.png" alt=""></p>
+<p>3.可是这个时候又想回到之前的版本怎么办，别急，只要你的命令行窗口没关掉，就往上找到<code>append GPL</code> 的 <code>commit id</code>是 <code>ee0a0cff...</code>(版本号只要前几位就行，git会自动查找)</p>
+<pre><code>$ git reset --hard ee0a0cff
+</code></pre><p>那要是命令行窗口关掉了呢？不怕，还是有办法的！Git提供了一个命令 <code>git reflog</code> 用来记录你的每一次命令。</p>
+<h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><pre><code>$ git rm readme.txt
+</code></pre><h2 id="上传到github完整过程-–添加远程库"><a href="#上传到github完整过程-–添加远程库" class="headerlink" title="上传到github完整过程 –添加远程库"></a>上传到github完整过程 –添加远程库</h2><pre><code>echo &quot;#DemoWebsite&quot; &gt;&gt; README.md
+git init
+git add README.md
+git commit -m &quot;first commit&quot;
+git remote add origin https://github.com/luyaJ/DemoWebsite.git
+git push -u origin master
+</code></pre><h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><h3 id="创建others分支，并切换到others分支"><a href="#创建others分支，并切换到others分支" class="headerlink" title="创建others分支，并切换到others分支"></a>创建<code>others</code>分支，并切换到<code>others</code>分支</h3><pre><code>$ git checkout -b others
+</code></pre><p>相当于下面的命令：</p>
+<pre><code>$ git branch others
+$ git checkout others
+</code></pre><h3 id="查看当前分支"><a href="#查看当前分支" class="headerlink" title="查看当前分支"></a>查看当前分支</h3><pre><code>$ git branch
+</code></pre><h3 id="切换回master分支"><a href="#切换回master分支" class="headerlink" title="切换回master分支"></a>切换回<code>master</code>分支</h3><pre><code>$ git checkout master
+</code></pre><h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><pre><code>$ git merge others
+</code></pre><h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><p>分支用完合并后就可以随意删除了：</p>
+<pre><code>$ git branch -d others
+</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>创建空目录三步走：<code>mkdir 目录名字</code> ， <code>cd 目录名字</code> ， <code>pwd</code></li>
+<li>初始化仓库：<code>git init</code></li>
+<li>添加文件到仓库：<code>git add 文件名</code> </li>
+<li><p>提交文件到仓库：<code>git commit -m “XXXX”</code><br>(注意每次修改，如果不<code>add</code>到暂存区，那就不会加入到 <code>commit</code>中)</p>
+</li>
+<li><p>掌握仓库当前的状态：<code>git status</code></p>
+</li>
+<li>查看文件修改内容： <code>git diff “文件名”</code></li>
+<li>查看修改的历史记录: <code>git log</code></li>
+<li>删除文件：<code>git rm 文件名</code></li>
+</ol>
+<p>最后附上<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰老师的Git教程</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -194,175 +297,90 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/22/git学习笔记/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/21/用css实现几个小图标/" class="archive-article-date">
-  	<time datetime="2017-07-21T05:25:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-21</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/21/用css实现几个小图标/">用css实现几个小图标</a>
-    </h1>
+  
+    <a href="/2017/07/21/用css实现几个小图标/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用css实现几个小图标</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/15/Yilia主题优化/" class="archive-article-date">
-  	<time datetime="2017-07-15T09:56:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/15/Yilia主题优化/">Yilia主题优化</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo+github</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/07/js几道小题/" class="archive-article-date">
-  	<time datetime="2017-07-07T12:16:39.462Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/07/js几道小题/">JS几道小题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/24/Software Test/" class="archive-article-date">
-  	<time datetime="2017-05-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/24/Software Test/">软件测试初学</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -393,8 +411,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
