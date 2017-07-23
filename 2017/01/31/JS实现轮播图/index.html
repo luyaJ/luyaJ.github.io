@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | luyaJ的小博客</title>
+  <title>JS实现轮播图 | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="luyaJ的小博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/page/2/index.html">
+  <meta name="description" content="这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS实现轮播图">
+<meta property="og:url" content="http://yoursite.com/2017/01/31/JS实现轮播图/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
+<meta property="og:description" content="这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西。">
+<meta property="og:updated_time" content="2017-07-23T14:51:19.487Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luyaJ的小博客">
+<meta name="twitter:title" content="JS实现轮播图">
+<meta name="twitter:description" content="这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -153,74 +157,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-JS实现轮播图" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/24/Software Test/" class="archive-article-date">
-  	<time datetime="2017-05-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/24/Software Test/">软件测试初学</a>
+    <h1 class="article-title" itemprop="name">
+      JS实现轮播图
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/31/JS实现轮播图/" class="archive-article-date">
+        
+        <a href="/2017/01/31/JS实现轮播图/" class="archive-article-date">
   	<time datetime="2017-01-31T08:10:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-31</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/31/JS实现轮播图/">JS实现轮播图</a>
-    </h1>
-  
+        
+      </header>
+    
 
-        <div class="article-info info-on-right">
-          
+    <!-- 目录内容 -->
+    
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#html代码实现"><span class="toc-number">1.</span> <span class="toc-text">html代码实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css部分代码实现"><span class="toc-number">2.</span> <span class="toc-text">css部分代码实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript部分代码实现"><span class="toc-number">3.</span> <span class="toc-text">javascript部分代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#点击-lt-gt-按钮让图片左右移动"><span class="toc-number">3.1.</span> <span class="toc-text">点击< >按钮让图片左右移动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设置轮播图的定时器"><span class="toc-number">3.2.</span> <span class="toc-text">设置轮播图的定时器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#清除轮播图的定时器"><span class="toc-number">3.3.</span> <span class="toc-text">清除轮播图的定时器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#小圆点随图片变化相应变化"><span class="toc-number">3.4.</span> <span class="toc-text">小圆点随图片变化相应变化</span></a></li></ol></li></ol>
+    </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+      };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+      };
+    </script>
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西。  </p>
+<a id="more"></a>
+<h3 id="html代码实现"><a href="#html代码实现" class="headerlink" title="html代码实现"></a>html代码实现</h3><pre><code>&lt;div id=&quot;content&quot;&gt;
+    &lt;div id=&quot;images&quot; style=&quot;left: -600px;&quot;&gt; 
+        &lt;img src=&quot;images/5.jpg&quot;&gt;
+        &lt;img src=&quot;images/1.jpg&quot;&gt;
+        &lt;img src=&quot;images/2.jpg&quot;&gt;
+        &lt;img src=&quot;images/3.jpg&quot;&gt;
+        &lt;img src=&quot;images/4.jpg&quot;&gt;
+        &lt;img src=&quot;images/5.jpg&quot;&gt;
+        &lt;img src=&quot;images/1.jpg&quot;&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;circle&quot;&gt;
+        &lt;span class=&quot;on&quot; index=&quot;1&quot;&gt;&lt;/span&gt;
+        &lt;span index=&quot;2&quot;&gt;&lt;/span&gt;
+        &lt;span index=&quot;3&quot;&gt;&lt;/span&gt;
+        &lt;span index=&quot;4&quot;&gt;&lt;/span&gt;
+        &lt;span index=&quot;5&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;btn&quot; id=&quot;btn_l&quot;&gt;&amp;lt;&lt;/div&gt;
+    &lt;div class=&quot;btn&quot; id=&quot;btn_r&quot;&gt;&amp;gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h3 id="css部分代码实现"><a href="#css部分代码实现" class="headerlink" title="css部分代码实现"></a>css部分代码实现</h3><p> 1.”content” 处设置相对位置：<code>position:relative</code>; 图片展示为只显示一张图片，所以溢出content容器部分使用属性：<code>overflow:hidden</code>;</p>
+<p> 2.左、右按钮部分代码：</p>
+<pre><code>position: relative;  
+cursor: pointer;  //鼠标移上去，显示手指妆
+height: 50px;
+width: 30px;
+background: rgba(0,0,0,0.3);
+top: 50%;
+font-size: 40px;
+text-align: center;
+line-height: 50px;
+display: none;  //当鼠标移上去时，btn出现
+color: #fff;
+</code></pre><h3 id="javascript部分代码实现"><a href="#javascript部分代码实现" class="headerlink" title="javascript部分代码实现"></a>javascript部分代码实现</h3><h4 id="点击-lt-gt-按钮让图片左右移动"><a href="#点击-lt-gt-按钮让图片左右移动" class="headerlink" title="点击&lt; &gt;按钮让图片左右移动"></a>点击&lt; &gt;按钮让图片左右移动</h4><pre><code>function animate(offset){
+    var newLeft = parseInt(images.style.left) + offset;
+    images.style.left = newLeft + &apos;px&apos;;
+    if (newLeft&lt;-3000) {
+        images.style.left = -600 + &apos;px&apos;;
+    }
+    if (newLeft&gt;-600) {
+        images.style.left = -3000 + &apos;px&apos;;
+    }
+}
+
+btn_l.onclick=function(){
+    animate(600);    
+}
+
+btn_r.onclick=function(){
+    animate(-600);
+}
+</code></pre><p>if循环语句是实现图片无限循环；</p>
+<p>这时，轮播图可以实现左右点击，图片相应变化的功能。</p>
+<h4 id="设置轮播图的定时器"><a href="#设置轮播图的定时器" class="headerlink" title="设置轮播图的定时器"></a>设置轮播图的定时器</h4><pre><code>var timer;
+function play(){
+    timer = setInterval(function() {
+        btn_r.onclick()
+    },3000)    //每3000ms图片自动移动
+}
+play();
+</code></pre><p>使用setIntervel()设置定时器。</p>
+<h4 id="清除轮播图的定时器"><a href="#清除轮播图的定时器" class="headerlink" title="清除轮播图的定时器"></a>清除轮播图的定时器</h4><pre><code>function stop() {
+    clearInterval(timer);
+}
+content.onmouseover = stop;
+content.onmouseout = play;
+</code></pre><p>图片自动移动时，当把鼠标悬停在content内时，图片暂停移动。</p>
+<h4 id="小圆点随图片变化相应变化"><a href="#小圆点随图片变化相应变化" class="headerlink" title="小圆点随图片变化相应变化"></a>小圆点随图片变化相应变化</h4><pre><code>function showCircle(){
+    for (var i=0;i&lt;circle.length;i++){
+        if(circle[i].className==&apos;on&apos;){
+            circle[i].className=&apos;&apos;;
+        }
+    }
+    circle[index-1].className=&apos;on&apos;;
+}
+</code></pre><p>for循环用来清除之前circle的样式；</p>
+<p>这时，点击&lt; &gt; 按钮小圆点会随图片相应点亮。</p>
+<pre><code>for (var i=0;i&lt;circle.length;i++){
+    circle[i].onclick=function(){
+        var clickIndex=parseInt(this.getAttribute(&apos;index&apos;));
+        var offset=600*(index-clickIndex);
+        animate(offset);
+        index=clickIndex;
+        showCircle();       
+    }
+}
+</code></pre><p>利用getAttribute(‘’)获取自定义index，之后</p>
+<pre><code>btn_l.onclick=function(){
+    index -= 1;
+    if(index&lt;1){
+        index=5;
+    }
+    showCircle();
+    animate(600);    
+}
+btn_r.onclick=function(){
+    index += 1;
+    if(index&gt;5){
+        index=1;
+    }
+    showCircle();
+    animate(-600);
+}
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -232,61 +330,99 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/01/31/JS实现轮播图/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/30/用github-hexo搭建博客/" class="archive-article-date">
-  	<time datetime="2017-01-30T14:44:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-30</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/30/用github-hexo搭建博客/">用github+hexo搭建博客</a>
-    </h1>
+    <a href="/2017/05/24/Software Test/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          软件测试初学
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/30/用github-hexo搭建博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用github+hexo搭建博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo+github</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2017/">&laquo; Prev</a><a class="page-number" href="/archives/2017/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 
           </div>
@@ -317,8 +453,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

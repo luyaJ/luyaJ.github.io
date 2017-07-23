@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/01/31/JS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/</loc>
+    
+    <lastmod>2017-07-23T14:51:19.487Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/01/30/%E7%94%A8github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2017-07-23T14:45:43.388Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>http://yoursite.com/2017/07/07/js%E5%87%A0%E9%81%93%E5%B0%8F%E9%A2%98/</loc>
     
     <lastmod>2017-07-15T09:53:03.293Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/01/31/Carousel-figure/</loc>
-    
-    <lastmod>2017-07-15T09:22:20.139Z</lastmod>
     
   </url>
   

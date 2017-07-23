@@ -914,12 +914,12 @@ public int divide(int a,int b){
   
   <entry>
     <title>JS实现轮播图</title>
-    <link href="http://yoursite.com/2017/01/31/Carousel-figure/"/>
-    <id>http://yoursite.com/2017/01/31/Carousel-figure/</id>
+    <link href="http://yoursite.com/2017/01/31/JS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/"/>
+    <id>http://yoursite.com/2017/01/31/JS实现轮播图/</id>
     <published>2017-01-31T08:10:42.000Z</published>
-    <updated>2017-07-15T09:22:20.139Z</updated>
+    <updated>2017-07-23T14:51:19.487Z</updated>
     
-    <content type="html"><![CDATA[<p>  这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西。  </p>
+    <content type="html"><![CDATA[<p> 这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西。  </p>
 <a id="more"></a>
 <h3 id="html代码实现"><a href="#html代码实现" class="headerlink" title="html代码实现"></a>html代码实现</h3><pre><code>&lt;div id=&quot;content&quot;&gt;
     &lt;div id=&quot;images&quot; style=&quot;left: -600px;&quot;&gt; 
@@ -954,7 +954,7 @@ text-align: center;
 line-height: 50px;
 display: none;  //当鼠标移上去时，btn出现
 color: #fff;
-</code></pre><h3 id="javascript部分代码实现"><a href="#javascript部分代码实现" class="headerlink" title="javascript部分代码实现"></a>javascript部分代码实现</h3><h5 id="1-点击-lt-gt-按钮让图片左右移动"><a href="#1-点击-lt-gt-按钮让图片左右移动" class="headerlink" title="1.点击&lt; &gt;按钮让图片左右移动"></a>1.点击&lt; &gt;按钮让图片左右移动</h5><pre><code>function animate(offset){
+</code></pre><h3 id="javascript部分代码实现"><a href="#javascript部分代码实现" class="headerlink" title="javascript部分代码实现"></a>javascript部分代码实现</h3><h4 id="点击-lt-gt-按钮让图片左右移动"><a href="#点击-lt-gt-按钮让图片左右移动" class="headerlink" title="点击&lt; &gt;按钮让图片左右移动"></a>点击&lt; &gt;按钮让图片左右移动</h4><pre><code>function animate(offset){
     var newLeft = parseInt(images.style.left) + offset;
     images.style.left = newLeft + &apos;px&apos;;
     if (newLeft&lt;-3000) {
@@ -974,7 +974,7 @@ btn_r.onclick=function(){
 }
 </code></pre><p>if循环语句是实现图片无限循环；</p>
 <p>这时，轮播图可以实现左右点击，图片相应变化的功能。</p>
-<h5 id="2-设置轮播图的定时器"><a href="#2-设置轮播图的定时器" class="headerlink" title="2.设置轮播图的定时器"></a>2.设置轮播图的定时器</h5><pre><code>var timer;
+<h4 id="设置轮播图的定时器"><a href="#设置轮播图的定时器" class="headerlink" title="设置轮播图的定时器"></a>设置轮播图的定时器</h4><pre><code>var timer;
 function play(){
     timer = setInterval(function() {
         btn_r.onclick()
@@ -982,13 +982,13 @@ function play(){
 }
 play();
 </code></pre><p>使用setIntervel()设置定时器。</p>
-<h5 id="3-清除轮播图的定时器"><a href="#3-清除轮播图的定时器" class="headerlink" title="3.清除轮播图的定时器"></a>3.清除轮播图的定时器</h5><pre><code>function stop() {
+<h4 id="清除轮播图的定时器"><a href="#清除轮播图的定时器" class="headerlink" title="清除轮播图的定时器"></a>清除轮播图的定时器</h4><pre><code>function stop() {
     clearInterval(timer);
 }
 content.onmouseover = stop;
 content.onmouseout = play;
 </code></pre><p>图片自动移动时，当把鼠标悬停在content内时，图片暂停移动。</p>
-<h5 id="4-小圆点随图片变化相应变化"><a href="#4-小圆点随图片变化相应变化" class="headerlink" title="4.小圆点随图片变化相应变化"></a>4.小圆点随图片变化相应变化</h5><pre><code>function showCircle(){
+<h4 id="小圆点随图片变化相应变化"><a href="#小圆点随图片变化相应变化" class="headerlink" title="小圆点随图片变化相应变化"></a>小圆点随图片变化相应变化</h4><pre><code>function showCircle(){
     for (var i=0;i&lt;circle.length;i++){
         if(circle[i].className==&apos;on&apos;){
             circle[i].className=&apos;&apos;;
@@ -1028,7 +1028,7 @@ btn_r.onclick=function(){
     
     <summary type="html">
     
-      &lt;p&gt;  这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西。  &lt;/p&gt;
+      &lt;p&gt; 这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西。  &lt;/p&gt;
     
     </summary>
     
