@@ -6,14 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: hexo+github | luyaJ的小博客</title>
+  <title>JSP学习笔记 | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="luyaJ的小博客">
-<meta property="og:url" content="http://yoursite.com/tags/hexo-github/index.html">
+  <meta name="description" content="JSP – Java Server Pages">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/07/23/JSP学习笔记/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
+<meta property="og:description" content="JSP – Java Server Pages">
+<meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/eclipse1.PNG">
+<meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/eclipse2.PNG">
+<meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/eclipse3.PNG">
+<meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/instruct.PNG">
+<meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/out%E5%AF%B9%E8%B1%A1.PNG">
+<meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/request.PNG">
+<meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/javabean.PNG">
+<meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/JavaBeanDemo1-1.PNG">
+<meta property="og:updated_time" content="2017-07-23T14:29:07.731Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luyaJ的小博客">
+<meta name="twitter:title" content="JSP学习笔记">
+<meta name="twitter:description" content="JSP – Java Server Pages">
+<meta name="twitter:image" content="http://ot4r4qnml.bkt.clouddn.com/eclipse1.PNG">
   
   
     <link rel="icon" href="/favicon.png">
@@ -153,146 +166,289 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-JSP学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/15/Yilia主题优化/" class="archive-article-date">
-  	<time datetime="2017-07-15T09:56:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/15/Yilia主题优化/">Yilia主题优化</a>
+    <h1 class="article-title" itemprop="name">
+      JSP学习笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/23/JSP学习笔记/" class="archive-article-date">
+  	<time datetime="2017-07-23T14:19:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-23</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#区别jsp和servlet"><span class="toc-number">1.</span> <span class="toc-text">区别jsp和servlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工具"><span class="toc-number">2.</span> <span class="toc-text">工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用myeclipse"><span class="toc-number">3.</span> <span class="toc-text">使用myeclipse</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSP指令"><span class="toc-number">4.</span> <span class="toc-text">JSP指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSP注释"><span class="toc-number">5.</span> <span class="toc-text">JSP注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSP脚本"><span class="toc-number">6.</span> <span class="toc-text">JSP脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSP声明"><span class="toc-number">7.</span> <span class="toc-text">JSP声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSP表达式"><span class="toc-number">8.</span> <span class="toc-text">JSP表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#做一个九九乘法表"><span class="toc-number">9.</span> <span class="toc-text">做一个九九乘法表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSP内置对象"><span class="toc-number">10.</span> <span class="toc-text">JSP内置对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#out对象"><span class="toc-number">10.1.</span> <span class="toc-text">out对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#get-post"><span class="toc-number">10.2.</span> <span class="toc-text">get/post</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#request-response"><span class="toc-number">10.3.</span> <span class="toc-text">request/response</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#session"><span class="toc-number">10.4.</span> <span class="toc-text">session</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#application"><span class="toc-number">10.5.</span> <span class="toc-text">application</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#page对象"><span class="toc-number">10.6.</span> <span class="toc-text">page对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaBean"><span class="toc-number">11.</span> <span class="toc-text">JavaBean</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建JavaBean"><span class="toc-number">11.1.</span> <span class="toc-text">创建JavaBean</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JavaBean动作元素"><span class="toc-number">11.2.</span> <span class="toc-text">JavaBean动作元素</span></a></li></ol></li></ol>
+    </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+      };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+      };
+    </script>
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JSP – Java Server Pages</p>
+<a id="more"></a>
+<h3 id="区别jsp和servlet"><a href="#区别jsp和servlet" class="headerlink" title="区别jsp和servlet"></a>区别jsp和servlet</h3><p>1.jsp就是在html里面写java代码，servlet就是在java里面写html代码。</p>
+<p>2.servlet在java代码中通过HttpServletResponse对象动态输出HTML内容；jsp在静态HTML内容中嵌入Java代码，Java代码被动态执行后生成HTML内容。</p>
+<p>3.两者通过MVC双剑合璧：MVC(Model-View-Controller)</p>
+<ul>
+<li>Controller(控制器) -负责转发请求，对请求进行处理</li>
+<li>View(视图) -负责界面显示</li>
+<li>Model(模型) -业务功能编写（例如算法实现）、数据库设计以及数据存取操作实现</li>
+</ul>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><p>myeclipse,tomcat</p>
+<h3 id="使用myeclipse"><a href="#使用myeclipse" class="headerlink" title="使用myeclipse"></a>使用myeclipse</h3><p>1.new – web project;</p>
+<p>2.输入project name (imoocjsp);</p>
+<p>3.打开imoocjsp 下的 Webroot 文件，双击index.jsp。删除<code>pageEncoding=&quot;ISO-8859-1&quot;</code>之后 使用 <code>alt+/</code> 选择<code>contentType</code>,将其中charset值改为<code>charset=utf-8</code>;(解决中文编码问题)</p>
+<p>4.点击图中红色区域内图标，选择Project – imoocjsp – add – Server – tomcat7 –ok;</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/eclipse1.PNG" alt=""></p>
+<p>5.启动Tomcat服务器，在地址栏输入：localhost:8080/imoocjsp/index.jsp</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/eclipse2.PNG" alt=""></p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/eclipse3.PNG" alt=""></p>
+<h3 id="JSP指令"><a href="#JSP指令" class="headerlink" title="JSP指令"></a>JSP指令</h3><p>用来设置与整个JSP页面相关的属性。<br>语法：<code>&lt;%@ directive attribute=&quot;value&quot; %&gt;</code></p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/instruct.PNG" alt=""></p>
+<ul>
+<li>include<ul>
+<li>指令: <code>&lt;%@ include file=&quot;url&quot; %&gt;</code></li>
+<li>动作：<code>&lt;jsp:include page=&quot;url&quot; flush=&quot;true|false&quot; /&gt;</code> </li>
+</ul>
+</li>
+<li>page(要包含的页面)；</li>
+<li>flush(被包含的页面是否从缓冲区读取)</li>
+</ul>
+<h3 id="JSP注释"><a href="#JSP注释" class="headerlink" title="JSP注释"></a>JSP注释</h3><ul>
+<li>HTML注释： <!-- html注释 -->  //客户端可见</li>
+<li>JSP注释： &lt;%– html注释 –%&gt;  //客户端不可见</li>
+<li>JSP脚本注释： //单行注释  / ** /多行注释</li>
+</ul>
+<h3 id="JSP脚本"><a href="#JSP脚本" class="headerlink" title="JSP脚本"></a>JSP脚本</h3><p>写在<code>&lt;% %&gt;</code> 中的叫做JSP脚本。</p>
+<pre><code>&lt;%
+out.println(&quot;大家好，JSP脚本&quot;);
+%&gt;
+</code></pre><h3 id="JSP声明"><a href="#JSP声明" class="headerlink" title="JSP声明"></a>JSP声明</h3><p>在JSP页面中定义变量或者方法。<br>语法：<code>&lt;%! JAVA代码 %&gt;</code></p>
+<pre><code>&lt;%!
+String s=&quot;张三&quot;; //声明了一个字符串变量
+int add(int a,int b){  //声明了一个返回整型函数，实现两个整数的求和
+    return a+b;
+}
+%&gt;
+</code></pre><h3 id="JSP表达式"><a href="#JSP表达式" class="headerlink" title="JSP表达式"></a>JSP表达式</h3><p>语法：<code>&lt;%=表达式 %&gt;</code><br>注意：表达式不以分号结束</p>
+<h3 id="做一个九九乘法表"><a href="#做一个九九乘法表" class="headerlink" title="做一个九九乘法表"></a>做一个九九乘法表</h3><pre><code>&lt;%!
+String printMultiTable() {
+String s=&quot;&quot;;
+for(int i=1;i&lt;=9;i++) {
+for(int j=1;j&lt;=i;j++) {
+    s+=i+&quot;*&quot;+j+&quot;=&quot;+(i*j)+&quot;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;;
+    }
+    s+=&quot;&lt;br&gt;&quot;;
+}
+return s;
+}
+%&gt;
+&lt;h1&gt;九九乘法表&lt;/h1&gt;&lt;br&gt;
+&lt;%=printMultiTable() %&gt;
+</code></pre><h3 id="JSP内置对象"><a href="#JSP内置对象" class="headerlink" title="JSP内置对象"></a>JSP内置对象</h3><h4 id="out对象"><a href="#out对象" class="headerlink" title="out对象"></a>out对象</h4><ul>
+<li>什么事缓冲区？</li>
+</ul>
+<p>Buffer,所谓缓冲区就是内存的一块区域来保存临时数据。</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/out%E5%AF%B9%E8%B1%A1.PNG" alt=""></p>
+<pre><code>&lt;%
+out.println(&quot;&lt;h2&gt;静夜思&lt;/h2&gt;&quot;);
+out.println(&quot;床前明月光&lt;br&gt;&quot;);
+out.clear();
+out.println(&quot;疑是地上霜&lt;br&gt;&quot;);
+%&gt;
+缓冲区大小：&lt;%=out.getBufferSize() %&gt;Byte&lt;br&gt;
+缓冲区剩余大小：&lt;%=out.getRemaining() %&gt;&lt;br&gt;
+缓冲区满时：&lt;%=out.isAutoFlush() %&gt;&lt;br&gt;
+</code></pre><h4 id="get-post"><a href="#get-post" class="headerlink" title="get/post"></a>get/post</h4><p>method=”get/post”</p>
+<ul>
+<li><code>get</code>: 提交的数据最多不超过2KB，安全性较低但效率比post高。适合提交数据量不大。安全性不高的数据。比如：搜索、查询等功能。</li>
+<li><p><code>post</code>: 将用户提交的信息封装在HTML HEADER内。适合提交数据量大，安全性高的用户信息。比如：注册、修改、上传等功能。</p>
+  <form action="dologin.jsp" method="post"><br>      用户名:<input type="text" name="username"><br><br>      密码:<input type="password" name="password"><br><br>      <input type="submit" value="登录"><br>  </form>
+
+</li>
+</ul>
+<h4 id="request-response"><a href="#request-response" class="headerlink" title="request/response"></a>request/response</h4><p><img src="http://ot4r4qnml.bkt.clouddn.com/request.PNG" alt=""></p>
+<pre><code>//login.jsp:
+&lt;form action=&quot;request.jsp&quot; method=&quot;post&quot;&gt;
+    用户名:&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;br&gt;
+    爱好:&lt;input type=&quot;checkbox&quot; name=&quot;favorite&quot; value=&quot;read&quot;&gt;读书
+    &lt;input type=&quot;checkbox&quot; name=&quot;favorite&quot; value=&quot;music&quot;&gt;音乐
+    &lt;input type=&quot;checkbox&quot; name=&quot;favorite&quot; value=&quot;movie&quot;&gt;电影
+    &lt;input type=&quot;checkbox&quot; name=&quot;favorite&quot; value=&quot;internet&quot;&gt;上网
+    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+&lt;/form&gt;
+&lt;a href=&quot;request.jsp?username=lisi&quot;&gt;测试URL传参数&lt;/a&gt;
+
+//request.jsp:
+&lt;%
+request.setCharacterEncoding(&quot;utf-8&quot;); //解决中文乱码问题
+%&gt;
+用户：&lt;%=request.getParameter(&quot;username&quot;) %&gt;&lt;br/&gt;
+爱好：&lt;%
+    if(request.getParameterValues(&quot;favorite&quot;)!=null){
+        String[] favorites=request.getParameterValues(&quot;favorite&quot;);
+        for(int i=0;i&lt;favorites.length;i++){
+            out.println(favorites[i]+&quot;&amp;nbsp;&amp;nbsp;&quot;);
+         }
+    }
+    %&gt;
+%&gt;
+</code></pre><h4 id="session"><a href="#session" class="headerlink" title="session"></a>session</h4><h4 id="application"><a href="#application" class="headerlink" title="application"></a>application</h4><h4 id="page对象"><a href="#page对象" class="headerlink" title="page对象"></a>page对象</h4><h3 id="JavaBean"><a href="#JavaBean" class="headerlink" title="JavaBean"></a>JavaBean</h3><p>javabean是一种规范，而不是一种技术或工具。</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/javabean.PNG" alt=""></p>
+<h4 id="创建JavaBean"><a href="#创建JavaBean" class="headerlink" title="创建JavaBean"></a>创建JavaBean</h4><ol>
+<li>新建一个Web Project –命名：JavaBeanDemo1 ；</li>
+<li>新建一个package –命名：com.po ；</li>
+<li>新建一个class –命名：Users ；</li>
+<li><img src="http://ot4r4qnml.bkt.clouddn.com/JavaBeanDemo1-1.PNG" alt=""></li>
+<li>右键 – <code>source</code> – <code>Generate getters and setters</code> – <code>Select All</code> –ok ；</li>
+<li>双击index.jsp – 使用page指令 <code>&lt;%@ page import=&quot;com.po.Users&quot; %&gt;</code></li>
+<li> <code>&lt;%
+ Users user = new Users();
+ user.setUsername(&quot;admin&quot;); //设置用户名
+ user.setPassword(&quot;123456&quot;); //设置密码
+ %&gt;
+ 用户名：&lt;%=user.getUsername() %&gt;&lt;br&gt;
+ 密码：&lt;%=user.getPassword() %&gt;&lt;br&gt;</code></li>
+</ol>
+<h4 id="JavaBean动作元素"><a href="#JavaBean动作元素" class="headerlink" title="JavaBean动作元素"></a>JavaBean动作元素</h4><ul>
+<li><code>&lt;jsp:useBean id=&quot;myUsers&quot; class=&quot;com.po.Users&quot; scope=&quot;page&quot; /&gt;</code></li>
+<li><code>&lt;jsp:setProperty name=&quot;myUsers&quot; property=&quot; * &quot;/&gt;</code></li>
+<li><code>&lt;jsp:getProperty name=&quot;myUsers&quot; property=&quot; * &quot;/&gt;</code></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo+github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaWeb</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/23/JSP学习笔记/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/30/github-hexo/" class="archive-article-date">
-  	<time datetime="2017-01-30T14:42:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-30</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/30/github-hexo/">用github+hexo搭建博客</a>
-    </h1>
+  
+    <a href="/2017/07/22/git学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git学习笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo+github</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/27/hello-world/" class="archive-article-date">
-  	<time datetime="2016-12-27T10:23:59.706Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/27/hello-world/">Hello World</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo+github</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -323,9 +479,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
