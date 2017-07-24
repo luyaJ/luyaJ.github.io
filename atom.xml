@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-24T07:01:15.650Z</updated>
+  <updated>2017-07-24T10:21:15.687Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,33 @@
     <link href="http://yoursite.com/2017/07/24/HTML5-Web%E5%AD%98%E5%82%A8/"/>
     <id>http://yoursite.com/2017/07/24/HTML5-Web存储/</id>
     <published>2017-07-24T06:02:21.000Z</published>
-    <updated>2017-07-24T07:01:15.650Z</updated>
+    <updated>2017-07-24T10:21:15.687Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="如何工作"><a href="#如何工作" class="headerlink" title="如何工作"></a>如何工作</h2><p>早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。</p>
+    <content type="html"><![CDATA[<p>HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：</p>
+<a id="more"></a>
+<ul>
+<li>localStorage –没有时间限制的数据存储。第二天、第二周或下一年之后，数据依然可用。</li>
+<li>sessionStorage –针对一个session的数据存储。当用户关闭浏览器窗口后，数据会被删除。</li>
+</ul>
+<h2 id="localStorage方法"><a href="#localStorage方法" class="headerlink" title="localStorage方法"></a>localStorage方法</h2><p>对用户访问页面的次数进行计数：</p>
+<pre><code>&lt;script&gt;
+    if (localStorage.pagecount) {
+        localStorage.pagecount=Number(localStorage.pagecount) +1;
+    } else {
+        localStorage.pagecount=1;
+    }
+    document.write(&quot;Visits &quot;+ localStorage.pagecount + &quot; time(s).&quot;);
+&lt;/script&gt;
+</code></pre><h2 id="sessionStorage方法"><a href="#sessionStorage方法" class="headerlink" title="sessionStorage方法"></a>sessionStorage方法</h2><p>用户在当前 session 中访问页面的次数进行计数：</p>
+<pre><code>&lt;script&gt;
+    if(sessionStorage.pageCount){
+        sessionStorage.pageCount = Number(sessionStorage.pageCount) +1;
+     } else {
+        sessionStorage.pageCount = 1;
+    }
+     document.write(&quot;visits: &quot; + sessionStorage.pageCount + &quot; 次&quot;);
+&lt;/script&gt;
+</code></pre><h2 id="如何工作"><a href="#如何工作" class="headerlink" title="如何工作"></a>如何工作</h2><p>早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。</p>
 <p>现如今的浏览器都很慷慨，都会提供5~10M（每个域）的存储空间。创建HTML5的本地存储时还充分考虑了Web应用（和移动应用）。所谓<strong>本地存储</strong>，就是指你的应用可以把数据存储在浏览器上，从而减少与服务器之间所需的通信。</p>
 <h3 id="如何做到的？"><a href="#如何做到的？" class="headerlink" title="如何做到的？"></a>如何做到的？</h3><ol>
 <li>使用这个API，页面可以在浏览器的本地存储中存储一个或多个键/值对；</li>
@@ -49,8 +73,7 @@ var name = localStorage[&quot;name&quot;];
     
     <summary type="html">
     
-      &lt;h2 id=&quot;如何工作&quot;&gt;&lt;a href=&quot;#如何工作&quot; class=&quot;headerlink&quot; title=&quot;如何工作&quot;&gt;&lt;/a&gt;如何工作&lt;/h2&gt;&lt;p&gt;早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。&lt;/p&gt;
-&lt;p&gt;现如今
+      &lt;p&gt;HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：&lt;/p&gt;
     
     </summary>
     

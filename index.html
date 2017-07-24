@@ -180,30 +180,10 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="如何工作"><a href="#如何工作" class="headerlink" title="如何工作"></a>如何工作</h2><p>早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。</p>
-<p>现如今的浏览器都很慷慨，都会提供5~10M（每个域）的存储空间。创建HTML5的本地存储时还充分考虑了Web应用（和移动应用）。所谓<strong>本地存储</strong>，就是指你的应用可以把数据存储在浏览器上，从而减少与服务器之间所需的通信。</p>
-<h3 id="如何做到的？"><a href="#如何做到的？" class="headerlink" title="如何做到的？"></a>如何做到的？</h3><ol>
-<li>使用这个API，页面可以在浏览器的本地存储中存储一个或多个键/值对；</li>
-<li>然后用键来获取相应的值；</li>
-</ol>
-<p>键/值对，就是<code>key: &quot;pet&quot;</code>, <code>key</code>就是键，<code>pet</code>就是对。</p>
-<h4 id="获取方法和设置方法-getItem和setItem"><a href="#获取方法和设置方法-getItem和setItem" class="headerlink" title="获取方法和设置方法(getItem和setItem)"></a>获取方法和设置方法(getItem和setItem)</h4><p><code>setItem</code>方法，用于存储某个数据，只能是string类型的数据项。</p>
-<pre><code>localStorage.setItem(&quot;name&quot;,&quot;luya&quot;);
-localStorage.setItem(&quot;age&quot;,21);
-alert(localStorage.getItem(&quot;name&quot;));
-//alert(parseInt(localStorage.getItem(&quot;age&quot;)));
-//输出：luya
-</code></pre><h4 id="看成一个关联数组"><a href="#看成一个关联数组" class="headerlink" title="看成一个关联数组"></a>看成一个关联数组</h4><pre><code>//为键赋值
-localStorage[&quot;name&quot;] = &quot;luya&quot;;
-//获取一个键存储的值,相当于getItem方法
-var name = localStorage[&quot;name&quot;];
-</code></pre><h3 id="另外两个特性"><a href="#另外两个特性" class="headerlink" title="另外两个特性"></a>另外两个特性</h3><p><code>length</code>属性，localStorage中有多少数据项；<code>key</code>方法，给出localStorage中各个数据项的键。</p>
-<pre><code>for(var i=0;i&lt;localStorage.length;i++){
-    var key = localStorage.key(i);
-    var value = localStorage[key];
-    alert(value);
-}
-</code></pre>
+        <p>HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：</p>
+        
+          <a class="article-more-a" href="/2017/07/24/HTML5-Web存储/#more">more >></a>
+        
       
 
       

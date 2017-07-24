@@ -8,25 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>HTML5 Web存储 | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如何工作早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。
-现如今的浏览器都很慷慨，都会提供5~10M（每个域）的存储空间。创建HTML5的本地存储时还充分考虑了Web应用（和移动应用）。所谓本地存储，就是指你的应用可以把数据存储在浏览器上，从而减少与服务器之间所需的通信。
-如何做到的？
-使用这个API，页面可以在浏览器的本地存储中存储一个或多个">
+  <meta name="description" content="HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML5 Web存储">
 <meta property="og:url" content="http://yoursite.com/2017/07/24/HTML5-Web存储/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
-<meta property="og:description" content="如何工作早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。
-现如今的浏览器都很慷慨，都会提供5~10M（每个域）的存储空间。创建HTML5的本地存储时还充分考虑了Web应用（和移动应用）。所谓本地存储，就是指你的应用可以把数据存储在浏览器上，从而减少与服务器之间所需的通信。
-如何做到的？
-使用这个API，页面可以在浏览器的本地存储中存储一个或多个">
-<meta property="og:updated_time" content="2017-07-24T07:01:15.650Z">
+<meta property="og:description" content="HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：">
+<meta property="og:updated_time" content="2017-07-24T10:21:15.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML5 Web存储">
-<meta name="twitter:description" content="如何工作早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。
-现如今的浏览器都很慷慨，都会提供5~10M（每个域）的存储空间。创建HTML5的本地存储时还充分考虑了Web应用（和移动应用）。所谓本地存储，就是指你的应用可以把数据存储在浏览器上，从而减少与服务器之间所需的通信。
-如何做到的？
-使用这个API，页面可以在浏览器的本地存储中存储一个或多个">
+<meta name="twitter:description" content="HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：">
   
   
     <link rel="icon" href="/favicon.png">
@@ -194,7 +185,7 @@
     <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何工作"><span class="toc-number">1.</span> <span class="toc-text">如何工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何做到的？"><span class="toc-number">1.1.</span> <span class="toc-text">如何做到的？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#获取方法和设置方法-getItem和setItem"><span class="toc-number">1.1.1.</span> <span class="toc-text">获取方法和设置方法(getItem和setItem)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#看成一个关联数组"><span class="toc-number">1.1.2.</span> <span class="toc-text">看成一个关联数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#另外两个特性"><span class="toc-number">1.2.</span> <span class="toc-text">另外两个特性</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#localStorage方法"><span class="toc-number">1.</span> <span class="toc-text">localStorage方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sessionStorage方法"><span class="toc-number">2.</span> <span class="toc-text">sessionStorage方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何工作"><span class="toc-number">3.</span> <span class="toc-text">如何工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何做到的？"><span class="toc-number">3.1.</span> <span class="toc-text">如何做到的？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#获取方法和设置方法-getItem和setItem"><span class="toc-number">3.1.1.</span> <span class="toc-text">获取方法和设置方法(getItem和setItem)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#看成一个关联数组"><span class="toc-number">3.1.2.</span> <span class="toc-text">看成一个关联数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#另外两个特性"><span class="toc-number">3.2.</span> <span class="toc-text">另外两个特性</span></a></li></ol></li></ol>
     </div>
     <script type="text/javascript">
       function showToc(){
@@ -215,7 +206,31 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="如何工作"><a href="#如何工作" class="headerlink" title="如何工作"></a>如何工作</h2><p>早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。</p>
+        <p>HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：</p>
+<a id="more"></a>
+<ul>
+<li>localStorage –没有时间限制的数据存储。第二天、第二周或下一年之后，数据依然可用。</li>
+<li>sessionStorage –针对一个session的数据存储。当用户关闭浏览器窗口后，数据会被删除。</li>
+</ul>
+<h2 id="localStorage方法"><a href="#localStorage方法" class="headerlink" title="localStorage方法"></a>localStorage方法</h2><p>对用户访问页面的次数进行计数：</p>
+<pre><code>&lt;script&gt;
+    if (localStorage.pagecount) {
+        localStorage.pagecount=Number(localStorage.pagecount) +1;
+    } else {
+        localStorage.pagecount=1;
+    }
+    document.write(&quot;Visits &quot;+ localStorage.pagecount + &quot; time(s).&quot;);
+&lt;/script&gt;
+</code></pre><h2 id="sessionStorage方法"><a href="#sessionStorage方法" class="headerlink" title="sessionStorage方法"></a>sessionStorage方法</h2><p>用户在当前 session 中访问页面的次数进行计数：</p>
+<pre><code>&lt;script&gt;
+    if(sessionStorage.pageCount){
+        sessionStorage.pageCount = Number(sessionStorage.pageCount) +1;
+     } else {
+        sessionStorage.pageCount = 1;
+    }
+     document.write(&quot;visits: &quot; + sessionStorage.pageCount + &quot; 次&quot;);
+&lt;/script&gt;
+</code></pre><h2 id="如何工作"><a href="#如何工作" class="headerlink" title="如何工作"></a>如何工作</h2><p>早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。</p>
 <p>现如今的浏览器都很慷慨，都会提供5~10M（每个域）的存储空间。创建HTML5的本地存储时还充分考虑了Web应用（和移动应用）。所谓<strong>本地存储</strong>，就是指你的应用可以把数据存储在浏览器上，从而减少与服务器之间所需的通信。</p>
 <h3 id="如何做到的？"><a href="#如何做到的？" class="headerlink" title="如何做到的？"></a>如何做到的？</h3><ol>
 <li>使用这个API，页面可以在浏览器的本地存储中存储一个或多个键/值对；</li>
