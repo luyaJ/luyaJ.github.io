@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-24T13:00:24.239Z</updated>
+  <updated>2017-07-24T16:17:06.046Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/07/24/HTML5-Web%E5%AD%98%E5%82%A8/"/>
     <id>http://yoursite.com/2017/07/24/HTML5-Web存储/</id>
     <published>2017-07-24T06:02:21.000Z</published>
-    <updated>2017-07-24T13:00:24.239Z</updated>
+    <updated>2017-07-24T16:17:06.046Z</updated>
     
     <content type="html"><![CDATA[<p>HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：</p>
 <a id="more"></a>
@@ -46,7 +46,7 @@
     }
      document.write(&quot;visits: &quot; + sessionStorage.pageCount + &quot; 次&quot;);
 &lt;/script&gt;
-</code></pre><h2 id="如何工作"><a href="#如何工作" class="headerlink" title="如何工作"></a>如何工作</h2><p>早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。</p>
+</code></pre><h2 id="如何工作"><a href="#如何工作" class="headerlink" title="如何工作?"></a>如何工作?</h2><p>早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。</p>
 <p>现如今的浏览器都很慷慨，都会提供5~10M（每个域）的存储空间。创建HTML5的本地存储时还充分考虑了Web应用（和移动应用）。所谓<strong>本地存储</strong>，就是指你的应用可以把数据存储在浏览器上，从而减少与服务器之间所需的通信。</p>
 <h3 id="如何做到的？"><a href="#如何做到的？" class="headerlink" title="如何做到的？"></a>如何做到的？</h3><ol>
 <li>使用这个API，页面可以在浏览器的本地存储中存储一个或多个键/值对；</li>
@@ -69,7 +69,13 @@ var name = localStorage[&quot;name&quot;];
     var value = localStorage[key];
     alert(value);
 }
-</code></pre><h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ul>
+</code></pre><h2 id="可以怎样使用？"><a href="#可以怎样使用？" class="headerlink" title="可以怎样使用？"></a>可以怎样使用？</h2><ul>
+<li>在我的新Twitter客户端，为了提高效率，我要用localStorage把Twitter搜索结果缓存起来。用户搜索时，会先搜索本地结果。这对移动用户很有帮助。</li>
+<li>用户存储播放列表（影片、音乐等）</li>
+<li>使用sessionStorage实现购物车</li>
+<li>有一个非常酷的游戏，他可以在两个不同的浏览器窗口同时工作，使用localStorage完成状态同步</li>
+</ul>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ul>
 <li>JavaScript对象表示法（JavaScript Object Notation）</li>
 <li>JSON是存储和交换文本信息的语法，类似XML；JSON比XML更小、更快、更易解析。</li>
 </ul>
