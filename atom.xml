@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-24T10:21:15.687Z</updated>
+  <updated>2017-07-24T13:00:24.239Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/07/24/HTML5-Web%E5%AD%98%E5%82%A8/"/>
     <id>http://yoursite.com/2017/07/24/HTML5-Web存储/</id>
     <published>2017-07-24T06:02:21.000Z</published>
-    <updated>2017-07-24T10:21:15.687Z</updated>
+    <updated>2017-07-24T13:00:24.239Z</updated>
     
     <content type="html"><![CDATA[<p>HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：</p>
 <a id="more"></a>
@@ -69,7 +69,12 @@ var name = localStorage[&quot;name&quot;];
     var value = localStorage[key];
     alert(value);
 }
-</code></pre>]]></content>
+</code></pre><h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ul>
+<li>JavaScript对象表示法（JavaScript Object Notation）</li>
+<li>JSON是存储和交换文本信息的语法，类似XML；JSON比XML更小、更快、更易解析。</li>
+</ul>
+<p>JSON API只有两个方法：<code>stringify</code> 和 <code>parse</code></p>
+]]></content>
     
     <summary type="html">
     

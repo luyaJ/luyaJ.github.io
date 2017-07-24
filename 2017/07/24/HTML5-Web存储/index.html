@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/24/HTML5-Web存储/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
 <meta property="og:description" content="HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：">
-<meta property="og:updated_time" content="2017-07-24T10:21:15.687Z">
+<meta property="og:updated_time" content="2017-07-24T13:00:24.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML5 Web存储">
 <meta name="twitter:description" content="HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：">
@@ -185,7 +185,7 @@
     <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#localStorage方法"><span class="toc-number">1.</span> <span class="toc-text">localStorage方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sessionStorage方法"><span class="toc-number">2.</span> <span class="toc-text">sessionStorage方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何工作"><span class="toc-number">3.</span> <span class="toc-text">如何工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何做到的？"><span class="toc-number">3.1.</span> <span class="toc-text">如何做到的？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#获取方法和设置方法-getItem和setItem"><span class="toc-number">3.1.1.</span> <span class="toc-text">获取方法和设置方法(getItem和setItem)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#看成一个关联数组"><span class="toc-number">3.1.2.</span> <span class="toc-text">看成一个关联数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#另外两个特性"><span class="toc-number">3.2.</span> <span class="toc-text">另外两个特性</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#localStorage方法"><span class="toc-number">1.</span> <span class="toc-text">localStorage方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sessionStorage方法"><span class="toc-number">2.</span> <span class="toc-text">sessionStorage方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何工作"><span class="toc-number">3.</span> <span class="toc-text">如何工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何做到的？"><span class="toc-number">3.1.</span> <span class="toc-text">如何做到的？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#获取方法和设置方法-getItem和setItem"><span class="toc-number">3.1.1.</span> <span class="toc-text">获取方法和设置方法(getItem和setItem)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#看成一个关联数组"><span class="toc-number">3.1.2.</span> <span class="toc-text">看成一个关联数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#另外两个特性"><span class="toc-number">3.2.</span> <span class="toc-text">另外两个特性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON"><span class="toc-number">4.</span> <span class="toc-text">JSON</span></a></li></ol>
     </div>
     <script type="text/javascript">
       function showToc(){
@@ -253,7 +253,12 @@ var name = localStorage[&quot;name&quot;];
     var value = localStorage[key];
     alert(value);
 }
-</code></pre>
+</code></pre><h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ul>
+<li>JavaScript对象表示法（JavaScript Object Notation）</li>
+<li>JSON是存储和交换文本信息的语法，类似XML；JSON比XML更小、更快、更易解析。</li>
+</ul>
+<p>JSON API只有两个方法：<code>stringify</code> 和 <code>parse</code></p>
+
       
 
       
