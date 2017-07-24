@@ -155,6 +155,97 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-HTML5-Web存储" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/24/HTML5-Web存储/">HTML5 Web存储</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/24/HTML5-Web存储/" class="archive-article-date">
+  	<time datetime="2017-07-24T06:02:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-24</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="如何工作"><a href="#如何工作" class="headerlink" title="如何工作"></a>如何工作</h2><p>早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。</p>
+<p>现如今的浏览器都很慷慨，都会提供5~10M（每个域）的存储空间。创建HTML5的本地存储时还充分考虑了Web应用（和移动应用）。所谓<strong>本地存储</strong>，就是指你的应用可以把数据存储在浏览器上，从而减少与服务器之间所需的通信。</p>
+<h3 id="如何做到的？"><a href="#如何做到的？" class="headerlink" title="如何做到的？"></a>如何做到的？</h3><ol>
+<li>使用这个API，页面可以在浏览器的本地存储中存储一个或多个键/值对；</li>
+<li>然后用键来获取相应的值；</li>
+</ol>
+<p>键/值对，就是<code>key: &quot;pet&quot;</code>, <code>key</code>就是键，<code>pet</code>就是对。</p>
+<h4 id="获取方法和设置方法-getItem和setItem"><a href="#获取方法和设置方法-getItem和setItem" class="headerlink" title="获取方法和设置方法(getItem和setItem)"></a>获取方法和设置方法(getItem和setItem)</h4><p><code>setItem</code>方法，用于存储某个数据，只能是string类型的数据项。</p>
+<pre><code>localStorage.setItem(&quot;name&quot;,&quot;luya&quot;);
+localStorage.setItem(&quot;age&quot;,21);
+alert(localStorage.getItem(&quot;name&quot;));
+//alert(parseInt(localStorage.getItem(&quot;age&quot;)));
+//输出：luya
+</code></pre><h4 id="看成一个关联数组"><a href="#看成一个关联数组" class="headerlink" title="看成一个关联数组"></a>看成一个关联数组</h4><pre><code>//为键赋值
+localStorage[&quot;name&quot;] = &quot;luya&quot;;
+//获取一个键存储的值,相当于getItem方法
+var name = localStorage[&quot;name&quot;];
+</code></pre><h3 id="另外两个特性"><a href="#另外两个特性" class="headerlink" title="另外两个特性"></a>另外两个特性</h3><p><code>length</code>属性，localStorage中有多少数据项；<code>key</code>方法，给出localStorage中各个数据项的键。</p>
+<pre><code>for(var i=0;i&lt;localStorage.length;i++){
+    var key = localStorage.key(i);
+    var value = localStorage[key];
+    alert(value);
+}
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTML5</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/24/HTML5-Web存储/">more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-JSP学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -439,77 +530,6 @@
 
 
   
-    <article id="post-js几道小题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/07/js几道小题/">JS几道小题</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/07/js几道小题/" class="archive-article-date">
-  	<time datetime="2017-07-07T12:16:39.462Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2017-7-6日厦门实训js作业"><a href="#2017-7-6日厦门实训js作业" class="headerlink" title="2017.7.6日厦门实训js作业"></a>2017.7.6日厦门实训js作业</h2><h3 id="例题1：定义两个整数变量，交换两个变量的值"><a href="#例题1：定义两个整数变量，交换两个变量的值" class="headerlink" title="例题1：定义两个整数变量，交换两个变量的值"></a>例题1：定义两个整数变量，交换两个变量的值</h3>
-        
-          <a class="article-more-a" href="/2017/07/07/js几道小题/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/07/js几道小题/">more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -608,6 +628,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
               </li>
              
               <li class="article-tag-list-item">

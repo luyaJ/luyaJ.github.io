@@ -6,14 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 软件测试 | luyaJ的小博客</title>
+  <title>HTML5 Web存储 | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="luyaJ的小博客">
-<meta property="og:url" content="http://yoursite.com/tags/软件测试/index.html">
+  <meta name="description" content="如何工作早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。
+现如今的浏览器都很慷慨，都会提供5~10M（每个域）的存储空间。创建HTML5的本地存储时还充分考虑了Web应用（和移动应用）。所谓本地存储，就是指你的应用可以把数据存储在浏览器上，从而减少与服务器之间所需的通信。
+如何做到的？
+使用这个API，页面可以在浏览器的本地存储中存储一个或多个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 Web存储">
+<meta property="og:url" content="http://yoursite.com/2017/07/24/HTML5-Web存储/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
+<meta property="og:description" content="如何工作早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。
+现如今的浏览器都很慷慨，都会提供5~10M（每个域）的存储空间。创建HTML5的本地存储时还充分考虑了Web应用（和移动应用）。所谓本地存储，就是指你的应用可以把数据存储在浏览器上，从而减少与服务器之间所需的通信。
+如何做到的？
+使用这个API，页面可以在浏览器的本地存储中存储一个或多个">
+<meta property="og:updated_time" content="2017-07-24T07:01:15.650Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luyaJ的小博客">
+<meta name="twitter:title" content="HTML5 Web存储">
+<meta name="twitter:description" content="如何工作早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。
+现如今的浏览器都很慷慨，都会提供5~10M（每个域）的存储空间。创建HTML5的本地存储时还充分考虑了Web应用（和移动应用）。所谓本地存储，就是指你的应用可以把数据存储在浏览器上，从而减少与服务器之间所需的通信。
+如何做到的？
+使用这个API，页面可以在浏览器的本地存储中存储一个或多个">
   
   
     <link rel="icon" href="/favicon.png">
@@ -153,60 +166,181 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-HTML5-Web存储" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/24/软件测试初学/" class="archive-article-date">
-  	<time datetime="2017-05-24T15:12:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/24/软件测试初学/">软件测试初学</a>
+    <h1 class="article-title" itemprop="name">
+      HTML5 Web存储
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/24/HTML5-Web存储/" class="archive-article-date">
+  	<time datetime="2017-07-24T06:02:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-24</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何工作"><span class="toc-number">1.</span> <span class="toc-text">如何工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何做到的？"><span class="toc-number">1.1.</span> <span class="toc-text">如何做到的？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#获取方法和设置方法-getItem和setItem"><span class="toc-number">1.1.1.</span> <span class="toc-text">获取方法和设置方法(getItem和setItem)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#看成一个关联数组"><span class="toc-number">1.1.2.</span> <span class="toc-text">看成一个关联数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#另外两个特性"><span class="toc-number">1.2.</span> <span class="toc-text">另外两个特性</span></a></li></ol></li></ol>
+    </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+      };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+      };
+    </script>
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="如何工作"><a href="#如何工作" class="headerlink" title="如何工作"></a>如何工作</h2><p>早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。</p>
+<p>现如今的浏览器都很慷慨，都会提供5~10M（每个域）的存储空间。创建HTML5的本地存储时还充分考虑了Web应用（和移动应用）。所谓<strong>本地存储</strong>，就是指你的应用可以把数据存储在浏览器上，从而减少与服务器之间所需的通信。</p>
+<h3 id="如何做到的？"><a href="#如何做到的？" class="headerlink" title="如何做到的？"></a>如何做到的？</h3><ol>
+<li>使用这个API，页面可以在浏览器的本地存储中存储一个或多个键/值对；</li>
+<li>然后用键来获取相应的值；</li>
+</ol>
+<p>键/值对，就是<code>key: &quot;pet&quot;</code>, <code>key</code>就是键，<code>pet</code>就是对。</p>
+<h4 id="获取方法和设置方法-getItem和setItem"><a href="#获取方法和设置方法-getItem和setItem" class="headerlink" title="获取方法和设置方法(getItem和setItem)"></a>获取方法和设置方法(getItem和setItem)</h4><p><code>setItem</code>方法，用于存储某个数据，只能是string类型的数据项。</p>
+<pre><code>localStorage.setItem(&quot;name&quot;,&quot;luya&quot;);
+localStorage.setItem(&quot;age&quot;,21);
+alert(localStorage.getItem(&quot;name&quot;));
+//alert(parseInt(localStorage.getItem(&quot;age&quot;)));
+//输出：luya
+</code></pre><h4 id="看成一个关联数组"><a href="#看成一个关联数组" class="headerlink" title="看成一个关联数组"></a>看成一个关联数组</h4><pre><code>//为键赋值
+localStorage[&quot;name&quot;] = &quot;luya&quot;;
+//获取一个键存储的值,相当于getItem方法
+var name = localStorage[&quot;name&quot;];
+</code></pre><h3 id="另外两个特性"><a href="#另外两个特性" class="headerlink" title="另外两个特性"></a>另外两个特性</h3><p><code>length</code>属性，localStorage中有多少数据项；<code>key</code>方法，给出localStorage中各个数据项的键。</p>
+<pre><code>for(var i=0;i&lt;localStorage.length;i++){
+    var key = localStorage.key(i);
+    var value = localStorage[key];
+    alert(value);
+}
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件测试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTML5</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/24/HTML5-Web存储/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/07/23/JSP学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JSP学习笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
+
+
 
 
           </div>
@@ -237,9 +371,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
