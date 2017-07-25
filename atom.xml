@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-25T13:42:04.134Z</updated>
+  <updated>2017-07-25T16:08:20.823Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用HBuilder</title>
+    <link href="http://yoursite.com/2017/07/26/%E4%BD%BF%E7%94%A8HBuilder/"/>
+    <id>http://yoursite.com/2017/07/26/使用HBuilder/</id>
+    <published>2017-07-25T16:03:21.000Z</published>
+    <updated>2017-07-25T16:08:20.823Z</updated>
+    
+    <content type="html"><![CDATA[<p>HBuilder下载地址：<a href="http://www.dcloud.io/" target="_blank" rel="external">HBuilder官网</a></p>
+<a id="more"></a>
+<p>HBuilder是DCloud（数字天堂）推出的一款支持HTML5的Web开发IDE。HBuilder的编写用到了Java、C、Web和Ruby。HBuilder本身主体是由Java编写，它基于Eclipse，所以顺其自然地兼容了Eclipse的插件。</p>
+<h2 id="HBuilder设置外部web服务器测试移动Web"><a href="#HBuilder设置外部web服务器测试移动Web" class="headerlink" title="HBuilder设置外部web服务器测试移动Web"></a>HBuilder设置外部web服务器测试移动Web</h2><h3 id="1-打开开发工具"><a href="#1-打开开发工具" class="headerlink" title="1.打开开发工具"></a>1.打开开发工具</h3><ol>
+<li><p>工具右上角更改开发视图模式为“<strong>边改边看模式</strong>” </p>
+</li>
+<li><p>打开设置web服务器</p>
+</li>
+</ol>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/web%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="web服务器"></p>
+<h3 id="2-设置外置服务器"><a href="#2-设置外置服务器" class="headerlink" title="2.设置外置服务器"></a>2.设置外置服务器</h3><ol>
+<li><p>择“外置Web服务器” ☞ 右边“新建”</p>
+</li>
+<li><p>编辑服务配置界面，“名称”随意，“浏览器运行URL”填写本机ip地址</p>
+</li>
+</ol>
+<h3 id="3-查看IP地址并配置web服务器"><a href="#3-查看IP地址并配置web服务器" class="headerlink" title="3.查看IP地址并配置web服务器"></a>3.查看IP地址并配置web服务器</h3><p>1.地址查看方式：在命令行中输入<code>ipconfig</code>，找到<code>IPv4</code>的地址</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/ipconfig.png" alt="ipconfig"></p>
+<p>2.填写在URL中，如图所示（要在IP地址后面加上HBuilder使用的<strong>端口8020</strong>）：</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="web服务器配置"></p>
+<p>3.使用新建的myWeb外部服务器</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="使用服务器"></p>
+<h3 id="4-扫码测试"><a href="#4-扫码测试" class="headerlink" title="4.扫码测试"></a>4.扫码测试</h3><p>在“web浏览器”网址右边有一个<strong>二维码</strong>标志，点击，使用手机扫描测试</p>
+<p><strong><em>注意：</em></strong> 扫码测试需要电脑和手机在同一个局域网下！！！</p>
+<p>电脑运行：</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E8%BF%90%E8%A1%8C1.png" alt="电脑运行结果"></p>
+<p>手机扫码运行：</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E6%89%8B%E6%9C%BA%E8%BF%90%E8%A1%8C.png" alt="手机运行结果"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;HBuilder下载地址：&lt;a href=&quot;http://www.dcloud.io/&quot;&gt;HBuilder官网&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>学习Sass</title>
