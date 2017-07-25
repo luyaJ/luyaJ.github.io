@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-24T16:17:06.046Z</updated>
+  <updated>2017-07-25T13:14:25.724Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,117 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习Sass</title>
+    <link href="http://yoursite.com/2017/07/25/%E5%AD%A6%E4%B9%A0Sass/"/>
+    <id>http://yoursite.com/2017/07/25/学习Sass/</id>
+    <published>2017-07-25T13:03:33.000Z</published>
+    <updated>2017-07-25T13:14:25.724Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="在webstrom中使用sass"><a href="#在webstrom中使用sass" class="headerlink" title="在webstrom中使用sass"></a>在webstrom中使用sass</h1><p>file ☛ settings  ☞ Tools  ☞ File Watchers  双击配置Sass</p>
+<h1 id="嵌套CSS规则"><a href="#嵌套CSS规则" class="headerlink" title="嵌套CSS规则"></a>嵌套CSS规则</h1><p>sass文件:</p>
+<pre><code>#content {
+    article {
+        h1 { color: #333 }
+        p { margin-bottom: 1.4em }
+    }
+    aside { background-color: #EEE }
+}
+</code></pre><p>编译成css后：</p>
+<pre><code>#content article h1 { color: #333 }
+#content article p { margin-bottom: 1.4em }
+#content aside { background-color: #EEE }
+</code></pre><h2 id="父选择器的标识符-amp"><a href="#父选择器的标识符-amp" class="headerlink" title="父选择器的标识符&amp;"></a>父选择器的标识符&amp;</h2><pre><code>article a {
+    color: blue;
+    &amp;:hover { color: red }
+}
+</code></pre><p>当包含父选择器标识符的嵌套规则被打开时，他不会像后代选择器那样进行拼接，而是 &amp; 被父选择器直接替换：</p>
+<pre><code>article a { color: blue; }
+article a:hover { color: red }
+</code></pre><h2 id="子组合选择器和同层组合选择器：-gt-、-和"><a href="#子组合选择器和同层组合选择器：-gt-、-和" class="headerlink" title="子组合选择器和同层组合选择器： &gt; 、 + 和 ~"></a>子组合选择器和同层组合选择器： &gt; 、 + 和 ~</h2><pre><code>article section { margin: 5px }
+article &gt; section { border: 1px solid #ccc }
+</code></pre><p>第一个选择器会选择article下的<strong>所有</strong>命中section选择器的元素。第二个选择器只会选择article下<strong>紧跟着的子元素</strong>中命中section选择器的元素。</p>
+<pre><code>header + p { font-size: 1.1em }
+</code></pre><p>在上例中，你可以用<strong>同层相邻组合选择器</strong> + 选择header元素后紧跟的p元素。</p>
+<pre><code>article ~ article { border-top: 1px dashed #ccc }
+</code></pre><p>你也可以用<strong>同层全体组合选择器</strong> ~ ，选择所有跟在article后的同层article元素，不管它们之间隔了多少其他元素。</p>
+<p>例子：</p>
+<pre><code>article {
+    ~ article { border-top: 1px dashed #ccc }
+    &gt; section { background: #eee }
+    dl &gt; {
+    dt { color: #333 }
+    dd { color: #555 }
+    }
+    nav + &amp; { margin-top: 0 }
+}    
+</code></pre><p>sass解开组合之后：</p>
+<pre><code>article ~ article { border-top: 1px dashed #ccc }
+article &gt; footer { background: #eee }
+article dl &gt; dt { color: #333 }
+article dl &gt; dd { color: #555 }
+nav + article { margin-top: 0 }
+</code></pre><h2 id="嵌套属性"><a href="#嵌套属性" class="headerlink" title="嵌套属性"></a>嵌套属性</h2><p>重复编写<code>border-style</code>  <code>border-width</code>  <code>border-color</code>等非常烦人，所以在sass中，只要像以下这样书写就行：</p>
+<pre><code>nav{
+    border: {
+    style: solid;
+    width: 1px;
+    color: #ccc;
+    }
+}
+</code></pre><p><strong><em>规则：</em></strong> 把属性名从中划线-的地方断开，在根属性后边添加一个冒号:，紧跟一个{ }块，把子属性部分写在这个{ }块中。</p>
+<p><strong><em>优点：</em></strong> 属性和选择器嵌套是非常伟大的特性，因为它们不仅大大减少了你的编写量，而且通过视觉上的缩进使你编写的样式结构更加清晰，更易于阅读和开发。</p>
+<h1 id="导入Sass文件"><a href="#导入Sass文件" class="headerlink" title="导入Sass文件"></a>导入Sass文件</h1><p>随着你的样式表越来越多，我们要把大量样式分拆到多个文件中，使用 <strong>@import</strong> 规则。</p>
+<h2 id="使用sass部分文件"><a href="#使用sass部分文件" class="headerlink" title="使用sass部分文件"></a>使用sass部分文件</h2><p>举例来说，你想导入 <code>themes/_night-sky.scss</code> 这个局部文件里的变量，你只需在样式表中写 <code>@import &quot;themes/night-sky&quot;;</code></p>
+<h2 id="默认变量值"><a href="#默认变量值" class="headerlink" title="默认变量值;"></a>默认变量值;</h2><p>一般情况下，你反复声明一个变量，只有最后一处声明有效且它会覆盖前边的值。举例说明：</p>
+<pre><code>$link-color: blue;
+$link-color: red;
+a {
+    color: $link-color;
+}
+</code></pre><p>在上边的例子中，超链接的<code>color</code>会被设置为<code>red</code>。这可能并不是你想要的结果，假如你写了一个可被他人通过<code>@import</code>导入的sass库文件，你可能希望导入者可以定制修改sass库文件中的某些值。使用sass的<code>!default</code>标签可以实现这个目的。它很像css属性中<code>!important</code>标签的对立面，不同的是<code>!default</code>用于变量，含义是：如果这个变量被声明赋值了，那就用它声明的值，否则就用这个默认值。</p>
+<pre><code>$fancybox-width: 400px !default;
+.fancybox {
+    width: $fancybox-width;
+}
+</code></pre><p>在上例中，如果用户在导入你的sass局部文件之前声明了一个<code>$fancybox-width</code>变量，那么你的局部文件中对<code>$fancybox-width</code>赋值<code>400px</code>的操作就无效。如果用户没有做这样的声明，则<code>$fancybox-width</code>将默认为<code>400px</code>。</p>
+<h2 id="静默注释"><a href="#静默注释" class="headerlink" title="静默注释"></a>静默注释</h2><pre><code>body {
+    color: #333;  // 这种注释内容不会出现在生成的css文件中
+    padding: 0;  /* 这种注释内容会出现在生成的css文件中 */
+}
+</code></pre><h1 id="混合器"><a href="#混合器" class="headerlink" title="混合器"></a>混合器</h1><p>混合器使用 <code>@mixin</code> 标识符定义。</p>
+<pre><code>@mixin rounded-corners {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+        border-radius: 5px;
+}
+</code></pre><p>然后就可以在样式表中通过 <code>@include</code> 来使用这个混合器。</p>
+<pre><code>notice {
+    background-color: green;
+    border: 2px solid #00aa00;
+    @include rounded-corners;
+}
+</code></pre><p>sass最终生成：</p>
+<pre><code>.notice {
+    background-color: green;
+    border: 2px solid #00aa00;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;在webstrom中使用sass&quot;&gt;&lt;a href=&quot;#在webstrom中使用sass&quot; class=&quot;headerlink&quot; title=&quot;在webstrom中使用sass&quot;&gt;&lt;/a&gt;在webstrom中使用sass&lt;/h1&gt;&lt;p&gt;file ☛ setting
+    
+    </summary>
+    
+    
+      <category term="css预处理器" scheme="http://yoursite.com/tags/css%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML5 Web存储</title>
