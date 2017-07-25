@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-25T13:14:25.724Z</updated>
+  <updated>2017-07-25T13:42:04.134Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,77 @@
     <link href="http://yoursite.com/2017/07/25/%E5%AD%A6%E4%B9%A0Sass/"/>
     <id>http://yoursite.com/2017/07/25/学习Sass/</id>
     <published>2017-07-25T13:03:33.000Z</published>
-    <updated>2017-07-25T13:14:25.724Z</updated>
+    <updated>2017-07-25T13:42:04.134Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="在webstrom中使用sass"><a href="#在webstrom中使用sass" class="headerlink" title="在webstrom中使用sass"></a>在webstrom中使用sass</h1><p>file ☛ settings  ☞ Tools  ☞ File Watchers  双击配置Sass</p>
+    <content type="html"><![CDATA[<p>CSS 预处理器的主要目标：提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。这不是锦上添花，而恰恰是雪中送炭。</p>
+<a id="more"></a>
+<p>目前主流的三个<strong>预处理器</strong>：</p>
+<ul>
+<li>Less</li>
+<li>Sass</li>
+<li>Stylus</li>
+</ul>
+<h1 id="安装Sass"><a href="#安装Sass" class="headerlink" title="安装Sass"></a>安装Sass</h1><p><a href="http://rubyinstaller.org/downloads" target="_blank" rel="external">Ruby下载链接http://rubyinstaller.org/downloads</a></p>
+<p>安装过程中请注意勾选 <code>Add Ruby executables to your PATH</code></p>
+<p>安装完成后运行cmd输入<code>ruby -v</code>测试有没有安装成功。</p>
+<p>若安装成功，使用<code>Ruby</code>自带的<code>RubyGems</code>系统安装Sass和Compass</p>
+<pre><code>gem install sass
+gem install compass
+</code></pre><p>这样就安装好了！</p>
+<p>如下sass常用更新、查看版本、sass命令帮助等命令：</p>
+<pre><code>gem update sass
+sass -v
+sass -h
+</code></pre><h1 id="编译Sass"><a href="#编译Sass" class="headerlink" title="编译Sass"></a>编译Sass</h1><p>Sass编译有很多种方式，如命令行编译模式、sublime插件<code>SASS-Build</code> 、编译软件<code>koala</code> 、前端自动化软件<code>codekit</code> 、Grunt打造前端自动化工作流<code>grunt-sass</code> 、Gulp打造前端自动化工作流<code>gulp-ruby-sass</code>等。</p>
+<h2 id="命令行编译："><a href="#命令行编译：" class="headerlink" title="命令行编译："></a>命令行编译：</h2><pre><code>//单文件转换命令
+sass input.scss output.css
+//单文件监听命令
+sass --watch input.scss:output.css
+//如果你有很多的sass文件的目录，你也可以告诉sass监听整个目录：
+sass --watch app/sass:public/stylesheets
+</code></pre><h2 id="四种编译排版"><a href="#四种编译排版" class="headerlink" title="四种编译排版"></a>四种编译排版</h2><pre><code>//未编译样式
+.box {
+    width: 300px;
+    height: 400px;
+    &amp;-title {
+        height: 30px;
+        line-height: 30px;
+    }
+}
+</code></pre><h3 id="nested-编译排版格式："><a href="#nested-编译排版格式：" class="headerlink" title="nested 编译排版格式："></a>nested 编译排版格式：</h3><pre><code>/*命令行内容*/
+sass style.scss:style.css --style nested
+
+/*编译过后样式*/
+.box {
+    width: 300px;
+    height: 400px; }
+    .box-title {
+        height: 30px;
+        line-height: 30px; }
+</code></pre><h3 id="expanded-编译排版格式"><a href="#expanded-编译排版格式" class="headerlink" title="expanded 编译排版格式"></a>expanded 编译排版格式</h3><pre><code>/*命令行内容*/
+sass style.scss:style.css --style expanded
+
+/*编译过后样式*/
+.box {
+    width: 300px;
+    height: 400px;
+}   
+.box-title {
+    height: 30px;
+    line-height: 30px;
+}
+</code></pre><h3 id="compact-编译排版格式"><a href="#compact-编译排版格式" class="headerlink" title="compact 编译排版格式"></a>compact 编译排版格式</h3><pre><code>/*命令行内容*/
+sass style.scss:style.css --style compact
+
+/*编译过后样式*/
+.box { width: 300px; height: 400px; }
+.box-title { height: 30px; line-height: 30px; }
+</code></pre><h3 id="compressed-编译排版格式"><a href="#compressed-编译排版格式" class="headerlink" title="compressed 编译排版格式"></a>compressed 编译排版格式</h3><pre><code>/*命令行内容*/
+sass style.scss:style.css --style compressed
+
+/*编译过后样式*/
+.box{width:300px;height:400px}.box-title{height:30px;line-height:30px}
+</code></pre><h1 id="在webstrom中使用sass"><a href="#在webstrom中使用sass" class="headerlink" title="在webstrom中使用sass"></a>在webstrom中使用sass</h1><p>file ☛ settings  ☞ Tools  ☞ File Watchers  双击配置Sass</p>
 <h1 id="嵌套CSS规则"><a href="#嵌套CSS规则" class="headerlink" title="嵌套CSS规则"></a>嵌套CSS规则</h1><p>sass文件:</p>
 <pre><code>#content {
     article {
@@ -117,7 +185,7 @@ a {
     
     <summary type="html">
     
-      &lt;h1 id=&quot;在webstrom中使用sass&quot;&gt;&lt;a href=&quot;#在webstrom中使用sass&quot; class=&quot;headerlink&quot; title=&quot;在webstrom中使用sass&quot;&gt;&lt;/a&gt;在webstrom中使用sass&lt;/h1&gt;&lt;p&gt;file ☛ setting
+      &lt;p&gt;CSS 预处理器的主要目标：提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。这不是锦上添花，而恰恰是雪中送炭。&lt;/p&gt;
     
     </summary>
     

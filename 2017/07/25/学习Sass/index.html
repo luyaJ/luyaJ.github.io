@@ -8,37 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>学习Sass | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在webstrom中使用sassfile ☛ settings  ☞ Tools  ☞ File Watchers  双击配置Sass
-嵌套CSS规则sass文件:
-#content {
-    article {
-        h1 { color: #333 }
-        p { margin-bottom: 1.4em }
-    }
-    aside { background-c">
+  <meta name="description" content="CSS 预处理器的主要目标：提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。这不是锦上添花，而恰恰是雪中送炭。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习Sass">
 <meta property="og:url" content="http://yoursite.com/2017/07/25/学习Sass/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
-<meta property="og:description" content="在webstrom中使用sassfile ☛ settings  ☞ Tools  ☞ File Watchers  双击配置Sass
-嵌套CSS规则sass文件:
-#content {
-    article {
-        h1 { color: #333 }
-        p { margin-bottom: 1.4em }
-    }
-    aside { background-c">
-<meta property="og:updated_time" content="2017-07-25T13:14:25.724Z">
+<meta property="og:description" content="CSS 预处理器的主要目标：提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。这不是锦上添花，而恰恰是雪中送炭。">
+<meta property="og:updated_time" content="2017-07-25T13:42:04.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习Sass">
-<meta name="twitter:description" content="在webstrom中使用sassfile ☛ settings  ☞ Tools  ☞ File Watchers  双击配置Sass
-嵌套CSS规则sass文件:
-#content {
-    article {
-        h1 { color: #333 }
-        p { margin-bottom: 1.4em }
-    }
-    aside { background-c">
+<meta name="twitter:description" content="CSS 预处理器的主要目标：提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。这不是锦上添花，而恰恰是雪中送炭。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -206,7 +185,7 @@
     <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#在webstrom中使用sass"><span class="toc-number">1.</span> <span class="toc-text">在webstrom中使用sass</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#嵌套CSS规则"><span class="toc-number">2.</span> <span class="toc-text">嵌套CSS规则</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#父选择器的标识符-amp"><span class="toc-number">2.1.</span> <span class="toc-text">父选择器的标识符&</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子组合选择器和同层组合选择器：-gt-、-和"><span class="toc-number">2.2.</span> <span class="toc-text">子组合选择器和同层组合选择器： > 、 + 和 ~</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#嵌套属性"><span class="toc-number">2.3.</span> <span class="toc-text">嵌套属性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#导入Sass文件"><span class="toc-number">3.</span> <span class="toc-text">导入Sass文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用sass部分文件"><span class="toc-number">3.1.</span> <span class="toc-text">使用sass部分文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#默认变量值"><span class="toc-number">3.2.</span> <span class="toc-text">默认变量值;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#静默注释"><span class="toc-number">3.3.</span> <span class="toc-text">静默注释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#混合器"><span class="toc-number">4.</span> <span class="toc-text">混合器</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装Sass"><span class="toc-number">1.</span> <span class="toc-text">安装Sass</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#编译Sass"><span class="toc-number">2.</span> <span class="toc-text">编译Sass</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令行编译："><span class="toc-number">2.1.</span> <span class="toc-text">命令行编译：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四种编译排版"><span class="toc-number">2.2.</span> <span class="toc-text">四种编译排版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nested-编译排版格式："><span class="toc-number">2.2.1.</span> <span class="toc-text">nested 编译排版格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#expanded-编译排版格式"><span class="toc-number">2.2.2.</span> <span class="toc-text">expanded 编译排版格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compact-编译排版格式"><span class="toc-number">2.2.3.</span> <span class="toc-text">compact 编译排版格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compressed-编译排版格式"><span class="toc-number">2.2.4.</span> <span class="toc-text">compressed 编译排版格式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在webstrom中使用sass"><span class="toc-number">3.</span> <span class="toc-text">在webstrom中使用sass</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#嵌套CSS规则"><span class="toc-number">4.</span> <span class="toc-text">嵌套CSS规则</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#父选择器的标识符-amp"><span class="toc-number">4.1.</span> <span class="toc-text">父选择器的标识符&</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子组合选择器和同层组合选择器：-gt-、-和"><span class="toc-number">4.2.</span> <span class="toc-text">子组合选择器和同层组合选择器： > 、 + 和 ~</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#嵌套属性"><span class="toc-number">4.3.</span> <span class="toc-text">嵌套属性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#导入Sass文件"><span class="toc-number">5.</span> <span class="toc-text">导入Sass文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用sass部分文件"><span class="toc-number">5.1.</span> <span class="toc-text">使用sass部分文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#默认变量值"><span class="toc-number">5.2.</span> <span class="toc-text">默认变量值;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#静默注释"><span class="toc-number">5.3.</span> <span class="toc-text">静默注释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#混合器"><span class="toc-number">6.</span> <span class="toc-text">混合器</span></a></li></ol>
     </div>
     <script type="text/javascript">
       function showToc(){
@@ -227,7 +206,75 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="在webstrom中使用sass"><a href="#在webstrom中使用sass" class="headerlink" title="在webstrom中使用sass"></a>在webstrom中使用sass</h1><p>file ☛ settings  ☞ Tools  ☞ File Watchers  双击配置Sass</p>
+        <p>CSS 预处理器的主要目标：提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。这不是锦上添花，而恰恰是雪中送炭。</p>
+<a id="more"></a>
+<p>目前主流的三个<strong>预处理器</strong>：</p>
+<ul>
+<li>Less</li>
+<li>Sass</li>
+<li>Stylus</li>
+</ul>
+<h1 id="安装Sass"><a href="#安装Sass" class="headerlink" title="安装Sass"></a>安装Sass</h1><p><a href="http://rubyinstaller.org/downloads" target="_blank" rel="external">Ruby下载链接http://rubyinstaller.org/downloads</a></p>
+<p>安装过程中请注意勾选 <code>Add Ruby executables to your PATH</code></p>
+<p>安装完成后运行cmd输入<code>ruby -v</code>测试有没有安装成功。</p>
+<p>若安装成功，使用<code>Ruby</code>自带的<code>RubyGems</code>系统安装Sass和Compass</p>
+<pre><code>gem install sass
+gem install compass
+</code></pre><p>这样就安装好了！</p>
+<p>如下sass常用更新、查看版本、sass命令帮助等命令：</p>
+<pre><code>gem update sass
+sass -v
+sass -h
+</code></pre><h1 id="编译Sass"><a href="#编译Sass" class="headerlink" title="编译Sass"></a>编译Sass</h1><p>Sass编译有很多种方式，如命令行编译模式、sublime插件<code>SASS-Build</code> 、编译软件<code>koala</code> 、前端自动化软件<code>codekit</code> 、Grunt打造前端自动化工作流<code>grunt-sass</code> 、Gulp打造前端自动化工作流<code>gulp-ruby-sass</code>等。</p>
+<h2 id="命令行编译："><a href="#命令行编译：" class="headerlink" title="命令行编译："></a>命令行编译：</h2><pre><code>//单文件转换命令
+sass input.scss output.css
+//单文件监听命令
+sass --watch input.scss:output.css
+//如果你有很多的sass文件的目录，你也可以告诉sass监听整个目录：
+sass --watch app/sass:public/stylesheets
+</code></pre><h2 id="四种编译排版"><a href="#四种编译排版" class="headerlink" title="四种编译排版"></a>四种编译排版</h2><pre><code>//未编译样式
+.box {
+    width: 300px;
+    height: 400px;
+    &amp;-title {
+        height: 30px;
+        line-height: 30px;
+    }
+}
+</code></pre><h3 id="nested-编译排版格式："><a href="#nested-编译排版格式：" class="headerlink" title="nested 编译排版格式："></a>nested 编译排版格式：</h3><pre><code>/*命令行内容*/
+sass style.scss:style.css --style nested
+
+/*编译过后样式*/
+.box {
+    width: 300px;
+    height: 400px; }
+    .box-title {
+        height: 30px;
+        line-height: 30px; }
+</code></pre><h3 id="expanded-编译排版格式"><a href="#expanded-编译排版格式" class="headerlink" title="expanded 编译排版格式"></a>expanded 编译排版格式</h3><pre><code>/*命令行内容*/
+sass style.scss:style.css --style expanded
+
+/*编译过后样式*/
+.box {
+    width: 300px;
+    height: 400px;
+}   
+.box-title {
+    height: 30px;
+    line-height: 30px;
+}
+</code></pre><h3 id="compact-编译排版格式"><a href="#compact-编译排版格式" class="headerlink" title="compact 编译排版格式"></a>compact 编译排版格式</h3><pre><code>/*命令行内容*/
+sass style.scss:style.css --style compact
+
+/*编译过后样式*/
+.box { width: 300px; height: 400px; }
+.box-title { height: 30px; line-height: 30px; }
+</code></pre><h3 id="compressed-编译排版格式"><a href="#compressed-编译排版格式" class="headerlink" title="compressed 编译排版格式"></a>compressed 编译排版格式</h3><pre><code>/*命令行内容*/
+sass style.scss:style.css --style compressed
+
+/*编译过后样式*/
+.box{width:300px;height:400px}.box-title{height:30px;line-height:30px}
+</code></pre><h1 id="在webstrom中使用sass"><a href="#在webstrom中使用sass" class="headerlink" title="在webstrom中使用sass"></a>在webstrom中使用sass</h1><p>file ☛ settings  ☞ Tools  ☞ File Watchers  双击配置Sass</p>
 <h1 id="嵌套CSS规则"><a href="#嵌套CSS规则" class="headerlink" title="嵌套CSS规则"></a>嵌套CSS规则</h1><p>sass文件:</p>
 <pre><code>#content {
     article {
