@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JS几道小题 | luyaJ的小博客</title>
+  <title>jQuery手册 | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2017.7.6日厦门实训js作业例题1：定义两个整数变量，交换两个变量的值">
+  <meta name="description" content="jQuery是一个JavaScript函数库，极大的简化了JavaScript编程。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS几道小题">
-<meta property="og:url" content="http://yoursite.com/2017/07/07/js几道小题/index.html">
+<meta property="og:title" content="jQuery手册">
+<meta property="og:url" content="http://yoursite.com/2017/07/28/jQuery手册/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
-<meta property="og:description" content="2017.7.6日厦门实训js作业例题1：定义两个整数变量，交换两个变量的值">
-<meta property="og:updated_time" content="2017-07-23T14:53:40.472Z">
+<meta property="og:description" content="jQuery是一个JavaScript函数库，极大的简化了JavaScript编程。">
+<meta property="og:image" content="http://otqcthsfv.bkt.clouddn.com/selector.PNG">
+<meta property="og:image" content="http://otqcthsfv.bkt.clouddn.com/selector1.png">
+<meta property="og:image" content="http://otqcthsfv.bkt.clouddn.com/filter.png">
+<meta property="og:updated_time" content="2017-07-28T15:21:36.824Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS几道小题">
-<meta name="twitter:description" content="2017.7.6日厦门实训js作业例题1：定义两个整数变量，交换两个变量的值">
+<meta name="twitter:title" content="jQuery手册">
+<meta name="twitter:description" content="jQuery是一个JavaScript函数库，极大的简化了JavaScript编程。">
+<meta name="twitter:image" content="http://otqcthsfv.bkt.clouddn.com/selector.PNG">
   
   
     <link rel="icon" href="/favicon.png">
@@ -157,20 +161,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js几道小题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-jQuery手册" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JS几道小题
+      jQuery手册
     </h1>
   
 
         
-        <a href="/2017/07/07/js几道小题/" class="archive-article-date">
-  	<time datetime="2017-07-07T12:16:39.462Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
+        <a href="/2017/07/28/jQuery手册/" class="archive-article-date">
+  	<time datetime="2017-07-28T15:09:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-28</time>
 </a>
         
       </header>
@@ -185,7 +189,7 @@
     <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2017-7-6日厦门实训js作业"><span class="toc-number">1.</span> <span class="toc-text">2017.7.6日厦门实训js作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#例题1：定义两个整数变量，交换两个变量的值"><span class="toc-number">1.1.</span> <span class="toc-text">例题1：定义两个整数变量，交换两个变量的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题２：定义三个整数变量，输出一次最大值"><span class="toc-number">1.2.</span> <span class="toc-text">例题２：定义三个整数变量，输出一次最大值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题3：输入三个数从小到大的输出"><span class="toc-number">1.3.</span> <span class="toc-text">例题3：输入三个数从小到大的输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题4：定义整数的成绩变量，按区间输出等级"><span class="toc-number">1.4.</span> <span class="toc-text">例题4：定义整数的成绩变量，按区间输出等级:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题5：定义一个变量表示年份，判断是否是闰年"><span class="toc-number">1.5.</span> <span class="toc-text">例题5：定义一个变量表示年份，判断是否是闰年</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题6：输出100以内的质数"><span class="toc-number">1.6.</span> <span class="toc-text">例题6：输出100以内的质数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2017-7-7日厦门实训js作业-–循环语句"><span class="toc-number">2.</span> <span class="toc-text">2017.7.7日厦门实训js作业 –循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#例题1：输出乘法口诀表"><span class="toc-number">2.1.</span> <span class="toc-text">例题1：输出乘法口诀表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题2：输出10行10列表格"><span class="toc-number">2.2.</span> <span class="toc-text">例题2：输出10行10列表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题3：在上例表格中改变奇数行的背景"><span class="toc-number">2.3.</span> <span class="toc-text">例题3：在上例表格中改变奇数行的背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题4：输出序列1-1-2-3-5-8-13……-N个数"><span class="toc-number">2.4.</span> <span class="toc-text">例题4：输出序列1,1,2,3,5,8,13…… N个数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2017-7-10日厦门实训js作业"><span class="toc-number">3.</span> <span class="toc-text">2017.7.10日厦门实训js作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#例题1：动态的显示当前时间"><span class="toc-number">3.1.</span> <span class="toc-text">例题1：动态的显示当前时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题2：计算器实现加减乘除（最简单的）"><span class="toc-number">3.2.</span> <span class="toc-text">例题2：计算器实现加减乘除（最简单的）</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择器"><span class="toc-number">2.</span> <span class="toc-text">选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#层级选择器"><span class="toc-number">2.1.</span> <span class="toc-text">层级选择器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件"><span class="toc-number">3.</span> <span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是事件？"><span class="toc-number">3.1.</span> <span class="toc-text">什么是事件？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用事件方法"><span class="toc-number">3.2.</span> <span class="toc-text">常用事件方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-document-ready"><span class="toc-number">3.2.0.1.</span> <span class="toc-text">1.$(document).ready()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-click-amp-dblclick"><span class="toc-number">3.2.0.2.</span> <span class="toc-text">2.click() & dblclick()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-bind"><span class="toc-number">3.2.0.3.</span> <span class="toc-text">3.bind()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-on-amp-off"><span class="toc-number">3.2.0.4.</span> <span class="toc-text">4.on() & off()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-toggle"><span class="toc-number">3.2.0.5.</span> <span class="toc-text">5.toggle()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-mousedown-amp-mouseup"><span class="toc-number">3.2.0.6.</span> <span class="toc-text">6.mousedown() & mouseup()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-focus-amp-blur"><span class="toc-number">3.2.0.7.</span> <span class="toc-text">7.focus() & blur()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-hover"><span class="toc-number">3.2.0.8.</span> <span class="toc-text">8.hover()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-1-event-target"><span class="toc-number">3.2.0.9.</span> <span class="toc-text">9.1. event.target</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-2-event-pageX-amp-event-pageY"><span class="toc-number">3.2.0.10.</span> <span class="toc-text">9.2. event.pageX & event.pageY</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-trigger"><span class="toc-number">3.2.0.11.</span> <span class="toc-text">10.trigger()</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#效果"><span class="toc-number">4.</span> <span class="toc-text">效果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#动画"><span class="toc-number">4.1.</span> <span class="toc-text">动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐藏-显示"><span class="toc-number">4.2.</span> <span class="toc-text">隐藏/显示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#淡入淡出"><span class="toc-number">4.3.</span> <span class="toc-text">淡入淡出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#滑动"><span class="toc-number">4.4.</span> <span class="toc-text">滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stop"><span class="toc-number">4.5.</span> <span class="toc-text">stop()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链-Chaining"><span class="toc-number">4.6.</span> <span class="toc-text">链(Chaining)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery-HTML"><span class="toc-number">5.</span> <span class="toc-text">jQuery HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获得内容-–-text-、html-、val"><span class="toc-number">5.1.</span> <span class="toc-text">获得内容 – text()、html()、val()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置或返回属性-–-attr"><span class="toc-number">5.2.</span> <span class="toc-text">设置或返回属性 – attr()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加元素"><span class="toc-number">5.3.</span> <span class="toc-text">添加元素</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#append-amp-prepend"><span class="toc-number">5.3.0.1.</span> <span class="toc-text">append() & prepend()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#after-amp-before"><span class="toc-number">5.3.0.2.</span> <span class="toc-text">after() & before()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除元素"><span class="toc-number">5.4.</span> <span class="toc-text">删除元素</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#remove"><span class="toc-number">5.4.0.1.</span> <span class="toc-text">remove()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#empty"><span class="toc-number">5.4.0.2.</span> <span class="toc-text">empty()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clone"><span class="toc-number">5.5.</span> <span class="toc-text">clone()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#addClass-amp-removeClass-amp-toggleClass"><span class="toc-number">5.6.</span> <span class="toc-text">addClass() & removeClass() & toggleClass()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-方法"><span class="toc-number">5.7.</span> <span class="toc-text">CSS()方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遍历"><span class="toc-number">6.</span> <span class="toc-text">遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#祖先-向上遍历"><span class="toc-number">6.1.</span> <span class="toc-text">祖先 (向上遍历)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后代-向下遍历"><span class="toc-number">6.2.</span> <span class="toc-text">后代 (向下遍历)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#同胞-水平遍历"><span class="toc-number">6.3.</span> <span class="toc-text">同胞 (水平遍历)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤-缩小搜索元素的范围"><span class="toc-number">6.4.</span> <span class="toc-text">过滤 (缩小搜索元素的范围)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#others"><span class="toc-number">6.5.</span> <span class="toc-text">others</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM元素方法"><span class="toc-number">7.</span> <span class="toc-text">DOM元素方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#index"><span class="toc-number">7.1.</span> <span class="toc-text">index()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#toArray"><span class="toc-number">7.2.</span> <span class="toc-text">toArray()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#size"><span class="toc-number">7.3.</span> <span class="toc-text">size()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#get"><span class="toc-number">7.4.</span> <span class="toc-text">get()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AJAX！！"><span class="toc-number">8.</span> <span class="toc-text">AJAX！！</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是AJAX"><span class="toc-number">8.1.</span> <span class="toc-text">什么是AJAX?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AJAX-load-方法"><span class="toc-number">8.2.</span> <span class="toc-text">AJAX load()方法</span></a></li></ol></li></ol>
     </div>
     <script type="text/javascript">
       function showToc(){
@@ -206,274 +210,342 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="2017-7-6日厦门实训js作业"><a href="#2017-7-6日厦门实训js作业" class="headerlink" title="2017.7.6日厦门实训js作业"></a>2017.7.6日厦门实训js作业</h2><h3 id="例题1：定义两个整数变量，交换两个变量的值"><a href="#例题1：定义两个整数变量，交换两个变量的值" class="headerlink" title="例题1：定义两个整数变量，交换两个变量的值"></a>例题1：定义两个整数变量，交换两个变量的值</h3><a id="more"></a>
-<pre><code>&lt;script&gt;
-    var a = prompt(&quot;请输入a的值&quot;);
-    var b = prompt(&quot;请输入b的值&quot;);
-    var t;
+        <p>jQuery是一个JavaScript函数库，极大的简化了JavaScript编程。</p>
+<a id="more"></a>
+<p>jQuery 版本 2 以上不支持 IE6、7、8 浏览器。如果需要支持 IE6/7/8，那么请选择1.9。你还可以通过条件注释在使用 IE6/7/8 时只包含进1.9。</p>
+<pre><code>&lt;!--[if lt IE 9]&gt;
+&lt;script src=&quot;jquery-1.9.0.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+&lt;!--[if gte IE 9]&gt;&lt;!--&gt;
+&lt;script src=&quot;jquery-2.0.0.js&quot;&gt;&lt;/script&gt;
+&lt;!--&lt;![endif]--&gt;
+</code></pre><p><strong>添加jQuery：</strong> </p>
+<ul>
+<li>官网下载 </li>
+<li>可以直接从百度CDN中引用jQuery：<code>src=&quot;https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js&quot;</code></li>
+</ul>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>文档就绪事件：</p>
+<pre><code>$(document).ready(function(){
+//代码部分
+});
+</code></pre><p>这是为了防止文档在完全加载之前运行jquery代码。</p>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$(“p”)</td>
+<td style="text-align:center">元素选择器</td>
+</tr>
+<tr>
+<td style="text-align:center">$(“#id”)</td>
+<td style="text-align:center">id选择器</td>
+</tr>
+<tr>
+<td style="text-align:center">$(“.class”)</td>
+<td style="text-align:center">class选择器</td>
+</tr>
+</tbody>
+</table>
+<p> <img src="http://otqcthsfv.bkt.clouddn.com/selector.PNG" alt="selector"></p>
+<h3 id="层级选择器"><a href="#层级选择器" class="headerlink" title="层级选择器"></a>层级选择器</h3><p> <img src="http://otqcthsfv.bkt.clouddn.com/selector1.png" alt="selector1"></p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><h3 id="什么是事件？"><a href="#什么是事件？" class="headerlink" title="什么是事件？"></a>什么是事件？</h3><p>页面对不同访问者的响应叫做事件。</p>
+<h3 id="常用事件方法"><a href="#常用事件方法" class="headerlink" title="常用事件方法"></a>常用事件方法</h3><h5 id="1-document-ready"><a href="#1-document-ready" class="headerlink" title="1.$(document).ready()"></a>1.$(document).ready()</h5><h5 id="2-click-amp-dblclick"><a href="#2-click-amp-dblclick" class="headerlink" title="2.click() &amp; dblclick()"></a>2.click() &amp; dblclick()</h5><h5 id="3-bind"><a href="#3-bind" class="headerlink" title="3.bind()"></a>3.bind()</h5><p>将事件和函数绑定到元素上。为被选元素添加一个或多个事件处理程序，并规定事件发生时运行的函数。</p>
+<pre><code>$(&quot;button&quot;).bind(&quot;click&quot;,function(){
+    $(&quot;p&quot;).show();
+});
+</code></pre><h5 id="4-on-amp-off"><a href="#4-on-amp-off" class="headerlink" title="4.on() &amp; off()"></a>4.on() &amp; off()</h5><p>在被选元素及子元素上添加一个或多个事件处理程序。使用on()方法添加的事件处理程序适用于<em>当前及未来的元素</em>（比如由脚本创建的新元素）。</p>
+<pre><code>$(&quot;p&quot;).on(&quot;click&quot;,function(){
+    alert(&quot;The paragraph was clicked.&quot;);
+});
+</code></pre><p>提示：如需移除事件处理程序，使用off()方法</p>
+<pre><code>$(&quot;button&quot;).click(function(){
+    $(&quot;p&quot;).off(&quot;click&quot;);
+});
+</code></pre><p>向元素添加多个事件处理程序：</p>
+<pre><code>$(&quot;p&quot;).on({
+    mouseover:function(){$(&quot;body&quot;).css(&quot;background-color&quot;,&quot;lightgray&quot;);},
+    mouseout:function(){$(&quot;body&quot;).css(&quot;background-color&quot;,&quot;lightblue&quot;);},
+    click:function(){$(&quot;body&quot;).css(&quot;background-color&quot;,&quot;yellow&quot;);}
+});
+</code></pre><h5 id="5-toggle"><a href="#5-toggle" class="headerlink" title="5.toggle()"></a>5.toggle()</h5><p>用于绑定两个或多个事件处理器函数，以响应被选元素的轮流的click事件。</p>
+<pre><code>&lt;button&gt;请点击这里，来切换不同的背景颜色&lt;/button&gt;
 
-    t = a;   //t=2
-    a = b;  //a=3
-    b = t;  //b=2
-    alert(&quot;交换后a的值：&quot; + a + &quot;,交换后b的值：&quot; + b);
-&lt;/script&gt;
-</code></pre><h3 id="例题２：定义三个整数变量，输出一次最大值"><a href="#例题２：定义三个整数变量，输出一次最大值" class="headerlink" title="例题２：定义三个整数变量，输出一次最大值"></a>例题２：定义三个整数变量，输出一次最大值</h3><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
-    var a = prompt(&quot;输入第一个数&quot;);
-    var b = prompt(&quot;输入第二个数&quot;);
-    var c = prompt(&quot;输入第三个数&quot;);
-    var max;
+$(document).ready(function(){
+    $(&quot;button&quot;).toggle(function(){
+        $(&quot;body&quot;).css(&quot;background&quot;,&quot;green&quot;);}
+        ,function(){
+        $(&quot;body&quot;).css(&quot;background-color&quot;,&quot;red&quot;);}
+        ,function(){
+        $(&quot;body&quot;).css(&quot;background-color&quot;,&quot;yellow&quot;);}
+    );
+});
+</code></pre><h5 id="6-mousedown-amp-mouseup"><a href="#6-mousedown-amp-mouseup" class="headerlink" title="6.mousedown() &amp; mouseup()"></a>6.mousedown() &amp; mouseup()</h5><p>当鼠标指针移动到元素上方，并按下鼠标按键时，会发生mousedown事件:</p>
+<pre><code>$(&quot;button&quot;).mousedown(function(){
+    $(&quot;p&quot;).slideToggle();
+});
+</code></pre><p>当在元素上松开鼠标按钮时，会发生mouseup事件</p>
+<h5 id="7-focus-amp-blur"><a href="#7-focus-amp-blur" class="headerlink" title="7.focus() &amp; blur()"></a>7.focus() &amp; blur()</h5><p>当元素获得焦点时，发生focus事件;当元素失去焦点时发生blur事件:</p>
+<pre><code>&lt;input type=&quot;text&quot; /&gt;
 
-    if(a&gt;=b){
-        max = a;
-    } else {
-        max = b;
-    }
-    if(max&lt;c){
-        max = c;
-    }
-    alert(&quot;最大的值是：&quot; + max);
-&lt;/script&gt;
-</code></pre><h3 id="例题3：输入三个数从小到大的输出"><a href="#例题3：输入三个数从小到大的输出" class="headerlink" title="例题3：输入三个数从小到大的输出"></a>例题3：输入三个数从小到大的输出</h3><pre><code>&lt;script&gt;
-    var a = prompt(&quot;输入第一个数&quot;);
-    var b = prompt(&quot;输入第二个数&quot;);
-    var c = prompt(&quot;输入第三个数&quot;);
-    var min,max,mid;
+$(&quot;input&quot;).focus(function(){
+    $(&quot;input&quot;).css(&quot;background-color&quot;,&quot;#FFFFCC&quot;);
+});
+$(&quot;input&quot;).blur(function(){
+    $(&quot;input&quot;).css(&quot;background-color&quot;,&quot;#D6D6FF&quot;);
+});
+</code></pre><h5 id="8-hover"><a href="#8-hover" class="headerlink" title="8.hover()"></a>8.hover()</h5><p>光标悬停事件:</p>
+<pre><code>$(&quot;p&quot;).hover(function(){
+    $(&quot;p&quot;).css(&quot;background-color&quot;,&quot;yellow&quot;);
+    },function(){
+    $(&quot;p&quot;).css(&quot;background-color&quot;,&quot;pink&quot;);
+});
+</code></pre><h5 id="9-1-event-target"><a href="#9-1-event-target" class="headerlink" title="9.1. event.target"></a>9.1. event.target</h5><p>target属性规定哪个DOM元素触发了该事件:</p>
+<pre><code>&lt;h1&gt;这是一个标题&lt;/h1&gt;
+&lt;h2&gt;这是另一个标题&lt;/h2&gt;
+&lt;p&gt;这是一个段落&lt;/p&gt;
+&lt;div&gt;&lt;/div&gt;
 
-    if(a&gt;=b){
-        if(b&gt;=c){
-            max = a;mid = b;min = c;
-        } else{
-            max = a;mid = c;min = b;
-        }
-    } else{     //a&lt;b
-        if(b&gt;=c){
-            max = b;mid = a;min = c;
-        } else{
-            max = b;mid = c;min = a;
-        }
-    }
-    if(max&lt;c){
-        if(a&gt;=b){
-            max = c;mid = a;min = b;
-        } else{
-            max = c;mid = b;min = a;
-        }
-    }
-    alert(&quot;从小到大排序：&quot; + min + &quot;&lt;&quot; + mid +  &quot;&lt;&quot; + max);
-&lt;/script&gt;
-</code></pre><p>额….这个写的不是很好，傻瓜式…以后再说</p>
-<h3 id="例题4：定义整数的成绩变量，按区间输出等级"><a href="#例题4：定义整数的成绩变量，按区间输出等级" class="headerlink" title="例题4：定义整数的成绩变量，按区间输出等级:"></a>例题4：定义整数的成绩变量，按区间输出等级:</h3><pre><code>&lt;script&gt;
-    var score = prompt(&quot;输入成绩：&quot;);
-    var sco = parseInt(score / 10);
-    switch(sco){
-        case 0 :
-            alert(&quot;不及格！&quot;); break;
-        case 1 :
-            alert(&quot;不及格！&quot;); break;
-        case 2 :
-            alert(&quot;不及格！&quot;); break;
-        case 3 :
-            alert(&quot;不及格！&quot;); break;
-        case 4 :
-            alert(&quot;不及格！&quot;); break;
-        case 5 :
-            alert(&quot;不及格！&quot;); break;
-        case 6:
-            alert(&quot;D&quot;); break;
-        case 7:
-            alert(&quot;C&quot;); break;
-        case 8:
-            alert(&quot;B&quot;); break;
-        case 9:
-            alert(&quot;A&quot;); break;
-        case 10:
-            alert(&quot;A&quot;); break;
-        default:
-            alert(&quot;输入有误！&quot;); break;
-    }
-&lt;/script&gt;
-</code></pre><h3 id="例题5：定义一个变量表示年份，判断是否是闰年"><a href="#例题5：定义一个变量表示年份，判断是否是闰年" class="headerlink" title="例题5：定义一个变量表示年份，判断是否是闰年"></a>例题5：定义一个变量表示年份，判断是否是闰年</h3><pre><code>&lt;script&gt;
-    &lt;!--闰年的条件是:能被4整除,但是不能被100整除,或者能被四百整除--&gt;
-        var year = prompt(&quot;输入一个年份：&quot;);
+$(&quot;p,h1,h2&quot;).click(function(event){
+    $(&quot;div&quot;).html(&quot;点击事件由一个 &quot; + event.target.nodeName + &quot; 元素触发&quot;);
+  });
+</code></pre><h5 id="9-2-event-pageX-amp-event-pageY"><a href="#9-2-event-pageX-amp-event-pageY" class="headerlink" title="9.2. event.pageX &amp; event.pageY"></a>9.2. event.pageX &amp; event.pageY</h5><p>pageX()属性是鼠标指针的位置，相对于文档的左边缘;pageY()属性是鼠标指针的位置，相对于文档的上边缘:</p>
+<pre><code>&lt;p&gt;鼠标指针位于：&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 
-        if((year%4==0) &amp;&amp; (year%100!==0) || (year%400==0)) {
-      alert(year+&quot;年是闰年&quot;);
-        } else {
-      alert(year+&quot;年是平年&quot;);
-     }
-&lt;/script&gt;
-</code></pre><h3 id="例题6：输出100以内的质数"><a href="#例题6：输出100以内的质数" class="headerlink" title="例题6：输出100以内的质数"></a>例题6：输出100以内的质数</h3><pre><code>&lt;script&gt;
-    //2,3,5,7,11,13,17,19,23...
-    //只能被1和自己本身除
-    for(var n=2;n&lt;=100;n++){
-        for(var m=2;m&lt;n;m++){
-            if(n%m == 0){
-                break;   //跳出当前循环
-            }
-        }
-        if(m&gt;=n){
-            document.write( n + &quot;,&quot;);
-        }
-    }
- &lt;/script&gt;
-</code></pre><h2 id="2017-7-7日厦门实训js作业-–循环语句"><a href="#2017-7-7日厦门实训js作业-–循环语句" class="headerlink" title="2017.7.7日厦门实训js作业 –循环语句"></a>2017.7.7日厦门实训js作业 –循环语句</h2><h3 id="例题1：输出乘法口诀表"><a href="#例题1：输出乘法口诀表" class="headerlink" title="例题1：输出乘法口诀表"></a>例题1：输出乘法口诀表</h3><pre><code>&lt;script&gt;
-    var num;
-    for(var i=1;i&lt;10;i++){
-        for(var j=1;j&lt;10;j++){
-            if(j&gt;i){
-                break;
-            } else {
-                num = i*j;
-                document.write(j + &quot;*&quot; + i + &quot;=&quot; + num + &quot;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;);
-            }
-        }
-        document.write(&quot;&lt;br/&gt;&quot;);
-    }
-&lt;/script&gt;
-</code></pre><h3 id="例题2：输出10行10列表格"><a href="#例题2：输出10行10列表格" class="headerlink" title="例题2：输出10行10列表格"></a>例题2：输出10行10列表格</h3><pre><code>&lt;button id=&quot;btn&quot;&gt;1.点击出现表格&lt;/button&gt;
-&lt;table id=&quot;table&quot; cellspacing=&quot;0&quot; cellpadding=&quot;10&quot; border=&quot;1&quot;&gt;&lt;/table&gt;
+$(document).mousemove(function(e){
+    $(&quot;span&quot;).text(&quot;X:&quot; + e.pageX + &quot;,Y:&quot; + e.pageY);
+})
+</code></pre><h5 id="10-trigger"><a href="#10-trigger" class="headerlink" title="10.trigger()"></a>10.trigger()</h5><p>触发被选元素的指定事件类型:</p>
+<pre><code>&lt;input type=&quot;text&quot; name=&quot;FirstName&quot; value=&quot;Hello World&quot; /&gt; &lt;br/&gt;
+&lt;button&gt;激活input域的select事件&lt;/button&gt;
+
+$(&quot;input&quot;).select(function(){
+    $(&quot;input&quot;).after(&quot;文本被选中！&quot;);
+  });
+  $(&quot;button&quot;).click(function(){
+    $(&quot;input&quot;).trigger(&quot;select&quot;);
+  });
+</code></pre><p>使用Event对象来触发事件：</p>
+<pre><code>$(&quot;input&quot;).select(function(){
+    $(&quot;input&quot;).after(&quot;文本被选中！&quot;);
+});
+var e = jQuery.Event(&quot;select&quot;);
+$(&quot;button&quot;).click(function(){
+    $(&quot;input&quot;).trigger(e);
+});
+</code></pre><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><ul>
+<li>animate()</li>
+</ul>
+<p>语法：<code>animate(styles,speed,easing,callback);</code></p>
+<pre><code>$(&quot;button&quot;).click(function(){
+    $(&quot;div&quot;).animate({left:&apos;250px&apos;});
+});
+</code></pre><p>参数<code>styles</code>中的css样式值 见：<a href="http://www.w3school.com.cn/jquery/effect_animate.asp" target="_blank" rel="external">链接</a></p>
+<p>注释：使用 “+=” 或 “-=” 来创建相对动画(relative animations)</p>
+<h3 id="隐藏-显示"><a href="#隐藏-显示" class="headerlink" title="隐藏/显示"></a>隐藏/显示</h3><ul>
+<li>hide(speed,callback);</li>
+<li>show(speed,callback);</li>
+<li>toggle(speed,callback);</li>
+</ul>
+<p><code>speed</code>参数可以取值：<code>slow</code>,<code>fast</code>,<code>normal</code>,毫秒;<code>callback</code>参数是隐藏或显示完成后所执行的函数名称。</p>
+<pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;button class=&quot;btn1&quot;&gt;Toggle&lt;/button&gt;
+
+$(&quot;.btn1&quot;).click(function(){
+    $(&quot;p&quot;).toggle();
+});
+</code></pre><h3 id="淡入淡出"><a href="#淡入淡出" class="headerlink" title="淡入淡出"></a>淡入淡出</h3><ul>
+<li>fadeIn(speed,callback);</li>
+<li>fadeOut(speed,callback);</li>
+<li>fadeToggle(speed,callback);</li>
+<li>fadeTo(speed,opacity,callback);</li>
+</ul>
+<p><code>speed</code>参数可以取值：<code>slow</code>,<code>fast</code>,<code>normal</code>,毫秒;<code>opacity</code>必需，规定淡入或淡出的透明度，介于0.00与1.00;<code>callback</code>参数是隐藏或显示完成后所执行的函数名称。</p>
+<pre><code>$(&quot;.btn1&quot;).click(function(){
+  $(&quot;p&quot;).fadeTo(1000,0.4);
+});
+</code></pre><h3 id="滑动"><a href="#滑动" class="headerlink" title="滑动"></a>滑动</h3><ul>
+<li>slideDown(speed,callback);</li>
+<li>slideUp(speed,callback);</li>
+<li>slideToggle(speed,callback);</li>
+</ul>
+<p><code>speed</code>参数可以取值：<code>slow</code>,<code>fast</code>,<code>normal</code>,毫秒;<code>callback</code>参数是隐藏或显示完成后所执行的函数名称。</p>
+<pre><code>$(&quot;.btn1&quot;).click(function(){
+    $(&quot;p&quot;).slideToggle();
+});
+</code></pre><h3 id="stop"><a href="#stop" class="headerlink" title="stop()"></a>stop()</h3><p>停止当前正在运行的动画:</p>
+<pre><code>$(&quot;#stop&quot;).click(function(){
+    $(&quot;#box&quot;).stop();
+});
+</code></pre><h3 id="链-Chaining"><a href="#链-Chaining" class="headerlink" title="链(Chaining)"></a>链(Chaining)</h3><pre><code>$(&quot;#p1&quot;).css(&quot;color&quot;,&quot;red&quot;).slideUp(2000).slideDown(2000);
+</code></pre><h2 id="jQuery-HTML"><a href="#jQuery-HTML" class="headerlink" title="jQuery HTML"></a>jQuery HTML</h2><h3 id="获得内容-–-text-、html-、val"><a href="#获得内容-–-text-、html-、val" class="headerlink" title="获得内容 – text()、html()、val()"></a>获得内容 – text()、html()、val()</h3><pre><code>&lt;p&gt;名称: &lt;input type=&quot;text&quot; id=&quot;test&quot; value=&quot;菜鸟教程&quot;&gt;&lt;/p&gt;
+&lt;button&gt;显示值&lt;/button&gt;
+
+$(document).ready(function(){
+$(&quot;button&quot;).click(function(){
+    alert(&quot;值为: &quot; + $(&quot;#test&quot;).val());
+    });
+});
+</code></pre><ul>
+<li>text() -  设置或返回所选元素的文本内容</li>
+<li>html() -  设置或返回所选元素的内容（包括 HTML 标记）</li>
+<li>val() - 设置或返回表单字段的值</li>
+</ul>
+<h3 id="设置或返回属性-–-attr"><a href="#设置或返回属性-–-attr" class="headerlink" title="设置或返回属性 – attr()"></a>设置或返回属性 – attr()</h3><p>1.返回属性：</p>
+<pre><code>&lt;p&gt;&lt;a href=&quot;http://www.runoob.com&quot; id=&quot;runoob&quot;&gt;菜鸟教程&lt;/a&gt;&lt;/p&gt;
+&lt;button&gt;显示 href 属性的值&lt;/button&gt;
+
+$(document).ready(function(){
+    $(&quot;button&quot;).click(function(){
+        alert($(&quot;#runoob&quot;).attr(&quot;href&quot;));
+     });
+});
+</code></pre><p>2.设置属性：</p>
+<pre><code>$(&quot;button&quot;).click(function(){
+    $(&quot;img&quot;).attr(&quot;width&quot;,&quot;180&quot;);
+});
+</code></pre><p>3.设置多个属性：</p>
+<pre><code>$(&quot;img&quot;).attr({width:&quot;50&quot;,height:&quot;80&quot;});
+</code></pre><h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><h5 id="append-amp-prepend"><a href="#append-amp-prepend" class="headerlink" title="append() &amp; prepend()"></a>append() &amp; prepend()</h5><p><code>append</code>是在被选元素的结尾(仍然在内部)插入内容;<code>prepend</code>是在被选元素的开头(仍然在内部)插入内容</p>
+<pre><code>$(&quot;p&quot;).append(&quot; &lt;b&gt;Hello world!&lt;/b&gt;&quot;);
+</code></pre><h5 id="after-amp-before"><a href="#after-amp-before" class="headerlink" title="after() &amp; before()"></a>after() &amp; before()</h5><p><code>after</code>在被选元素的之后插入内容;<code>before</code>在被选元素之前插入内容</p>
+<pre><code>$(&quot;p&quot;).before(&quot;&lt;p&gt;Hello world!&lt;/p&gt;&quot;);
+</code></pre><h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><h5 id="remove"><a href="#remove" class="headerlink" title="remove()"></a>remove()</h5><p>删除被选元素及其子元素,该方法不会把匹配的元素从jQuery对象中删除，因而可以在将来再使用这些匹配的元素。</p>
+<h5 id="empty"><a href="#empty" class="headerlink" title="empty()"></a>empty()</h5><p>从被选元素移除所有内容，包括所有文本和子节点:</p>
+<pre><code>&lt;div id=&quot;div1&quot; style=&quot;height:100px;width:300px;border:1px solid black;background-color:yellow;&quot;&gt;这是 div 中的一些文本。
+&lt;p&gt;这是在div中的一个段落。&lt;/p&gt;
+&lt;p&gt;这是在div中的另外一个段落。&lt;/p&gt;
+&lt;/div&gt;
+&lt;button&gt;清空div元素&lt;/button&gt;
+
+$(document).ready(function(){
+    $(&quot;button&quot;).click(function(){
+        $(&quot;#div1&quot;).empty();
+    });
+});
+</code></pre><h3 id="clone"><a href="#clone" class="headerlink" title="clone()"></a>clone()</h3><p>生成被选元素的副本，包含子节点、文本和属性:</p>
+<pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;button&gt;复制每个 p 元素，然后追加到 body 元素&lt;/button&gt;
+
+$(&quot;button&quot;).click(function(){
+    $(&quot;body&quot;).append($(&quot;p&quot;).clone());
+});
+</code></pre><h3 id="addClass-amp-removeClass-amp-toggleClass"><a href="#addClass-amp-removeClass-amp-toggleClass" class="headerlink" title="addClass() &amp; removeClass() &amp; toggleClass()"></a>addClass() &amp; removeClass() &amp; toggleClass()</h3><pre><code>&lt;div class=&quot;div1&quot;&gt;这是一些文本。&lt;/div&gt;
+&lt;button&gt;为第一个div元素添加类&lt;/button&gt;
+
+.blue{ color:blue; }
+$(document).ready(function(){
+    $(&quot;button&quot;).click(function(){
+        $(&quot;#div1&quot;).addClass(&quot;blue&quot;);
+    });
+});
+</code></pre><h3 id="CSS-方法"><a href="#CSS-方法" class="headerlink" title="CSS()方法"></a>CSS()方法</h3><p>设置css属性：</p>
+<pre><code>$(&quot;p&quot;).css(&quot;background-color&quot;,&quot;yellow&quot;);
+$(&quot;p&quot;).css(&quot;background-color&quot;,&quot;yellow&quot;,&quot;font-size&quot;,&quot;200%&quot;);
+</code></pre><h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><h3 id="祖先-向上遍历"><a href="#祖先-向上遍历" class="headerlink" title="祖先 (向上遍历)"></a>祖先 (向上遍历)</h3><p>1.parent() 返回被选元素的直接父元素，只会向上一级对DOM树进行遍历。</p>
+<p>2.parsents() 从父元素开始，返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>)。返回包含零个、一个元素或多个元素的jquery对象。</html></p>
+<p>3.closest() 从当前元素开始，获得匹配选择器的第一个祖先元素，从当前元素开始沿DOM树向上。返回包含零个或一个元素的jquery对象。（和.parents有点相似）</p>
+<pre><code>$(&apos;li.item-a&apos;).closest(&apos;ul&apos;).css(&apos;background-color&apos;, &apos;red&apos;); //整个ul中的li元素颜色都会变红
+</code></pre><p>4.parsentsUntil() 返回介于两个给定元素之间的所有祖先元素。</p>
+<h3 id="后代-向下遍历"><a href="#后代-向下遍历" class="headerlink" title="后代 (向下遍历)"></a>后代 (向下遍历)</h3><p>1.children() 返回被选元素的所有直接子元素，该方法只会向<strong>下一级</strong>对DOM树进行遍历。</p>
+<pre><code>$(&quot;div&quot;).children(&quot;.selected&quot;).css(&quot;color&quot;,&quot;blue&quot;);
+</code></pre><p>2.find() 返回被选元素的后代元素，一路向下直到最后一个后代。</p>
+<pre><code>`$(&apos;li.item-ii&apos;).find(&apos;li&apos;).css(&apos;background-color&apos;,&apos;red&apos;);`
+</code></pre><p>也可以使用给定的jquery集合或元素来进行筛选：</p>
+<pre><code>var $allListElements = $(&apos;li&apos;);
+$(&apos;li.item-ii&apos;).find($allListElements).css(&apos;background-color&apos;,&apos;red&apos;);
+</code></pre><p>3.contents() 获得匹配元素集合中每个元素的子节点，包括文本和注释节点。</p>
+<pre><code>&lt;p&gt;Hello&lt;a href=&quot;#&quot;&gt;Apple&lt;/a&gt;,how are you doing?&lt;/p&gt;
 
 &lt;script&gt;
-window.onload = function() {
-    var btn = document.getElementById(&quot;btn&quot;);
-    btn.onclick = out;
-    function out(){
-        var table = document.getElementById(&quot;table&quot;);
-        for(var j=1;j&lt;=10;j++){
-            var tr = document.createElement(&quot;tr&quot;);
-            for(var i=1;i&lt;=10;i++){
-                var td = document.createElement(&quot;td&quot;);   //创建元素节点eleNode
-                td.innerHTML = i;
-                tr.appendChild(td);   //将元素节点td添加到tr中
-             }
-         table.appendChild(tr);
-        }
-     }
+    $(&quot;p&quot;).contents().filter(function(){ return this.nodeType != 1; }).wrap(&quot;&lt;b/&gt;&quot;);
 &lt;/script&gt;
-</code></pre><p><strong><em>自己在作业的基础上拓展了一下：获取任意行列的表格并输出</em></strong></p>
-<pre><code>请输入行数：&lt;input id=&quot;rows&quot; /&gt;&lt;br/&gt;&lt;br/&gt;
-请输入列数：&lt;input id=&quot;cols&quot; /&gt;&lt;br/&gt;&lt;br/&gt;
-&lt;button id=&quot;btn1&quot;&gt;2.点击出现你输入的表格&lt;/button&gt;&lt;br&gt;&lt;br/&gt;
-&lt;table id=&quot;table1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;10&quot; border=&quot;1&quot;&gt;&lt;/table&gt;
+</code></pre><h3 id="同胞-水平遍历"><a href="#同胞-水平遍历" class="headerlink" title="同胞 (水平遍历)"></a>同胞 (水平遍历)</h3><p>1.siblings() 返回被选元素的所有同胞元素:</p>
+<pre><code>$(&quot;p&quot;).siblings(&quot;.selected&quot;).css(&quot;background&quot;, &quot;yellow&quot;); //查找每个 p 元素的所有类名为 &quot;selected&quot; 的所有同胞元素：
+</code></pre><p>2.next() 返回被选元素的下一个同胞元素</p>
+<h3 id="过滤-缩小搜索元素的范围"><a href="#过滤-缩小搜索元素的范围" class="headerlink" title="过滤 (缩小搜索元素的范围)"></a>过滤 (缩小搜索元素的范围)</h3><p>1.first() 返回被选元素的首个元素。</p>
+<p>2.last() 返回被选元素的最后一个元素。</p>
+<p>3.eq() 返回被选元素中带有指定索引号的元素。</p>
+<pre><code>.blue{ background-color:blue; }
+
+$(&quot;body&quot;).find(&quot;div&quot;).eq(2).addClass(&quot;blue&quot;);
+</code></pre><p>如果提供负数，则指示从集合结尾开始的位置，而不是从开头开始。</p>
+<p>4.filter() 允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回。</p>
+<pre><code>&lt;div&gt;&lt;/div&gt;
+&lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;
+&lt;div&gt;&lt;/div&gt;
 
 &lt;script&gt;
-    var btn1 = document.getElementById(&quot;btn1&quot;);
-        btn1.onclick = out1;
-        function out1(){
-            var table1 = document.getElementById(&quot;table1&quot;);
-            var rows = document.getElementById(&quot;rows&quot;).value;
-            var cols = document.getElementById(&quot;cols&quot;).value;
-
-            for(var j=1;j&lt;=cols;j++){
-                var tr1 = document.createElement(&quot;tr&quot;);
-                for(var i=1;i&lt;=rows;i++){
-                    var td1 = document.createElement(&quot;td&quot;);
-                    td1.innerHTML = i;
-                    tr1.appendChild(td1);
-                }
-                table1.appendChild(tr1);
-            }
-        }
+  $(&quot;div&quot;).css(&quot;background&quot;, &quot;#c8ebcc&quot;)
+    .filter(&quot;.middle&quot;)
+    .css(&quot;border-color&quot;, &quot;red&quot;);
 &lt;/script&gt;
-</code></pre><h3 id="例题3：在上例表格中改变奇数行的背景"><a href="#例题3：在上例表格中改变奇数行的背景" class="headerlink" title="例题3：在上例表格中改变奇数行的背景"></a>例题3：在上例表格中改变奇数行的背景</h3><pre><code>&lt;button id=&quot;btn&quot;&gt;点击后奇数行有背景颜色&lt;/button&gt;
-&lt;table id=&quot;table&quot; border=&quot;1&quot; cellpadding=&quot;10px&quot; cellspacing=&quot;0&quot;&gt;&lt;/table&gt;
+</code></pre><p><img src="http://otqcthsfv.bkt.clouddn.com/filter.png" alt="filter"></p>
+<p>5.not() 和filter()方法相反。</p>
+<h3 id="others"><a href="#others" class="headerlink" title="others"></a>others</h3><p>1.add() 将元素添加到匹配元素的集合中:</p>
+<pre><code>$(&quot;div&quot;).css(&quot;border&quot;, &quot;2px solid red&quot;)
+    .add(&quot;p&quot;)
+    .css(&quot;background&quot;, &quot;yellow&quot;);
+</code></pre><p>2.each() 对jQuery对象进行迭代，为每个匹配元素执行函数。</p>
+<pre><code>$(&quot;button).click(function(){
+    $(&quot;li&quot;).each(function(){
+        alert($(this).text())        
+    });
+});
+</code></pre><p>3.end() 结束当前链条中的最近的筛选操作，并将匹配元素集还原为之前的状态。</p>
+<pre><code>&lt;ul class=&quot;first&quot;&gt;
+   &lt;li class=&quot;foo&quot;&gt;list item 1&lt;/li&gt;
+   &lt;li&gt;list item 2&lt;/li&gt;
+   &lt;li class=&quot;bar&quot;&gt;list item 3&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;script&gt;
-    window.onload = function () {
-        var btn = document.getElementById(&quot;btn&quot;);
-        btn.onclick = out2;
-        function out2() {
-            var table = document.getElementById(&quot;table&quot;);
-            for (var j = 1; j &lt;= 10; j++) {
-                var tr = document.createElement(&quot;tr&quot;);
-                if (j%2 != 0) {    //判断是否为奇数行
-                    tr.style.backgroundColor = &quot;red&quot;;
-                }
-                for (var i = 1; i &lt;= 10; i++) {
-                    var td = document.createElement(&quot;td&quot;);
-                    td.innerHTML = i;
-                    tr.appendChild(td);
-                }
-                table.appendChild(tr);
-            }
-        }
-    }
-&lt;/script&gt;
-</code></pre><h3 id="例题4：输出序列1-1-2-3-5-8-13……-N个数"><a href="#例题4：输出序列1-1-2-3-5-8-13……-N个数" class="headerlink" title="例题4：输出序列1,1,2,3,5,8,13…… N个数"></a>例题4：输出序列1,1,2,3,5,8,13…… N个数</h3><pre><code>&lt;script&gt;
-    var a=1;b=1;
-    if(a=1){
-        document.write(a + &quot; &quot;);
-    }
-    if(b=1){
-        document.write(b + &quot; &quot;);
-    }
-   for(var n=0;n&lt;500;n++){
-        n = a + b; //1+1=2 ;n=2 n=3 n=5
-        a = b;    //a=1; a=1; a=2; a=3;
-        b = n; //b=1 b=2; b=3; b=5;
-       document.write(n + &quot; &quot;);
-    }
-&lt;/script&gt;
-</code></pre><p>此段代码不够完善…待完善</p>
-<h2 id="2017-7-10日厦门实训js作业"><a href="#2017-7-10日厦门实训js作业" class="headerlink" title="2017.7.10日厦门实训js作业"></a>2017.7.10日厦门实训js作业</h2><h3 id="例题1：动态的显示当前时间"><a href="#例题1：动态的显示当前时间" class="headerlink" title="例题1：动态的显示当前时间"></a>例题1：动态的显示当前时间</h3><pre><code>function startTime(){
-    var today = new Date();
-    var year = today.getFullYear();
-    var month = today.getMonth() + 1;
-    var day = today.getDate();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
+$(&apos;ul.first&apos;).find(&apos;.foo&apos;).css(&apos;background-color&apos;, &apos;red&apos;)
+  .end().find(&apos;.bar&apos;).css(&apos;background-color&apos;, &apos;green&apos;);
+</code></pre><p><strong>说明</strong>: 这条命令链检索第一个列表中类名为foo的项目，并把它们的背景设置为红色。end()会将对象还原为调用find()之前的状态，所以第二个find()查找的是<code>&lt;ul class=&quot;first&quot;&gt;</code>内的<code>.bar&#39;</code>，而不是在列表的<code>&lt;li class=&quot;foo&quot;&gt;</code>中查找，并将匹配元素的背景设置为绿色。最后的结果是第一个列表中的项目1和项目3被设置了带颜色的背景，而第二个列表中的项目没有任何变化。</p>
+<h2 id="DOM元素方法"><a href="#DOM元素方法" class="headerlink" title="DOM元素方法"></a>DOM元素方法</h2><h3 id="index"><a href="#index" class="headerlink" title="index()"></a>index()</h3><p>返回指定元素相对于其他指定元素的index位置：</p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;Coffee&lt;/li&gt;
+    &lt;li&gt;Milk&lt;/li&gt;
+    &lt;li&gt;Soda&lt;/li&gt;
+&lt;/ul&gt;
 
-    document.getElementById(&quot;time&quot;).innerHTML =&quot;现在是北京时间：&quot; + year + &quot;年&quot; + month + &quot;月&quot; + day + &quot;日&quot; + &quot; &quot; + h + &quot;:&quot; + m + &quot;:&quot; + s ;
+$(&quot;li&quot;).click(function(){
+    alert($(this).index());
+});
+</code></pre><h3 id="toArray"><a href="#toArray" class="headerlink" title="toArray()"></a>toArray()</h3><p>以数组的形式返回jQuery选择器匹配的元素:</p>
+<pre><code>x = $(&quot;li&quot;).toArray()
+  for(i=0;i&lt;x.length;i++){
+    alert(x[i].innerHTML);
+  }
+</code></pre><h3 id="size"><a href="#size" class="headerlink" title="size()"></a>size()</h3><p>返回被jQuery选择器匹配的元素的数量:</p>
+<pre><code>$(document).ready(function(){
+    alert($(&quot;li&quot;).size());
+});  //输出结果：3
+</code></pre><h3 id="get"><a href="#get" class="headerlink" title="get()"></a>get()</h3><p>获得由选择器指定的DOM元素:</p>
+<pre><code>&lt;p&gt;This is a paragraph&lt;/p&gt;
+&lt;button&gt;获得p DOM元素&lt;/button&gt;
+&lt;div&gt;&lt;/div&gt;
 
-    t = setTimeout(function(){startTime()},500);
-}
-function checkTime(i){
-    if(i&lt;10){
-         i = &quot;0&quot; + i;
-     }
-    return i;
-     }
+$(&quot;button&quot;).click(function(){
+    x = $(&quot;p&quot;).get(0);
+    $(&quot;div&quot;).text(x.nodeName + &quot;: &quot; + x.innerHTML);
+});  //输出结果：P: This is a paragraph
+</code></pre><h2 id="AJAX！！"><a href="#AJAX！！" class="headerlink" title="AJAX！！"></a>AJAX！！</h2><p>AJAX 是与服务器交换数据的技术，通过后台加载数据，它在不重载全部页面的情况下，实现了对部分网页的更新。</p>
+<h3 id="什么是AJAX"><a href="#什么是AJAX" class="headerlink" title="什么是AJAX?"></a>什么是AJAX?</h3><p>AJAX = 异步JavaScript和XML (Asynchronous JavaScript and XML)</p>
+<h3 id="AJAX-load-方法"><a href="#AJAX-load-方法" class="headerlink" title="AJAX load()方法"></a>AJAX load()方法</h3><p>语法：<code>$(selector).load(URL,data,callback);</code></p>
+<pre><code>&lt;div id=&quot;div1&quot;&gt;使用jquery AJAX修改文本内容&lt;/div&gt;
+&lt;button&gt;获取外部内容&lt;/button&gt;
 
-&lt;body onload=&quot;startTime()&quot;&gt;
-    &lt;div id=&quot;time&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;
-</code></pre><h3 id="例题2：计算器实现加减乘除（最简单的）"><a href="#例题2：计算器实现加减乘除（最简单的）" class="headerlink" title="例题2：计算器实现加减乘除（最简单的）"></a>例题2：计算器实现加减乘除（最简单的）</h3><pre><code>数字1：&lt;input id=&quot;num1&quot;&gt;&lt;br/&gt;&lt;br/&gt;
-数字2：&lt;input id=&quot;num2&quot;&gt;&lt;br/&gt;&lt;br/&gt;
-&lt;button onclick=&quot;add()&quot;&gt;加法&lt;/button&gt;
-&lt;button onclick=&quot;del()&quot;&gt;减法&lt;/button&gt;
-&lt;button onclick=&quot;mul()&quot;&gt;乘法&lt;/button&gt;
-&lt;button onclick=&quot;division()&quot;&gt;除法&lt;/button&gt;&lt;br/&gt;&lt;br/&gt;
-结果为：&lt;input id=&quot;result&quot; value=&quot;&quot;&gt;
-
-&lt;script&gt;
-function add() {
-    var num1 = document.getElementById(&quot;num1&quot;).value;
-    var num2 = document.getElementById(&quot;num2&quot;).value;
-    var result = parseFloat(num1) + parseFloat(num2);
-    document.getElementById(&quot;result&quot;).value = result;
-}
-function del() {
-    var num1 = document.getElementById(&quot;num1&quot;).value;
-    var num2 = document.getElementById(&quot;num2&quot;).value;
-    var result = parseFloat(num1) - parseFloat(num2);
-    document.getElementById(&quot;result&quot;).value = result;
-}
-function mul() {
-    var num1 = document.getElementById(&quot;num1&quot;).value;
-    var num2 = document.getElementById(&quot;num2&quot;).value;
-    var result = num1 * num2;
-    document.getElementById(&quot;result&quot;).value = result;
-}
-function division() {
-    var num1 = document.getElementById(&quot;num1&quot;).value;
-    var num2 = document.getElementById(&quot;num2&quot;).value;
-    var result = num1 / num2;
-    document.getElementById(&quot;result&quot;).value = result;
-}
-&lt;/script&gt;
+$(document).ready(function(){
+    $(&quot;button&quot;).click(function(){
+        $(&quot;#div1&quot;).load(&quot;/try/ajax/demo_test.txt&quot;);
+    });  //此处的url是我引用过来的
+});
 </code></pre>
       
 
@@ -487,7 +559,7 @@ function division() {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
         		</li>
       		
 		</ul>
@@ -543,7 +615,7 @@ function division() {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/07/js几道小题/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/28/jQuery手册/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -557,18 +629,9 @@ function division() {
   
 <nav id="article-nav">
   
-    <a href="/2017/07/15/Yilia主题优化/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Yilia主题优化
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/05/24/软件测试初学/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">软件测试初学</div>
+    <a href="/2017/07/26/使用HBuilder/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用HBuilder</div>
       <i class="icon-circle-right"></i>
     </a>
   
