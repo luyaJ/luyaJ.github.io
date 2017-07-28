@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-25T16:08:20.823Z</updated>
+  <updated>2017-07-28T12:37:41.667Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/07/26/%E4%BD%BF%E7%94%A8HBuilder/"/>
     <id>http://yoursite.com/2017/07/26/使用HBuilder/</id>
     <published>2017-07-25T16:03:21.000Z</published>
-    <updated>2017-07-25T16:08:20.823Z</updated>
+    <updated>2017-07-28T12:37:41.667Z</updated>
     
     <content type="html"><![CDATA[<p>HBuilder下载地址：<a href="http://www.dcloud.io/" target="_blank" rel="external">HBuilder官网</a></p>
 <a id="more"></a>
@@ -33,7 +33,7 @@
 </ol>
 <p><img src="http://ot4r4qnml.bkt.clouddn.com/web%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="web服务器"></p>
 <h3 id="2-设置外置服务器"><a href="#2-设置外置服务器" class="headerlink" title="2.设置外置服务器"></a>2.设置外置服务器</h3><ol>
-<li><p>择“外置Web服务器” ☞ 右边“新建”</p>
+<li><p>选择“外置Web服务器” ☞ 右边“新建”</p>
 </li>
 <li><p>编辑服务配置界面，“名称”随意，“浏览器运行URL”填写本机ip地址</p>
 </li>
