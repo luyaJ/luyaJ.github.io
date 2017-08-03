@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-28T15:21:36.824Z</updated>
+  <updated>2017-08-03T10:48:22.826Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二叉树遍历</title>
+    <link href="http://yoursite.com/2017/08/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/"/>
+    <id>http://yoursite.com/2017/08/03/二叉树遍历/</id>
+    <published>2017-08-03T10:48:00.000Z</published>
+    <updated>2017-08-03T10:48:22.826Z</updated>
+    
+    <content type="html"><![CDATA[<p>总结二叉树前序、中序、后序遍历互相求法，知二求三。</p>
+<a id="more"></a>
+<h2 id="各遍历特性"><a href="#各遍历特性" class="headerlink" title="各遍历特性"></a>各遍历特性</h2><ul>
+<li>前序遍历<ol>
+<li>访问根节点</li>
+<li>前序遍历左子树</li>
+<li>前序遍历右子树</li>
+</ol>
+</li>
+<li>中序遍历<ol>
+<li>中序遍历左子树</li>
+<li>访问根节点</li>
+<li>中序遍历右子树</li>
+</ol>
+</li>
+<li>后序遍历<ol>
+<li>后序遍历左子树</li>
+<li>后序遍历右子树</li>
+<li>访问根节点</li>
+</ol>
+</li>
+</ul>
+<h2 id="由二叉树得各遍历"><a href="#由二叉树得各遍历" class="headerlink" title="由二叉树得各遍历"></a>由二叉树得各遍历</h2><p><img src="http://ot4r4qnml.bkt.clouddn.com/erchashu1.png" alt="二叉树1"></p>
+<p>先序遍历: <code>ABDGCEF</code> ;</p>
+<p>中序遍历: <code>DGBAECF</code> ;</p>
+<p>后序遍历: <code>GDBEFCA</code> ;</p>
+<h2 id="已知前序、中序遍历，求后序遍历"><a href="#已知前序、中序遍历，求后序遍历" class="headerlink" title="已知前序、中序遍历，求后序遍历"></a>已知前序、中序遍历，求后序遍历</h2><blockquote>
+<p>例：</p>
+<p>前序遍历： GDAFEMHZ</p>
+<p>中序遍历： ADEFGHMZ</p>
+</blockquote>
+<p><strong>解析:</strong></p>
+<p>1.根据前序遍历的特点，得到根节点是 <code>G</code> ;</p>
+<p>2.观察中序遍历，知：<code>ADEF</code>是根节点的左子树，<code>HMZ</code>是根节点的右子树;</p>
+<p>3.接下来，知道左子树的根节点为 <code>D</code> ;</p>
+<p>4.同理，<code>A</code> 为 <code>D</code> 的左子树，<code>EF</code> 为右子树</p>
+<p>5.右子树的根节点是 <code>M</code> ，依次，画出的结果如图：</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E4%BA%8C%E5%8F%89%E6%A0%912.png" alt="二叉树2"></p>
+<p>那么，可以得到后序遍历顺序为：<code>AEFDHZMG</code></p>
+<h2 id="已知中序、后序遍历，求前序遍历"><a href="#已知中序、后序遍历，求前序遍历" class="headerlink" title="已知中序、后序遍历，求前序遍历"></a>已知中序、后序遍历，求前序遍历</h2><blockquote>
+<p>例：</p>
+<p>中序遍历: ADEFGHMZ</p>
+<p>后序遍历: AEFDHZMG</p>
+</blockquote>
+<p><strong>解析：</strong></p>
+<p>1.由后序遍历知 <code>G</code> 为根节点,结合中序遍历知 <code>ADEF</code> 为左子树，<code>HMZ</code> 为右子树;</p>
+<p>2.再观察后序遍历，知道 <code>D</code> 为左子树根节点， <code>M</code> 为右子树根节点;</p>
+<p>3.分析结果如图：</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/erchashu3.png" alt="二叉树3"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;总结二叉树前序、中序、后序遍历互相求法，知二求三。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>jQuery手册</title>
