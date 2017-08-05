@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-05T15:42:29.191Z</updated>
+  <updated>2017-08-05T15:49:16.881Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/08/05/JavaScript%E6%89%8B%E5%86%8C/"/>
     <id>http://yoursite.com/2017/08/05/JavaScript手册/</id>
     <published>2017-08-05T14:51:43.000Z</published>
-    <updated>2017-08-05T15:42:29.191Z</updated>
+    <updated>2017-08-05T15:49:16.881Z</updated>
     
     <content type="html"><![CDATA[<p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。</p>
 <a id="more"></a>
@@ -230,7 +230,7 @@ document.write(num.map(Math.sqrt));  //输出：1,2,4,10
       <category term="web前端" scheme="http://yoursite.com/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
     
   </entry>
   
