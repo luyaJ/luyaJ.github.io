@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-07T07:08:10.227Z</updated>
+  <updated>2017-08-07T14:51:32.179Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/08/05/JavaScript%E6%89%8B%E5%86%8C/"/>
     <id>http://yoursite.com/2017/08/05/JavaScript手册/</id>
     <published>2017-08-05T14:51:43.000Z</published>
-    <updated>2017-08-07T07:08:10.227Z</updated>
+    <updated>2017-08-07T14:51:32.179Z</updated>
     
     <content type="html"><![CDATA[<p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。</p>
 <a id="more"></a>
@@ -346,7 +346,7 @@
 <li><code>^n</code> : 匹配任何开头为<code>n</code>的字符串。</li>
 </ul>
 <p><em>例：</em> 对字符串开头的 “is” 进行全局搜索：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'Is this his'</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(<span class="regexp">/is$/g</span>));  <span class="comment">//输出：Is</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'Is this his'</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(<span class="regexp">/^is/g</span>));  <span class="comment">//输出：Is</span></div></pre></td></tr></table></figure>
 <ul>
 <li><code>?=n</code> : 匹配任何其后紧接指定字符串<code>n</code>的字符串。</li>
 </ul>
@@ -356,7 +356,14 @@
 <li><code>?!n</code> : 匹配其后没有紧接指定字符串<code>n</code>的任何字符串。</li>
 </ul>
 <p><em>例：</em> 对其后没有紧跟 “all” 的 “is” 进行全局搜索：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'Is this all there is'</span>;</div><div class="line">patt1 = <span class="regexp">/is(?! all)/gi</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(patt1));  <span class="comment">//输出：Is,is</span></div></pre></td></tr></table></figure>]]></content>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'Is this all there is'</span>;</div><div class="line">patt1 = <span class="regexp">/is(?! all)/gi</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(patt1));  <span class="comment">//输出：Is,is</span></div></pre></td></tr></table></figure>
+<h3 id="支持正则表达式的String对象的方法"><a href="#支持正则表达式的String对象的方法" class="headerlink" title="支持正则表达式的String对象的方法"></a>支持正则表达式的String对象的方法</h3><ul>
+<li><code>search()</code>用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。</li>
+<li><code>match()</code>在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。</li>
+<li><code>replace()</code>在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</li>
+<li><code>split()</code>把一个字符串分割成字符串数组。</li>
+</ul>
+]]></content>
     
     <summary type="html">
     
