@@ -6,22 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>二叉树遍历 | luyaJ的小博客</title>
+  <title>二叉树 | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="总结二叉树前序、中序、后序遍历互相求法，知二求三。">
+  <meta name="description" content="二叉树（Binary Tree）是n（n&amp;gt;=0）个结点的有限集合，该集合或者为空集（空二叉树），或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树遍历">
+<meta property="og:title" content="二叉树">
 <meta property="og:url" content="http://yoursite.com/2017/08/03/二叉树遍历/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
-<meta property="og:description" content="总结二叉树前序、中序、后序遍历互相求法，知二求三。">
+<meta property="og:description" content="二叉树（Binary Tree）是n（n&amp;gt;=0）个结点的有限集合，该集合或者为空集（空二叉树），或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。">
+<meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/binaryTree.png">
 <meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/erchashu1.png">
 <meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/%E4%BA%8C%E5%8F%89%E6%A0%912.png">
 <meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/erchashu3.png">
-<meta property="og:updated_time" content="2017-08-03T10:48:22.826Z">
+<meta property="og:updated_time" content="2017-08-10T09:42:05.933Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二叉树遍历">
-<meta name="twitter:description" content="总结二叉树前序、中序、后序遍历互相求法，知二求三。">
-<meta name="twitter:image" content="http://ot4r4qnml.bkt.clouddn.com/erchashu1.png">
+<meta name="twitter:title" content="二叉树">
+<meta name="twitter:description" content="二叉树（Binary Tree）是n（n&amp;gt;=0）个结点的有限集合，该集合或者为空集（空二叉树），或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。">
+<meta name="twitter:image" content="http://ot4r4qnml.bkt.clouddn.com/binaryTree.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -168,7 +169,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      二叉树遍历
+      二叉树
     </h1>
   
 
@@ -189,7 +190,7 @@
     <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#各遍历特性"><span class="toc-number">1.</span> <span class="toc-text">各遍历特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#由二叉树得各遍历"><span class="toc-number">2.</span> <span class="toc-text">由二叉树得各遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#已知前序、中序遍历，求后序遍历"><span class="toc-number">3.</span> <span class="toc-text">已知前序、中序遍历，求后序遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#已知中序、后序遍历，求前序遍历"><span class="toc-number">4.</span> <span class="toc-text">已知中序、后序遍历，求前序遍历</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉树特点"><span class="toc-number">1.</span> <span class="toc-text">二叉树特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉树节点的定义"><span class="toc-number">2.</span> <span class="toc-text">二叉树节点的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五种基本形态"><span class="toc-number">3.</span> <span class="toc-text">五种基本形态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特殊二叉树"><span class="toc-number">4.</span> <span class="toc-text">特殊二叉树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性质"><span class="toc-number">5.</span> <span class="toc-text">性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#各遍历特性"><span class="toc-number">6.</span> <span class="toc-text">各遍历特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#由二叉树得各遍历"><span class="toc-number">6.1.</span> <span class="toc-text">由二叉树得各遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知前序、中序遍历，求后序遍历"><span class="toc-number">6.2.</span> <span class="toc-text">已知前序、中序遍历，求后序遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知中序、后序遍历，求前序遍历"><span class="toc-number">6.3.</span> <span class="toc-text">已知中序、后序遍历，求前序遍历</span></a></li></ol></li></ol>
     </div>
     <script type="text/javascript">
       function showToc(){
@@ -210,8 +211,43 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>总结二叉树前序、中序、后序遍历互相求法，知二求三。</p>
+        <p>二叉树（Binary Tree）是n（n&gt;=0）个结点的有限集合，该集合或者为空集（空二叉树），或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。</p>
 <a id="more"></a>
+<h2 id="二叉树特点"><a href="#二叉树特点" class="headerlink" title="二叉树特点"></a>二叉树特点</h2><p>每个结点最多有两棵子树，所以二叉树中不存在度大于2的结点。二叉树中每一个节点都是一个对象，每一个数据节点都有三个指针，分别是指向父母、左孩子和右孩子的指针。每一个节点都是通过指针相互连接的。相连指针的关系都是父子关系。</p>
+<h2 id="二叉树节点的定义"><a href="#二叉树节点的定义" class="headerlink" title="二叉树节点的定义"></a>二叉树节点的定义</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">struct binaryTreeNode&#123;</div><div class="line">    int m_nValue;</div><div class="line">    binaryTreeNode* m_pLeft;</div><div class="line">    binaryTreeNode* m_pRight;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="五种基本形态"><a href="#五种基本形态" class="headerlink" title="五种基本形态"></a>五种基本形态</h2><ul>
+<li>空二叉树</li>
+<li>只有一个根节点</li>
+<li>根节点只有左子树</li>
+<li>根节点只有右子树</li>
+<li>根节点既有左子树又有右子树</li>
+</ul>
+<p><strong>又：</strong> 拥有三个节点的普通树只有两种情况：2层或3层。但由于二叉树要分左右，于是就有了如图5种情况：</p>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/binaryTree.png" alt="二叉树节点"></p>
+<h2 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h2><ol>
+<li>斜树</li>
+</ol>
+<p>上图的第二、三个小树。</p>
+<ol>
+<li>满二叉树</li>
+</ol>
+<p>在一棵二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树称为满二叉树。</p>
+<ol>
+<li>完全二叉树</li>
+</ol>
+<p>完全二叉树是指最后一层左边是满的，右边可能满也可能不满，然后其余层都是满的。一个深度为k，节点个数为 2^k - 1 的二叉树为满二叉树（完全二叉树）。就是一棵树，深度为k，并且没有空位。</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>叶子结点只能出现在最下两层。</li>
+<li>最下层的叶子一定集中在左部连续位置。</li>
+<li>倒数第二层，若有叶子结点，一定都在右部连续位置。</li>
+<li>如果结点度为1，则该结点只有左孩子。</li>
+<li>同样结点树的二叉树，完全二叉树的深度最小。</li>
+</ul>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><ol>
+<li>在二叉树的第i层上至多有2^(i-1)个结点(i&gt;=1)</li>
+<li>深度为k的二叉树至多有2^k-1个结点(k&gt;=1)</li>
+</ol>
 <h2 id="各遍历特性"><a href="#各遍历特性" class="headerlink" title="各遍历特性"></a>各遍历特性</h2><ul>
 <li>前序遍历<ol>
 <li>访问根节点</li>
@@ -232,11 +268,11 @@
 </ol>
 </li>
 </ul>
-<h2 id="由二叉树得各遍历"><a href="#由二叉树得各遍历" class="headerlink" title="由二叉树得各遍历"></a>由二叉树得各遍历</h2><p><img src="http://ot4r4qnml.bkt.clouddn.com/erchashu1.png" alt="二叉树1"></p>
+<h3 id="由二叉树得各遍历"><a href="#由二叉树得各遍历" class="headerlink" title="由二叉树得各遍历"></a>由二叉树得各遍历</h3><p><img src="http://ot4r4qnml.bkt.clouddn.com/erchashu1.png" alt="二叉树1"></p>
 <p>先序遍历: <code>ABDGCEF</code> ;</p>
 <p>中序遍历: <code>DGBAECF</code> ;</p>
 <p>后序遍历: <code>GDBEFCA</code> ;</p>
-<h2 id="已知前序、中序遍历，求后序遍历"><a href="#已知前序、中序遍历，求后序遍历" class="headerlink" title="已知前序、中序遍历，求后序遍历"></a>已知前序、中序遍历，求后序遍历</h2><blockquote>
+<h3 id="已知前序、中序遍历，求后序遍历"><a href="#已知前序、中序遍历，求后序遍历" class="headerlink" title="已知前序、中序遍历，求后序遍历"></a>已知前序、中序遍历，求后序遍历</h3><blockquote>
 <p>例：</p>
 <p>前序遍历： GDAFEMHZ</p>
 <p>中序遍历： ADEFGHMZ</p>
@@ -249,7 +285,7 @@
 <p>5.右子树的根节点是 <code>M</code> ，依次，画出的结果如图：</p>
 <p><img src="http://ot4r4qnml.bkt.clouddn.com/%E4%BA%8C%E5%8F%89%E6%A0%912.png" alt="二叉树2"></p>
 <p>那么，可以得到后序遍历顺序为：<code>AEFDHZMG</code></p>
-<h2 id="已知中序、后序遍历，求前序遍历"><a href="#已知中序、后序遍历，求前序遍历" class="headerlink" title="已知中序、后序遍历，求前序遍历"></a>已知中序、后序遍历，求前序遍历</h2><blockquote>
+<h3 id="已知中序、后序遍历，求前序遍历"><a href="#已知中序、后序遍历，求前序遍历" class="headerlink" title="已知中序、后序遍历，求前序遍历"></a>已知中序、后序遍历，求前序遍历</h3><blockquote>
 <p>例：</p>
 <p>中序遍历: ADEFGHMZ</p>
 <p>后序遍历: AEFDHZMG</p>
@@ -474,11 +510,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,19 +534,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JavaScript 算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,10 +559,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>
