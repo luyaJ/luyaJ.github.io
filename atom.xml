@@ -1904,7 +1904,7 @@ border-bottom-left-radius: 1em 3em;
     <link href="http://yoursite.com/2017/07/15/Yilia%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/"/>
     <id>http://yoursite.com/2017/07/15/Yilia主题优化/</id>
     <published>2017-07-15T09:56:56.000Z</published>
-    <updated>2017-07-23T14:39:37.079Z</updated>
+    <updated>2017-08-11T04:26:44.642Z</updated>
     
     <content type="html"><![CDATA[<p>过了大半年，该是要好好整理下自己的博客了。</p>
 <a id="more"></a>
@@ -1995,7 +1995,13 @@ date: {{ date }}
 tags:
 toc: true
 ---
-</code></pre>]]></content>
+</code></pre><p><strong>注：</strong> 如果想要多个tag，则以这样的格式显示<code>tages: [js,css]</code></p>
+<h3 id="给网页加ico图标"><a href="#给网页加ico图标" class="headerlink" title="给网页加ico图标"></a>给网页加ico图标</h3><ol>
+<li>增加网站标题栏logo，很简单。将图片改成32*32格式的ico图标（这里我是在线转换的）</li>
+<li>在文件中找到<code>E:\blog\themes\yilia\layout\_partial</code>，再找到<code>head.ejs</code>,在里面增加语句<code>&lt;link rel=&quot;shortcut icon&quot; href=&quot;图片地址&quot;&gt;</code></li>
+</ol>
+<p><strong>注意：</strong> 如果把ico图标放在网站根目录下，那么浏览器会不停的搜索网站根目录。</p>
+]]></content>
     
     <summary type="html">
     
