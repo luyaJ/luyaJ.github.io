@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-17T09:16:56.926Z</updated>
+  <updated>2017-08-17T12:07:54.773Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,13 +20,31 @@
     <link href="http://yoursite.com/2017/08/17/Flex%E5%B8%83%E5%B1%80/"/>
     <id>http://yoursite.com/2017/08/17/Flex布局/</id>
     <published>2017-08-17T09:15:15.000Z</published>
-    <updated>2017-08-17T09:16:56.926Z</updated>
+    <updated>2017-08-17T12:07:54.773Z</updated>
     
     <content type="html"><![CDATA[<p>Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。</p>
 <a id="more"></a>
-<h2 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h2><p><img src="" alt="容器图"></p>
-<h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>该属性决定主轴的方向，即项目排列方向。<br>语法：<code>flex-direction: row | row-reverse | column | column-reverse</code></p>
-<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3>]]></content>
+<h2 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h2><p><img src="http://otf35fo4u.bkt.clouddn.com/flex.png" alt="容器图"></p>
+<h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>该属性决定主轴的方向，即项目排列方向。</p>
+<p>语法：<code>flex-direction: row | row-reverse | column | column-reverse</code></p>
+<p><code>row</code>为默认值，主轴为水平方向，起点在左端。</p>
+<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p>默认情况下，项目都排在一条线（又称”轴线”）上。<code>flex-wrap</code>属性定义，如果一条轴线排不下，如何换行。</p>
+<p>语法：<code>flex-wrap: nowrap | wrap | wrap-reverse</code></p>
+<p><code>nowrap</code>为默认值，不换行；<code>wrap</code>换行，第一行在上方；<code>wrap-reverse</code>换行，第一行在下面。</p>
+<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p><code>flex-flow</code>属性是<code>flex-direction</code>属性和<code>flex-wrap</code>属性的简写形式，默认值为<code>row nowrap</code>。</p>
+<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>该属性定义了项目在主轴上的对齐方式。</p>
+<p>语法：<code>justify-content: flex-start | flex-end | center | space-between | space-around</code></p>
+<p><img src="http://otf35fo4u.bkt.clouddn.com/justify-content.png" alt="主轴对其方式"></p>
+<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>该属性定义项目在交叉轴上如何对齐。</p>
+<p>语法：<code>align-items: flex-start | flex-end | center | baseline | stretch</code></p>
+<p><img src="http://otf35fo4u.bkt.clouddn.com/align-items.png" alt="交叉轴对齐方式"></p>
+<p><code>baseline</code>项目的第一行文字的基线对齐;<code>stretch</code>为默认值，如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
+<h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3><p><code>align-content</code>属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
+<p>语法：<code>align-content: flex-start | flex-end | center | space-between | space-around | stretch</code></p>
+<p><img src="http://otf35fo4u.bkt.clouddn.com/align-content.png" alt="对齐"></p>
+<h2 id="项目属性"><a href="#项目属性" class="headerlink" title="项目属性"></a>项目属性</h2><p>略</p>
+<p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">阮一峰 Flex布局</a><br><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">Flex布局 实例篇</a></p>
+]]></content>
     
     <summary type="html">
     
