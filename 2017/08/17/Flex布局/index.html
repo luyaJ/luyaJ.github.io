@@ -7,14 +7,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <link rel="shortcut icon" href="http://otnbkrzno.bkt.clouddn.com/myPic.ico">
-  <title>Tag: jQuery | luyaJ的小博客</title>
+  <title>Flex布局 | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="luyaJ的小博客">
-<meta property="og:url" content="http://yoursite.com/tags/jQuery/index.html">
+  <meta name="description" content="Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flex布局">
+<meta property="og:url" content="http://yoursite.com/2017/08/17/Flex布局/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
+<meta property="og:description" content="Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。">
+<meta property="og:updated_time" content="2017-08-17T09:16:56.926Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luyaJ的小博客">
+<meta name="twitter:title" content="Flex布局">
+<meta name="twitter:description" content="Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -154,60 +158,173 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Flex布局" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/28/jQuery手册/" class="archive-article-date">
-  	<time datetime="2017-07-28T15:09:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/28/jQuery手册/">jQuery手册</a>
+    <h1 class="article-title" itemprop="name">
+      Flex布局
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/08/17/Flex布局/" class="archive-article-date">
+  	<time datetime="2017-08-17T09:15:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-17</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#容器的属性"><span class="toc-number">1.</span> <span class="toc-text">容器的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-direction"><span class="toc-number">1.1.</span> <span class="toc-text">flex-direction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-wrap"><span class="toc-number">1.2.</span> <span class="toc-text">flex-wrap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-flow"><span class="toc-number">1.3.</span> <span class="toc-text">flex-flow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#justify-content"><span class="toc-number">1.4.</span> <span class="toc-text">justify-content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-items"><span class="toc-number">1.5.</span> <span class="toc-text">align-items</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-content"><span class="toc-number">1.6.</span> <span class="toc-text">align-content</span></a></li></ol></li></ol>
+    </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+      };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+      };
+    </script>
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。</p>
+<a id="more"></a>
+<h2 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h2><p><img src="" alt="容器图"></p>
+<h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>该属性决定主轴的方向，即项目排列方向。<br>语法：<code>flex-direction: row | row-reverse | column | column-reverse</code></p>
+<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/web前端/" class="article-tag-list-link color1">web前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/17/Flex布局/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/08/10/js几种常见排序算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js几种常见排序算法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
+
+
 
 
           </div>
@@ -238,9 +355,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

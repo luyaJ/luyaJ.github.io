@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-10T08:40:13.752Z</updated>
+  <updated>2017-08-17T09:16:56.926Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flex布局</title>
+    <link href="http://yoursite.com/2017/08/17/Flex%E5%B8%83%E5%B1%80/"/>
+    <id>http://yoursite.com/2017/08/17/Flex布局/</id>
+    <published>2017-08-17T09:15:15.000Z</published>
+    <updated>2017-08-17T09:16:56.926Z</updated>
+    
+    <content type="html"><![CDATA[<p>Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。</p>
+<a id="more"></a>
+<h2 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h2><p><img src="" alt="容器图"></p>
+<h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>该属性决定主轴的方向，即项目排列方向。<br>语法：<code>flex-direction: row | row-reverse | column | column-reverse</code></p>
+<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="web前端" scheme="http://yoursite.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>js几种常见排序算法</title>
