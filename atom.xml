@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-21T13:46:22.480Z</updated>
+  <updated>2017-08-21T13:48:45.596Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/08/17/Flex%E5%B8%83%E5%B1%80/"/>
     <id>http://yoursite.com/2017/08/17/Flex布局/</id>
     <published>2017-08-17T09:15:15.000Z</published>
-    <updated>2017-08-21T13:46:22.480Z</updated>
+    <updated>2017-08-21T13:48:45.596Z</updated>
     
     <content type="html"><![CDATA[<p>Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。</p>
 <a id="more"></a>
@@ -48,9 +48,8 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.item&#123; flex-shrink: <span class="tag">&lt;<span class="name">number</span>&gt;</span>; /*default 1*/ &#125;</div></pre></td></tr></table></figure>
 <h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><p><code>flex-basis</code>属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为<code>auto</code>，即项目的本来大小。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.item&#123; flex-basis: <span class="tag">&lt;<span class="name">length</span>&gt;</span>; /*default auto*/ &#125;</div></pre></td></tr></table></figure>
-<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p><code>flex</code>属性是<code>flex-grow</code>, <code>flex-shrink</code>和<code>flex-basis</code>的简写，默认值为<code>0 1 auto</code>。后两个属性可选。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.item&#123; flex: none | [&lt;'flex-grow'&gt;] &lt;'&lt;flex-shrink&gt;'&gt; || &lt;'flex-basis'&gt; &#125;</div></pre></td></tr></table></figure>
-<p>该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关</p>
+<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p><code>flex</code>属性是<code>flex-grow</code>, <code>flex-shrink</code>和<code>flex-basis</code>的简写，默认值为<code>0 1 auto</code>。后两个属性可选。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.item&#123; flex: none | [&lt;'flex-grow'&gt;] &lt;'&lt;flex-shrink&gt;'&gt; || &lt;'flex-basis'&gt; &#125;</div></pre></td></tr></table></figure></p>
+<p>该属性有两个快捷值：<code>auto (1 1 auto)</code>和<code>none (0 0 auto)</code>。建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关</p>
 <p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">阮一峰 Flex布局</a><br><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">Flex布局 实例篇</a></p>
 ]]></content>
     
