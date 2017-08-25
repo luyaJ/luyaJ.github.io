@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2017-08-25T10:40:43.533Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/08/24/WechatApp%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2017-08-24T14:10:07.914Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://yoursite.com/2017/08/05/JavaScript%E6%89%8B%E5%86%8C/</loc>
     
     <lastmod>2017-08-08T12:59:06.614Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    
-    <lastmod>2017-08-03T05:03:49.676Z</lastmod>
     
   </url>
   
