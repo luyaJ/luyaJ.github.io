@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-24T14:10:07.914Z</updated>
+  <updated>2017-09-13T01:06:16.777Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,343 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>《写给大家看的设计书》.md</title>
+    <link href="http://yoursite.com/2017/09/13/%E3%80%8A%E5%86%99%E7%BB%99%E5%A4%A7%E5%AE%B6%E7%9C%8B%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B9%A6%E3%80%8B-md/"/>
+    <id>http://yoursite.com/2017/09/13/《写给大家看的设计书》-md/</id>
+    <published>2017-09-13T01:06:16.000Z</published>
+    <updated>2017-09-13T01:06:16.777Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JS几道小题</title>
+    <link href="http://yoursite.com/2017/09/03/js%E5%87%A0%E9%81%93%E5%B0%8F%E9%A2%98/"/>
+    <id>http://yoursite.com/2017/09/03/js几道小题/</id>
+    <published>2017-09-03T10:38:05.468Z</published>
+    <updated>2017-07-23T14:53:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="2017-7-6日厦门实训js作业"><a href="#2017-7-6日厦门实训js作业" class="headerlink" title="2017.7.6日厦门实训js作业"></a>2017.7.6日厦门实训js作业</h2><h3 id="例题1：定义两个整数变量，交换两个变量的值"><a href="#例题1：定义两个整数变量，交换两个变量的值" class="headerlink" title="例题1：定义两个整数变量，交换两个变量的值"></a>例题1：定义两个整数变量，交换两个变量的值</h3><a id="more"></a>
+<pre><code>&lt;script&gt;
+    var a = prompt(&quot;请输入a的值&quot;);
+    var b = prompt(&quot;请输入b的值&quot;);
+    var t;
+
+    t = a;   //t=2
+    a = b;  //a=3
+    b = t;  //b=2
+    alert(&quot;交换后a的值：&quot; + a + &quot;,交换后b的值：&quot; + b);
+&lt;/script&gt;
+</code></pre><h3 id="例题２：定义三个整数变量，输出一次最大值"><a href="#例题２：定义三个整数变量，输出一次最大值" class="headerlink" title="例题２：定义三个整数变量，输出一次最大值"></a>例题２：定义三个整数变量，输出一次最大值</h3><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    var a = prompt(&quot;输入第一个数&quot;);
+    var b = prompt(&quot;输入第二个数&quot;);
+    var c = prompt(&quot;输入第三个数&quot;);
+    var max;
+
+    if(a&gt;=b){
+        max = a;
+    } else {
+        max = b;
+    }
+    if(max&lt;c){
+        max = c;
+    }
+    alert(&quot;最大的值是：&quot; + max);
+&lt;/script&gt;
+</code></pre><h3 id="例题3：输入三个数从小到大的输出"><a href="#例题3：输入三个数从小到大的输出" class="headerlink" title="例题3：输入三个数从小到大的输出"></a>例题3：输入三个数从小到大的输出</h3><pre><code>&lt;script&gt;
+    var a = prompt(&quot;输入第一个数&quot;);
+    var b = prompt(&quot;输入第二个数&quot;);
+    var c = prompt(&quot;输入第三个数&quot;);
+    var min,max,mid;
+
+    if(a&gt;=b){
+        if(b&gt;=c){
+            max = a;mid = b;min = c;
+        } else{
+            max = a;mid = c;min = b;
+        }
+    } else{     //a&lt;b
+        if(b&gt;=c){
+            max = b;mid = a;min = c;
+        } else{
+            max = b;mid = c;min = a;
+        }
+    }
+    if(max&lt;c){
+        if(a&gt;=b){
+            max = c;mid = a;min = b;
+        } else{
+            max = c;mid = b;min = a;
+        }
+    }
+    alert(&quot;从小到大排序：&quot; + min + &quot;&lt;&quot; + mid +  &quot;&lt;&quot; + max);
+&lt;/script&gt;
+</code></pre><p>额….这个写的不是很好，傻瓜式…以后再说</p>
+<h3 id="例题4：定义整数的成绩变量，按区间输出等级"><a href="#例题4：定义整数的成绩变量，按区间输出等级" class="headerlink" title="例题4：定义整数的成绩变量，按区间输出等级:"></a>例题4：定义整数的成绩变量，按区间输出等级:</h3><pre><code>&lt;script&gt;
+    var score = prompt(&quot;输入成绩：&quot;);
+    var sco = parseInt(score / 10);
+    switch(sco){
+        case 0 :
+            alert(&quot;不及格！&quot;); break;
+        case 1 :
+            alert(&quot;不及格！&quot;); break;
+        case 2 :
+            alert(&quot;不及格！&quot;); break;
+        case 3 :
+            alert(&quot;不及格！&quot;); break;
+        case 4 :
+            alert(&quot;不及格！&quot;); break;
+        case 5 :
+            alert(&quot;不及格！&quot;); break;
+        case 6:
+            alert(&quot;D&quot;); break;
+        case 7:
+            alert(&quot;C&quot;); break;
+        case 8:
+            alert(&quot;B&quot;); break;
+        case 9:
+            alert(&quot;A&quot;); break;
+        case 10:
+            alert(&quot;A&quot;); break;
+        default:
+            alert(&quot;输入有误！&quot;); break;
+    }
+&lt;/script&gt;
+</code></pre><h3 id="例题5：定义一个变量表示年份，判断是否是闰年"><a href="#例题5：定义一个变量表示年份，判断是否是闰年" class="headerlink" title="例题5：定义一个变量表示年份，判断是否是闰年"></a>例题5：定义一个变量表示年份，判断是否是闰年</h3><pre><code>&lt;script&gt;
+    &lt;!--闰年的条件是:能被4整除,但是不能被100整除,或者能被四百整除--&gt;
+        var year = prompt(&quot;输入一个年份：&quot;);
+
+        if((year%4==0) &amp;&amp; (year%100!==0) || (year%400==0)) {
+      alert(year+&quot;年是闰年&quot;);
+        } else {
+      alert(year+&quot;年是平年&quot;);
+     }
+&lt;/script&gt;
+</code></pre><h3 id="例题6：输出100以内的质数"><a href="#例题6：输出100以内的质数" class="headerlink" title="例题6：输出100以内的质数"></a>例题6：输出100以内的质数</h3><pre><code>&lt;script&gt;
+    //2,3,5,7,11,13,17,19,23...
+    //只能被1和自己本身除
+    for(var n=2;n&lt;=100;n++){
+        for(var m=2;m&lt;n;m++){
+            if(n%m == 0){
+                break;   //跳出当前循环
+            }
+        }
+        if(m&gt;=n){
+            document.write( n + &quot;,&quot;);
+        }
+    }
+ &lt;/script&gt;
+</code></pre><h2 id="2017-7-7日厦门实训js作业-–循环语句"><a href="#2017-7-7日厦门实训js作业-–循环语句" class="headerlink" title="2017.7.7日厦门实训js作业 –循环语句"></a>2017.7.7日厦门实训js作业 –循环语句</h2><h3 id="例题1：输出乘法口诀表"><a href="#例题1：输出乘法口诀表" class="headerlink" title="例题1：输出乘法口诀表"></a>例题1：输出乘法口诀表</h3><pre><code>&lt;script&gt;
+    var num;
+    for(var i=1;i&lt;10;i++){
+        for(var j=1;j&lt;10;j++){
+            if(j&gt;i){
+                break;
+            } else {
+                num = i*j;
+                document.write(j + &quot;*&quot; + i + &quot;=&quot; + num + &quot;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;);
+            }
+        }
+        document.write(&quot;&lt;br/&gt;&quot;);
+    }
+&lt;/script&gt;
+</code></pre><h3 id="例题2：输出10行10列表格"><a href="#例题2：输出10行10列表格" class="headerlink" title="例题2：输出10行10列表格"></a>例题2：输出10行10列表格</h3><pre><code>&lt;button id=&quot;btn&quot;&gt;1.点击出现表格&lt;/button&gt;
+&lt;table id=&quot;table&quot; cellspacing=&quot;0&quot; cellpadding=&quot;10&quot; border=&quot;1&quot;&gt;&lt;/table&gt;
+
+&lt;script&gt;
+window.onload = function() {
+    var btn = document.getElementById(&quot;btn&quot;);
+    btn.onclick = out;
+    function out(){
+        var table = document.getElementById(&quot;table&quot;);
+        for(var j=1;j&lt;=10;j++){
+            var tr = document.createElement(&quot;tr&quot;);
+            for(var i=1;i&lt;=10;i++){
+                var td = document.createElement(&quot;td&quot;);   //创建元素节点eleNode
+                td.innerHTML = i;
+                tr.appendChild(td);   //将元素节点td添加到tr中
+             }
+         table.appendChild(tr);
+        }
+     }
+&lt;/script&gt;
+</code></pre><p><strong><em>自己在作业的基础上拓展了一下：获取任意行列的表格并输出</em></strong></p>
+<pre><code>请输入行数：&lt;input id=&quot;rows&quot; /&gt;&lt;br/&gt;&lt;br/&gt;
+请输入列数：&lt;input id=&quot;cols&quot; /&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;button id=&quot;btn1&quot;&gt;2.点击出现你输入的表格&lt;/button&gt;&lt;br&gt;&lt;br/&gt;
+&lt;table id=&quot;table1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;10&quot; border=&quot;1&quot;&gt;&lt;/table&gt;
+
+&lt;script&gt;
+    var btn1 = document.getElementById(&quot;btn1&quot;);
+        btn1.onclick = out1;
+        function out1(){
+            var table1 = document.getElementById(&quot;table1&quot;);
+            var rows = document.getElementById(&quot;rows&quot;).value;
+            var cols = document.getElementById(&quot;cols&quot;).value;
+
+            for(var j=1;j&lt;=cols;j++){
+                var tr1 = document.createElement(&quot;tr&quot;);
+                for(var i=1;i&lt;=rows;i++){
+                    var td1 = document.createElement(&quot;td&quot;);
+                    td1.innerHTML = i;
+                    tr1.appendChild(td1);
+                }
+                table1.appendChild(tr1);
+            }
+        }
+&lt;/script&gt;
+</code></pre><h3 id="例题3：在上例表格中改变奇数行的背景"><a href="#例题3：在上例表格中改变奇数行的背景" class="headerlink" title="例题3：在上例表格中改变奇数行的背景"></a>例题3：在上例表格中改变奇数行的背景</h3><pre><code>&lt;button id=&quot;btn&quot;&gt;点击后奇数行有背景颜色&lt;/button&gt;
+&lt;table id=&quot;table&quot; border=&quot;1&quot; cellpadding=&quot;10px&quot; cellspacing=&quot;0&quot;&gt;&lt;/table&gt;
+
+&lt;script&gt;
+    window.onload = function () {
+        var btn = document.getElementById(&quot;btn&quot;);
+        btn.onclick = out2;
+        function out2() {
+            var table = document.getElementById(&quot;table&quot;);
+            for (var j = 1; j &lt;= 10; j++) {
+                var tr = document.createElement(&quot;tr&quot;);
+                if (j%2 != 0) {    //判断是否为奇数行
+                    tr.style.backgroundColor = &quot;red&quot;;
+                }
+                for (var i = 1; i &lt;= 10; i++) {
+                    var td = document.createElement(&quot;td&quot;);
+                    td.innerHTML = i;
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+        }
+    }
+&lt;/script&gt;
+</code></pre><h3 id="例题4：输出序列1-1-2-3-5-8-13……-N个数"><a href="#例题4：输出序列1-1-2-3-5-8-13……-N个数" class="headerlink" title="例题4：输出序列1,1,2,3,5,8,13…… N个数"></a>例题4：输出序列1,1,2,3,5,8,13…… N个数</h3><pre><code>&lt;script&gt;
+    var a=1;b=1;
+    if(a=1){
+        document.write(a + &quot; &quot;);
+    }
+    if(b=1){
+        document.write(b + &quot; &quot;);
+    }
+   for(var n=0;n&lt;500;n++){
+        n = a + b; //1+1=2 ;n=2 n=3 n=5
+        a = b;    //a=1; a=1; a=2; a=3;
+        b = n; //b=1 b=2; b=3; b=5;
+       document.write(n + &quot; &quot;);
+    }
+&lt;/script&gt;
+</code></pre><p>此段代码不够完善…待完善</p>
+<h2 id="2017-7-10日厦门实训js作业"><a href="#2017-7-10日厦门实训js作业" class="headerlink" title="2017.7.10日厦门实训js作业"></a>2017.7.10日厦门实训js作业</h2><h3 id="例题1：动态的显示当前时间"><a href="#例题1：动态的显示当前时间" class="headerlink" title="例题1：动态的显示当前时间"></a>例题1：动态的显示当前时间</h3><pre><code>function startTime(){
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+
+    document.getElementById(&quot;time&quot;).innerHTML =&quot;现在是北京时间：&quot; + year + &quot;年&quot; + month + &quot;月&quot; + day + &quot;日&quot; + &quot; &quot; + h + &quot;:&quot; + m + &quot;:&quot; + s ;
+
+    t = setTimeout(function(){startTime()},500);
+}
+function checkTime(i){
+    if(i&lt;10){
+         i = &quot;0&quot; + i;
+     }
+    return i;
+     }
+
+&lt;body onload=&quot;startTime()&quot;&gt;
+    &lt;div id=&quot;time&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="例题2：计算器实现加减乘除（最简单的）"><a href="#例题2：计算器实现加减乘除（最简单的）" class="headerlink" title="例题2：计算器实现加减乘除（最简单的）"></a>例题2：计算器实现加减乘除（最简单的）</h3><pre><code>数字1：&lt;input id=&quot;num1&quot;&gt;&lt;br/&gt;&lt;br/&gt;
+数字2：&lt;input id=&quot;num2&quot;&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;button onclick=&quot;add()&quot;&gt;加法&lt;/button&gt;
+&lt;button onclick=&quot;del()&quot;&gt;减法&lt;/button&gt;
+&lt;button onclick=&quot;mul()&quot;&gt;乘法&lt;/button&gt;
+&lt;button onclick=&quot;division()&quot;&gt;除法&lt;/button&gt;&lt;br/&gt;&lt;br/&gt;
+结果为：&lt;input id=&quot;result&quot; value=&quot;&quot;&gt;
+
+&lt;script&gt;
+function add() {
+    var num1 = document.getElementById(&quot;num1&quot;).value;
+    var num2 = document.getElementById(&quot;num2&quot;).value;
+    var result = parseFloat(num1) + parseFloat(num2);
+    document.getElementById(&quot;result&quot;).value = result;
+}
+function del() {
+    var num1 = document.getElementById(&quot;num1&quot;).value;
+    var num2 = document.getElementById(&quot;num2&quot;).value;
+    var result = parseFloat(num1) - parseFloat(num2);
+    document.getElementById(&quot;result&quot;).value = result;
+}
+function mul() {
+    var num1 = document.getElementById(&quot;num1&quot;).value;
+    var num2 = document.getElementById(&quot;num2&quot;).value;
+    var result = num1 * num2;
+    document.getElementById(&quot;result&quot;).value = result;
+}
+function division() {
+    var num1 = document.getElementById(&quot;num1&quot;).value;
+    var num2 = document.getElementById(&quot;num2&quot;).value;
+    var result = num1 / num2;
+    document.getElementById(&quot;result&quot;).value = result;
+}
+&lt;/script&gt;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;2017-7-6日厦门实训js作业&quot;&gt;&lt;a href=&quot;#2017-7-6日厦门实训js作业&quot; class=&quot;headerlink&quot; title=&quot;2017.7.6日厦门实训js作业&quot;&gt;&lt;/a&gt;2017.7.6日厦门实训js作业&lt;/h2&gt;&lt;h3 id=&quot;例题1：定义两个整数变量，交换两个变量的值&quot;&gt;&lt;a href=&quot;#例题1：定义两个整数变量，交换两个变量的值&quot; class=&quot;headerlink&quot; title=&quot;例题1：定义两个整数变量，交换两个变量的值&quot;&gt;&lt;/a&gt;例题1：定义两个整数变量，交换两个变量的值&lt;/h3&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2017/09/03/hello-world/"/>
+    <id>http://yoursite.com/2017/09/03/hello-world/</id>
+    <published>2017-09-03T10:38:04.988Z</published>
+    <updated>2017-07-21T10:03:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<a id="more"></a>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="hexo+github" scheme="http://yoursite.com/tags/hexo-github/"/>
+    
+  </entry>
+  
+  <entry>
     <title>WechatApp基础</title>
     <link href="http://yoursite.com/2017/08/24/WechatApp%E5%9F%BA%E7%A1%80/"/>
     <id>http://yoursite.com/2017/08/24/WechatApp基础/</id>
     <published>2017-08-24T13:50:30.000Z</published>
-    <updated>2017-08-24T14:10:07.914Z</updated>
+    <updated>2017-08-24T14:10:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>小程序开发框架的目标是通过尽可能简单、高效的方式让开发者可以在微信中开发具有原生 APP 体验的服务。框架提供了自己的视图层描述语言 WXML 和 WXSS，以及基于 JavaScript 的逻辑层框架，并在视图层与逻辑层间提供了数据传输和事件系统，可以让开发者可以方便的聚焦于数据与逻辑上。</p>
 <a id="more"></a>
@@ -83,7 +415,7 @@
     <link href="http://yoursite.com/2017/08/17/Flex%E5%B8%83%E5%B1%80/"/>
     <id>http://yoursite.com/2017/08/17/Flex布局/</id>
     <published>2017-08-17T09:15:15.000Z</published>
-    <updated>2017-08-21T13:51:06.770Z</updated>
+    <updated>2017-08-21T13:51:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性。</p>
 <a id="more"></a>
@@ -135,7 +467,7 @@
     <link href="http://yoursite.com/2017/08/10/js%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     <id>http://yoursite.com/2017/08/10/js几种常见排序算法/</id>
     <published>2017-08-10T08:09:46.000Z</published>
-    <updated>2017-08-10T08:40:13.752Z</updated>
+    <updated>2017-08-10T08:40:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>这里整理几种常用的排序，以后再加入其他的。</p>
 <a id="more"></a>
@@ -219,7 +551,7 @@
     <link href="http://yoursite.com/2017/08/08/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>http://yoursite.com/2017/08/08/正则表达式/</id>
     <published>2017-08-08T11:33:30.000Z</published>
-    <updated>2017-08-13T09:54:36.437Z</updated>
+    <updated>2017-08-13T09:54:38.000Z</updated>
     
     <content type="html"><![CDATA[<p>正则表达式是对字符串操作的一种逻辑公式。</p>
 <a id="more"></a>
@@ -452,7 +784,7 @@
     <link href="http://yoursite.com/2017/08/05/JavaScript%E6%89%8B%E5%86%8C/"/>
     <id>http://yoursite.com/2017/08/05/JavaScript手册/</id>
     <published>2017-08-05T14:51:43.000Z</published>
-    <updated>2017-08-08T12:59:06.614Z</updated>
+    <updated>2017-08-08T12:59:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。</p>
 <a id="more"></a>
@@ -824,7 +1156,7 @@
     <link href="http://yoursite.com/2017/08/03/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     <id>http://yoursite.com/2017/08/03/二叉树/</id>
     <published>2017-08-03T10:48:00.000Z</published>
-    <updated>2017-08-10T09:42:05.933Z</updated>
+    <updated>2017-08-10T09:42:06.000Z</updated>
     
     <content type="html"><![CDATA[<p>二叉树（Binary Tree）是n（n&gt;=0）个结点的有限集合，该集合或者为空集（空二叉树），或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。</p>
 <a id="more"></a>
@@ -930,7 +1262,7 @@
     <link href="http://yoursite.com/2017/07/28/jQuery%E6%89%8B%E5%86%8C/"/>
     <id>http://yoursite.com/2017/07/28/jQuery手册/</id>
     <published>2017-07-28T15:09:06.000Z</published>
-    <updated>2017-07-28T15:21:36.824Z</updated>
+    <updated>2017-07-28T15:21:38.000Z</updated>
     
     <content type="html"><![CDATA[<p>jQuery是一个JavaScript函数库，极大的简化了JavaScript编程。</p>
 <a id="more"></a>
@@ -1286,7 +1618,7 @@ $(document).ready(function(){
     <link href="http://yoursite.com/2017/07/26/%E4%BD%BF%E7%94%A8HBuilder/"/>
     <id>http://yoursite.com/2017/07/26/使用HBuilder/</id>
     <published>2017-07-25T16:03:21.000Z</published>
-    <updated>2017-07-28T12:37:41.667Z</updated>
+    <updated>2017-07-28T12:37:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>HBuilder下载地址：<a href="http://www.dcloud.io/" target="_blank" rel="external">HBuilder官网</a></p>
 <a id="more"></a>
@@ -1320,7 +1652,7 @@ $(document).ready(function(){
     
     <summary type="html">
     
-      &lt;p&gt;HBuilder下载地址：&lt;a href=&quot;http://www.dcloud.io/&quot;&gt;HBuilder官网&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;HBuilder下载地址：&lt;a href=&quot;http://www.dcloud.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HBuilder官网&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1334,7 +1666,7 @@ $(document).ready(function(){
     <link href="http://yoursite.com/2017/07/25/%E5%AD%A6%E4%B9%A0Sass/"/>
     <id>http://yoursite.com/2017/07/25/学习Sass/</id>
     <published>2017-07-25T13:03:33.000Z</published>
-    <updated>2017-07-25T13:42:04.134Z</updated>
+    <updated>2017-07-25T13:42:06.000Z</updated>
     
     <content type="html"><![CDATA[<p>CSS 预处理器的主要目标：提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。这不是锦上添花，而恰恰是雪中送炭。</p>
 <a id="more"></a>
@@ -1513,7 +1845,7 @@ a {
     <link href="http://yoursite.com/2017/07/24/HTML5-Web%E5%AD%98%E5%82%A8/"/>
     <id>http://yoursite.com/2017/07/24/HTML5-Web存储/</id>
     <published>2017-07-24T06:02:21.000Z</published>
-    <updated>2017-07-24T16:17:06.046Z</updated>
+    <updated>2017-07-24T16:17:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：</p>
 <a id="more"></a>
@@ -1591,7 +1923,7 @@ var name = localStorage[&quot;name&quot;];
     <link href="http://yoursite.com/2017/07/23/JSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2017/07/23/JSP学习笔记/</id>
     <published>2017-07-23T14:19:34.000Z</published>
-    <updated>2017-07-23T14:29:07.731Z</updated>
+    <updated>2017-07-23T14:29:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>JSP – Java Server Pages</p>
 <a id="more"></a>
@@ -1742,7 +2074,7 @@ request.setCharacterEncoding(&quot;utf-8&quot;); //解决中文乱码问题
     <link href="http://yoursite.com/2017/07/22/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2017/07/22/git学习笔记/</id>
     <published>2017-07-22T02:52:20.000Z</published>
-    <updated>2017-07-27T08:00:51.689Z</updated>
+    <updated>2017-07-27T08:00:52.000Z</updated>
     
     <content type="html"><![CDATA[<p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
 <a id="more"></a>
@@ -1829,7 +2161,7 @@ $ git checkout others
     <link href="http://yoursite.com/2017/07/21/%E7%94%A8css%E5%AE%9E%E7%8E%B0%E5%87%A0%E4%B8%AA%E5%B0%8F%E5%9B%BE%E6%A0%87/"/>
     <id>http://yoursite.com/2017/07/21/用css实现几个小图标/</id>
     <published>2017-07-21T05:25:59.000Z</published>
-    <updated>2017-07-21T10:00:22.548Z</updated>
+    <updated>2017-07-21T10:00:24.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-三角形"><a href="#1-三角形" class="headerlink" title="1. 三角形"></a>1. 三角形</h3><a id="more"></a>
 <p>设置一个块元素大小为0，采用<code>border</code>属性，制作如下各种图形：</p>
@@ -2019,7 +2351,7 @@ border-bottom-left-radius: 1em 3em;
     <link href="http://yoursite.com/2017/07/15/Yilia%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/"/>
     <id>http://yoursite.com/2017/07/15/Yilia主题优化/</id>
     <published>2017-07-15T09:56:56.000Z</published>
-    <updated>2017-08-11T04:26:44.642Z</updated>
+    <updated>2017-08-11T04:26:46.000Z</updated>
     
     <content type="html"><![CDATA[<p>过了大半年，该是要好好整理下自己的博客了。</p>
 <a id="more"></a>
@@ -2130,299 +2462,11 @@ toc: true
   </entry>
   
   <entry>
-    <title>JS几道小题</title>
-    <link href="http://yoursite.com/2017/07/07/js%E5%87%A0%E9%81%93%E5%B0%8F%E9%A2%98/"/>
-    <id>http://yoursite.com/2017/07/07/js几道小题/</id>
-    <published>2017-07-07T12:16:39.462Z</published>
-    <updated>2017-07-23T14:53:40.472Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="2017-7-6日厦门实训js作业"><a href="#2017-7-6日厦门实训js作业" class="headerlink" title="2017.7.6日厦门实训js作业"></a>2017.7.6日厦门实训js作业</h2><h3 id="例题1：定义两个整数变量，交换两个变量的值"><a href="#例题1：定义两个整数变量，交换两个变量的值" class="headerlink" title="例题1：定义两个整数变量，交换两个变量的值"></a>例题1：定义两个整数变量，交换两个变量的值</h3><a id="more"></a>
-<pre><code>&lt;script&gt;
-    var a = prompt(&quot;请输入a的值&quot;);
-    var b = prompt(&quot;请输入b的值&quot;);
-    var t;
-
-    t = a;   //t=2
-    a = b;  //a=3
-    b = t;  //b=2
-    alert(&quot;交换后a的值：&quot; + a + &quot;,交换后b的值：&quot; + b);
-&lt;/script&gt;
-</code></pre><h3 id="例题２：定义三个整数变量，输出一次最大值"><a href="#例题２：定义三个整数变量，输出一次最大值" class="headerlink" title="例题２：定义三个整数变量，输出一次最大值"></a>例题２：定义三个整数变量，输出一次最大值</h3><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
-    var a = prompt(&quot;输入第一个数&quot;);
-    var b = prompt(&quot;输入第二个数&quot;);
-    var c = prompt(&quot;输入第三个数&quot;);
-    var max;
-
-    if(a&gt;=b){
-        max = a;
-    } else {
-        max = b;
-    }
-    if(max&lt;c){
-        max = c;
-    }
-    alert(&quot;最大的值是：&quot; + max);
-&lt;/script&gt;
-</code></pre><h3 id="例题3：输入三个数从小到大的输出"><a href="#例题3：输入三个数从小到大的输出" class="headerlink" title="例题3：输入三个数从小到大的输出"></a>例题3：输入三个数从小到大的输出</h3><pre><code>&lt;script&gt;
-    var a = prompt(&quot;输入第一个数&quot;);
-    var b = prompt(&quot;输入第二个数&quot;);
-    var c = prompt(&quot;输入第三个数&quot;);
-    var min,max,mid;
-
-    if(a&gt;=b){
-        if(b&gt;=c){
-            max = a;mid = b;min = c;
-        } else{
-            max = a;mid = c;min = b;
-        }
-    } else{     //a&lt;b
-        if(b&gt;=c){
-            max = b;mid = a;min = c;
-        } else{
-            max = b;mid = c;min = a;
-        }
-    }
-    if(max&lt;c){
-        if(a&gt;=b){
-            max = c;mid = a;min = b;
-        } else{
-            max = c;mid = b;min = a;
-        }
-    }
-    alert(&quot;从小到大排序：&quot; + min + &quot;&lt;&quot; + mid +  &quot;&lt;&quot; + max);
-&lt;/script&gt;
-</code></pre><p>额….这个写的不是很好，傻瓜式…以后再说</p>
-<h3 id="例题4：定义整数的成绩变量，按区间输出等级"><a href="#例题4：定义整数的成绩变量，按区间输出等级" class="headerlink" title="例题4：定义整数的成绩变量，按区间输出等级:"></a>例题4：定义整数的成绩变量，按区间输出等级:</h3><pre><code>&lt;script&gt;
-    var score = prompt(&quot;输入成绩：&quot;);
-    var sco = parseInt(score / 10);
-    switch(sco){
-        case 0 :
-            alert(&quot;不及格！&quot;); break;
-        case 1 :
-            alert(&quot;不及格！&quot;); break;
-        case 2 :
-            alert(&quot;不及格！&quot;); break;
-        case 3 :
-            alert(&quot;不及格！&quot;); break;
-        case 4 :
-            alert(&quot;不及格！&quot;); break;
-        case 5 :
-            alert(&quot;不及格！&quot;); break;
-        case 6:
-            alert(&quot;D&quot;); break;
-        case 7:
-            alert(&quot;C&quot;); break;
-        case 8:
-            alert(&quot;B&quot;); break;
-        case 9:
-            alert(&quot;A&quot;); break;
-        case 10:
-            alert(&quot;A&quot;); break;
-        default:
-            alert(&quot;输入有误！&quot;); break;
-    }
-&lt;/script&gt;
-</code></pre><h3 id="例题5：定义一个变量表示年份，判断是否是闰年"><a href="#例题5：定义一个变量表示年份，判断是否是闰年" class="headerlink" title="例题5：定义一个变量表示年份，判断是否是闰年"></a>例题5：定义一个变量表示年份，判断是否是闰年</h3><pre><code>&lt;script&gt;
-    &lt;!--闰年的条件是:能被4整除,但是不能被100整除,或者能被四百整除--&gt;
-        var year = prompt(&quot;输入一个年份：&quot;);
-
-        if((year%4==0) &amp;&amp; (year%100!==0) || (year%400==0)) {
-      alert(year+&quot;年是闰年&quot;);
-        } else {
-      alert(year+&quot;年是平年&quot;);
-     }
-&lt;/script&gt;
-</code></pre><h3 id="例题6：输出100以内的质数"><a href="#例题6：输出100以内的质数" class="headerlink" title="例题6：输出100以内的质数"></a>例题6：输出100以内的质数</h3><pre><code>&lt;script&gt;
-    //2,3,5,7,11,13,17,19,23...
-    //只能被1和自己本身除
-    for(var n=2;n&lt;=100;n++){
-        for(var m=2;m&lt;n;m++){
-            if(n%m == 0){
-                break;   //跳出当前循环
-            }
-        }
-        if(m&gt;=n){
-            document.write( n + &quot;,&quot;);
-        }
-    }
- &lt;/script&gt;
-</code></pre><h2 id="2017-7-7日厦门实训js作业-–循环语句"><a href="#2017-7-7日厦门实训js作业-–循环语句" class="headerlink" title="2017.7.7日厦门实训js作业 –循环语句"></a>2017.7.7日厦门实训js作业 –循环语句</h2><h3 id="例题1：输出乘法口诀表"><a href="#例题1：输出乘法口诀表" class="headerlink" title="例题1：输出乘法口诀表"></a>例题1：输出乘法口诀表</h3><pre><code>&lt;script&gt;
-    var num;
-    for(var i=1;i&lt;10;i++){
-        for(var j=1;j&lt;10;j++){
-            if(j&gt;i){
-                break;
-            } else {
-                num = i*j;
-                document.write(j + &quot;*&quot; + i + &quot;=&quot; + num + &quot;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;);
-            }
-        }
-        document.write(&quot;&lt;br/&gt;&quot;);
-    }
-&lt;/script&gt;
-</code></pre><h3 id="例题2：输出10行10列表格"><a href="#例题2：输出10行10列表格" class="headerlink" title="例题2：输出10行10列表格"></a>例题2：输出10行10列表格</h3><pre><code>&lt;button id=&quot;btn&quot;&gt;1.点击出现表格&lt;/button&gt;
-&lt;table id=&quot;table&quot; cellspacing=&quot;0&quot; cellpadding=&quot;10&quot; border=&quot;1&quot;&gt;&lt;/table&gt;
-
-&lt;script&gt;
-window.onload = function() {
-    var btn = document.getElementById(&quot;btn&quot;);
-    btn.onclick = out;
-    function out(){
-        var table = document.getElementById(&quot;table&quot;);
-        for(var j=1;j&lt;=10;j++){
-            var tr = document.createElement(&quot;tr&quot;);
-            for(var i=1;i&lt;=10;i++){
-                var td = document.createElement(&quot;td&quot;);   //创建元素节点eleNode
-                td.innerHTML = i;
-                tr.appendChild(td);   //将元素节点td添加到tr中
-             }
-         table.appendChild(tr);
-        }
-     }
-&lt;/script&gt;
-</code></pre><p><strong><em>自己在作业的基础上拓展了一下：获取任意行列的表格并输出</em></strong></p>
-<pre><code>请输入行数：&lt;input id=&quot;rows&quot; /&gt;&lt;br/&gt;&lt;br/&gt;
-请输入列数：&lt;input id=&quot;cols&quot; /&gt;&lt;br/&gt;&lt;br/&gt;
-&lt;button id=&quot;btn1&quot;&gt;2.点击出现你输入的表格&lt;/button&gt;&lt;br&gt;&lt;br/&gt;
-&lt;table id=&quot;table1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;10&quot; border=&quot;1&quot;&gt;&lt;/table&gt;
-
-&lt;script&gt;
-    var btn1 = document.getElementById(&quot;btn1&quot;);
-        btn1.onclick = out1;
-        function out1(){
-            var table1 = document.getElementById(&quot;table1&quot;);
-            var rows = document.getElementById(&quot;rows&quot;).value;
-            var cols = document.getElementById(&quot;cols&quot;).value;
-
-            for(var j=1;j&lt;=cols;j++){
-                var tr1 = document.createElement(&quot;tr&quot;);
-                for(var i=1;i&lt;=rows;i++){
-                    var td1 = document.createElement(&quot;td&quot;);
-                    td1.innerHTML = i;
-                    tr1.appendChild(td1);
-                }
-                table1.appendChild(tr1);
-            }
-        }
-&lt;/script&gt;
-</code></pre><h3 id="例题3：在上例表格中改变奇数行的背景"><a href="#例题3：在上例表格中改变奇数行的背景" class="headerlink" title="例题3：在上例表格中改变奇数行的背景"></a>例题3：在上例表格中改变奇数行的背景</h3><pre><code>&lt;button id=&quot;btn&quot;&gt;点击后奇数行有背景颜色&lt;/button&gt;
-&lt;table id=&quot;table&quot; border=&quot;1&quot; cellpadding=&quot;10px&quot; cellspacing=&quot;0&quot;&gt;&lt;/table&gt;
-
-&lt;script&gt;
-    window.onload = function () {
-        var btn = document.getElementById(&quot;btn&quot;);
-        btn.onclick = out2;
-        function out2() {
-            var table = document.getElementById(&quot;table&quot;);
-            for (var j = 1; j &lt;= 10; j++) {
-                var tr = document.createElement(&quot;tr&quot;);
-                if (j%2 != 0) {    //判断是否为奇数行
-                    tr.style.backgroundColor = &quot;red&quot;;
-                }
-                for (var i = 1; i &lt;= 10; i++) {
-                    var td = document.createElement(&quot;td&quot;);
-                    td.innerHTML = i;
-                    tr.appendChild(td);
-                }
-                table.appendChild(tr);
-            }
-        }
-    }
-&lt;/script&gt;
-</code></pre><h3 id="例题4：输出序列1-1-2-3-5-8-13……-N个数"><a href="#例题4：输出序列1-1-2-3-5-8-13……-N个数" class="headerlink" title="例题4：输出序列1,1,2,3,5,8,13…… N个数"></a>例题4：输出序列1,1,2,3,5,8,13…… N个数</h3><pre><code>&lt;script&gt;
-    var a=1;b=1;
-    if(a=1){
-        document.write(a + &quot; &quot;);
-    }
-    if(b=1){
-        document.write(b + &quot; &quot;);
-    }
-   for(var n=0;n&lt;500;n++){
-        n = a + b; //1+1=2 ;n=2 n=3 n=5
-        a = b;    //a=1; a=1; a=2; a=3;
-        b = n; //b=1 b=2; b=3; b=5;
-       document.write(n + &quot; &quot;);
-    }
-&lt;/script&gt;
-</code></pre><p>此段代码不够完善…待完善</p>
-<h2 id="2017-7-10日厦门实训js作业"><a href="#2017-7-10日厦门实训js作业" class="headerlink" title="2017.7.10日厦门实训js作业"></a>2017.7.10日厦门实训js作业</h2><h3 id="例题1：动态的显示当前时间"><a href="#例题1：动态的显示当前时间" class="headerlink" title="例题1：动态的显示当前时间"></a>例题1：动态的显示当前时间</h3><pre><code>function startTime(){
-    var today = new Date();
-    var year = today.getFullYear();
-    var month = today.getMonth() + 1;
-    var day = today.getDate();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-
-    document.getElementById(&quot;time&quot;).innerHTML =&quot;现在是北京时间：&quot; + year + &quot;年&quot; + month + &quot;月&quot; + day + &quot;日&quot; + &quot; &quot; + h + &quot;:&quot; + m + &quot;:&quot; + s ;
-
-    t = setTimeout(function(){startTime()},500);
-}
-function checkTime(i){
-    if(i&lt;10){
-         i = &quot;0&quot; + i;
-     }
-    return i;
-     }
-
-&lt;body onload=&quot;startTime()&quot;&gt;
-    &lt;div id=&quot;time&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;
-</code></pre><h3 id="例题2：计算器实现加减乘除（最简单的）"><a href="#例题2：计算器实现加减乘除（最简单的）" class="headerlink" title="例题2：计算器实现加减乘除（最简单的）"></a>例题2：计算器实现加减乘除（最简单的）</h3><pre><code>数字1：&lt;input id=&quot;num1&quot;&gt;&lt;br/&gt;&lt;br/&gt;
-数字2：&lt;input id=&quot;num2&quot;&gt;&lt;br/&gt;&lt;br/&gt;
-&lt;button onclick=&quot;add()&quot;&gt;加法&lt;/button&gt;
-&lt;button onclick=&quot;del()&quot;&gt;减法&lt;/button&gt;
-&lt;button onclick=&quot;mul()&quot;&gt;乘法&lt;/button&gt;
-&lt;button onclick=&quot;division()&quot;&gt;除法&lt;/button&gt;&lt;br/&gt;&lt;br/&gt;
-结果为：&lt;input id=&quot;result&quot; value=&quot;&quot;&gt;
-
-&lt;script&gt;
-function add() {
-    var num1 = document.getElementById(&quot;num1&quot;).value;
-    var num2 = document.getElementById(&quot;num2&quot;).value;
-    var result = parseFloat(num1) + parseFloat(num2);
-    document.getElementById(&quot;result&quot;).value = result;
-}
-function del() {
-    var num1 = document.getElementById(&quot;num1&quot;).value;
-    var num2 = document.getElementById(&quot;num2&quot;).value;
-    var result = parseFloat(num1) - parseFloat(num2);
-    document.getElementById(&quot;result&quot;).value = result;
-}
-function mul() {
-    var num1 = document.getElementById(&quot;num1&quot;).value;
-    var num2 = document.getElementById(&quot;num2&quot;).value;
-    var result = num1 * num2;
-    document.getElementById(&quot;result&quot;).value = result;
-}
-function division() {
-    var num1 = document.getElementById(&quot;num1&quot;).value;
-    var num2 = document.getElementById(&quot;num2&quot;).value;
-    var result = num1 / num2;
-    document.getElementById(&quot;result&quot;).value = result;
-}
-&lt;/script&gt;
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;2017-7-6日厦门实训js作业&quot;&gt;&lt;a href=&quot;#2017-7-6日厦门实训js作业&quot; class=&quot;headerlink&quot; title=&quot;2017.7.6日厦门实训js作业&quot;&gt;&lt;/a&gt;2017.7.6日厦门实训js作业&lt;/h2&gt;&lt;h3 id=&quot;例题1：定义两个整数变量，交换两个变量的值&quot;&gt;&lt;a href=&quot;#例题1：定义两个整数变量，交换两个变量的值&quot; class=&quot;headerlink&quot; title=&quot;例题1：定义两个整数变量，交换两个变量的值&quot;&gt;&lt;/a&gt;例题1：定义两个整数变量，交换两个变量的值&lt;/h3&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>软件测试初学</title>
     <link href="http://yoursite.com/2017/05/24/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%88%9D%E5%AD%A6/"/>
     <id>http://yoursite.com/2017/05/24/软件测试初学/</id>
     <published>2017-05-24T15:12:30.000Z</published>
-    <updated>2017-07-23T15:20:44.204Z</updated>
+    <updated>2017-07-23T15:20:46.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="软件缺陷常见问题"><a href="#软件缺陷常见问题" class="headerlink" title="软件缺陷常见问题"></a>软件缺陷常见问题</h2><a id="more"></a>
 <h5 id="统一性"><a href="#统一性" class="headerlink" title="统一性"></a>统一性</h5><p>中英文问题</p>
@@ -2494,7 +2538,7 @@ public int divide(int a,int b){
     <link href="http://yoursite.com/2017/01/31/JS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/"/>
     <id>http://yoursite.com/2017/01/31/JS实现轮播图/</id>
     <published>2017-01-31T08:10:42.000Z</published>
-    <updated>2017-07-23T14:51:19.487Z</updated>
+    <updated>2017-07-23T14:51:20.000Z</updated>
     
     <content type="html"><![CDATA[<p> 这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西。  </p>
 <a id="more"></a>
@@ -2619,7 +2663,7 @@ btn_r.onclick=function(){
     <link href="http://yoursite.com/2017/01/30/%E7%94%A8github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/2017/01/30/用github-hexo搭建博客/</id>
     <published>2017-01-30T14:44:59.000Z</published>
-    <updated>2017-07-23T14:45:43.388Z</updated>
+    <updated>2017-07-23T14:45:44.000Z</updated>
     
     <content type="html"><![CDATA[<p>  2016年月底第一次正式开始搭建博客，在学长和另一个小伙伴的帮助下，我初次认识github+hexo，被它给吸引。寒假开始后，就在准备换主题，因为我对原始主题实在无爱，强迫症越来越严重的我，不换好主题坚持不做笔记（无奈脸）。刚刚换好主题的我，觉得之前自己用了好几个晚上都没有换好主题的自己简直是傻bi（给自己一个黑人问号），不过好在自己现在换好了主题，赶紧做笔记，谨防自己忘了。</p>
 <a id="more"></a>
@@ -2646,36 +2690,6 @@ btn_r.onclick=function(){
     <summary type="html">
     
       &lt;p&gt;  2016年月底第一次正式开始搭建博客，在学长和另一个小伙伴的帮助下，我初次认识github+hexo，被它给吸引。寒假开始后，就在准备换主题，因为我对原始主题实在无爱，强迫症越来越严重的我，不换好主题坚持不做笔记（无奈脸）。刚刚换好主题的我，觉得之前自己用了好几个晚上都没有换好主题的自己简直是傻bi（给自己一个黑人问号），不过好在自己现在换好了主题，赶紧做笔记，谨防自己忘了。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="hexo+github" scheme="http://yoursite.com/tags/hexo-github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/12/27/hello-world/"/>
-    <id>http://yoursite.com/2016/12/27/hello-world/</id>
-    <published>2016-12-27T10:23:59.706Z</published>
-    <updated>2017-07-21T10:03:23.691Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
     
     </summary>
     
