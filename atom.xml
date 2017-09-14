@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-13T01:10:03.625Z</updated>
+  <updated>2017-09-14T14:41:51.481Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>《写给大家看的设计书》.md</title>
+    <title>《写给大家看的设计书》</title>
     <link href="http://yoursite.com/2017/09/13/%E3%80%8A%E5%86%99%E7%BB%99%E5%A4%A7%E5%AE%B6%E7%9C%8B%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B9%A6%E3%80%8B/"/>
     <id>http://yoursite.com/2017/09/13/《写给大家看的设计书》/</id>
     <published>2017-09-13T01:06:16.000Z</published>
-    <updated>2017-09-13T01:10:03.625Z</updated>
+    <updated>2017-09-14T14:41:51.481Z</updated>
     
     <content type="html"><![CDATA[<p>《写给大家看的设计书》由世界著名设计师、技术专家和畅销书作家Robin Williams著。</p>
 <a id="more"></a>
@@ -48,13 +48,53 @@
 <p>如果两个项不完全相同，就应当使之不同，而且应当是截然不同。</p>
 </blockquote>
 <h2 id="颜色运用"><a href="#颜色运用" class="headerlink" title="颜色运用"></a>颜色运用</h2><ol>
-<li><p>三原色（红、黄、蓝）</p>
-</li>
-<li><p>三间色（橙、绿、紫）</p>
-</li>
-<li><p>第三色（）</p>
-</li>
+<li>三原色（红、黄、蓝）</li>
 </ol>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E4%B8%89%E5%8E%9F%E8%89%B2.png" alt="三原色"></p>
+<ol>
+<li>三间色（橙、绿、紫）</li>
+</ol>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E4%B8%89%E9%97%B4%E8%89%B2.png" alt="三间色"></p>
+<ol>
+<li>第三色（把色轮中的空白填满得到）</li>
+</ol>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E7%AC%AC%E4%B8%89%E8%89%B2.png" alt="第三色"></p>
+<ol>
+<li>互补色（色轮上相对的颜色，一种作为主色，另一种用于强调）</li>
+</ol>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E4%BA%92%E8%A1%A5%E8%89%B2.png" alt="互补色"></p>
+<ol>
+<li>三色组（基色三色组、间色三色组、其他）</li>
+</ol>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E4%B8%89%E8%89%B2%E7%BB%84.png" alt="三色组"></p>
+<ol>
+<li>分裂互补三色组（从色轮的一边选择颜色，从该互补色两侧得到另外两色）</li>
+</ol>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E5%88%86%E8%A3%82%E4%BA%92%E8%A1%A5%E4%B8%89%E8%89%B2%E7%BB%84.png" alt="分裂互补三色组"></p>
+<ol>
+<li>类似色（由色轮上彼此相邻的颜色组成）</li>
+</ol>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E7%B1%BB%E4%BC%BC%E8%89%B2.png" alt="类似色"></p>
+<ol>
+<li>暗色和亮色（纯色就是色调，向色调增加黑色就构成一个暗色，向色调增加白色就构成一个亮色）</li>
+</ol>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E6%9A%97%E8%89%B2%E5%92%8C%E6%98%8E%E8%89%B2.png" alt="暗色和亮色"></p>
+<ol>
+<li>暖色和冷色</li>
+</ol>
+<p>冷色是后退型，趋于做背景色；暖色是趋进型，尽量少用暖色。</p>
+<ol>
+<li>CMYK与RGB，印刷与Web</li>
+</ol>
+<ul>
+<li><code>CMYK</code>代表Cyan（一种蓝色）、Magenta（一种红/粉红色）、Yellow和一个Key色（通常是黑色）。</li>
+<li><code>RGB</code>表示Red（红色）、Green（绿色）和Blue（蓝色）。</li>
+<li>需要印刷的项目应当使用<code>CMYK</code>。</li>
+<li>需要在屏幕上看的内容则应使用<code>RGB</code>。</li>
+</ul>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>字体对比有6种明确的不同方式：大小、粗细、结构、形状、方向和颜色。</p>
+<h3 id="字体类别"><a href="#字体类别" class="headerlink" title="字体类别"></a>字体类别</h3><p><img src="http://ot4r4qnml.bkt.clouddn.com/fonts.png" alt="6种字体"></p>
+<p><a href="https://fonts.google.com/" target="_blank" rel="external">Google Fonts</a></p>
 ]]></content>
     
     <summary type="html">
