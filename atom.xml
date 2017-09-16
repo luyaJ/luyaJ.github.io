@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-14T14:52:46.544Z</updated>
+  <updated>2017-09-16T15:10:11.501Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,78 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS_齐舞</title>
+    <link href="http://yoursite.com/2017/09/16/CSS-%E9%BD%90%E8%88%9E/"/>
+    <id>http://yoursite.com/2017/09/16/CSS-齐舞/</id>
+    <published>2017-09-16T15:07:25.000Z</published>
+    <updated>2017-09-16T15:10:11.501Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="层叠、继承和CSS单位"><a href="#层叠、继承和CSS单位" class="headerlink" title="层叠、继承和CSS单位"></a>层叠、继承和CSS单位</h1><a id="more"></a>
+<h2 id="选择器的特异度"><a href="#选择器的特异度" class="headerlink" title="选择器的特异度"></a>选择器的特异度</h2><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th style="text-align:center">内联</th>
+<th style="text-align:center">id个数</th>
+<th style="text-align:center">（伪）类个数</th>
+<th style="text-align:center">标签个数</th>
+<th style="text-align:center">特异度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#nav .list li a:link</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0122</td>
+</tr>
+<tr>
+<td>.hd ul.links a</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0022</td>
+</tr>
+</tbody>
+</table>
+<p>可以理解为特异度 <code>0122</code> &gt; <code>0022</code>，所以第一个的优先级大于第二个的优先级。</p>
+<p>再举一个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>选择器的特异度<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">    .title&#123; color: blue; &#125;</div><div class="line">    article h1&#123; color:red; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这里可以理解为<code>.title</code>的特异度是<code>0010</code>，<code>article h1</code>的特异度是<code>0002</code>。所以字体颜色是蓝色。</p>
+<h2 id="简单选择器的特异度级别（由低到高）"><a href="#简单选择器的特异度级别（由低到高）" class="headerlink" title="简单选择器的特异度级别（由低到高）"></a>简单选择器的特异度级别（由低到高）</h2><ul>
+<li>level 0：*</li>
+<li>level 1：标签选择器、伪元素</li>
+<li>level 2：类、伪类、属性</li>
+<li>level 3：id</li>
+<li>level 4：内联</li>
+</ul>
+<p>伪元素：<code>:before</code>,<code>:after</code>,<code>:first-line</code>,<code>:first-letter</code>。</p>
+<p>伪类有：<code>:first-child</code>,<code>:link</code>,<code>:visited</code>,<code>:hover</code>,<code>:active</code>,<code>:focus</code>,<code>:lang</code>,<code>:right</code>,<code>:left</code>,<code>:first</code>。</p>
+<h2 id="属性匹配"><a href="#属性匹配" class="headerlink" title="属性匹配"></a>属性匹配</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>普通按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>主要按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">    .btn&#123; display: inline-block;border: none;background: #e6e6e6;color: #333; &#125;</div><div class="line">    .btn.btn-primary&#123; color: #fff;background: #218de6; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这里<code>.btn.btn-primary</code>会覆盖掉<code>.btn</code>,颜色和背景颜色为<code>#fff和#218de6;</code>,所以第二个按钮背景颜色为蓝色，字体颜色为白色。</p>
+<h2 id="important"><a href="#important" class="headerlink" title="important"></a>important</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>普通按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>主要按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">    .btn&#123; display: inline-block;border: none;background: #e6e6e6;color: #333 !important; &#125;</div><div class="line">    .btn.btn-primary&#123; color: #fff;background: #218de6; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>给<code>.btn</code>的<code>color</code>属性增加了<code>!important</code>,那么该属性不会被改变，所以第二个按钮的背景颜色为蓝色，字体颜色为#333。</p>
+<p>如果想要覆盖掉<code>.btn</code>的<code>color</code>值，那么也给<code>.btn.btn-primary</code>中的<code>color</code>添加<code>!important</code>。</p>
+<h2 id="Cascading（继承）"><a href="#Cascading（继承）" class="headerlink" title="Cascading（继承）"></a>Cascading（继承）</h2><p>某些属性会自动继承其父元素的计算值，除非显式指定一个值。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;层叠、继承和CSS单位&quot;&gt;&lt;a href=&quot;#层叠、继承和CSS单位&quot; class=&quot;headerlink&quot; title=&quot;层叠、继承和CSS单位&quot;&gt;&lt;/a&gt;层叠、继承和CSS单位&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="web前端" scheme="http://yoursite.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>《写给大家看的设计书》</title>
