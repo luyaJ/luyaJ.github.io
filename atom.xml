@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-17T13:39:21.598Z</updated>
+  <updated>2017-09-17T14:19:47.824Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,10 +20,11 @@
     <link href="http://yoursite.com/2017/09/16/CSS-%E9%BD%90%E8%88%9E/"/>
     <id>http://yoursite.com/2017/09/16/CSS-齐舞/</id>
     <published>2017-09-16T15:07:25.000Z</published>
-    <updated>2017-09-17T13:39:21.598Z</updated>
+    <updated>2017-09-17T14:19:47.824Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="层叠、继承和CSS单位"><a href="#层叠、继承和CSS单位" class="headerlink" title="层叠、继承和CSS单位"></a>层叠、继承和CSS单位</h1><a id="more"></a>
-<h2 id="选择器的特异度"><a href="#选择器的特异度" class="headerlink" title="选择器的特异度"></a>选择器的特异度</h2><table>
+    <content type="html"><![CDATA[<p><img src="https://t.75team.com/video" alt="齐舞学院"></p>
+<a id="more"></a>
+<h1 id="层叠、继承和CSS单位"><a href="#层叠、继承和CSS单位" class="headerlink" title="层叠、继承和CSS单位"></a>层叠、继承和CSS单位</h1><h2 id="选择器的特异度"><a href="#选择器的特异度" class="headerlink" title="选择器的特异度"></a>选择器的特异度</h2><table>
 <thead>
 <tr>
 <th>选择器</th>
@@ -72,11 +73,40 @@
 <p>给<code>.btn</code>的<code>color</code>属性增加了<code>!important</code>,那么该属性不会被改变，所以第二个按钮的背景颜色为蓝色，字体颜色为#333。</p>
 <p>如果想要覆盖掉<code>.btn</code>的<code>color</code>值，那么也给<code>.btn.btn-primary</code>中的<code>color</code>添加<code>!important</code>。</p>
 <h2 id="Cascading（继承）"><a href="#Cascading（继承）" class="headerlink" title="Cascading（继承）"></a>Cascading（继承）</h2><p>某些属性会自动继承其父元素的计算值，除非显式指定一个值。</p>
+<h2 id="长度单位"><a href="#长度单位" class="headerlink" title="长度单位"></a>长度单位</h2><ul>
+<li><p>绝对单位</p>
+<ul>
+<li>px：像素，对应显示器的一个像素点</li>
+<li>in：英寸</li>
+<li>英寸cm：厘米</li>
+<li>厘米mm：毫米</li>
+<li>毫米pt：磅（1pt等于1/72英寸）</li>
+<li>英寸pc：1pc等于12pt</li>
+</ul>
+</li>
+<li><p>相对单位</p>
+<ul>
+<li>em：相对于该元素的一个font-size</li>
+<li>rem：相对于html元素的font-size</li>
+<li>vh：浏览器窗口高度的1%</li>
+<li>vw：浏览器窗口宽度的1%</li>
+<li>vmin：vh和vm中的较小值</li>
+<li>vmax：vh和vm中的较大值</li>
+</ul>
+</li>
+</ul>
+<h2 id="HSL颜色模型"><a href="#HSL颜色模型" class="headerlink" title="HSL颜色模型"></a>HSL颜色模型</h2><p>使用Hue、Saturation、Lightness三个数字来表示颜色。</p>
+<ul>
+<li>Hue：色相（H）是色彩的基本属性，就是平常所说的颜色名称，如红色、黄色等。取值范围是0-360（0代表红色）。</li>
+<li>Saturation：饱和度（S）是指色彩的纯度，越高色彩越纯，低则逐渐变灰。取值范围0-100%。</li>
+<li>Lightness：越高颜色越亮。取值范围是0-100%。</li>
+<li>例如：hsl(0,50%,50%)、hsla(120,50%,50%,0.5)。</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;层叠、继承和CSS单位&quot;&gt;&lt;a href=&quot;#层叠、继承和CSS单位&quot; class=&quot;headerlink&quot; title=&quot;层叠、继承和CSS单位&quot;&gt;&lt;/a&gt;层叠、继承和CSS单位&lt;/h1&gt;
+      &lt;p&gt;&lt;img src=&quot;https://t.75team.com/video&quot; alt=&quot;齐舞学院&quot;&gt;&lt;/p&gt;
     
     </summary>
     
