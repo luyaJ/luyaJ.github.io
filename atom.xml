@@ -1750,7 +1750,7 @@ $(document).ready(function(){
     <link href="http://yoursite.com/2017/07/26/%E4%BD%BF%E7%94%A8HBuilder/"/>
     <id>http://yoursite.com/2017/07/26/使用HBuilder/</id>
     <published>2017-07-25T16:03:21.000Z</published>
-    <updated>2017-07-28T12:37:42.000Z</updated>
+    <updated>2017-09-17T14:04:45.823Z</updated>
     
     <content type="html"><![CDATA[<p>HBuilder下载地址：<a href="http://www.dcloud.io/" target="_blank" rel="external">HBuilder官网</a></p>
 <a id="more"></a>
@@ -1787,6 +1787,8 @@ $(document).ready(function(){
       &lt;p&gt;HBuilder下载地址：&lt;a href=&quot;http://www.dcloud.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HBuilder官网&lt;/a&gt;&lt;/p&gt;
     
     </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
       <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
