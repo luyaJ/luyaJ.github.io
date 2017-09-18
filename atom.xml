@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-17T14:23:45.229Z</updated>
+  <updated>2017-09-18T15:04:32.128Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/09/16/CSS-%E9%BD%90%E8%88%9E/"/>
     <id>http://yoursite.com/2017/09/16/CSS-齐舞/</id>
     <published>2017-09-16T15:07:25.000Z</published>
-    <updated>2017-09-17T14:23:45.229Z</updated>
+    <updated>2017-09-18T15:04:32.128Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://t.75team.com/video" target="_blank" rel="external">齐舞学院</a></p>
 <a id="more"></a>
@@ -102,6 +102,25 @@
 <li>Lightness：越高颜色越亮。取值范围是0-100%。</li>
 <li>例如：hsl(0,50%,50%)、hsla(120,50%,50%,0.5)。</li>
 </ul>
+<h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><h2 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h2><p>语法：<code>box-sizing: border-box | content-box | inherit</code>,初始值为<code>content-box</code>。</p>
+<h2 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h2><p>语法：<code>overflow: visible | hidden | scroll | auto</code>,默认值为<code>visible</code>。</p>
+<ul>
+<li>visible：默认值。内容不会被修剪，会呈现在元素框之外。</li>
+<li>hidden：内容会被修剪，并且其余内容是不可见的。</li>
+<li>scroll：内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。</li>
+<li>auto：如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。</li>
+</ul>
+<h2 id="visibility"><a href="#visibility" class="headerlink" title="visibility"></a>visibility</h2><p>语法：<code>visible | hidden | collapse</code>,默认值为<code>visible</code>。</p>
+<p>即使不可见的元素也会占据页面上的空间。请使用 “display” 属性来创建不占据页面空间的不可见元素。</p>
+<h2 id="Generated-Content"><a href="#Generated-Content" class="headerlink" title="Generated Content"></a>Generated Content</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;a href="http://example.com"&gt;访问链接&lt;/a&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    a::before&#123;</div><div class="line">        content: '\2693';</div><div class="line">    &#125;</div><div class="line">    a::after&#123;</div><div class="line">        content: '(' attr(href) ')';</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://ot4r4qnml.bkt.clouddn.com/before.png" alt="::before::after"></p>
+<h1 id="排版细节"><a href="#排版细节" class="headerlink" title="排版细节"></a>排版细节</h1><h2 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h2><ul>
+<li>定义盒子所处的行盒（line box）的垂直对齐关系</li>
+<li>语法：<code>vertical-align: baseline | sub | super | top | text-top | middle | bottom | text-bottom | &lt;percentage&gt; | &lt;length&gt;</code></li>
+<li>初始值为<code>baseline</code></li>
+<li>百分比相对于元素自身的行高</li>
+</ul>
+<p><img src="http://otf35fo4u.bkt.clouddn.com/vertical.png" alt="vertical-align"></p>
 ]]></content>
     
     <summary type="html">
