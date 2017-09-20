@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="luyaJ的小博客">
 <meta property="og:description" content="2017.7.6日厦门实训js作业例题1：定义两个整数变量，交换两个变量的值">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-20T14:23:49.535Z">
+<meta property="og:updated_time" content="2017-09-20T14:31:13.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS几道小题">
 <meta name="twitter:description" content="2017.7.6日厦门实训js作业例题1：定义两个整数变量，交换两个变量的值">
@@ -210,225 +210,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="2017-7-6日厦门实训js作业"><a href="#2017-7-6日厦门实训js作业" class="headerlink" title="2017.7.6日厦门实训js作业"></a>2017.7.6日厦门实训js作业</h2><h3 id="例题1：定义两个整数变量，交换两个变量的值"><a href="#例题1：定义两个整数变量，交换两个变量的值" class="headerlink" title="例题1：定义两个整数变量，交换两个变量的值"></a>例题1：定义两个整数变量，交换两个变量的值</h3><a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	<span class="keyword">var</span> a = prompt(<span class="string">"请输入a的值"</span>);</div><div class="line">	<span class="keyword">var</span> b = prompt(<span class="string">"请输入b的值"</span>);</div><div class="line">	<span class="keyword">var</span> t;</div><div class="line"></div><div class="line">	t = a;   <span class="comment">//t=2</span></div><div class="line">	a = b;  <span class="comment">//a=3</span></div><div class="line">	b = t;  <span class="comment">//b=2</span></div><div class="line">	alert(<span class="string">"交换后a的值："</span> + a + <span class="string">",交换后b的值："</span> + b);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
-<h3 id="例题２：定义三个整数变量，输出一次最大值"><a href="#例题２：定义三个整数变量，输出一次最大值" class="headerlink" title="例题２：定义三个整数变量，输出一次最大值"></a>例题２：定义三个整数变量，输出一次最大值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> a = prompt(<span class="string">"输入第一个数"</span>);</div><div class="line">	<span class="keyword">var</span> b = prompt(<span class="string">"输入第二个数"</span>);</div><div class="line">	<span class="keyword">var</span> c = prompt(<span class="string">"输入第三个数"</span>);</div><div class="line">	<span class="keyword">var</span> max;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(a&gt;=b)&#123;</div><div class="line">		max = a;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		max = b;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(max&lt;c)&#123;</div><div class="line">		max = c;</div><div class="line">    &#125;</div><div class="line">    alert(<span class="string">"最大的值是："</span> + max);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
-<h3 id="例题3：输入三个数从小到大的输出"><a href="#例题3：输入三个数从小到大的输出" class="headerlink" title="例题3：输入三个数从小到大的输出"></a>例题3：输入三个数从小到大的输出</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">var</span> a = prompt(<span class="string">"输入第一个数"</span>);</div><div class="line">    <span class="keyword">var</span> b = prompt(<span class="string">"输入第二个数"</span>);</div><div class="line">    <span class="keyword">var</span> c = prompt(<span class="string">"输入第三个数"</span>);</div><div class="line">    <span class="keyword">var</span> min,max,mid;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(a&gt;=b)&#123;</div><div class="line">        <span class="keyword">if</span>(b&gt;=c)&#123;</div><div class="line">            max = a;mid = b;min = c;</div><div class="line">        &#125; <span class="keyword">else</span>&#123;</div><div class="line">            max = a;mid = c;min = b;</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span>&#123;     <span class="comment">//a&lt;b</span></div><div class="line">        <span class="keyword">if</span>(b&gt;=c)&#123;</div><div class="line">            max = b;mid = a;min = c;</div><div class="line">        &#125; <span class="keyword">else</span>&#123;</div><div class="line">            max = b;mid = c;min = a;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(max&lt;c)&#123;</div><div class="line">        <span class="keyword">if</span>(a&gt;=b)&#123;</div><div class="line">            max = c;mid = a;min = b;</div><div class="line">        &#125; <span class="keyword">else</span>&#123;</div><div class="line">            max = c;mid = b;min = a;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    alert(<span class="string">"从小到大排序："</span> + min + <span class="string">"&lt;"</span> + mid +  <span class="string">"&lt;"</span> + max);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	<span class="keyword">var</span> a = prompt(<span class="string">"请输入a的值"</span>);</div><div class="line">	<span class="keyword">var</span> b = prompt(<span class="string">"请输入b的值"</span>);</div><div class="line">	<span class="keyword">var</span> t;</div><div class="line"></div><div class="line">	t = a;   <span class="comment">//t=2</span></div><div class="line">	a = b;  <span class="comment">//a=3</span></div><div class="line">	b = t;  <span class="comment">//b=2</span></div><div class="line">	alert(<span class="string">"交换后a的值："</span> + a + <span class="string">",交换后b的值："</span> + b);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h3 id="例题２：定义三个整数变量，输出一次最大值"><a href="#例题２：定义三个整数变量，输出一次最大值" class="headerlink" title="例题２：定义三个整数变量，输出一次最大值"></a>例题２：定义三个整数变量，输出一次最大值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> a = prompt(<span class="string">"输入第一个数"</span>);</div><div class="line">	<span class="keyword">var</span> b = prompt(<span class="string">"输入第二个数"</span>);</div><div class="line">	<span class="keyword">var</span> c = prompt(<span class="string">"输入第三个数"</span>);</div><div class="line">	<span class="keyword">var</span> max;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(a&gt;=b)&#123;</div><div class="line">		max = a;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		max = b;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(max&lt;c)&#123;</div><div class="line">		max = c;</div><div class="line">    &#125;</div><div class="line">    alert(<span class="string">"最大的值是："</span> + max);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h3 id="例题3：输入三个数从小到大的输出"><a href="#例题3：输入三个数从小到大的输出" class="headerlink" title="例题3：输入三个数从小到大的输出"></a>例题3：输入三个数从小到大的输出</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">var</span> a = prompt(<span class="string">"输入第一个数"</span>);</div><div class="line">    <span class="keyword">var</span> b = prompt(<span class="string">"输入第二个数"</span>);</div><div class="line">    <span class="keyword">var</span> c = prompt(<span class="string">"输入第三个数"</span>);</div><div class="line">    <span class="keyword">var</span> min,max,mid;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(a&gt;=b)&#123;</div><div class="line">        <span class="keyword">if</span>(b&gt;=c)&#123;</div><div class="line">            max = a;mid = b;min = c;</div><div class="line">        &#125; <span class="keyword">else</span>&#123;</div><div class="line">            max = a;mid = c;min = b;</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span>&#123;     <span class="comment">//a&lt;b</span></div><div class="line">        <span class="keyword">if</span>(b&gt;=c)&#123;</div><div class="line">            max = b;mid = a;min = c;</div><div class="line">        &#125; <span class="keyword">else</span>&#123;</div><div class="line">            max = b;mid = c;min = a;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(max&lt;c)&#123;</div><div class="line">        <span class="keyword">if</span>(a&gt;=b)&#123;</div><div class="line">            max = c;mid = a;min = b;</div><div class="line">        &#125; <span class="keyword">else</span>&#123;</div><div class="line">            max = c;mid = b;min = a;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    alert(<span class="string">"从小到大排序："</span> + min + <span class="string">"&lt;"</span> + mid +  <span class="string">"&lt;"</span> + max);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 <p>额….这个写的不是很好，傻瓜式…以后再说</p>
-<h3 id="例题4：定义整数的成绩变量，按区间输出等级"><a href="#例题4：定义整数的成绩变量，按区间输出等级" class="headerlink" title="例题4：定义整数的成绩变量，按区间输出等级:"></a>例题4：定义整数的成绩变量，按区间输出等级:</h3><p>```</p>
-<script>
-    var score = prompt("输入成绩：");
-    var sco = parseInt(score / 10);
-    switch(sco){
-        case 0 :
-            alert("不及格！"); break;
-        case 1 :
-            alert("不及格！"); break;
-        case 2 :
-            alert("不及格！"); break;
-        case 3 :
-            alert("不及格！"); break;
-        case 4 :
-                alert("不及格！"); break;
-            case 5 :
-                alert("不及格！"); break;
-            case 6:
-                alert("D"); break;
-            case 7:
-                alert("C"); break;
-            case 8:
-                alert("B"); break;
-            case 9:
-                alert("A"); break;
-            case 10:
-                alert("A"); break;
-            default:
-                alert("输入有误！"); break;
-        }
-    </script>
-
-<h3 id="例题5：定义一个变量表示年份，判断是否是闰年"><a href="#例题5：定义一个变量表示年份，判断是否是闰年" class="headerlink" title="例题5：定义一个变量表示年份，判断是否是闰年"></a>例题5：定义一个变量表示年份，判断是否是闰年</h3><pre><code>&lt;script&gt;
-    &lt;!--闰年的条件是:能被4整除,但是不能被100整除,或者能被四百整除--&gt;
-        var year = prompt(&quot;输入一个年份：&quot;);
-
-        if((year%4==0) &amp;&amp; (year%100!==0) || (year%400==0)) {
-      alert(year+&quot;年是闰年&quot;);
-        } else {
-      alert(year+&quot;年是平年&quot;);
-     }
-&lt;/script&gt;
-</code></pre><h3 id="例题6：输出100以内的质数"><a href="#例题6：输出100以内的质数" class="headerlink" title="例题6：输出100以内的质数"></a>例题6：输出100以内的质数</h3><pre><code>&lt;script&gt;
-    //2,3,5,7,11,13,17,19,23...
-    //只能被1和自己本身除
-    for(var n=2;n&lt;=100;n++){
-        for(var m=2;m&lt;n;m++){
-            if(n%m == 0){
-                break;   //跳出当前循环
-            }
-        }
-        if(m&gt;=n){
-            document.write( n + &quot;,&quot;);
-        }
-    }
- &lt;/script&gt;
-</code></pre><h2 id="2017-7-7日厦门实训js作业-–循环语句"><a href="#2017-7-7日厦门实训js作业-–循环语句" class="headerlink" title="2017.7.7日厦门实训js作业 –循环语句"></a>2017.7.7日厦门实训js作业 –循环语句</h2><h3 id="例题1：输出乘法口诀表"><a href="#例题1：输出乘法口诀表" class="headerlink" title="例题1：输出乘法口诀表"></a>例题1：输出乘法口诀表</h3><pre><code>&lt;script&gt;
-    var num;
-    for(var i=1;i&lt;10;i++){
-        for(var j=1;j&lt;10;j++){
-            if(j&gt;i){
-                break;
-            } else {
-                num = i*j;
-                document.write(j + &quot;*&quot; + i + &quot;=&quot; + num + &quot;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;);
-            }
-        }
-        document.write(&quot;&lt;br/&gt;&quot;);
-    }
-&lt;/script&gt;
-</code></pre><h3 id="例题2：输出10行10列表格"><a href="#例题2：输出10行10列表格" class="headerlink" title="例题2：输出10行10列表格"></a>例题2：输出10行10列表格</h3><pre><code>&lt;button id=&quot;btn&quot;&gt;1.点击出现表格&lt;/button&gt;
-&lt;table id=&quot;table&quot; cellspacing=&quot;0&quot; cellpadding=&quot;10&quot; border=&quot;1&quot;&gt;&lt;/table&gt;
-
-&lt;script&gt;
-window.onload = function() {
-    var btn = document.getElementById(&quot;btn&quot;);
-    btn.onclick = out;
-    function out(){
-        var table = document.getElementById(&quot;table&quot;);
-        for(var j=1;j&lt;=10;j++){
-            var tr = document.createElement(&quot;tr&quot;);
-            for(var i=1;i&lt;=10;i++){
-                var td = document.createElement(&quot;td&quot;);   //创建元素节点eleNode
-                td.innerHTML = i;
-                tr.appendChild(td);   //将元素节点td添加到tr中
-             }
-         table.appendChild(tr);
-        }
-     }
-&lt;/script&gt;
-</code></pre><p><strong><em>自己在作业的基础上拓展了一下：获取任意行列的表格并输出</em></strong></p>
-<pre><code>请输入行数：&lt;input id=&quot;rows&quot; /&gt;&lt;br/&gt;&lt;br/&gt;
-请输入列数：&lt;input id=&quot;cols&quot; /&gt;&lt;br/&gt;&lt;br/&gt;
-&lt;button id=&quot;btn1&quot;&gt;2.点击出现你输入的表格&lt;/button&gt;&lt;br&gt;&lt;br/&gt;
-&lt;table id=&quot;table1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;10&quot; border=&quot;1&quot;&gt;&lt;/table&gt;
-
-&lt;script&gt;
-    var btn1 = document.getElementById(&quot;btn1&quot;);
-        btn1.onclick = out1;
-        function out1(){
-            var table1 = document.getElementById(&quot;table1&quot;);
-            var rows = document.getElementById(&quot;rows&quot;).value;
-            var cols = document.getElementById(&quot;cols&quot;).value;
-
-            for(var j=1;j&lt;=cols;j++){
-                var tr1 = document.createElement(&quot;tr&quot;);
-                for(var i=1;i&lt;=rows;i++){
-                    var td1 = document.createElement(&quot;td&quot;);
-                    td1.innerHTML = i;
-                    tr1.appendChild(td1);
-                }
-                table1.appendChild(tr1);
-            }
-        }
-&lt;/script&gt;
-</code></pre><h3 id="例题3：在上例表格中改变奇数行的背景"><a href="#例题3：在上例表格中改变奇数行的背景" class="headerlink" title="例题3：在上例表格中改变奇数行的背景"></a>例题3：在上例表格中改变奇数行的背景</h3><pre><code>&lt;button id=&quot;btn&quot;&gt;点击后奇数行有背景颜色&lt;/button&gt;
-&lt;table id=&quot;table&quot; border=&quot;1&quot; cellpadding=&quot;10px&quot; cellspacing=&quot;0&quot;&gt;&lt;/table&gt;
-
-&lt;script&gt;
-    window.onload = function () {
-        var btn = document.getElementById(&quot;btn&quot;);
-        btn.onclick = out2;
-        function out2() {
-            var table = document.getElementById(&quot;table&quot;);
-            for (var j = 1; j &lt;= 10; j++) {
-                var tr = document.createElement(&quot;tr&quot;);
-                if (j%2 != 0) {    //判断是否为奇数行
-                    tr.style.backgroundColor = &quot;red&quot;;
-                }
-                for (var i = 1; i &lt;= 10; i++) {
-                    var td = document.createElement(&quot;td&quot;);
-                    td.innerHTML = i;
-                    tr.appendChild(td);
-                }
-                table.appendChild(tr);
-            }
-        }
-    }
-&lt;/script&gt;
-</code></pre><h3 id="例题4：输出序列1-1-2-3-5-8-13……-N个数"><a href="#例题4：输出序列1-1-2-3-5-8-13……-N个数" class="headerlink" title="例题4：输出序列1,1,2,3,5,8,13…… N个数"></a>例题4：输出序列1,1,2,3,5,8,13…… N个数</h3><pre><code>&lt;script&gt;
-    var a=1;b=1;
-    if(a=1){
-        document.write(a + &quot; &quot;);
-    }
-    if(b=1){
-        document.write(b + &quot; &quot;);
-    }
-   for(var n=0;n&lt;500;n++){
-        n = a + b; //1+1=2 ;n=2 n=3 n=5
-        a = b;    //a=1; a=1; a=2; a=3;
-        b = n; //b=1 b=2; b=3; b=5;
-       document.write(n + &quot; &quot;);
-    }
-&lt;/script&gt;
-</code></pre><p>此段代码不够完善…待完善</p>
-<h2 id="2017-7-10日厦门实训js作业"><a href="#2017-7-10日厦门实训js作业" class="headerlink" title="2017.7.10日厦门实训js作业"></a>2017.7.10日厦门实训js作业</h2><h3 id="例题1：动态的显示当前时间"><a href="#例题1：动态的显示当前时间" class="headerlink" title="例题1：动态的显示当前时间"></a>例题1：动态的显示当前时间</h3><pre><code>function startTime(){
-    var today = new Date();
-    var year = today.getFullYear();
-    var month = today.getMonth() + 1;
-    var day = today.getDate();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-
-    document.getElementById(&quot;time&quot;).innerHTML =&quot;现在是北京时间：&quot; + year + &quot;年&quot; + month + &quot;月&quot; + day + &quot;日&quot; + &quot; &quot; + h + &quot;:&quot; + m + &quot;:&quot; + s ;
-
-    t = setTimeout(function(){startTime()},500);
-}
-function checkTime(i){
-    if(i&lt;10){
-         i = &quot;0&quot; + i;
-     }
-    return i;
-     }
-
-&lt;body onload=&quot;startTime()&quot;&gt;
-    &lt;div id=&quot;time&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;
-</code></pre><h3 id="例题2：计算器实现加减乘除（最简单的）"><a href="#例题2：计算器实现加减乘除（最简单的）" class="headerlink" title="例题2：计算器实现加减乘除（最简单的）"></a>例题2：计算器实现加减乘除（最简单的）</h3><pre><code>数字1：&lt;input id=&quot;num1&quot;&gt;&lt;br/&gt;&lt;br/&gt;
-数字2：&lt;input id=&quot;num2&quot;&gt;&lt;br/&gt;&lt;br/&gt;
-&lt;button onclick=&quot;add()&quot;&gt;加法&lt;/button&gt;
-&lt;button onclick=&quot;del()&quot;&gt;减法&lt;/button&gt;
-&lt;button onclick=&quot;mul()&quot;&gt;乘法&lt;/button&gt;
-&lt;button onclick=&quot;division()&quot;&gt;除法&lt;/button&gt;&lt;br/&gt;&lt;br/&gt;
-结果为：&lt;input id=&quot;result&quot; value=&quot;&quot;&gt;
-
-&lt;script&gt;
-function add() {
-    var num1 = document.getElementById(&quot;num1&quot;).value;
-    var num2 = document.getElementById(&quot;num2&quot;).value;
-    var result = parseFloat(num1) + parseFloat(num2);
-    document.getElementById(&quot;result&quot;).value = result;
-}
-function del() {
-    var num1 = document.getElementById(&quot;num1&quot;).value;
-    var num2 = document.getElementById(&quot;num2&quot;).value;
-    var result = parseFloat(num1) - parseFloat(num2);
-    document.getElementById(&quot;result&quot;).value = result;
-}
-function mul() {
-    var num1 = document.getElementById(&quot;num1&quot;).value;
-    var num2 = document.getElementById(&quot;num2&quot;).value;
-    var result = num1 * num2;
-    document.getElementById(&quot;result&quot;).value = result;
-}
-function division() {
-    var num1 = document.getElementById(&quot;num1&quot;).value;
-    var num2 = document.getElementById(&quot;num2&quot;).value;
-    var result = num1 / num2;
-    document.getElementById(&quot;result&quot;).value = result;
-}
-&lt;/script&gt;
-</code></pre>
+<h3 id="例题4：定义整数的成绩变量，按区间输出等级"><a href="#例题4：定义整数的成绩变量，按区间输出等级" class="headerlink" title="例题4：定义整数的成绩变量，按区间输出等级:"></a>例题4：定义整数的成绩变量，按区间输出等级:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">var</span> score = prompt(<span class="string">"输入成绩："</span>);</div><div class="line">    <span class="keyword">var</span> sco = <span class="built_in">parseInt</span>(score / <span class="number">10</span>);</div><div class="line">    <span class="keyword">switch</span>(sco)&#123;</div><div class="line">        <span class="keyword">case</span> <span class="number">0</span> :</div><div class="line">            alert(<span class="string">"不及格！"</span>); <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">1</span> :</div><div class="line">            alert(<span class="string">"不及格！"</span>); <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">2</span> :</div><div class="line">            alert(<span class="string">"不及格！"</span>); <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">3</span> :</div><div class="line">            alert(<span class="string">"不及格！"</span>); <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">4</span> :</div><div class="line">            alert(<span class="string">"不及格！"</span>); <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">5</span> :</div><div class="line">            alert(<span class="string">"不及格！"</span>); <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">6</span>:</div><div class="line">            alert(<span class="string">"D"</span>); <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">7</span>:</div><div class="line">            alert(<span class="string">"C"</span>); <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">8</span>:</div><div class="line">            alert(<span class="string">"B"</span>); <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">9</span>:</div><div class="line">            alert(<span class="string">"A"</span>); <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">10</span>:</div><div class="line">            alert(<span class="string">"A"</span>); <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            alert(<span class="string">"输入有误！"</span>); <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="例题5：定义一个变量表示年份，判断是否是闰年"><a href="#例题5：定义一个变量表示年份，判断是否是闰年" class="headerlink" title="例题5：定义一个变量表示年份，判断是否是闰年"></a>例题5：定义一个变量表示年份，判断是否是闰年</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	&lt;!--闰年的条件是:能被4整除,但是不能被100整除,或者能被四百整除--&gt;</div><div class="line">    var year = prompt("输入一个年份：");</div><div class="line"></div><div class="line">    if((year%4==0) &amp;&amp; (year%100!==0) || (year%400==0)) &#123;</div><div class="line">        alert(year+"年是闰年");</div><div class="line">    &#125; else &#123;</div><div class="line">        alert(year+"年是平年");</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h3 id="例题6：输出100以内的质数"><a href="#例题6：输出100以内的质数" class="headerlink" title="例题6：输出100以内的质数"></a>例题6：输出100以内的质数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="comment">//2,3,5,7,11,13,17,19,23...</span></div><div class="line">    <span class="comment">//只能被1和自己本身除</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> n=<span class="number">2</span>;n&lt;=<span class="number">100</span>;n++)&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> m=<span class="number">2</span>;m&lt;n;m++)&#123;</div><div class="line">            <span class="keyword">if</span>(n%m == <span class="number">0</span>)&#123;</div><div class="line">                <span class="keyword">break</span>;   <span class="comment">//跳出当前循环</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(m&gt;=n)&#123;</div><div class="line">            <span class="built_in">document</span>.write( n + <span class="string">","</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="2017-7-7日厦门实训js作业-–循环语句"><a href="#2017-7-7日厦门实训js作业-–循环语句" class="headerlink" title="2017.7.7日厦门实训js作业 –循环语句"></a>2017.7.7日厦门实训js作业 –循环语句</h2><h3 id="例题1：输出乘法口诀表"><a href="#例题1：输出乘法口诀表" class="headerlink" title="例题1：输出乘法口诀表"></a>例题1：输出乘法口诀表</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">var</span> num;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;<span class="number">10</span>;i++)&#123;</div><div class="line">         <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">1</span>;j&lt;<span class="number">10</span>;j++)&#123;</div><div class="line">            <span class="keyword">if</span>(j&gt;i)&#123;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                num = i*j;</div><div class="line">                <span class="built_in">document</span>.write(j + <span class="string">"*"</span> + i + <span class="string">"="</span> + num + <span class="string">"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">document</span>.write(<span class="string">"&lt;br/&gt;"</span>);</div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="例题2：输出10行10列表格"><a href="#例题2：输出10行10列表格" class="headerlink" title="例题2：输出10行10列表格"></a>例题2：输出10行10列表格</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;button id="btn"&gt;1.点击出现表格&lt;/button&gt;</div><div class="line">&lt;table id="table" cellspacing="0" cellpadding="10" border="1"&gt;&lt;/table&gt;</div><div class="line">   </div><div class="line">&lt;script&gt;</div><div class="line">	window.onload = function() &#123;</div><div class="line">		var btn = document.getElementById("btn");</div><div class="line">		btn.onclick = out;</div><div class="line">		function out()&#123;</div><div class="line">			var table = document.getElementById("table");</div><div class="line">			for(var j=1;j&lt;=10;j++)&#123;</div><div class="line">				var tr = document.createElement("tr");</div><div class="line">				for(var i=1;i&lt;=10;i++)&#123;</div><div class="line">					var td = document.createElement("td");   //创建元素节点eleNode</div><div class="line">					td.innerHTML = i;</div><div class="line">					tr.appendChild(td);   //将元素节点td添加到tr中</div><div class="line">				 &#125;</div><div class="line">			 table.appendChild(tr);</div><div class="line">			&#125;</div><div class="line">		 &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p><strong><em>自己在作业的基础上拓展了一下：获取任意行列的表格并输出</em></strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">请输入行数：&lt;input id=<span class="string">"rows"</span> /&gt;&lt;br/&gt;&lt;br/&gt;</div><div class="line">请输入列数：&lt;input id=<span class="string">"cols"</span> /&gt;&lt;br/&gt;&lt;br/&gt;</div><div class="line">&lt;button id=<span class="string">"btn1"</span>&gt;<span class="number">2.</span>点击出现你输入的表格&lt;<span class="regexp">/button&gt;&lt;br&gt;&lt;br/</span>&gt;</div><div class="line">&lt;table id="table1" cellspacing="0" cellpadding="10" border="1"&gt;&lt;/table&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">	<span class="keyword">var</span> btn1 = <span class="built_in">document</span>.getElementById(<span class="string">"btn1"</span>);</div><div class="line">    btn1.onclick = out1;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">out1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> table1 = <span class="built_in">document</span>.getElementById(<span class="string">"table1"</span>);</div><div class="line">        <span class="keyword">var</span> rows = <span class="built_in">document</span>.getElementById(<span class="string">"rows"</span>).value;</div><div class="line">        <span class="keyword">var</span> cols = <span class="built_in">document</span>.getElementById(<span class="string">"cols"</span>).value;</div><div class="line"></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">1</span>;j&lt;=cols;j++)&#123;</div><div class="line">            <span class="keyword">var</span> tr1 = <span class="built_in">document</span>.createElement(<span class="string">"tr"</span>);</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=rows;i++)&#123;</div><div class="line">                <span class="keyword">var</span> td1 = <span class="built_in">document</span>.createElement(<span class="string">"td"</span>);</div><div class="line">                td1.innerHTML = i;</div><div class="line">                tr1.appendChild(td1);</div><div class="line">            &#125;</div><div class="line">            table1.appendChild(tr1);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="例题3：在上例表格中改变奇数行的背景"><a href="#例题3：在上例表格中改变奇数行的背景" class="headerlink" title="例题3：在上例表格中改变奇数行的背景"></a>例题3：在上例表格中改变奇数行的背景</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;button id="btn"&gt;点击后奇数行有背景颜色&lt;/button&gt;</div><div class="line">&lt;table id="table" border="1" cellpadding="10px" cellspacing="0"&gt;&lt;/table&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">    window.onload = function () &#123;</div><div class="line">        var btn = document.getElementById("btn");</div><div class="line">        btn.onclick = out2;</div><div class="line">        function out2() &#123;</div><div class="line">            var table = document.getElementById("table");</div><div class="line">            for (var j = 1; j &lt;= 10; j++) &#123;</div><div class="line">                var tr = document.createElement("tr");</div><div class="line">                if (j%2 != 0) &#123;    //判断是否为奇数行</div><div class="line">                    tr.style.backgroundColor = "red";</div><div class="line">                &#125;</div><div class="line">                for (var i = 1; i &lt;= 10; i++) &#123;</div><div class="line">                    var td = document.createElement("td");</div><div class="line">                    td.innerHTML = i;</div><div class="line">                    tr.appendChild(td);</div><div class="line">                &#125;</div><div class="line">                table.appendChild(tr);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h3 id="例题4：输出序列1-1-2-3-5-8-13……-N个数"><a href="#例题4：输出序列1-1-2-3-5-8-13……-N个数" class="headerlink" title="例题4：输出序列1,1,2,3,5,8,13…… N个数"></a>例题4：输出序列1,1,2,3,5,8,13…… N个数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">var</span> a=<span class="number">1</span>;b=<span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(a=<span class="number">1</span>)&#123;</div><div class="line">        <span class="built_in">document</span>.write(a + <span class="string">" "</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(b=<span class="number">1</span>)&#123;</div><div class="line">        <span class="built_in">document</span>.write(b + <span class="string">" "</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> n=<span class="number">0</span>;n&lt;<span class="number">500</span>;n++)&#123;</div><div class="line">        n = a + b; <span class="comment">//1+1=2 ;n=2 n=3 n=5</span></div><div class="line">        a = b;    <span class="comment">//a=1; a=1; a=2; a=3;</span></div><div class="line">        b = n; <span class="comment">//b=1 b=2; b=3; b=5;</span></div><div class="line">        ocument.write(n + <span class="string">" "</span>);</div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p>此段代码不够完善…待完善</p>
+<h2 id="2017-7-10日厦门实训js作业"><a href="#2017-7-10日厦门实训js作业" class="headerlink" title="2017.7.10日厦门实训js作业"></a>2017.7.10日厦门实训js作业</h2><h3 id="例题1：动态的显示当前时间"><a href="#例题1：动态的显示当前时间" class="headerlink" title="例题1：动态的显示当前时间"></a>例题1：动态的显示当前时间</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">startTime</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> today = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">	<span class="keyword">var</span> year = today.getFullYear();</div><div class="line">	<span class="keyword">var</span> month = today.getMonth() + <span class="number">1</span>;</div><div class="line">	<span class="keyword">var</span> day = today.getDate();</div><div class="line">	<span class="keyword">var</span> h = today.getHours();</div><div class="line">	<span class="keyword">var</span> m = today.getMinutes();</div><div class="line">	<span class="keyword">var</span> s = today.getSeconds();</div><div class="line">	m = checkTime(m);</div><div class="line">	s = checkTime(s);</div><div class="line"></div><div class="line">	<span class="built_in">document</span>.getElementById(<span class="string">"time"</span>).innerHTML =<span class="string">"现在是北京时间："</span> + year + <span class="string">"年"</span> + month + <span class="string">"月"</span> + day + <span class="string">"日"</span> + <span class="string">" "</span> + h + <span class="string">":"</span> + m + <span class="string">":"</span> + s ;</div><div class="line"></div><div class="line">	t = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;startTime()&#125;,<span class="number">500</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkTime</span>(<span class="params">i</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(i&lt;<span class="number">10</span>)&#123;</div><div class="line">		i = <span class="string">"0"</span> + i;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> i;</div><div class="line">&#125;</div><div class="line">	</div><div class="line">&lt;body onload=<span class="string">"startTime()"</span>&gt;</div><div class="line">	&lt;div id="time"&gt;&lt;/div&gt;</div><div class="line">&lt;<span class="regexp">/body&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="例题2：计算器实现加减乘除（最简单的）"><a href="#例题2：计算器实现加减乘除（最简单的）" class="headerlink" title="例题2：计算器实现加减乘除（最简单的）"></a>例题2：计算器实现加减乘除（最简单的）</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">数字1：&lt;input id="num1"&gt;&lt;br/&gt;&lt;br/&gt;</div><div class="line">数字2：&lt;input id="num2"&gt;&lt;br/&gt;&lt;br/&gt;</div><div class="line">&lt;button onclick="add()"&gt;加法&lt;/button&gt;</div><div class="line">&lt;button onclick="del()"&gt;减法&lt;/button&gt;</div><div class="line">&lt;button onclick="mul()"&gt;乘法&lt;/button&gt;</div><div class="line">&lt;button onclick="division()"&gt;除法&lt;/button&gt;&lt;br/&gt;&lt;br/&gt;</div><div class="line">结果为：&lt;input id="result" value=""&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">	function add() &#123;</div><div class="line">		var num1 = document.getElementById("num1").value;</div><div class="line">		var num2 = document.getElementById("num2").value;</div><div class="line">		var result = parseFloat(num1) + parseFloat(num2);</div><div class="line">		document.getElementById("result").value = result;</div><div class="line">	&#125;</div><div class="line">	function del() &#123;</div><div class="line">		var num1 = document.getElementById("num1").value;</div><div class="line">		var num2 = document.getElementById("num2").value;</div><div class="line">		var result = parseFloat(num1) - parseFloat(num2);</div><div class="line">		document.getElementById("result").value = result;</div><div class="line">	&#125;</div><div class="line">	function mul() &#123;</div><div class="line">		var num1 = document.getElementById("num1").value;</div><div class="line">		var num2 = document.getElementById("num2").value;</div><div class="line">		var result = num1 * num2;</div><div class="line">		document.getElementById("result").value = result;</div><div class="line">	&#125;</div><div class="line">	function division() &#123;</div><div class="line">		var num1 = document.getElementById("num1").value;</div><div class="line">		var num2 = document.getElementById("num2").value;</div><div class="line">		var result = num1 / num2;</div><div class="line">		document.getElementById("result").value = result;</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
       
 
       
