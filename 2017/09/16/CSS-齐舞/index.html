@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ot4r4qnml.bkt.clouddn.com/before.png">
 <meta property="og:image" content="http://otf35fo4u.bkt.clouddn.com/vertical.png">
-<meta property="og:updated_time" content="2017-09-19T15:24:32.939Z">
+<meta property="og:updated_time" content="2017-09-20T14:19:40.184Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS_齐舞">
 <meta name="twitter:description" content="参考视频：齐舞学院">
@@ -246,7 +246,7 @@
 </table>
 <p>可以理解为特异度 <code>0122</code> &gt; <code>0022</code>，所以第一个的优先级大于第二个的优先级。</p>
 <p>再举一个例子：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>选择器的特异度<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">    .title&#123; color: blue; &#125;</div><div class="line">    article h1&#123; color:red; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;article&gt;</div><div class="line">    &lt;h1 class="title"&gt;选择器的特异度&lt;/h1&gt;</div><div class="line">&lt;/article&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    .title&#123; color: blue; &#125;</div><div class="line">    article h1&#123; color:red; &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
 <p>这里可以理解为<code>.title</code>的特异度是<code>0010</code>，<code>article h1</code>的特异度是<code>0002</code>。所以字体颜色是蓝色。</p>
 <h2 id="简单选择器的特异度级别（由低到高）"><a href="#简单选择器的特异度级别（由低到高）" class="headerlink" title="简单选择器的特异度级别（由低到高）"></a>简单选择器的特异度级别（由低到高）</h2><ul>
 <li>level 0：*</li>
@@ -257,9 +257,9 @@
 </ul>
 <p>伪元素：<code>:before</code>,<code>:after</code>,<code>:first-line</code>,<code>:first-letter</code>。</p>
 <p>伪类有：<code>:first-child</code>,<code>:link</code>,<code>:visited</code>,<code>:hover</code>,<code>:active</code>,<code>:focus</code>,<code>:lang</code>,<code>:right</code>,<code>:left</code>,<code>:first</code>。</p>
-<h2 id="属性匹配"><a href="#属性匹配" class="headerlink" title="属性匹配"></a>属性匹配</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>普通按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>主要按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">    .btn&#123; display: inline-block;border: none;background: #e6e6e6;color: #333; &#125;</div><div class="line">    .btn.btn-primary&#123; color: #fff;background: #218de6; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="属性匹配"><a href="#属性匹配" class="headerlink" title="属性匹配"></a>属性匹配</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;button class="btn"&gt;普通按钮&lt;/button&gt;</div><div class="line">&lt;button class="btn btn-primary"&gt;主要按钮&lt;/button&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    .btn&#123; display: inline-block;border: none;background: #e6e6e6;color: #333; &#125;</div><div class="line">    .btn.btn-primary&#123; color: #fff;background: #218de6; &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
 <p>这里<code>.btn.btn-primary</code>会覆盖掉<code>.btn</code>,颜色和背景颜色为<code>#fff和#218de6;</code>,所以第二个按钮背景颜色为蓝色，字体颜色为白色。</p>
-<h2 id="important"><a href="#important" class="headerlink" title="important"></a>important</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>普通按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>主要按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">    .btn&#123; display: inline-block;border: none;background: #e6e6e6;color: #333 !important; &#125;</div><div class="line">    .btn.btn-primary&#123; color: #fff;background: #218de6; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="important"><a href="#important" class="headerlink" title="important"></a>important</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;button class="btn"&gt;普通按钮&lt;/button&gt;</div><div class="line">&lt;button class="btn btn-primary"&gt;主要按钮&lt;/button&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    .btn&#123; display: inline-block;border: none;background: #e6e6e6;color: #333 !important; &#125;</div><div class="line">    .btn.btn-primary&#123; color: #fff;background: #218de6; &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
 <p>给<code>.btn</code>的<code>color</code>属性增加了<code>!important</code>,那么该属性不会被改变，所以第二个按钮的背景颜色为蓝色，字体颜色为#333。</p>
 <p>如果想要覆盖掉<code>.btn</code>的<code>color</code>值，那么也给<code>.btn.btn-primary</code>中的<code>color</code>添加<code>!important</code>。</p>
 <h2 id="Cascading（继承）"><a href="#Cascading（继承）" class="headerlink" title="Cascading（继承）"></a>Cascading（继承）</h2><p>某些属性会自动继承其父元素的计算值，除非显式指定一个值。</p>
@@ -528,15 +528,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,7 +552,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,19 +560,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo+github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">css预处理器</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,15 +572,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">

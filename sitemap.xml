@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/09/03/js%E5%87%A0%E9%81%93%E5%B0%8F%E9%A2%98/</loc>
+    
+    <lastmod>2017-09-20T14:23:49.535Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/09/16/CSS-%E9%BD%90%E8%88%9E/</loc>
     
-    <lastmod>2017-09-19T15:24:32.939Z</lastmod>
+    <lastmod>2017-09-20T14:19:40.184Z</lastmod>
     
   </url>
   
@@ -54,13 +61,6 @@
     <loc>http://yoursite.com/2017/07/24/HTML5-Web%E5%AD%98%E5%82%A8/</loc>
     
     <lastmod>2017-09-17T13:37:10.807Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/09/03/js%E5%87%A0%E9%81%93%E5%B0%8F%E9%A2%98/</loc>
-    
-    <lastmod>2017-09-17T13:36:54.611Z</lastmod>
     
   </url>
   

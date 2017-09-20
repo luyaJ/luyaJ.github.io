@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-19T15:24:32.939Z</updated>
+  <updated>2017-09-20T14:19:40.184Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/09/16/CSS-%E9%BD%90%E8%88%9E/"/>
     <id>http://yoursite.com/2017/09/16/CSS-齐舞/</id>
     <published>2017-09-16T15:07:25.000Z</published>
-    <updated>2017-09-19T15:24:32.939Z</updated>
+    <updated>2017-09-20T14:19:40.184Z</updated>
     
     <content type="html"><![CDATA[<p>参考视频：<a href="https://t.75team.com/video" target="_blank" rel="external">齐舞学院</a></p>
 <a id="more"></a>
@@ -56,7 +56,7 @@
 </table>
 <p>可以理解为特异度 <code>0122</code> &gt; <code>0022</code>，所以第一个的优先级大于第二个的优先级。</p>
 <p>再举一个例子：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>选择器的特异度<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">    .title&#123; color: blue; &#125;</div><div class="line">    article h1&#123; color:red; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;article&gt;</div><div class="line">    &lt;h1 class="title"&gt;选择器的特异度&lt;/h1&gt;</div><div class="line">&lt;/article&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    .title&#123; color: blue; &#125;</div><div class="line">    article h1&#123; color:red; &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
 <p>这里可以理解为<code>.title</code>的特异度是<code>0010</code>，<code>article h1</code>的特异度是<code>0002</code>。所以字体颜色是蓝色。</p>
 <h2 id="简单选择器的特异度级别（由低到高）"><a href="#简单选择器的特异度级别（由低到高）" class="headerlink" title="简单选择器的特异度级别（由低到高）"></a>简单选择器的特异度级别（由低到高）</h2><ul>
 <li>level 0：*</li>
@@ -67,9 +67,9 @@
 </ul>
 <p>伪元素：<code>:before</code>,<code>:after</code>,<code>:first-line</code>,<code>:first-letter</code>。</p>
 <p>伪类有：<code>:first-child</code>,<code>:link</code>,<code>:visited</code>,<code>:hover</code>,<code>:active</code>,<code>:focus</code>,<code>:lang</code>,<code>:right</code>,<code>:left</code>,<code>:first</code>。</p>
-<h2 id="属性匹配"><a href="#属性匹配" class="headerlink" title="属性匹配"></a>属性匹配</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>普通按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>主要按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">    .btn&#123; display: inline-block;border: none;background: #e6e6e6;color: #333; &#125;</div><div class="line">    .btn.btn-primary&#123; color: #fff;background: #218de6; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="属性匹配"><a href="#属性匹配" class="headerlink" title="属性匹配"></a>属性匹配</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;button class="btn"&gt;普通按钮&lt;/button&gt;</div><div class="line">&lt;button class="btn btn-primary"&gt;主要按钮&lt;/button&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    .btn&#123; display: inline-block;border: none;background: #e6e6e6;color: #333; &#125;</div><div class="line">    .btn.btn-primary&#123; color: #fff;background: #218de6; &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
 <p>这里<code>.btn.btn-primary</code>会覆盖掉<code>.btn</code>,颜色和背景颜色为<code>#fff和#218de6;</code>,所以第二个按钮背景颜色为蓝色，字体颜色为白色。</p>
-<h2 id="important"><a href="#important" class="headerlink" title="important"></a>important</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>普通按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>主要按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">    .btn&#123; display: inline-block;border: none;background: #e6e6e6;color: #333 !important; &#125;</div><div class="line">    .btn.btn-primary&#123; color: #fff;background: #218de6; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="important"><a href="#important" class="headerlink" title="important"></a>important</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;button class="btn"&gt;普通按钮&lt;/button&gt;</div><div class="line">&lt;button class="btn btn-primary"&gt;主要按钮&lt;/button&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    .btn&#123; display: inline-block;border: none;background: #e6e6e6;color: #333 !important; &#125;</div><div class="line">    .btn.btn-primary&#123; color: #fff;background: #218de6; &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
 <p>给<code>.btn</code>的<code>color</code>属性增加了<code>!important</code>,那么该属性不会被改变，所以第二个按钮的背景颜色为蓝色，字体颜色为#333。</p>
 <p>如果想要覆盖掉<code>.btn</code>的<code>color</code>值，那么也给<code>.btn.btn-primary</code>中的<code>color</code>添加<code>!important</code>。</p>
 <h2 id="Cascading（继承）"><a href="#Cascading（继承）" class="headerlink" title="Cascading（继承）"></a>Cascading（继承）</h2><p>某些属性会自动继承其父元素的计算值，除非显式指定一个值。</p>
@@ -248,95 +248,46 @@
     <link href="http://yoursite.com/2017/09/03/js%E5%87%A0%E9%81%93%E5%B0%8F%E9%A2%98/"/>
     <id>http://yoursite.com/2017/09/03/js几道小题/</id>
     <published>2017-09-03T10:38:05.468Z</published>
-    <updated>2017-09-17T13:36:54.611Z</updated>
+    <updated>2017-09-20T14:23:49.535Z</updated>
     
     <content type="html"><![CDATA[<h2 id="2017-7-6日厦门实训js作业"><a href="#2017-7-6日厦门实训js作业" class="headerlink" title="2017.7.6日厦门实训js作业"></a>2017.7.6日厦门实训js作业</h2><h3 id="例题1：定义两个整数变量，交换两个变量的值"><a href="#例题1：定义两个整数变量，交换两个变量的值" class="headerlink" title="例题1：定义两个整数变量，交换两个变量的值"></a>例题1：定义两个整数变量，交换两个变量的值</h3><a id="more"></a>
-<pre><code>&lt;script&gt;
-    var a = prompt(&quot;请输入a的值&quot;);
-    var b = prompt(&quot;请输入b的值&quot;);
-    var t;
-
-    t = a;   //t=2
-    a = b;  //a=3
-    b = t;  //b=2
-    alert(&quot;交换后a的值：&quot; + a + &quot;,交换后b的值：&quot; + b);
-&lt;/script&gt;
-</code></pre><h3 id="例题２：定义三个整数变量，输出一次最大值"><a href="#例题２：定义三个整数变量，输出一次最大值" class="headerlink" title="例题２：定义三个整数变量，输出一次最大值"></a>例题２：定义三个整数变量，输出一次最大值</h3><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
-    var a = prompt(&quot;输入第一个数&quot;);
-    var b = prompt(&quot;输入第二个数&quot;);
-    var c = prompt(&quot;输入第三个数&quot;);
-    var max;
-
-    if(a&gt;=b){
-        max = a;
-    } else {
-        max = b;
-    }
-    if(max&lt;c){
-        max = c;
-    }
-    alert(&quot;最大的值是：&quot; + max);
-&lt;/script&gt;
-</code></pre><h3 id="例题3：输入三个数从小到大的输出"><a href="#例题3：输入三个数从小到大的输出" class="headerlink" title="例题3：输入三个数从小到大的输出"></a>例题3：输入三个数从小到大的输出</h3><pre><code>&lt;script&gt;
-    var a = prompt(&quot;输入第一个数&quot;);
-    var b = prompt(&quot;输入第二个数&quot;);
-    var c = prompt(&quot;输入第三个数&quot;);
-    var min,max,mid;
-
-    if(a&gt;=b){
-        if(b&gt;=c){
-            max = a;mid = b;min = c;
-        } else{
-            max = a;mid = c;min = b;
-        }
-    } else{     //a&lt;b
-        if(b&gt;=c){
-            max = b;mid = a;min = c;
-        } else{
-            max = b;mid = c;min = a;
-        }
-    }
-    if(max&lt;c){
-        if(a&gt;=b){
-            max = c;mid = a;min = b;
-        } else{
-            max = c;mid = b;min = a;
-        }
-    }
-    alert(&quot;从小到大排序：&quot; + min + &quot;&lt;&quot; + mid +  &quot;&lt;&quot; + max);
-&lt;/script&gt;
-</code></pre><p>额….这个写的不是很好，傻瓜式…以后再说</p>
-<h3 id="例题4：定义整数的成绩变量，按区间输出等级"><a href="#例题4：定义整数的成绩变量，按区间输出等级" class="headerlink" title="例题4：定义整数的成绩变量，按区间输出等级:"></a>例题4：定义整数的成绩变量，按区间输出等级:</h3><pre><code>&lt;script&gt;
-    var score = prompt(&quot;输入成绩：&quot;);
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	<span class="keyword">var</span> a = prompt(<span class="string">"请输入a的值"</span>);</div><div class="line">	<span class="keyword">var</span> b = prompt(<span class="string">"请输入b的值"</span>);</div><div class="line">	<span class="keyword">var</span> t;</div><div class="line"></div><div class="line">	t = a;   <span class="comment">//t=2</span></div><div class="line">	a = b;  <span class="comment">//a=3</span></div><div class="line">	b = t;  <span class="comment">//b=2</span></div><div class="line">	alert(<span class="string">"交换后a的值："</span> + a + <span class="string">",交换后b的值："</span> + b);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h3 id="例题２：定义三个整数变量，输出一次最大值"><a href="#例题２：定义三个整数变量，输出一次最大值" class="headerlink" title="例题２：定义三个整数变量，输出一次最大值"></a>例题２：定义三个整数变量，输出一次最大值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> a = prompt(<span class="string">"输入第一个数"</span>);</div><div class="line">	<span class="keyword">var</span> b = prompt(<span class="string">"输入第二个数"</span>);</div><div class="line">	<span class="keyword">var</span> c = prompt(<span class="string">"输入第三个数"</span>);</div><div class="line">	<span class="keyword">var</span> max;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(a&gt;=b)&#123;</div><div class="line">		max = a;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		max = b;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(max&lt;c)&#123;</div><div class="line">		max = c;</div><div class="line">    &#125;</div><div class="line">    alert(<span class="string">"最大的值是："</span> + max);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h3 id="例题3：输入三个数从小到大的输出"><a href="#例题3：输入三个数从小到大的输出" class="headerlink" title="例题3：输入三个数从小到大的输出"></a>例题3：输入三个数从小到大的输出</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">var</span> a = prompt(<span class="string">"输入第一个数"</span>);</div><div class="line">    <span class="keyword">var</span> b = prompt(<span class="string">"输入第二个数"</span>);</div><div class="line">    <span class="keyword">var</span> c = prompt(<span class="string">"输入第三个数"</span>);</div><div class="line">    <span class="keyword">var</span> min,max,mid;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(a&gt;=b)&#123;</div><div class="line">        <span class="keyword">if</span>(b&gt;=c)&#123;</div><div class="line">            max = a;mid = b;min = c;</div><div class="line">        &#125; <span class="keyword">else</span>&#123;</div><div class="line">            max = a;mid = c;min = b;</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span>&#123;     <span class="comment">//a&lt;b</span></div><div class="line">        <span class="keyword">if</span>(b&gt;=c)&#123;</div><div class="line">            max = b;mid = a;min = c;</div><div class="line">        &#125; <span class="keyword">else</span>&#123;</div><div class="line">            max = b;mid = c;min = a;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(max&lt;c)&#123;</div><div class="line">        <span class="keyword">if</span>(a&gt;=b)&#123;</div><div class="line">            max = c;mid = a;min = b;</div><div class="line">        &#125; <span class="keyword">else</span>&#123;</div><div class="line">            max = c;mid = b;min = a;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    alert(<span class="string">"从小到大排序："</span> + min + <span class="string">"&lt;"</span> + mid +  <span class="string">"&lt;"</span> + max);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p>额….这个写的不是很好，傻瓜式…以后再说</p>
+<h3 id="例题4：定义整数的成绩变量，按区间输出等级"><a href="#例题4：定义整数的成绩变量，按区间输出等级" class="headerlink" title="例题4：定义整数的成绩变量，按区间输出等级:"></a>例题4：定义整数的成绩变量，按区间输出等级:</h3><p>```</p>
+<script>
+    var score = prompt("输入成绩：");
     var sco = parseInt(score / 10);
     switch(sco){
         case 0 :
-            alert(&quot;不及格！&quot;); break;
+            alert("不及格！"); break;
         case 1 :
-            alert(&quot;不及格！&quot;); break;
+            alert("不及格！"); break;
         case 2 :
-            alert(&quot;不及格！&quot;); break;
+            alert("不及格！"); break;
         case 3 :
-            alert(&quot;不及格！&quot;); break;
+            alert("不及格！"); break;
         case 4 :
-            alert(&quot;不及格！&quot;); break;
-        case 5 :
-            alert(&quot;不及格！&quot;); break;
-        case 6:
-            alert(&quot;D&quot;); break;
-        case 7:
-            alert(&quot;C&quot;); break;
-        case 8:
-            alert(&quot;B&quot;); break;
-        case 9:
-            alert(&quot;A&quot;); break;
-        case 10:
-            alert(&quot;A&quot;); break;
-        default:
-            alert(&quot;输入有误！&quot;); break;
-    }
-&lt;/script&gt;
-</code></pre><h3 id="例题5：定义一个变量表示年份，判断是否是闰年"><a href="#例题5：定义一个变量表示年份，判断是否是闰年" class="headerlink" title="例题5：定义一个变量表示年份，判断是否是闰年"></a>例题5：定义一个变量表示年份，判断是否是闰年</h3><pre><code>&lt;script&gt;
+                alert("不及格！"); break;
+            case 5 :
+                alert("不及格！"); break;
+            case 6:
+                alert("D"); break;
+            case 7:
+                alert("C"); break;
+            case 8:
+                alert("B"); break;
+            case 9:
+                alert("A"); break;
+            case 10:
+                alert("A"); break;
+            default:
+                alert("输入有误！"); break;
+        }
+    </script>
+
+<h3 id="例题5：定义一个变量表示年份，判断是否是闰年"><a href="#例题5：定义一个变量表示年份，判断是否是闰年" class="headerlink" title="例题5：定义一个变量表示年份，判断是否是闰年"></a>例题5：定义一个变量表示年份，判断是否是闰年</h3><pre><code>&lt;script&gt;
     &lt;!--闰年的条件是:能被4整除,但是不能被100整除,或者能被四百整除--&gt;
         var year = prompt(&quot;输入一个年份：&quot;);
 
@@ -983,9 +934,9 @@ function division() {
 <h3 id="onchange事件"><a href="#onchange事件" class="headerlink" title="onchange事件"></a>onchange事件</h3><p>在域的内容改变时发生。常结合对输入字段的验证来使用。</p>
 <p>支持该事件的HTML标签：<code>&lt;input type=&quot;text&quot;&gt;</code> , <code>&lt;select&gt;</code> , <code>&lt;textarea&gt;</code> ;</p>
 <p>支持该事件的JavaScript对象：<code>fileUpload</code> , <code>select</code> , <code>text</code> , <code>textarea</code>;</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">输入你的名字：&lt;input type=<span class="string">"text"</span> id=<span class="string">"name"</span> onchange=<span class="string">"myFunction()"</span>&gt;</div><div class="line">&lt;p&gt;当你离开输入框后，函数将被触发，将小写字母转为大写字母。&lt;/p&gt;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> name = <span class="built_in">document</span>.getElementById(<span class="string">"name"</span>);</div><div class="line">    name.value = name.value.toUpperCase();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">输入你的名字：&lt;input type=<span class="string">"text"</span> id=<span class="string">"name"</span> onchange=<span class="string">"myFunction()"</span>&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>当你离开输入框后，函数将被触发，将小写字母转为大写字母。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> name = <span class="built_in">document</span>.getElementById(<span class="string">"name"</span>);</div><div class="line">    name.value = name.value.toUpperCase();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="onmouseover-amp-onmouseout事件"><a href="#onmouseover-amp-onmouseout事件" class="headerlink" title="onmouseover &amp; onmouseout事件"></a>onmouseover &amp; onmouseout事件</h3><p>用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div onmouseover=<span class="string">"mOver(this)"</span> onmouseout=<span class="string">"mOut(this)"</span> style=<span class="string">"background: red;width: 120px;height: 120px;"</span>&gt;&lt;/div&gt;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mOut</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    obj.innerHTML = <span class="string">"Move Over Me"</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mOver</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    obj.innerHTML = <span class="string">"Thank you!"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div onmouseover=<span class="string">"mOver(this)"</span> onmouseout=<span class="string">"mOut(this)"</span> style=<span class="string">"background: red;width: 120px;height: 120px;"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mOut</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    obj.innerHTML = <span class="string">"Move Over Me"</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mOver</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    obj.innerHTML = <span class="string">"Thank you!"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="onmousedown-amp-onmouseup-amp-onclick事件"><a href="#onmousedown-amp-onmouseup-amp-onclick事件" class="headerlink" title="onmousedown &amp; onmouseup &amp; onclick事件"></a>onmousedown &amp; onmouseup &amp; onclick事件</h3><p>onmousedown, onmouseup 以及 onclick 构成了鼠标点击事件的所有部分。首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;img id=<span class="string">"img"</span> onmousedown=<span class="string">"lighton()"</span> onmouseup=<span class="string">"lightoff()"</span> src=<span class="string">"http://www.runoob.com/try/demo_source/bulboff.gif"</span> width=<span class="string">"100px"</span> height=<span class="string">"180px"</span>&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">lightoff</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'img'</span>).src=<span class="string">"http://www.runoob.com/try/demo_source/bulboff.gif"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="button事件"><a href="#button事件" class="headerlink" title="button事件"></a>button事件</h3><p>指示当事件被触发时哪个鼠标按键被点击。语法：<code>event.button = 0|1|2</code> 。</p>

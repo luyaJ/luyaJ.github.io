@@ -216,9 +216,9 @@
 <h3 id="onchange事件"><a href="#onchange事件" class="headerlink" title="onchange事件"></a>onchange事件</h3><p>在域的内容改变时发生。常结合对输入字段的验证来使用。</p>
 <p>支持该事件的HTML标签：<code>&lt;input type=&quot;text&quot;&gt;</code> , <code>&lt;select&gt;</code> , <code>&lt;textarea&gt;</code> ;</p>
 <p>支持该事件的JavaScript对象：<code>fileUpload</code> , <code>select</code> , <code>text</code> , <code>textarea</code>;</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">输入你的名字：&lt;input type=<span class="string">"text"</span> id=<span class="string">"name"</span> onchange=<span class="string">"myFunction()"</span>&gt;</div><div class="line">&lt;p&gt;当你离开输入框后，函数将被触发，将小写字母转为大写字母。&lt;/p&gt;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> name = <span class="built_in">document</span>.getElementById(<span class="string">"name"</span>);</div><div class="line">    name.value = name.value.toUpperCase();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">输入你的名字：&lt;input type=<span class="string">"text"</span> id=<span class="string">"name"</span> onchange=<span class="string">"myFunction()"</span>&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>当你离开输入框后，函数将被触发，将小写字母转为大写字母。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> name = <span class="built_in">document</span>.getElementById(<span class="string">"name"</span>);</div><div class="line">    name.value = name.value.toUpperCase();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="onmouseover-amp-onmouseout事件"><a href="#onmouseover-amp-onmouseout事件" class="headerlink" title="onmouseover &amp; onmouseout事件"></a>onmouseover &amp; onmouseout事件</h3><p>用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div onmouseover=<span class="string">"mOver(this)"</span> onmouseout=<span class="string">"mOut(this)"</span> style=<span class="string">"background: red;width: 120px;height: 120px;"</span>&gt;&lt;/div&gt;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mOut</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    obj.innerHTML = <span class="string">"Move Over Me"</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mOver</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    obj.innerHTML = <span class="string">"Thank you!"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div onmouseover=<span class="string">"mOver(this)"</span> onmouseout=<span class="string">"mOut(this)"</span> style=<span class="string">"background: red;width: 120px;height: 120px;"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mOut</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    obj.innerHTML = <span class="string">"Move Over Me"</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mOver</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    obj.innerHTML = <span class="string">"Thank you!"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="onmousedown-amp-onmouseup-amp-onclick事件"><a href="#onmousedown-amp-onmouseup-amp-onclick事件" class="headerlink" title="onmousedown &amp; onmouseup &amp; onclick事件"></a>onmousedown &amp; onmouseup &amp; onclick事件</h3><p>onmousedown, onmouseup 以及 onclick 构成了鼠标点击事件的所有部分。首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;img id=<span class="string">"img"</span> onmousedown=<span class="string">"lighton()"</span> onmouseup=<span class="string">"lightoff()"</span> src=<span class="string">"http://www.runoob.com/try/demo_source/bulboff.gif"</span> width=<span class="string">"100px"</span> height=<span class="string">"180px"</span>&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">lightoff</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'img'</span>).src=<span class="string">"http://www.runoob.com/try/demo_source/bulboff.gif"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="button事件"><a href="#button事件" class="headerlink" title="button事件"></a>button事件</h3><p>指示当事件被触发时哪个鼠标按键被点击。语法：<code>event.button = 0|1|2</code> 。</p>
@@ -774,15 +774,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -794,7 +798,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -802,19 +806,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo+github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">css预处理器</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -822,15 +818,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
