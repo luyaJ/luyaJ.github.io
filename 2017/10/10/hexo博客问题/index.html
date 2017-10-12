@@ -6,16 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <link rel="shortcut icon" href="http://otnbkrzno.bkt.clouddn.com/myPic.ico">
-  <title>Category: WechatApp | luyaJ的小博客</title>
+  <link rel="shortcut icon" href="http://otnbkrzno.bkt.clouddn.com/20171007073136465_easyicon_net_32.ico">
+  <title>hexo博客问题 | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="luyaJ的小博客">
-<meta property="og:url" content="http://yoursite.com/categories/WechatApp/index.html">
+  <meta name="description" content="hexo博客中遇见的问题及解决办法。">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo博客问题">
+<meta property="og:url" content="http://yoursite.com/2017/10/10/hexo博客问题/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
+<meta property="og:description" content="hexo博客中遇见的问题及解决办法。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oxligjg1w.bkt.clouddn.com/error-debug.png">
+<meta property="og:image" content="http://oxligjg1w.bkt.clouddn.com/hexo--debug.png">
+<meta property="og:updated_time" content="2017-10-10T07:25:25.005Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luyaJ的小博客">
+<meta name="twitter:title" content="hexo博客问题">
+<meta name="twitter:description" content="hexo博客中遇见的问题及解决办法。">
+<meta name="twitter:image" content="http://oxligjg1w.bkt.clouddn.com/error-debug.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -42,7 +50,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://otnbkrzno.bkt.clouddn.com/meng.png" class="js-avatar">
+			<img src="http://otnbkrzno.bkt.clouddn.com/20171007073136465_easyicon_net_32.ico" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">luyaJ</a></h1>
@@ -102,7 +110,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://otnbkrzno.bkt.clouddn.com/meng.png" class="js-avatar">
+				<img src="http://otnbkrzno.bkt.clouddn.com/20171007073136465_easyicon_net_32.ico" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">luyaJ</h1>
@@ -155,71 +163,174 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-hexo博客问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/24/WechatApp基础/" class="archive-article-date">
-  	<time datetime="2017-08-24T13:50:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/24/WechatApp基础/">WechatApp基础</a>
+    <h1 class="article-title" itemprop="name">
+      hexo博客问题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/10/10/hexo博客问题/" class="archive-article-date">
+  	<time datetime="2017-10-10T06:28:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-10</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解决fs-SyncWriteStream报错问题"><span class="toc-number">1.</span> <span class="toc-text">解决fs.SyncWriteStream报错问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决Template-render-error问题"><span class="toc-number">2.</span> <span class="toc-text">解决Template render error问题</span></a></li></ol>
+    </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+      };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+      };
+    </script>
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>hexo博客中遇见的问题及解决办法。</p>
+<a id="more"></a>
+<h2 id="解决fs-SyncWriteStream报错问题"><a href="#解决fs-SyncWriteStream报错问题" class="headerlink" title="解决fs.SyncWriteStream报错问题"></a>解决fs.SyncWriteStream报错问题</h2><p>最近，在执行hexo命令时，遇到了这样的报错：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(node:<span class="number">11320</span>) [DEP0061] DeprecationWarning: fs.SyncWriteStream is deprecated.</div></pre></td></tr></table></figure>
+<p>在网上查阅资料发现，原来是<code>node.js</code>从8.0开始弃用<code>fs.SyncWriteStream</code>这个方法。有人issue了这个问题（<a href="https://github.com/hexojs/hexo/issues/2598" target="_blank" rel="external">fs.SyncWriteStream</a>），原来是需要更新hexo-fs插件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-fs --save</div></pre></td></tr></table></figure>
+<p>但是这样我更新之后还是有同样的错误，那么就是用以下方法定位错误在哪里：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo clean --debug</div></pre></td></tr></table></figure>
+<p>结果如图：</p>
+<p><img src="http://oxligjg1w.bkt.clouddn.com/error-debug.png" alt="hexo--debug"></p>
+<p>可以看到我所在报错的位置是<code>hexo-deployer-git</code>，于是找到<code>hexo-deployer-git\node_modules\hexo-fs\lib\fs.js</code>的第718行，将<code>exports.SyncWriteStream = fs.SyncWriteStream;</code>注释掉，即可。</p>
+<p>再次使用<code>$ hexo clean --debug</code>，发现问题解决了：</p>
+<p><img src="http://oxligjg1w.bkt.clouddn.com/hexo--debug.png" alt=""></p>
+<h2 id="解决Template-render-error问题"><a href="#解决Template-render-error问题" class="headerlink" title="解决Template render error问题"></a>解决Template render error问题</h2><p>在执行命令时，又遇到了这样的问题：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</div><div class="line">Template render error: (unknown path)</div></pre></td></tr></table></figure>
+<p>帮助文档：<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">hexo–troubleshooting</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">WechatApp</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/WechatApp/" class="article-tag-list-link color5">WechatApp</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/10/hexo博客问题/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/09/16/CSS-齐舞/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS_齐舞</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
+
+
 
 
           </div>
@@ -250,10 +361,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
@@ -312,19 +423,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -332,11 +435,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">WechatApp</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -348,15 +463,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -411,7 +522,7 @@
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">var luyaJ = {&lt;br&gt;MyMotto:&quot;talk is cheap,show me the code&quot;,&lt;br&gt;MyTarget:&quot;恍若女人般的优雅code&quot;&lt;br&gt;}</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">spring,summer,autumn,winter</div>
   	  	
     	</section>
     

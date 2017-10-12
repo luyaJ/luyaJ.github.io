@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/08/24/WechatApp%E5%9F%BA%E7%A1%80/</loc>
+    
+    <lastmod>2017-10-12T02:43:36.241Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/10/hexo%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2017-10-10T07:25:25.005Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/09/16/CSS-%E9%BD%90%E8%88%9E/</loc>
     
     <lastmod>2017-09-24T13:57:21.344Z</lastmod>
@@ -110,13 +124,6 @@
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2017-08-27T14:20:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/08/24/WechatApp%E5%9F%BA%E7%A1%80/</loc>
-    
-    <lastmod>2017-08-24T14:10:08.000Z</lastmod>
     
   </url>
   
