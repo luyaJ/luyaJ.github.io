@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-10T07:25:25.005Z</updated>
+  <updated>2017-10-13T06:21:49.731Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/10/10/hexo%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2017/10/10/hexo博客问题/</id>
     <published>2017-10-10T06:28:48.000Z</published>
-    <updated>2017-10-10T07:25:25.005Z</updated>
+    <updated>2017-10-13T06:21:49.731Z</updated>
     
     <content type="html"><![CDATA[<p>hexo博客中遇见的问题及解决办法。</p>
 <a id="more"></a>
@@ -37,6 +37,7 @@
 <p><img src="http://oxligjg1w.bkt.clouddn.com/hexo--debug.png" alt=""></p>
 <h2 id="解决Template-render-error问题"><a href="#解决Template-render-error问题" class="headerlink" title="解决Template render error问题"></a>解决Template render error问题</h2><p>在执行命令时，又遇到了这样的问题：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</div><div class="line">Template render error: (unknown path)</div></pre></td></tr></table></figure>
+<p>经过查询，我知道了，有两个地方会导致出现这样的问题：①<code>_config.yml</code>配置文件中，你写的格式、缩进等可能会导致出现问题；②在你的<code>page/post</code>可能是你的哪篇文章出现了问题。</p>
 <p>帮助文档：<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">hexo–troubleshooting</a></p>
 ]]></content>
     
