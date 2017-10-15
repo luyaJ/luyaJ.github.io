@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-15T14:28:41.585Z</updated>
+  <updated>2017-10-15T14:31:09.227Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,19 +20,19 @@
     <link href="http://yoursite.com/2017/10/15/%E5%AD%A6%E4%B9%A0linux/"/>
     <id>http://yoursite.com/2017/10/15/学习linux/</id>
     <published>2017-10-15T12:02:49.000Z</published>
-    <updated>2017-10-15T14:28:41.585Z</updated>
+    <updated>2017-10-15T14:31:09.227Z</updated>
     
     <content type="html"><![CDATA[<p>简介：使用虚拟机安装linux以及linux学习。</p>
 <a id="more"></a>
 <ul>
-<li>VMware Workstation Pro：<img src="https://www.vmware.com/cn/products/workstation-pro.html" alt="下载地址"></li>
-<li>CentOS：<img src="http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso" alt="下载地址"></li>
+<li>VMware Workstation Pro：<a href="https://www.vmware.com/cn/products/workstation-pro.html" target="_blank" rel="external">下载地址</a></li>
+<li>CentOS：<a href="http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso" target="_blank" rel="external">下载地址</a></li>
 <li>书籍推荐：《跟阿铭学Linux》2014年10月第1版</li>
-<li>实验楼：<img src="https://www.shiyanlou.com/courses/1" alt="学习地址"></li>
+<li>实验楼：<a href="https://www.shiyanlou.com/courses/1" target="_blank" rel="external">学习地址</a></li>
 </ul>
 <h1 id="虚拟机安装Linux"><a href="#虚拟机安装Linux" class="headerlink" title="虚拟机安装Linux"></a>虚拟机安装Linux</h1><p>《跟阿铭学Linux》这里面也有详细的安装过程，这里我就记录两点：</p>
 <ol>
-<li><a href="http://oxv4lmd01.bkt.clouddn.com/%E9%80%89%E6%8B%A9gui.png" target="_blank" rel="external">图形界面</a></li>
+<li><img src="http://oxv4lmd01.bkt.clouddn.com/%E9%80%89%E6%8B%A9gui.png" alt="图形界面"></li>
 </ol>
 <p>习惯于用图形界面的同学一定要记得选择这项，不然之后安装有点麻烦。</p>
 <ol>
