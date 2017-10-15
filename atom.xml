@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-13T06:21:49.731Z</updated>
+  <updated>2017-10-15T14:28:41.585Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,194 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习linux</title>
+    <link href="http://yoursite.com/2017/10/15/%E5%AD%A6%E4%B9%A0linux/"/>
+    <id>http://yoursite.com/2017/10/15/学习linux/</id>
+    <published>2017-10-15T12:02:49.000Z</published>
+    <updated>2017-10-15T14:28:41.585Z</updated>
+    
+    <content type="html"><![CDATA[<p>简介：使用虚拟机安装linux以及linux学习。</p>
+<a id="more"></a>
+<ul>
+<li>VMware Workstation Pro：<img src="https://www.vmware.com/cn/products/workstation-pro.html" alt="下载地址"></li>
+<li>CentOS：<img src="http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso" alt="下载地址"></li>
+<li>书籍推荐：《跟阿铭学Linux》2014年10月第1版</li>
+<li>实验楼：<img src="https://www.shiyanlou.com/courses/1" alt="学习地址"></li>
+</ul>
+<h1 id="虚拟机安装Linux"><a href="#虚拟机安装Linux" class="headerlink" title="虚拟机安装Linux"></a>虚拟机安装Linux</h1><p>《跟阿铭学Linux》这里面也有详细的安装过程，这里我就记录两点：</p>
+<ol>
+<li><a href="http://oxv4lmd01.bkt.clouddn.com/%E9%80%89%E6%8B%A9gui.png" target="_blank" rel="external">图形界面</a></li>
+</ol>
+<p>习惯于用图形界面的同学一定要记得选择这项，不然之后安装有点麻烦。</p>
+<ol>
+<li>刚点击<code>install CentOS 7</code> ，就发现界面黑屏，怎么弄都没有反应，这个时候就要注意，是不是电脑禁止了虚拟机功能。解决办法：重启电脑进入BIOS，找到<code>virtualization</code>的一项,我的BIOS中在<code>Advanced-cpu setup-virtualization</code>，现为<code>Disabled</code>状态，改为<code>Enable</code>，再开机安装这个问题应该解决了！</li>
+</ol>
+<p>其他的可以参考这篇文章，讲的很详细。（<img src="https://zm10.sm-tc.cn/?src=l4uLj8XQ0IiIiNGcl5qRmIeKhoqekYzRnJCS0KqRlofQx8zLysvRl4uSkw%3D%3D&amp;uid=ce6674418dc941a250cb1bbb92abaff3&amp;hid=2e837fc7c03ffc154a4bd83c8d2925af&amp;pos=1&amp;cid=9&amp;time=1507991385827&amp;from=click&amp;restype=1&amp;pagetype=0000004000000402&amp;bu=structure_web_info&amp;query=centos7%E5%88%86%E5%8C%BA%E6%96%B9%E6%A1%88&amp;mode=&amp;v=1&amp;uc_param_str=dnntnwvepffrgibijbprsvdsdichei" alt="CentOs安装教程等">）</p>
+<h1 id="学习Linux"><a href="#学习Linux" class="headerlink" title="学习Linux"></a>学习Linux</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="小笔记"><a href="#小笔记" class="headerlink" title="小笔记"></a>小笔记</h3><ul>
+<li>切换用户：<code>su 用户名</code> (<code>su root</code>)</li>
+<li>新建目录：<code>mkdir 目录名</code></li>
+<li>新建文件：<code>touch 文件名</code></li>
+<li>切换路径：<code>cd 路径地址</code></li>
+</ul>
+<h3 id="重要快捷键"><a href="#重要快捷键" class="headerlink" title="重要快捷键"></a>重要快捷键</h3><ul>
+<li>tab键:写命令时，命令不记得，那就用Tab补全</li>
+<li>Ctrl+c:强行终止当前程序 </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+d</td>
+<td>键盘输入结束或退出终端</td>
+</tr>
+<tr>
+<td>Ctrl+s</td>
+<td>暂停当前程序，暂停后按下任意键恢复运行</td>
+</tr>
+<tr>
+<td>Ctrl+z</td>
+<td>将当前程序放到后台运行，恢复到前台为命令fg</td>
+</tr>
+<tr>
+<td>Ctrl+a</td>
+<td>将光标移至输入行头，相当于Home键</td>
+</tr>
+<tr>
+<td>Ctrl+e</td>
+<td>将光标移至输入行末，相当于End键</td>
+</tr>
+<tr>
+<td>Ctrl+k</td>
+<td>删除从光标所在位置到行末</td>
+</tr>
+<tr>
+<td>Alt+Backspace</td>
+<td>向前删除一个单词</td>
+</tr>
+<tr>
+<td>Shift+PgUp</td>
+<td>将终端显示向上滚动</td>
+</tr>
+<tr>
+<td>Shift+PgDn</td>
+<td>将终端显示向下滚动</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>方向键↑:恢复之前输入过的命令</li>
+</ul>
+<h3 id="Shell常用通配符"><a href="#Shell常用通配符" class="headerlink" title="Shell常用通配符"></a>Shell常用通配符</h3><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>匹配0或多个字符</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配任意一个字符</td>
+</tr>
+<tr>
+<td>[list]</td>
+<td>匹配list中的任意单一字符</td>
+</tr>
+<tr>
+<td>[!list]</td>
+<td>匹配除list中的任意单一字符以外的字符</td>
+</tr>
+<tr>
+<td>[c1-c2]</td>
+<td>匹配c1-c2中的任意单一字符,如：[0-9] [a-z]</td>
+</tr>
+<tr>
+<td>{string1,string2,…}</td>
+<td>匹配string1或string2(或更多)其一字符串</td>
+</tr>
+<tr>
+<td>{c1…c2}</td>
+<td>匹配c1-c2中全部字符，如{1..10}</td>
+</tr>
+</tbody>
+</table>
+<p>一次性创建多个文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[luyaj@localhost <span class="built_in">test</span>]$ touch hello&#123;1..3&#125;.html</div><div class="line">[luyaj@localhost <span class="built_in">test</span>]$ ls *.html</div><div class="line">hello1.html  hello2.html  hello3.html</div></pre></td></tr></table></figure></p>
+<h3 id="在命令行中获取帮助"><a href="#在命令行中获取帮助" class="headerlink" title="在命令行中获取帮助"></a>在命令行中获取帮助</h3><p>你可以使用如下方式来获得某个命令的说明和使用方式的详细介绍:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ man &lt;command_name&gt;</div></pre></td></tr></table></figure></p>
+<p>由于<code>man</code>的命令很多，所以手册进行了分区段处理，通常被分为以下8个区段：</p>
+<table>
+<thead>
+<tr>
+<th>区段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>一般命令</td>
+</tr>
+<tr>
+<td>2</td>
+<td>系统调用</td>
+</tr>
+<tr>
+<td>3</td>
+<td>库函数，涵盖了C标准函数库</td>
+</tr>
+<tr>
+<td>4</td>
+<td>特殊文件（通常是/dev中的设备）和驱动程序</td>
+</tr>
+<tr>
+<td>5</td>
+<td>文件格式和约定</td>
+</tr>
+<tr>
+<td>6</td>
+<td>游戏和屏保</td>
+</tr>
+<tr>
+<td>7</td>
+<td>杂项</td>
+</tr>
+<tr>
+<td>8</td>
+<td>系统管理命令和守护进程</td>
+</tr>
+</tbody>
+</table>
+<p>例如：<code>$ man 1 ls</code></p>
+<p>如果你知道某个命令的作用，只是想快速查看一些它的某个具体参数的作用，那么你可以使用–help参数，大部分命令都会带有这个参数，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls --help</div></pre></td></tr></table></figure></p>
+<h2 id="Linux文件和目录管理"><a href="#Linux文件和目录管理" class="headerlink" title="Linux文件和目录管理"></a>Linux文件和目录管理</h2><h3 id="命令cd"><a href="#命令cd" class="headerlink" title="命令cd"></a>命令cd</h3><p>命令cd是用来变更用户所在目录的，后面只能跟目录名，跟了文件名会报错；命令pwd是用来打印当前所在目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[luyaj@localhost ~]$ <span class="built_in">cd</span> home</div><div class="line">bash: <span class="built_in">cd</span>: home: 没有那个文件或目录</div><div class="line">[luyaj@localhost ~]$ <span class="built_in">cd</span> /home</div><div class="line">[luyaj@localhost home]$ <span class="built_in">pwd</span></div><div class="line">/home</div></pre></td></tr></table></figure></p>
+<p>在linux文件系统中，有两个特殊的符号也可以表示目录。”.”表示当前目录，”..”表示当前目录的上一级目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[luyaj@localhost <span class="built_in">test</span>]$ <span class="built_in">cd</span> .</div><div class="line">[luyaj@localhost <span class="built_in">test</span>]$ <span class="built_in">pwd</span></div><div class="line">/home/luyaj/<span class="built_in">test</span></div><div class="line">[luyaj@localhost <span class="built_in">test</span>]$ <span class="built_in">cd</span> ..</div><div class="line">[luyaj@localhost ~]$ <span class="built_in">pwd</span></div><div class="line">/home/luyaj</div></pre></td></tr></table></figure></p>
+<h3 id="命令mkdir"><a href="#命令mkdir" class="headerlink" title="命令mkdir"></a>命令mkdir</h3><p><code>mkdir</code>是<em>make directory</em>的缩写。命令格式是：<code>mkdir [-mp][目录名称]</code>。-m选项用于指定要创建目录的权限（不常用）；-p选项很有用处，我们先来看看：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[luyaj@localhost ~]$ mkdir luya/<span class="built_in">test</span>/123</div><div class="line">mkdir: 无法创建目录<span class="string">"luya/test/123"</span>: 没有那个文件或目录</div><div class="line">[luyaj@localhost ~]$ mkdir -p luya/<span class="built_in">test</span>/123</div><div class="line">[luyaj@localhost ~]$ ls luya/<span class="built_in">test</span></div><div class="line">123</div></pre></td></tr></table></figure>
+<p>我们发现当我们想创建目录<code>luya/test/123</code>时，提示无法创建、<code>/luya/test</code>文件不存在。这是因为在linux中，如果发现要创建的目录的上一级目录不存在就会报错。所以-p这个选项就是帮我们创建一大串级联目录，并且当创建一个已经存在的目录时不会报错。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;简介：使用虚拟机安装linux以及linux学习。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo博客问题</title>
@@ -2524,133 +2712,6 @@ public int divide(int a,int b){
     
     
       <category term="软件测试" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS实现轮播图</title>
-    <link href="http://yoursite.com/2017/01/31/JS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/"/>
-    <id>http://yoursite.com/2017/01/31/JS实现轮播图/</id>
-    <published>2017-01-31T08:10:42.000Z</published>
-    <updated>2017-09-17T13:36:43.725Z</updated>
-    
-    <content type="html"><![CDATA[<p> 这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西。  </p>
-<a id="more"></a>
-<h3 id="html代码实现"><a href="#html代码实现" class="headerlink" title="html代码实现"></a>html代码实现</h3><pre><code>&lt;div id=&quot;content&quot;&gt;
-    &lt;div id=&quot;images&quot; style=&quot;left: -600px;&quot;&gt; 
-        &lt;img src=&quot;images/5.jpg&quot;&gt;
-        &lt;img src=&quot;images/1.jpg&quot;&gt;
-        &lt;img src=&quot;images/2.jpg&quot;&gt;
-        &lt;img src=&quot;images/3.jpg&quot;&gt;
-        &lt;img src=&quot;images/4.jpg&quot;&gt;
-        &lt;img src=&quot;images/5.jpg&quot;&gt;
-        &lt;img src=&quot;images/1.jpg&quot;&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;circle&quot;&gt;
-        &lt;span class=&quot;on&quot; index=&quot;1&quot;&gt;&lt;/span&gt;
-        &lt;span index=&quot;2&quot;&gt;&lt;/span&gt;
-        &lt;span index=&quot;3&quot;&gt;&lt;/span&gt;
-        &lt;span index=&quot;4&quot;&gt;&lt;/span&gt;
-        &lt;span index=&quot;5&quot;&gt;&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;btn&quot; id=&quot;btn_l&quot;&gt;&amp;lt;&lt;/div&gt;
-    &lt;div class=&quot;btn&quot; id=&quot;btn_r&quot;&gt;&amp;gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre><h3 id="css部分代码实现"><a href="#css部分代码实现" class="headerlink" title="css部分代码实现"></a>css部分代码实现</h3><p> 1.”content” 处设置相对位置：<code>position:relative</code>; 图片展示为只显示一张图片，所以溢出content容器部分使用属性：<code>overflow:hidden</code>;</p>
-<p> 2.左、右按钮部分代码：</p>
-<pre><code>position: relative;  
-cursor: pointer;  //鼠标移上去，显示手指妆
-height: 50px;
-width: 30px;
-background: rgba(0,0,0,0.3);
-top: 50%;
-font-size: 40px;
-text-align: center;
-line-height: 50px;
-display: none;  //当鼠标移上去时，btn出现
-color: #fff;
-</code></pre><h3 id="javascript部分代码实现"><a href="#javascript部分代码实现" class="headerlink" title="javascript部分代码实现"></a>javascript部分代码实现</h3><h4 id="点击-lt-gt-按钮让图片左右移动"><a href="#点击-lt-gt-按钮让图片左右移动" class="headerlink" title="点击&lt; &gt;按钮让图片左右移动"></a>点击&lt; &gt;按钮让图片左右移动</h4><pre><code>function animate(offset){
-    var newLeft = parseInt(images.style.left) + offset;
-    images.style.left = newLeft + &apos;px&apos;;
-    if (newLeft&lt;-3000) {
-        images.style.left = -600 + &apos;px&apos;;
-    }
-    if (newLeft&gt;-600) {
-        images.style.left = -3000 + &apos;px&apos;;
-    }
-}
-
-btn_l.onclick=function(){
-    animate(600);    
-}
-
-btn_r.onclick=function(){
-    animate(-600);
-}
-</code></pre><p>if循环语句是实现图片无限循环；</p>
-<p>这时，轮播图可以实现左右点击，图片相应变化的功能。</p>
-<h4 id="设置轮播图的定时器"><a href="#设置轮播图的定时器" class="headerlink" title="设置轮播图的定时器"></a>设置轮播图的定时器</h4><pre><code>var timer;
-function play(){
-    timer = setInterval(function() {
-        btn_r.onclick()
-    },3000)    //每3000ms图片自动移动
-}
-play();
-</code></pre><p>使用setIntervel()设置定时器。</p>
-<h4 id="清除轮播图的定时器"><a href="#清除轮播图的定时器" class="headerlink" title="清除轮播图的定时器"></a>清除轮播图的定时器</h4><pre><code>function stop() {
-    clearInterval(timer);
-}
-content.onmouseover = stop;
-content.onmouseout = play;
-</code></pre><p>图片自动移动时，当把鼠标悬停在content内时，图片暂停移动。</p>
-<h4 id="小圆点随图片变化相应变化"><a href="#小圆点随图片变化相应变化" class="headerlink" title="小圆点随图片变化相应变化"></a>小圆点随图片变化相应变化</h4><pre><code>function showCircle(){
-    for (var i=0;i&lt;circle.length;i++){
-        if(circle[i].className==&apos;on&apos;){
-            circle[i].className=&apos;&apos;;
-        }
-    }
-    circle[index-1].className=&apos;on&apos;;
-}
-</code></pre><p>for循环用来清除之前circle的样式；</p>
-<p>这时，点击&lt; &gt; 按钮小圆点会随图片相应点亮。</p>
-<pre><code>for (var i=0;i&lt;circle.length;i++){
-    circle[i].onclick=function(){
-        var clickIndex=parseInt(this.getAttribute(&apos;index&apos;));
-        var offset=600*(index-clickIndex);
-        animate(offset);
-        index=clickIndex;
-        showCircle();       
-    }
-}
-</code></pre><p>利用getAttribute(‘’)获取自定义index，之后</p>
-<pre><code>btn_l.onclick=function(){
-    index -= 1;
-    if(index&lt;1){
-        index=5;
-    }
-    showCircle();
-    animate(600);    
-}
-btn_r.onclick=function(){
-    index += 1;
-    if(index&gt;5){
-        index=1;
-    }
-    showCircle();
-    animate(-600);
-}
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt; 这个轮播图是在2016年12月完成的，是我用js完成的第一个小东西。  &lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Web前端" scheme="http://yoursite.com/categories/Web%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
     
   </entry>
   
