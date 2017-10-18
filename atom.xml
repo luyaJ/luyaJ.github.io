@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-17T06:19:04.628Z</updated>
+  <updated>2017-10-18T01:47:46.585Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/10/15/%E5%AD%A6%E4%B9%A0linux/"/>
     <id>http://yoursite.com/2017/10/15/学习linux/</id>
     <published>2017-10-15T12:02:49.000Z</published>
-    <updated>2017-10-17T06:19:04.628Z</updated>
+    <updated>2017-10-18T01:47:46.585Z</updated>
     
     <content type="html"><![CDATA[<p>简介：使用虚拟机安装linux以及linux学习。</p>
 <a id="more"></a>
@@ -44,6 +44,7 @@
 <li>新建目录：<code>mkdir 目录名</code></li>
 <li>新建文件：<code>touch 文件名</code></li>
 <li>切换路径：<code>cd 路径地址</code></li>
+<li>关机命令：<code>init 0</code></li>
 </ul>
 <h2 id="重要快捷键"><a href="#重要快捷键" class="headerlink" title="重要快捷键"></a>重要快捷键</h2><ul>
 <li>tab键:写命令时，命令不记得，那就用Tab补全</li>
@@ -304,8 +305,22 @@
 <p>/dev/shm为内存挂载点，如果你想把文件放到内存里，就可以放到这个目录下。</p>
 <h3 id="命令du"><a href="#命令du" class="headerlink" title="命令du"></a>命令du</h3><p>用来查看某个目录或文件所占空间的大小，命令格式：<code>du [-abckmsh][文件或者目录名]</code>。</p>
 <ul>
-<li>-a：</li>
+<li>-a：表示全部文件和目录的大小都列出来。如果不指定单位，默认显示单位为”KB”。</li>
+<li>-b：表示列出的值以”bytes”为单位输出。</li>
+<li>-k：表示以”KB”为单位输出，这和不加选项是一样的。</li>
+<li>-m：表示以”MB”为单位输出。</li>
+<li>-h：表示系统自动调节单位。</li>
+<li>-c：表示最后加总。</li>
+<li>-s：表示只列出总和。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">[luyaj@localhost ~]$ du <span class="built_in">test</span></div><div class="line">0   <span class="built_in">test</span>/<span class="built_in">test</span>2</div><div class="line">0   <span class="built_in">test</span>/<span class="built_in">test</span>3</div><div class="line">0   <span class="built_in">test</span></div><div class="line">[luyaj@localhost ~]$ du <span class="_">-a</span> <span class="built_in">test</span></div><div class="line">0   <span class="built_in">test</span>/<span class="built_in">test</span>2</div><div class="line">0   <span class="built_in">test</span>/<span class="built_in">test</span>3/1.txt</div><div class="line">0   <span class="built_in">test</span>/<span class="built_in">test</span>3</div><div class="line">0   <span class="built_in">test</span></div><div class="line">[luyaj@localhost ~]$ du -b /etc/passwd</div><div class="line">2233    /etc/passwd</div><div class="line">[luyaj@localhost ~]$ du -k /etc/passwd</div><div class="line">4   /etc/passwd</div><div class="line">[luyaj@localhost ~]$ du -m /etc/passwd</div><div class="line">1   /etc/passwd</div><div class="line">[luyaj@localhost ~]$ du -h /etc/passwd</div><div class="line">4.0K    /etc/passwd</div><div class="line">[luyaj@localhost ~]$ du -c <span class="built_in">test</span></div><div class="line">0   <span class="built_in">test</span>/<span class="built_in">test</span>2</div><div class="line">0   <span class="built_in">test</span>/<span class="built_in">test</span>3</div><div class="line">0   <span class="built_in">test</span></div><div class="line">0   总用量</div><div class="line">[luyaj@localhost ~]$ du <span class="_">-s</span> <span class="built_in">test</span></div><div class="line">0   <span class="built_in">test</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
+<h2 id="磁盘的分区和格式化"><a href="#磁盘的分区和格式化" class="headerlink" title="磁盘的分区和格式化"></a>磁盘的分区和格式化</h2><h3 id="增加虚拟磁盘"><a href="#增加虚拟磁盘" class="headerlink" title="增加虚拟磁盘"></a>增加虚拟磁盘</h3><p>在系统关机的状态下，选择你的虚拟机，右键<strong>设置</strong>，然后<strong>添加</strong>硬盘，创建<strong>新虚拟磁盘</strong>，将虚拟磁盘拆分成多个文件，完成。</p>
+<h3 id="命令fdisk"><a href="#命令fdisk" class="headerlink" title="命令fdisk"></a>命令fdisk</h3><p>这里我已经创建好了新的磁盘，所以执行命令<code>fdisk -l</code>会发现新增了一个磁盘”/dev/sdb”。</p>
+<p>如果只执行命令<code>fdisk /dev/sda</code>就会进入另一种模式，在这个模式下，可以对磁盘进行分区操作。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">[root@localhost luyaj]<span class="comment"># fdisk /dev/sdb</span></div><div class="line">欢迎使用 fdisk (util-linux 2.23.2)。</div><div class="line"></div><div class="line">更改将停留在内存中，直到您决定将更改写入磁盘。</div><div class="line">使用写入命令前请三思。</div><div class="line"></div><div class="line">Device does not contain a recognized partition table</div><div class="line">使用磁盘标识符 0xad054854 创建新的 DOS 磁盘标签。</div><div class="line"></div><div class="line">命令(输入 m 获取帮助)：m</div><div class="line">命令操作</div><div class="line">   a   toggle a bootable flag</div><div class="line">   b   edit bsd disklabel</div><div class="line">   c   toggle the dos compatibility flag</div><div class="line">   d   delete a partition</div><div class="line">   g   create a new empty GPT partition table</div><div class="line">   G   create an IRIX (SGI) partition table</div><div class="line">   l   list known partition types</div><div class="line">   m   <span class="built_in">print</span> this menu</div><div class="line">   n   add a new partition</div><div class="line">   o   create a new empty DOS partition table</div><div class="line">   p   <span class="built_in">print</span> the partition table</div><div class="line">   q   quit without saving changes</div><div class="line">   s   create a new empty Sun disklabel</div><div class="line">   t   change a partition’s system id</div><div class="line">   u   change display/entry units</div><div class="line">   v   verify the partition table</div><div class="line">   w   write table to disk and <span class="built_in">exit</span></div><div class="line">   x   extra functionality (experts only)</div></pre></td></tr></table></figure>
+<p>输入p命令，我们可以看到当前无分区：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">命令(输入 m 获取帮助)：p</div><div class="line"></div><div class="line">磁盘 /dev/sdb：8589 MB, 8589934592 字节，16777216 个扇区</div><div class="line">Units = 扇区 of 1 * 512 = 512 bytes</div><div class="line">扇区大小(逻辑/物理)：512 字节 / 512 字节</div><div class="line">I/O 大小(最小/最佳)：512 字节 / 512 字节</div><div class="line">磁盘标签类型：dos</div><div class="line">磁盘标识符：0xad054854</div><div class="line"></div><div class="line">   设备 Boot      Start         End      Blocks   Id  System</div></pre></td></tr></table></figure></p>
+<p>那么我们开始创建分区：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">命令(输入 m 获取帮助)：n</div><div class="line">Partition <span class="built_in">type</span>:</div><div class="line">   p   primary (0 primary, 0 extended, 4 free)</div><div class="line">   e   extended</div><div class="line">Select (default p): p</div><div class="line">分区号 (1-4，默认 1)：1</div><div class="line">起始 扇区 (2048-16777215，默认为 2048)：1</div><div class="line">值超出范围。</div><div class="line">起始 扇区 (2048-16777215，默认为 2048)：2048</div><div class="line">Last 扇区, +扇区 or +size&#123;K,M,G&#125; (2048-16777215，默认为 16777215)：+1000M</div><div class="line">分区 1 已设置为 Linux 类型，大小设为 1000 MiB</div></pre></td></tr></table></figure></p>
+<p>使用n命令新建分区，选择p（主分区），</p>
 ]]></content>
     
     <summary type="html">
