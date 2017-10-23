@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-19T09:24:16.887Z</updated>
+  <updated>2017-10-23T09:55:21.543Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>归并排序实现的三种方式</title>
+    <link href="http://yoursite.com/2017/10/23/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
+    <id>http://yoursite.com/2017/10/23/归并排序实现的三种方式/</id>
+    <published>2017-10-23T08:31:18.000Z</published>
+    <updated>2017-10-23T09:55:21.543Z</updated>
+    
+    <content type="html"><![CDATA[<p>算法课上老师布置的第一次上机实验。归并排序，一个<strong>分治</strong>的策略，先进行划分，再进行合并。空间复杂度：nlogn</p>
+<a id="more"></a>
+<h2 id="递归实现的归并排序"><a href="#递归实现的归并排序" class="headerlink" title="递归实现的归并排序"></a>递归实现的归并排序</h2><h3 id="基本思想："><a href="#基本思想：" class="headerlink" title="基本思想："></a>基本思想：</h3><p>将待排的元素分成大小大致相同的2个子集，分别对这两个子集进行排序，最终将排好序的子集合并，就会得到一个排好序的集合。</p>
+<p>设当前归并排序的区间是[left..right],分治法的三个步骤是：</p>
+<ul>
+<li>1.<strong>分解</strong>：将当前区间一分为二，即求分裂点</li>
+<li>2.<strong>求解</strong>：递归的对两个子区间[left..mid]和[mid+1..right]进行归并排序</li>
+<li>3.<strong>组合</strong>：将已排序的两个子区间[left..mid]和[mid+1..right]归并为一个有序的区间[left..right]。</li>
+</ul>
+<h3 id="实现过程如图："><a href="#实现过程如图：" class="headerlink" title="实现过程如图："></a>实现过程如图：</h3><p><img src="http://oy9sf0i32.bkt.clouddn.com/%E9%80%92%E5%BD%92%E7%9A%84%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.png" alt="递归的归并排序"></p>
+<h3 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;算法课上老师布置的第一次上机实验。归并排序，一个&lt;strong&gt;分治&lt;/strong&gt;的策略，先进行划分，再进行合并。空间复杂度：nlogn&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Web前端" scheme="http://yoursite.com/categories/Web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>学习linux</title>
@@ -2788,78 +2820,6 @@ toc: true
     
     
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>软件测试初学</title>
-    <link href="http://yoursite.com/2017/05/24/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%88%9D%E5%AD%A6/"/>
-    <id>http://yoursite.com/2017/05/24/软件测试初学/</id>
-    <published>2017-05-24T15:12:30.000Z</published>
-    <updated>2017-07-23T15:20:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="软件缺陷常见问题"><a href="#软件缺陷常见问题" class="headerlink" title="软件缺陷常见问题"></a>软件缺陷常见问题</h2><a id="more"></a>
-<h5 id="统一性"><a href="#统一性" class="headerlink" title="统一性"></a>统一性</h5><p>中英文问题</p>
-<h5 id="容错性"><a href="#容错性" class="headerlink" title="容错性"></a>容错性</h5><h5 id="互动性"><a href="#互动性" class="headerlink" title="互动性"></a>互动性</h5><ul>
-<li>用户输入信息有误时，按“确定”后，所有信息被清空(这种情况要避免)</li>
-<li>对于所有的删除信息在删除之前都要给出是否删除确认的提示或者放弃的提示。</li>
-<li>危险操作之前，提醒</li>
-<li>改变数据状态，提醒</li>
-<li>如填写资料有错误的时候，应该能够提示错误的位置，让用户知道到底是哪些地方输入的不正确</li>
-</ul>
-<h5 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h5><p>使用的提示信息要通俗易懂</p>
-<h5 id="兼容性："><a href="#兼容性：" class="headerlink" title="兼容性："></a>兼容性：</h5><ul>
-<li>操作系统版本</li>
-<li>屏幕分辨率</li>
-<li>网络类型(wifi,3G,4G)</li>
-</ul>
-<h5 id="易用性"><a href="#易用性" class="headerlink" title="易用性"></a>易用性</h5><p>对于要求用户大量录入信息的页面，要支持Tab键的输入，Tab键的走向要一般要遵循从做左到右，从上到下的的原则</p>
-<h5 id="安全性："><a href="#安全性：" class="headerlink" title="安全性："></a>安全性：</h5><ul>
-<li>登录网站进入其内部网页后，直接拷贝网址，然后粘贴到另一IE 窗口输入，在其他机器上看是否可以绕过登录直接访问</li>
-<li>对于需要登录的系统，在用户不操作的一定时间内，出于安全性考虑，最好要让用户重新登录才能重新使用该系统</li>
-<li>有些文件在ini等配置文件中写出了管理员口令密码等信息，而且是明文的!这是一个安全隐患</li>
-</ul>
-<p>！！！所有软件测试都是建立在业务之上的</p>
-<h2 id="等价类"><a href="#等价类" class="headerlink" title="等价类"></a>等价类</h2><p>概念：是指把程序的输入域根据等价类原则划分成若干部分，然后从每个部分中选取少数具有代表性的数据作为测试输入数据的一种方法。</p>
-<ol>
-<li>有效等价类</li>
-<li>无效等价类</li>
-</ol>
-<h2 id="Junit单元测试"><a href="#Junit单元测试" class="headerlink" title="Junit单元测试"></a>Junit单元测试</h2><p>测试用例不是用来证明你是对的，而是用来证明你没错。</p>
-<h5 id="入门："><a href="#入门：" class="headerlink" title="入门："></a>入门：</h5><p>1.新建一个类：</p>
-<p>File → Java Project : name (JUnit_Test) → 在src下new Package : name (JunitTest) → new class : name (Calculator) → 敲代码：</p>
-<pre><code>package JunitTest;
-public class Calculator {    
-public int add(int a,int b){
-    return a+b;
-}
-public int subtract(int a,int b){
-    return a-b;
-}
-public int multiply(int a,int b){
-    return a*b;
-}
-public int divide(int a,int b){
-    return a/b;
-}    
-}
-</code></pre><p>2.导入JUnit jar包：</p>
-<p>JUnit_Test → Build Path → Add Libraries… → JUnit → Next&gt; → Finish</p>
-<p>3.JunitTest → new : JUnit Test Case →输入测试工作区的名字 Name : (AddSubTest) , Class under test : name (Calculator) → Finish</p>
-<p>4.运行测试用例：</p>
-<p>右键 → Run AS → Junit Test → 结果显示，测试工作都运行通过</p>
-<p><img src="http://ot4r4qnml.bkt.clouddn.com/1.PNG" alt=""></p>
-<h4 id="第一个测试用例："><a href="#第一个测试用例：" class="headerlink" title="第一个测试用例："></a>第一个测试用例：</h4><p><img src="http://ot4r4qnml.bkt.clouddn.com/AddTest.PNG" alt=""><br><img src="http://ot4r4qnml.bkt.clouddn.com/AddTest2.PNG" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;软件缺陷常见问题&quot;&gt;&lt;a href=&quot;#软件缺陷常见问题&quot; class=&quot;headerlink&quot; title=&quot;软件缺陷常见问题&quot;&gt;&lt;/a&gt;软件缺陷常见问题&lt;/h2&gt;
-    
-    </summary>
-    
-    
-      <category term="软件测试" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
