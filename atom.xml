@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-23T09:55:21.543Z</updated>
+  <updated>2017-10-27T14:59:50.645Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一些工具使用</title>
+    <link href="http://yoursite.com/2017/10/27/%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2017/10/27/一些工具使用/</id>
+    <published>2017-10-27T14:32:16.000Z</published>
+    <updated>2017-10-27T14:59:50.645Z</updated>
+    
+    <content type="html"><![CDATA[<p>兴致来了，记录下自己喜欢的小工具，不定期更新。</p>
+<a id="more"></a>
+<h2 id="第一个工具-——-使用Emoji"><a href="#第一个工具-——-使用Emoji" class="headerlink" title="第一个工具 —— 使用Emoji"></a>第一个工具 —— 使用Emoji</h2><p>嗯，Emoji，在github里使用的emoji，好可爱的~ 看到这个好东西是来自前端早读课的第1083期文章，附上文章地址<a href="http://mp.weixin.qq.com/s/xaHAb_C1Vtih9mrIv379ew" target="_blank" rel="external">【第1083期】git commit时使用 Emoji</a>。</p>
+<p>使用起来很简单,直接在在emoji名字的前后各加上一个冒号：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m <span class="string">":sparkles:腾讯课堂NEXT学位"</span></div></pre></td></tr></table></figure></p>
+<p>效果展示：<br><img src="http://oxligjg1w.bkt.clouddn.com/gitmoji.png" alt="alt"></p>
+<ul>
+<li><a href="https://github.com/luyaJ/gitmoji" target="_blank" rel="external">github上的源码–gitmoji</a></li>
+<li><a href="https://gitmoji.carloscuesta.me/" target="_blank" rel="external">An emoji guide for your commit messages</a>在这里看图标的名称。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;兴致来了，记录下自己喜欢的小工具，不定期更新。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>归并排序实现的三种方式</title>
@@ -2705,121 +2736,6 @@ border-bottom-left-radius: 1em 3em;
     
     
       <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Yilia主题优化</title>
-    <link href="http://yoursite.com/2017/07/15/Yilia%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/"/>
-    <id>http://yoursite.com/2017/07/15/Yilia主题优化/</id>
-    <published>2017-07-15T09:56:56.000Z</published>
-    <updated>2017-09-17T13:38:42.051Z</updated>
-    
-    <content type="html"><![CDATA[<p>过了大半年，该是要好好整理下自己的博客了。</p>
-<a id="more"></a>
-<h2 id="github-hexo"><a href="#github-hexo" class="headerlink" title="github+hexo"></a>github+hexo</h2><h3 id="新建文章："><a href="#新建文章：" class="headerlink" title="新建文章："></a>新建文章：</h3><pre><code>$ hexo new &quot;新的文章&quot;
-</code></pre><p>然后你就发现blog根目录下的source文件夹中的_post文件夹中多了一个 <strong>新的文章.md</strong> 文件</p>
-<h3 id="本地服务预览："><a href="#本地服务预览：" class="headerlink" title="本地服务预览："></a>本地服务预览：</h3><pre><code>$ hexo s  //server  （会监视文件变动并自动更新）
-</code></pre><p>觉得自己的文章没问题后，就通过<code>hexo g</code> , <code>hexo d</code>生成和部署网页</p>
-<h3 id="清除缓存："><a href="#清除缓存：" class="headerlink" title="清除缓存："></a>清除缓存：</h3><pre><code>$ hexo clean
-</code></pre><h3 id="生成："><a href="#生成：" class="headerlink" title="生成："></a>生成：</h3><pre><code>$ hexo g  //generate
-</code></pre><h3 id="部署："><a href="#部署：" class="headerlink" title="部署："></a>部署：</h3><pre><code>$ hexo d  //deploy
-</code></pre><p>上面两部可以合起来</p>
-<pre><code>$ hexo d -g
-</code></pre><p><strong><a href="https://hexo.io/themes/" target="_blank" rel="external">hexo所有主题传送门</a></strong></p>
-<p><strong><a href="https://maxiang.io/" target="_blank" rel="external">markdown语法</a></strong></p>
-<p><strong><a href="http://www.markdownpad.com/" target="_blank" rel="external">markdownPad下载</a></strong></p>
-<p>推荐几个我觉得不错的主题：</p>
-<ul>
-<li><a href="http://ochukai.me/" target="_blank" rel="external">Ochuuunn</a> /  <a href="https://github.com/ochukai/hexo-theme-ochuunn" target="_blank" rel="external">github下载</a></li>
-<li><a href="http://hexo-theme-random.herokuapp.com/" target="_blank" rel="external">Random</a> / <a href="https://github.com/stiekel/hexo-theme-random" target="_blank" rel="external">github下载</a></li>
-</ul>
-<h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><pre><code>$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
-</code></pre><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>修改hexo根目录下的<code>_config.yml</code> ： <code>theme : yilia</code></p>
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><pre><code>$ cd themes/yilia
-$ git pull
-</code></pre><p>上面是老东西，下面是优化</p>
-<h2 id="添加文章目录"><a href="#添加文章目录" class="headerlink" title="添加文章目录"></a>添加文章目录</h2><h3 id="添加css样式"><a href="#添加css样式" class="headerlink" title="添加css样式"></a>添加css样式</h3><p>打开<code>themes\yilia\source</code>下的 <code>main.2d7529.css</code>文件(这里好像名字会不一样，没关系，找到.css文件就ok了)，在里面添加代码：</p>
-<pre><code>/* 新添加的 */
-#container .show-toc-btn,#container .toc-article{display:block}
-.toc-article{z-index:100;background:#fff;border:1px solid #ccc;max-width:250px;min-width:150px;max-height:500px;overflow-y:auto;-webkit-box-shadow:5px 5px 2px #ccc;box-shadow:5px 5px 2px #ccc;font-size:12px;padding:10px;position:fixed;right:35px;top:129px}.toc-article .toc-close{font-weight:700;font-size:20px;cursor:pointer;float:right;color:#ccc}.toc-article .toc-close:hover{color:#000}.toc-article .toc{font-size:12px;padding:0;line-height:20px}.toc-article .toc .toc-number{color:#333}.toc-article .toc .toc-text:hover{text-decoration:underline;color:#2a6496}.toc-article li{list-style-type:none}.toc-article .toc-level-1{margin:4px 0}.toc-article .toc-child{}@-moz-keyframes cd-bounce-1{0%{opacity:0;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}60%{opacity:1;-o-transform:scale(1.01);-webkit-transform:scale(1.01);-moz-transform:scale(1.01);-ms-transform:scale(1.01);transform:scale(1.01)}100%{-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}}@-webkit-keyframes cd-bounce-1{0%{opacity:0;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}60%{opacity:1;-o-transform:scale(1.01);-webkit-transform:scale(1.01);-moz-transform:scale(1.01);-ms-transform:scale(1.01);transform:scale(1.01)}100%{-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}}@-o-keyframes cd-bounce-1{0%{opacity:0;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}60%{opacity:1;-o-transform:scale(1.01);-webkit-transform:scale(1.01);-moz-transform:scale(1.01);-ms-transform:scale(1.01);transform:scale(1.01)}100%{-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}}@keyframes cd-bounce-1{0%{opacity:0;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}60%{opacity:1;-o-transform:scale(1.01);-webkit-transform:scale(1.01);-moz-transform:scale(1.01);-ms-transform:scale(1.01);transform:scale(1.01)}100%{-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}}.show-toc-btn{display:none;z-index:10;width:30px;min-height:14px;overflow:hidden;padding:4px 6px 8px 5px;border:1px solid #ddd;border-right:none;position:fixed;right:40px;text-align:center;background-color:#f9f9f9}.show-toc-btn .btn-bg{margin-top:2px;display:block;width:16px;height:14px;background:url(http://7xtawy.com1.z0.glb.clouddn.com/show.png) no-repeat;-webkit-background-size:100%;-moz-background-size:100%;background-size:100%}.show-toc-btn .btn-text{color:#999;font-size:12px}.show-toc-btn:hover{cursor:pointer}.show-toc-btn:hover .btn-bg{background-position:0 -16px}.show-toc-btn:hover .btn-text{font-size:12px;color:#ea8010}
-.toc-article li ol, .toc-article li ul { margin-left: 30px; } .toc-article ol, .toc-article ul { 
-margin: 10px 0; }
-</code></pre><h3 id="修改article-ejs文件"><a href="#修改article-ejs文件" class="headerlink" title="修改article.ejs文件"></a>修改article.ejs文件</h3><p>打开<code>themes\yilia\layout\_partial</code>文件夹下的<code>article.ejs</code>文件，在<code>&lt;/header&gt; &lt;% } %</code> 下面加入如下内容(注意插入的位置):</p>
-<pre><code>&lt;!-- 目录内容 --&gt;
-&lt;% if (!index &amp;&amp; post.toc){ %&gt;
-&lt;p class=&quot;show-toc-btn&quot; id=&quot;show-toc-btn&quot; onclick=&quot;showToc();&quot; style=&quot;display:none&quot;&gt;
-  &lt;span class=&quot;btn-bg&quot;&gt;&lt;/span&gt;
-  &lt;span class=&quot;btn-text&quot;&gt;文章导航&lt;/span&gt;
-&lt;/p&gt;
-&lt;div id=&quot;toc-article&quot; class=&quot;toc-article&quot;&gt;
-  &lt;span id=&quot;toc-close&quot; class=&quot;toc-close&quot; title=&quot;隐藏导航&quot; onclick=&quot;showBtn();&quot;&gt;×&lt;/span&gt;
-  &lt;strong class=&quot;toc-title&quot;&gt;文章目录&lt;/strong&gt;
-  &lt;%- toc(post.content) %&gt;
-&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-  function showToc(){
-    var toc_article = document.getElementById(&quot;toc-article&quot;);
-    var show_toc_btn = document.getElementById(&quot;show-toc-btn&quot;);
-    toc_article.setAttribute(&quot;style&quot;,&quot;display:block&quot;);
-    show_toc_btn.setAttribute(&quot;style&quot;,&quot;display:none&quot;);
-  };
-  function showBtn(){
-    var toc_article = document.getElementById(&quot;toc-article&quot;);
-    var show_toc_btn = document.getElementById(&quot;show-toc-btn&quot;);
-    toc_article.setAttribute(&quot;style&quot;,&quot;display:none&quot;);
-    show_toc_btn.setAttribute(&quot;style&quot;,&quot;display:block&quot;);
-  };
-&lt;/script&gt;
-&lt;% } %&gt;
-&lt;!-- 目录内容结束 --&gt;
-</code></pre><p><strong>如果想要文章显示目录，要在每篇文章的开头加入：<code>toc: true</code></strong></p>
-<p><img src="http://ot4r4qnml.bkt.clouddn.com/catalogue.PNG" alt="目录效果图"></p>
-<h2 id="添加其他一些东西"><a href="#添加其他一些东西" class="headerlink" title="添加其他一些东西"></a>添加其他一些东西</h2><h3 id="添加“关于”"><a href="#添加“关于”" class="headerlink" title="添加“关于”"></a>添加“关于”</h3><pre><code>$ hexo new page &quot;about&quot;
-</code></pre><p>此时，<code>source</code>中就会多出一个文件夹，名为<code>about</code>,可以在里面编辑内容</p>
-<p>在<code>themes/yilia/_config.yml</code>添加下面内容：</p>
-<pre><code>menu:
-    关于: /about
-</code></pre><h3 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h3><pre><code>$ npm install hexo-generator-feed --save
-</code></pre><p>注意完整的输入上面的代码，<code>--save</code>不能省，否则插件信息不能写入package.json，之后<code>hexo clean</code> 、<code>hexo g</code>,查看public文件夹，里面多了一个atom.xml文件夹表示成功。</p>
-<h3 id="添加sitemap"><a href="#添加sitemap" class="headerlink" title="添加sitemap"></a>添加sitemap</h3><pre><code>$ npm install hexo-generator-sitemap --save
-</code></pre><p><code>hexo clean</code> 、<code>hexo g</code>,查看public文件夹，可以看到sitemap.xml文件。</p>
-<p>sitemap的初衷是给搜索引擎看的，为了提高搜索引擎对自己站点的收录效果，我们最好手动到google和百度等搜索引擎提交sitemap.xml。</p>
-<h3 id="添加本站访问次数"><a href="#添加本站访问次数" class="headerlink" title="添加本站访问次数"></a>添加本站访问次数</h3><p>在<code>themes/yilia/layout/_partial</code> 下找到footer.ejs , 在里面加入以下代码：</p>
-<pre><code>&lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;
-
-&lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;
-    本文总阅读量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;次
-&lt;/span&gt;
-</code></pre><h3 id="文章模板"><a href="#文章模板" class="headerlink" title="文章模板"></a>文章模板</h3><p>打开hexo/scaffolds/post.md , 可以看到：</p>
-<pre><code>---
-title: {{ title }}
-date: {{ date }}
-tags:
----
-</code></pre><p>做以下的修改，每次自动生成目录：</p>
-<pre><code>---
-title: {{ title }}
-date: {{ date }}
-tags:
-toc: true
----
-</code></pre><p><strong>注：</strong> 如果想要多个tag，则以这样的格式显示<code>tages: [js,css]</code></p>
-<h3 id="给网页加ico图标"><a href="#给网页加ico图标" class="headerlink" title="给网页加ico图标"></a>给网页加ico图标</h3><ol>
-<li>增加网站标题栏logo，很简单。将图片改成32*32格式的ico图标（这里我是在线转换的）</li>
-<li>在文件中找到<code>E:\blog\themes\yilia\layout\_partial</code>，再找到<code>head.ejs</code>,在里面增加语句<code>&lt;link rel=&quot;shortcut icon&quot; href=&quot;图片地址&quot;&gt;</code></li>
-</ol>
-<p><strong>注意：</strong> 如果把ico图标放在网站根目录下，那么浏览器会不停的搜索网站根目录。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;过了大半年，该是要好好整理下自己的博客了。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
   </entry>
   
