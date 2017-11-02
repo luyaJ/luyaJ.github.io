@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-27T14:59:50.645Z</updated>
+  <updated>2017-11-02T10:37:39.399Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习linux之第二篇</title>
+    <link href="http://yoursite.com/2017/11/02/%E5%AD%A6%E4%B9%A0linux%E4%B9%8B%E7%AC%AC%E4%BA%8C%E7%AF%87/"/>
+    <id>http://yoursite.com/2017/11/02/学习linux之第二篇/</id>
+    <published>2017-11-02T10:35:28.000Z</published>
+    <updated>2017-11-02T10:37:39.399Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是linux后半部分的学习，记录shell，正则表达式等内容。</p>
+<a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是linux后半部分的学习，记录shell，正则表达式等内容。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>一些工具使用</title>
@@ -83,7 +106,7 @@
     <link href="http://yoursite.com/2017/10/15/%E5%AD%A6%E4%B9%A0linux/"/>
     <id>http://yoursite.com/2017/10/15/学习linux/</id>
     <published>2017-10-15T12:02:49.000Z</published>
-    <updated>2017-11-02T10:21:06.112Z</updated>
+    <updated>2017-11-02T10:38:42.205Z</updated>
     
     <content type="html"><![CDATA[<p>简介：使用虚拟机安装linux以及linux学习。</p>
 <a id="more"></a>
@@ -434,6 +457,7 @@
 <h2 id="使用zip压缩"><a href="#使用zip压缩" class="headerlink" title="使用zip压缩"></a>使用zip压缩</h2><p>zip后面先跟目录文件名（即要压缩后的自定义压缩包名），然后跟要压缩的文件或者目录。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ touch 1.txt</div><div class="line">[jly@localhost ~]$ zip 1.txt.zip 1.txt</div><div class="line">  adding: 1.txt (stored 0%)</div></pre></td></tr></table></figure></p>
 <p>当一个目录下还有二级目录甚至更多级目录时，如果想一并压缩所有文件，必须加上-r选项，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ zip -r dir1.zip dir1/</div></pre></td></tr></table></figure></p>
 <p>解压方法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ unzip 1.txt.zip</div></pre></td></tr></table></figure></p>
+<p>到这里为止就是学习《跟阿铭学linux》的前8章内容，有需要会再更新。</p>
 ]]></content>
     
     <summary type="html">
@@ -2579,198 +2603,6 @@ $ git checkout others
     
     
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用css实现几个小图标</title>
-    <link href="http://yoursite.com/2017/07/21/%E7%94%A8css%E5%AE%9E%E7%8E%B0%E5%87%A0%E4%B8%AA%E5%B0%8F%E5%9B%BE%E6%A0%87/"/>
-    <id>http://yoursite.com/2017/07/21/用css实现几个小图标/</id>
-    <published>2017-07-21T05:25:59.000Z</published>
-    <updated>2017-09-17T13:35:45.931Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-三角形"><a href="#1-三角形" class="headerlink" title="1. 三角形"></a>1. 三角形</h3><a id="more"></a>
-<p>设置一个块元素大小为0，采用<code>border</code>属性，制作如下各种图形：</p>
-<pre><code>//1.双色正方形
-height: 0;
-width: 0;
-border-bottom: 100px solid indianred;
-border-left: 100px solid chocolate;
-</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/zfx.png" alt="双色正方形"></p>
-<pre><code>//2.三色矩形
-border-right: 100px solid darkcyan;
-</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/jx.png" alt="三色矩形"></p>
-<pre><code>//3.四色正方形
-border-top: 100px solid plum;
-</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/zfx1.png" alt="四色正方形"></p>
-<pre><code>//4.三角形
-height: 0;
-width: 0;
-border-bottom: 100px solid indianred;
-border-left: 100px solid transparent;
-border-right: 100px solid transparent;
-</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/sjx.png" alt="三角形"></p>
-<h3 id="2-陌陌轮廓"><a href="#2-陌陌轮廓" class="headerlink" title="2.陌陌轮廓"></a>2.陌陌轮廓</h3><p>使用圆角属性制作~直接上代码</p>
-<pre><code>height: 100px;
-width: 100px;
-background: darkgoldenrod;
-border-radius: 50% 50% 0;
-</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/momo.png" alt="momo"></p>
-<p>进一步拓展，制作成小水滴：</p>
-<pre><code>height: 100px;
-width: 100px;
-background: sandybrown;
-border-radius: 50% 50% 0;
-transform: rotate(45deg);
-</code></pre><h3 id="3-扭曲的正方形"><a href="#3-扭曲的正方形" class="headerlink" title="3.扭曲的正方形"></a>3.扭曲的正方形</h3><pre><code>height: 100px;
-width: 100px;
-background: mediumslateblue;
-border-radius: 20px 12px 40px / 0.5em 3em;
-</code></pre><p>其中的<code>border-radius: 2em 1em 4em / 0.5em 3em;</code>等价于：</p>
-<pre><code>border-top-left-radius: 2em 0.5em;
-border-top-right-radius: 1em 3em;
-border-bottom-right-radius: 4em 0.5em;
-border-bottom-left-radius: 1em 3em;
-</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/zgx2.png" alt="扭曲的正方形"></p>
-<p><strong><em>注释:</em></strong> 如果省略 bottom-left，则与 top-right 相同。如果省略 bottom-right，则与 top-left 相同。如果省略 top-right，则与 top-left 相同。</p>
-<h3 id="4-箭头"><a href="#4-箭头" class="headerlink" title="4.箭头"></a>4.箭头</h3><pre><code>.demo{
-    width: 0;
-    height: 0;
-    border-top: 15px solid transparent;
-    border-right: 15px solid red;
-    -webkit-transform: rotate(10deg);
-    -o-transform: rotate(10deg);
-    -moz-transform: rotate(10deg);
-    -ms-transform: rotate(10deg);
-}
-.demo:after{
-    content: &quot;&quot;;
-    position: absolute;
-    border-top: 5px solid red;
-    border-radius: 20px 0 0 0;
-    top: -18px;
-    left: -10px;
-    width: 15px;
-    height: 15px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-}
-</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/arrow.png" alt="arrow"></p>
-<h3 id="5-小星星"><a href="#5-小星星" class="headerlink" title="5.小星星"></a>5.小星星</h3><p>思想：三个三角形拼接而成，使用<code>transform</code>调整方向。</p>
-<pre><code>.star{
-    margin: 100px 0;
-    color: red;
-    height: 0;
-    width: 0;
-    border-right: 100px solid transparent;
-    border-bottom: 70px solid darkkhaki;
-    border-left: 100px solid transparent;
-    -webkit-transform: rotate(35deg);
-    -o-transform: rotate(35deg);
-    -moz-transform: rotate(35deg);
-    -ms-transform: rotate(35deg);
-}
-.star:before{
-    content: &apos;&apos;;
-    height: 0;
-    width: 0;
-    border-bottom: 80px solid darkkhaki;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    position: absolute;
-    top: -56px;
-    left: -77px;
-    -webkit-transform: rotate(-35deg);
-    -moz-transform: rotate(-35deg);
-    -ms-transform: rotate(-35deg);
-    -o-transform: rotate(-35deg);
-}
-.star:after{
-    content: &apos;&apos;;
-    width: 0;
-    height: 0;
-    border-right: 100px solid transparent;
-    border-bottom: 70px solid darkkhaki;
-    border-left: 100px solid transparent;
-    position: absolute;
-    color: red;
-    top: 10px;
-    left: -115px;
-    -webkit-transform: rotate(-70deg);
-    -moz-transform: rotate(-70deg);
-    -ms-transform: rotate(-70deg);
-    -o-transform: rotate(-70deg);
-}
-</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/star.png" alt="star">    </p>
-<h3 id="6-心形"><a href="#6-心形" class="headerlink" title="6.心形"></a>6.心形</h3><pre><code>.heart{
-    width: 100px;
-    height: 90px;
-}
-.heart:before,
-.heart:after {
-    position: absolute;
-    content: &apos;&apos;;
-    width: 50px;
-    height: 80px;
-    background: darksalmon;
-    border-radius: 50px 50px 0 0;
-    left: 50px;
-    -webkit-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    -webkit-transform-origin: 0 100%;
-    -moz-transform-origin: 0 100%;
-    -ms-transform-origin: 0 100%;
-    -o-transform-origin: 0 100%;
-    transform-origin : 0 100%;
-}
-.heart:after{
-    left: 0;
-    -webkit-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    transform: rotate(45deg);
-    -webkit-transform-origin: 100% 100%;
-    -moz-transform-origin: 100% 100%;
-    -ms-transform-origin: 100% 100%;
-    -o-transform-origin: 100% 100%;
-    transform-origin :100% 100%;
-}
-</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/heart.png" alt="heart">    </p>
-<h3 id="7-十字架"><a href="#7-十字架" class="headerlink" title="7.十字架"></a>7.十字架</h3><pre><code>.cross{
-    height: 100px;
-    width: 20px;
-    background: mediumseagreen;
-    margin-left: 50px;
-    position: relative;
-}
-.cross:after{
-    background: mediumseagreen;
-    content: &apos;&apos;;
-    height: 20px;
-    position: absolute;
-    width: 80px;
-    top: 30px;
-    left: -30px;
-}
-</code></pre><p><img src="http://otf35fo4u.bkt.clouddn.com/cross.png" alt="cross"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1-三角形&quot;&gt;&lt;a href=&quot;#1-三角形&quot; class=&quot;headerlink&quot; title=&quot;1. 三角形&quot;&gt;&lt;/a&gt;1. 三角形&lt;/h3&gt;
-    
-    </summary>
-    
-      <category term="Web前端" scheme="http://yoursite.com/categories/Web%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
     
   </entry>
   
