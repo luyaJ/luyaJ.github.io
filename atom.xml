@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-02T10:37:39.399Z</updated>
+  <updated>2017-11-04T01:46:27.966Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://yoursite.com/2017/11/02/%E5%AD%A6%E4%B9%A0linux%E4%B9%8B%E7%AC%AC%E4%BA%8C%E7%AF%87/"/>
     <id>http://yoursite.com/2017/11/02/学习linux之第二篇/</id>
     <published>2017-11-02T10:35:28.000Z</published>
-    <updated>2017-11-02T10:37:39.399Z</updated>
+    <updated>2017-11-04T01:46:27.966Z</updated>
     
-    <content type="html"><![CDATA[<p>这是linux后半部分的学习，记录shell，正则表达式等内容。</p>
+    <content type="html"><![CDATA[<p>这是linux后半部分的学习，记录RPM包以及shell，正则表达式等内容。</p>
 <a id="more"></a>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;这是linux后半部分的学习，记录shell，正则表达式等内容。&lt;/p&gt;
+      &lt;p&gt;这是linux后半部分的学习，记录RPM包以及shell，正则表达式等内容。&lt;/p&gt;
     
     </summary>
     
