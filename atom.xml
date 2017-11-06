@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-04T01:46:27.966Z</updated>
+  <updated>2017-11-06T08:54:50.838Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,10 +20,31 @@
     <link href="http://yoursite.com/2017/11/02/%E5%AD%A6%E4%B9%A0linux%E4%B9%8B%E7%AC%AC%E4%BA%8C%E7%AF%87/"/>
     <id>http://yoursite.com/2017/11/02/学习linux之第二篇/</id>
     <published>2017-11-02T10:35:28.000Z</published>
-    <updated>2017-11-04T01:46:27.966Z</updated>
+    <updated>2017-11-06T08:54:50.838Z</updated>
     
     <content type="html"><![CDATA[<p>这是linux后半部分的学习，记录RPM包以及shell，正则表达式等内容。</p>
-<a id="more"></a>]]></content>
+<a id="more"></a>
+<h1 id="Shell基础知识"><a href="#Shell基础知识" class="headerlink" title="Shell基础知识"></a>Shell基础知识</h1><p>shell是系统跟计算机硬件交互时使用的中间介质，它只是系统的一个工具。如果把计算机硬件比作一个人的躯体，那系统内核就是人的大脑，shell称为人的五官更为贴切。</p>
+<h2 id="一些命令"><a href="#一些命令" class="headerlink" title="一些命令"></a>一些命令</h2><h3 id="记录历史命令"><a href="#记录历史命令" class="headerlink" title="记录历史命令"></a>记录历史命令</h3><ul>
+<li><code>!!</code>:表示执行上一条指令。</li>
+<li><code>!n</code>:表示执行命令历史中的第n条指令。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[root@localhost jly]<span class="comment"># pwd</span></div><div class="line">/home/jly</div><div class="line">[root@localhost jly]<span class="comment"># !!</span></div><div class="line"><span class="built_in">pwd</span></div><div class="line">/home/jly</div><div class="line"></div><div class="line">[root@localhost jly]<span class="comment"># history |grep 25</span></div><div class="line">   25  <span class="built_in">exit</span></div><div class="line">   34  <span class="built_in">history</span> |grep 25</div><div class="line">[root@localhost jly]<span class="comment"># !25</span></div><div class="line"><span class="built_in">exit</span></div><div class="line"><span class="built_in">exit</span></div></pre></td></tr></table></figure>
+<h3 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h3><p>使用alias命令把一个常用的且很长的指令别名为一个简单易记得指令；unalias解除别名功能。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[root@localhost jly]<span class="comment"># alias</span></div><div class="line"><span class="built_in">alias</span> cp=<span class="string">'cp -i'</span></div><div class="line"><span class="built_in">alias</span> egrep=<span class="string">'egrep --color=auto'</span></div><div class="line"><span class="built_in">alias</span> fgrep=<span class="string">'fgrep --color=auto'</span></div><div class="line"><span class="built_in">alias</span> grep=<span class="string">'grep --color=auto'</span></div><div class="line"><span class="built_in">alias</span> l.=<span class="string">'ls -d .* --color=auto'</span></div><div class="line"><span class="built_in">alias</span> ll=<span class="string">'ls -l --color=auto'</span></div><div class="line"><span class="built_in">alias</span> ls=<span class="string">'ls --color=auto'</span></div><div class="line"><span class="built_in">alias</span> mv=<span class="string">'mv -i'</span></div><div class="line"><span class="built_in">alias</span> rm=<span class="string">'rm -i'</span></div><div class="line"><span class="built_in">alias</span> <span class="built_in">which</span>=<span class="string">'alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'</span></div><div class="line">[root@localhost jly]<span class="comment"># alias aming='pwd'</span></div><div class="line">[root@localhost jly]<span class="comment"># aming</span></div><div class="line">/home/jly</div><div class="line">[root@localhost jly]<span class="comment"># unalias aming   </span></div><div class="line">[root@localhost jly]<span class="comment"># aming</span></div><div class="line">bash: aming: 未找到命令...</div></pre></td></tr></table></figure></p>
+<h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><p>使用“*”来匹配0个或多个字符，用“？”匹配一个字符。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ls -d test*</span></div><div class="line"><span class="comment"># test1.txt test2 test3 test.pl</span></div><div class="line"><span class="comment"># ls -d test?</span></div><div class="line"><span class="comment"># test2 test3</span></div></pre></td></tr></table></figure></p>
+<h3 id="作业控制"><a href="#作业控制" class="headerlink" title="作业控制"></a>作业控制</h3><p>使用vi命令编辑test.txt:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ vi test.txt</div><div class="line">testtesttest</div></pre></td></tr></table></figure></p>
+<p>按ESC键后使用Ctrl+z暂停任务，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ vi test.txt</div><div class="line"></div><div class="line">[1]+  已停止               vim test.txt</div></pre></td></tr></table></figure></p>
+<p>上面提示“vi test.txt” 已经停止了，使用fg命令可以恢复它，然后又会进入刚才的vi窗口。再次使其暂停，然后输入jobs，可以看到被暂停或者在后台运行的任务：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ <span class="built_in">jobs</span></div><div class="line">[1]+  已停止               vim test.txt</div></pre></td></tr></table></figure></p>
+<p>如果想把暂停的任务放到后台重新运行，就是用bg命令(但是vi似乎不支持在后台运行)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ <span class="built_in">bg</span></div><div class="line">[1]+ vim test.txt &amp;</div><div class="line"></div><div class="line">[1]+  已停止               vim test.txt</div></pre></td></tr></table></figure></p>
+<h2 id="linux-shell中的特殊符号"><a href="#linux-shell中的特殊符号" class="headerlink" title="linux shell中的特殊符号"></a>linux shell中的特殊符号</h2><ul>
+<li>注释符号<code>#</code>：在<code>#</code>后面的内容都会被忽略。</li>
+<li><p>脱义字符<code>\</code>：会将后面的特殊符号（如”*”）还原为普通字符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ ls <span class="_">-d</span> <span class="built_in">test</span>\*</div><div class="line">ls: 无法访问<span class="built_in">test</span>*: 没有那个文件或目录</div></pre></td></tr></table></figure>
+</li>
+<li><p>管道符<code>|</code>：将前面命令的输出作为后面命令的输入。</p>
+</li>
+</ul>
+]]></content>
     
     <summary type="html">
     
