@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="luyaJ的小博客">
 <meta property="og:description" content="这是linux后半部分的学习，记录RPM包以及shell，正则表达式等内容。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-06T08:54:50.838Z">
+<meta property="og:updated_time" content="2017-11-12T15:02:23.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习linux之第二篇">
 <meta name="twitter:description" content="这是linux后半部分的学习，记录RPM包以及shell，正则表达式等内容。">
@@ -188,7 +188,7 @@
     <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell基础知识"><span class="toc-number">1.</span> <span class="toc-text">Shell基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一些命令"><span class="toc-number">1.1.</span> <span class="toc-text">一些命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#记录历史命令"><span class="toc-number">1.1.1.</span> <span class="toc-text">记录历史命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#别名"><span class="toc-number">1.1.2.</span> <span class="toc-text">别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通配符"><span class="toc-number">1.1.3.</span> <span class="toc-text">通配符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业控制"><span class="toc-number">1.1.4.</span> <span class="toc-text">作业控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux-shell中的特殊符号"><span class="toc-number">1.2.</span> <span class="toc-text">linux shell中的特殊符号</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell基础知识"><span class="toc-number">1.</span> <span class="toc-text">Shell基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一些命令"><span class="toc-number">1.1.</span> <span class="toc-text">一些命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#记录历史命令"><span class="toc-number">1.1.1.</span> <span class="toc-text">记录历史命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#别名"><span class="toc-number">1.1.2.</span> <span class="toc-text">别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通配符"><span class="toc-number">1.1.3.</span> <span class="toc-text">通配符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业控制"><span class="toc-number">1.1.4.</span> <span class="toc-text">作业控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux-shell中的特殊符号"><span class="toc-number">1.2.</span> <span class="toc-text">linux shell中的特殊符号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#重定向符号"><span class="toc-number">1.2.1.</span> <span class="toc-text">重定向符号</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正则表达式"><span class="toc-number">2.</span> <span class="toc-text">正则表达式</span></a></li></ol>
     </div>
     <script type="text/javascript">
       function showToc(){
@@ -230,6 +230,29 @@
 </li>
 <li><p>管道符<code>|</code>：将前面命令的输出作为后面命令的输入。</p>
 </li>
+<li><code>wc</code>命令用于统计文档的行数、字符数或词数。</li>
+<li><p>符号”$”用于作变量前面的标志符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ ls test.txt</div><div class="line">test.txt</div><div class="line">[jly@localhost ~]$ ls !$</div><div class="line">ls test.txt</div><div class="line">test.txt</div></pre></td></tr></table></figure>
+</li>
+<li><p>符号”~”表示用户的家目录，root用户的家目录是<code>/root</code>,普通用户则是<code>/home/username</code></p>
+</li>
+</ul>
+<h3 id="重定向符号"><a href="#重定向符号" class="headerlink" title="重定向符号"></a>重定向符号</h3><ul>
+<li><blockquote>
+<p>和 &gt;&gt;:分别表示取代和追加。</p>
+</blockquote>
+</li>
+<li>当我们运行一个命令报错时，报错信息会输出到当前屏幕，如果想重定向到一个文本里，则要用重定向符号“2&gt;”或者“2&gt;&gt;”,分别表示错误重定向和错误追加重定向。</li>
+</ul>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>命令格式：<code>grep [-cinvABC] &#39;word&#39; filename</code>。</p>
+<ul>
+<li>-c: 表示打印符合要求的行数</li>
+<li>-i: 表示忽略大小写</li>
+<li>-n: 表示输出符合要求的行及行号</li>
+<li>-v: 表示打印不符合要求的行号</li>
+<li>-A: 后面跟一个数字（有无空格都可以）；-A2：表示打印符合要求的行以及下面两行</li>
+<li>-B: 后面跟一个数字；-B2：表示打印符合要求的行以及上面两行</li>
+<li>-C: 后面跟一个数字；-C2：表示打印符合要求的行以及上下各两行</li>
 </ul>
 
       
@@ -441,7 +464,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -449,15 +472,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">WechatApp</a>
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">WechatApp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,6 +492,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">书籍</a>
               </li>
              
@@ -477,15 +508,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
