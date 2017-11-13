@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-12T15:02:23.973Z</updated>
+  <updated>2017-11-13T14:58:50.093Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/11/02/%E5%AD%A6%E4%B9%A0linux%E4%B9%8B%E7%AC%AC%E4%BA%8C%E7%AF%87/"/>
     <id>http://yoursite.com/2017/11/02/学习linux之第二篇/</id>
     <published>2017-11-02T10:35:28.000Z</published>
-    <updated>2017-11-12T15:02:23.973Z</updated>
+    <updated>2017-11-13T14:58:50.093Z</updated>
     
     <content type="html"><![CDATA[<p>这是linux后半部分的学习，记录RPM包以及shell，正则表达式等内容。</p>
 <a id="more"></a>
@@ -57,16 +57,17 @@
 </li>
 <li>当我们运行一个命令报错时，报错信息会输出到当前屏幕，如果想重定向到一个文本里，则要用重定向符号“2&gt;”或者“2&gt;&gt;”,分别表示错误重定向和错误追加重定向。</li>
 </ul>
-<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>命令格式：<code>grep [-cinvABC] &#39;word&#39; filename</code>。</p>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="grep-egrep工具的使用"><a href="#grep-egrep工具的使用" class="headerlink" title="grep/egrep工具的使用"></a>grep/egrep工具的使用</h2><p>命令格式：<code>grep [-cinvABC] &#39;word&#39; filename</code>。</p>
 <ul>
 <li>-c: 表示打印符合要求的行数</li>
 <li>-i: 表示忽略大小写</li>
 <li>-n: 表示输出符合要求的行及行号</li>
-<li>-v: 表示打印不符合要求的行号</li>
+<li>-v: 表示打印不符合要求的行号grep</li>
 <li>-A: 后面跟一个数字（有无空格都可以）；-A2：表示打印符合要求的行以及下面两行</li>
 <li>-B: 后面跟一个数字；-B2：表示打印符合要求的行以及上面两行</li>
 <li>-C: 后面跟一个数字；-C2：表示打印符合要求的行以及上下各两行</li>
 </ul>
+<p>### </p>
 ]]></content>
     
     <summary type="html">
