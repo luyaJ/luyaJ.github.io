@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-16T03:19:16.458Z</updated>
+  <updated>2017-11-17T06:15:34.431Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/11/02/%E5%AD%A6%E4%B9%A0linux%E4%B9%8B%E7%AC%AC%E4%BA%8C%E7%AF%87/"/>
     <id>http://yoursite.com/2017/11/02/学习linux之第二篇/</id>
     <published>2017-11-02T10:35:28.000Z</published>
-    <updated>2017-11-16T03:19:16.458Z</updated>
+    <updated>2017-11-17T06:15:34.431Z</updated>
     
     <content type="html"><![CDATA[<p>这是linux后半部分的学习，记录RPM包以及shell，正则表达式等内容。</p>
 <a id="more"></a>
@@ -86,7 +86,8 @@
 <h3 id="替换字符或者字符串"><a href="#替换字符或者字符串" class="headerlink" title="替换字符或者字符串"></a>替换字符或者字符串</h3><p>“s”就是替换的动作，“g”表示本行全局替换，不加g则只替换本行出现的第一个。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ sed  <span class="string">'1,2s/ot/to/g'</span> test.txt</div><div class="line">rto:x:0:0:/rto:/bin/bash</div><div class="line">operator:x:11:0:operator:/roto:/sbin/nologin</div><div class="line">1111111111111111111111111111111111</div><div class="line">aaaaaaaaaaaaaaaaaaaaaaaaaaaa</div><div class="line">[jly@localhost ~]$ sed  <span class="string">'s#ot#to#g'</span> test.txt</div></pre></td></tr></table></figure></p>
 <p>上面两种格式都可以。</p>
 <h3 id="直接修改文件的内容"><a href="#直接修改文件的内容" class="headerlink" title="直接修改文件的内容"></a>直接修改文件的内容</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ sed -i <span class="string">'s/ot/to/g'</span> test.txt</div><div class="line">[jly@localhost ~]$ cat test.txt</div><div class="line">rto:x:0:0:/rto:/bin/bash</div><div class="line">operator:x:11:0:operator:/roto:/sbin/nologin</div><div class="line">1111111111111111111111111111111111</div><div class="line">aaaaaaaaaaaaaaaaaaaaaaaaaaaa</div></pre></td></tr></table></figure>
-<h2 id="awk工具的使用"><a href="#awk工具的使用" class="headerlink" title="awk工具的使用"></a>awk工具的使用</h2>]]></content>
+<p>#</p>
+]]></content>
     
     <summary type="html">
     
@@ -169,7 +170,7 @@
     <link href="http://yoursite.com/2017/10/15/%E5%AD%A6%E4%B9%A0linux/"/>
     <id>http://yoursite.com/2017/10/15/学习linux/</id>
     <published>2017-10-15T12:02:49.000Z</published>
-    <updated>2017-11-03T15:30:12.591Z</updated>
+    <updated>2017-11-17T14:54:40.148Z</updated>
     
     <content type="html"><![CDATA[<p>简介：使用虚拟机安装linux以及linux学习。</p>
 <a id="more"></a>
@@ -526,6 +527,14 @@
 <h2 id="使用zip压缩"><a href="#使用zip压缩" class="headerlink" title="使用zip压缩"></a>使用zip压缩</h2><p>zip后面先跟目录文件名（即要压缩后的自定义压缩包名），然后跟要压缩的文件或者目录。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ touch 1.txt</div><div class="line">[jly@localhost ~]$ zip 1.txt.zip 1.txt</div><div class="line">  adding: 1.txt (stored 0%)</div></pre></td></tr></table></figure></p>
 <p>当一个目录下还有二级目录甚至更多级目录时，如果想一并压缩所有文件，必须加上-r选项，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ zip -r dir1.zip dir1/</div></pre></td></tr></table></figure></p>
 <p>解压方法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ unzip 1.txt.zip</div></pre></td></tr></table></figure></p>
+<h1 id="文本编辑工具Vim"><a href="#文本编辑工具Vim" class="headerlink" title="文本编辑工具Vim"></a>文本编辑工具Vim</h1><p>vim有三种模式：一般模式、编辑模式和命令模式。</p>
+<ul>
+<li>在<strong>一般模式</strong>下不可以修改某个字符，想要修改字符，就要进入<strong>编辑模式</strong>。从一般模式进入编辑模式，你只需要按i/I/a/A/o/O/r/R中的某一个键即可。当进入编辑模式时，就会显示“插入/INSERT/REPLACE”的其中一个。</li>
+<li>如果想从编辑模式回到一般模式，直接按esc键即可。</li>
+<li>在一般模式下，输入“：”或者“/”即可进入<strong>命令模式</strong>。在该模式下，可以搜索某个字符或者字符串，也可以实现保存、替换、退出、显示行号等操作。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//vim test.txt文本内容显示如下</div><div class="line">qwqeqwqeqwqwrqrwwrw</div><div class="line">dvfvgbg</div><div class="line">//在一般模式下，先输入<span class="string">"："</span>，再输入<span class="string">"/qw"</span>，就会匹配出所有符合条件的qw。</div><div class="line">//或者在一般模式下，先输入<span class="string">"/"</span>，再直接输入qw，同样匹配所有qw。</div></pre></td></tr></table></figure>
+<p>命令模式的其他功能：<br>| 命令 | 作用 |<br>| :—- | :— |<br>| :w | 保存文本 |<br>| :q | 退出Vim |<br>| :w! | 强制保存，在root用户下，即使文本只读也可以完全保存 |<br>| :q! | 强制退出，所有改动不生效 |<br>| :wq | 保存并退出 |<br>| :set nu | 显示行号 |<br>| :set nonu | 不显示行号 |</p>
 <p>到这里为止就是学习《跟阿铭学linux》的前8章内容，有需要会再更新。</p>
 ]]></content>
     
