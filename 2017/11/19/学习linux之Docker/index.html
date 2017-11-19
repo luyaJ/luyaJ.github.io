@@ -7,15 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <link rel="shortcut icon" href="http://otnbkrzno.bkt.clouddn.com/myPic.ico">
-  <title>Archives: 2017/9 | luyaJ的小博客</title>
+  <title>学习linux之Docker | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="luyaJ的小博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/09/index.html">
+  <meta name="description" content="在容器中部署静态网站Nginx部署流程如下： 创建映射80端口的交互式容器12[root@localhost jly]# docker run -p 80 --name web -i -t centos /bin/bash[root@f711b712010f /]# 创建如上带端口映射的交互容器，命名为”web”，使用centos为系统。 安装Nginx安装文本编辑器vim创建静态页面修改Ngin">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习linux之Docker">
+<meta property="og:url" content="http://yoursite.com/2017/11/19/学习linux之Docker/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
+<meta property="og:description" content="在容器中部署静态网站Nginx部署流程如下： 创建映射80端口的交互式容器12[root@localhost jly]# docker run -p 80 --name web -i -t centos /bin/bash[root@f711b712010f /]# 创建如上带端口映射的交互容器，命名为”web”，使用centos为系统。 安装Nginx安装文本编辑器vim创建静态页面修改Ngin">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-19T13:16:03.783Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luyaJ的小博客">
+<meta name="twitter:title" content="学习linux之Docker">
+<meta name="twitter:description" content="在容器中部署静态网站Nginx部署流程如下： 创建映射80端口的交互式容器12[root@localhost jly]# docker run -p 80 --name web -i -t centos /bin/bash[root@f711b712010f /]# 创建如上带端口映射的交互容器，命名为”web”，使用centos为系统。 安装Nginx安装文本编辑器vim创建静态页面修改Ngin">
   
   
     <link rel="icon" href="/favicon.png">
@@ -155,169 +160,172 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-学习linux之Docker" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      学习linux之Docker
+    </h1>
+  
+
+        
+        <a href="/2017/11/19/学习linux之Docker/" class="archive-article-date">
+  	<time datetime="2017-11-19T12:26:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-19</time>
+</a>
+        
+      </header>
     
+
+    <!-- 目录内容 -->
+    
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#在容器中部署静态网站"><span class="toc-number">1.</span> <span class="toc-text">在容器中部署静态网站</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建映射80端口的交互式容器"><span class="toc-number">1.0.1.</span> <span class="toc-text">创建映射80端口的交互式容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Nginx"><span class="toc-number">1.0.2.</span> <span class="toc-text">安装Nginx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装文本编辑器vim"><span class="toc-number">1.0.3.</span> <span class="toc-text">安装文本编辑器vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建静态页面"><span class="toc-number">1.0.4.</span> <span class="toc-text">创建静态页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改Nginx配置文件"><span class="toc-number">1.0.5.</span> <span class="toc-text">修改Nginx配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行Nginx"><span class="toc-number">1.0.6.</span> <span class="toc-text">运行Nginx</span></a></li></ol></li></ol></li></ol>
+    </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+      };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+      };
+    </script>
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="在容器中部署静态网站"><a href="#在容器中部署静态网站" class="headerlink" title="在容器中部署静态网站"></a>在容器中部署静态网站</h1><p>Nginx部署流程如下：</p>
+<h3 id="创建映射80端口的交互式容器"><a href="#创建映射80端口的交互式容器" class="headerlink" title="创建映射80端口的交互式容器"></a>创建映射80端口的交互式容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost jly]<span class="comment"># docker run -p 80 --name web -i -t centos /bin/bash</span></div><div class="line">[root@f711b712010f /]<span class="comment">#</span></div></pre></td></tr></table></figure>
+<p>创建如上带端口映射的交互容器，命名为”web”，使用centos为系统。</p>
+<h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><h3 id="安装文本编辑器vim"><a href="#安装文本编辑器vim" class="headerlink" title="安装文本编辑器vim"></a>安装文本编辑器vim</h3><h3 id="创建静态页面"><a href="#创建静态页面" class="headerlink" title="创建静态页面"></a>创建静态页面</h3><h3 id="修改Nginx配置文件"><a href="#修改Nginx配置文件" class="headerlink" title="修改Nginx配置文件"></a>修改Nginx配置文件</h3><h3 id="运行Nginx"><a href="#运行Nginx" class="headerlink" title="运行Nginx"></a>运行Nginx</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/16/CSS-齐舞/" class="archive-article-date">
-  	<time datetime="2017-09-16T15:07:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/16/CSS-齐舞/">CSS_齐舞</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Web前端/" class="article-tag-list-link color1">Web前端</a>
+        			<a href="/categories/工具/" class="article-tag-list-link color3">工具</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/19/学习linux之Docker/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/13/《写给大家看的设计书》/" class="archive-article-date">
-  	<time datetime="2017-09-13T01:06:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/13/《写给大家看的设计书》/">《写给大家看的设计书》</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">书籍</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/阅读笔记/" class="article-tag-list-link color5">阅读笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/03/js几道小题/" class="archive-article-date">
-  	<time datetime="2017-09-03T10:38:05.468Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/03/js几道小题/">JS几道小题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Web前端/" class="article-tag-list-link color1">Web前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/11/02/学习linux之第二篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习linux之第二篇</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
+
+
 
 
           </div>
@@ -348,8 +356,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
