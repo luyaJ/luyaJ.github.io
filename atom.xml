@@ -46,7 +46,7 @@
     <link href="http://yoursite.com/2017/11/02/%E5%AD%A6%E4%B9%A0linux%E4%B9%8B%E7%AC%AC%E4%BA%8C%E7%AF%87/"/>
     <id>http://yoursite.com/2017/11/02/学习linux之第二篇/</id>
     <published>2017-11-02T10:35:28.000Z</published>
-    <updated>2017-11-18T15:24:18.190Z</updated>
+    <updated>2017-11-20T15:32:07.274Z</updated>
     
     <content type="html"><![CDATA[<p>这是linux后半部分的学习，记录RPM包以及shell，正则表达式等内容。</p>
 <a id="more"></a>
@@ -140,6 +140,45 @@
 <p>循环条件也可以是一组字符串或者数字：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]<span class="comment"># for i in 1 a b;do echo $i;done</span></div><div class="line">1</div><div class="line">a</div><div class="line">b</div></pre></td></tr></table></figure></p>
 <h2 id="shell脚本中的函数"><a href="#shell脚本中的函数" class="headerlink" title="shell脚本中的函数"></a>shell脚本中的函数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">sum</span></span>()&#123;</div><div class="line"> sum=$[<span class="variable">$1</span>+<span class="variable">$2</span>]</div><div class="line"> <span class="built_in">echo</span> <span class="variable">$sum</span></div><div class="line">&#125;</div><div class="line">sum <span class="variable">$1</span> <span class="variable">$2</span></div><div class="line">[root@localhost sbin]<span class="comment"># sh first.sh 1 2</span></div><div class="line">3</div></pre></td></tr></table></figure>
 <p>注意，在shell脚本中，函数一定要写在最前面，因为函数是要被调用的，如果还没有出现就被调用，肯定会出错的。</p>
+<h1 id="linux系统日常管理"><a href="#linux系统日常管理" class="headerlink" title="linux系统日常管理"></a>linux系统日常管理</h1><h2 id="监控系统的状态"><a href="#监控系统的状态" class="headerlink" title="监控系统的状态"></a>监控系统的状态</h2><h3 id="w查看当前系统的负载"><a href="#w查看当前系统的负载" class="headerlink" title="w查看当前系统的负载"></a>w查看当前系统的负载</h3><p>主要关注load average后的三个值，表示单位时间段内CPU的活动进程数，这个值越大就说明服务器压力越大，一般情况下，这个值只要不超过服务器的CPU数量就没有关系。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ w</div><div class="line"> 21:40:29 up 2 min,  2 users,  load average: 1.68, 0.99, 0.39</div><div class="line">USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT</div><div class="line">jly      :0       :0               21:39   ?xdm?  24.29s  0.42s gdm-session-worker [pa</div><div class="line">jly      pts/0    :0               21:39    5.00s  0.11s  0.04s w</div></pre></td></tr></table></figure></p>
+<p>查看服务器有几个CPU的方法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ cat /proc/cpuinfo</div><div class="line">processor   : 0</div><div class="line">vendor_id   : GenuineIntel</div><div class="line">cpu family  : 6</div><div class="line">model       : 61</div><div class="line">model name  : Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz</div><div class="line">stepping    : 4</div><div class="line">microcode   : 0x1f</div><div class="line">cpu MHz     : 2200.448</div><div class="line">cache size  : 3072 KB</div><div class="line">physical id : 0</div><div class="line">siblings    : 1</div><div class="line">core id     : 0</div><div class="line">cpu cores   : 1</div><div class="line">apicid      : 0</div><div class="line">initial apicid  : 0</div><div class="line">fpu     : yes</div><div class="line">fpu_exception   : yes</div><div class="line">cpuid level : 20</div><div class="line">wp      : yes</div><div class="line">flags       : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology tsc_reliable nonstop_tsc aperfmperf eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ida arat epb pln pts dtherm fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid rdseed adx smap xsaveopt</div><div class="line">bogomips    : 4402.00</div><div class="line">clflush size    : 64</div><div class="line">cache_alignment : 64</div><div class="line">address sizes   : 42 bits physical, 48 bits virtual</div><div class="line">power management:</div></pre></td></tr></table></figure></p>
+<h3 id="vmstat监控系统的状态"><a href="#vmstat监控系统的状态" class="headerlink" title="vmstat监控系统的状态"></a>vmstat监控系统的状态</h3><p>命令w查看系统整体上的负载，可以查看系统有没有压力，但无法判断具体是哪里（CPU、内存、磁盘等）有压力，所以就用vmstat。vmstat命令打印有以下6部分(列举常用的)：</p>
+<ul>
+<li>procs显示进程的相关信息<ul>
+<li>r：表示运行和等待CPU时间片的进程数，该数值如果长期大于服务器CPU的个数，则说明CPU不够用了。</li>
+<li>b：表示等待资源的进程数，比如等待I/O、内存等。</li>
+</ul>
+</li>
+<li>memory显示内存的相关信息</li>
+<li>swap显示内存的交换情况<ul>
+<li>si：表示由交换区写入到内存的数据量</li>
+<li>so：表示由内存写入到交换区的数据量</li>
+</ul>
+</li>
+<li>io显示磁盘的使用情况<ul>
+<li>bi：表示从块设备读取数据的量（读磁盘）</li>
+<li>bo：表示从块设备写入数据的量（写磁盘）</li>
+</ul>
+</li>
+<li>system显示采集间隔内发生的中段次数</li>
+<li>cpu显示CPU的使用状态<ul>
+<li>wa：表示I/O等待所占用CPU的时间百分比 </li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ vmstat</div><div class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</div><div class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="keyword">in</span>   cs us sy id wa st</div><div class="line"> 3  0   3156  66000     36 436188    0    2   894    78  125  213  3  2 92  3  0</div></pre></td></tr></table></figure>
+<p>也可以使用命令<code>vmstat 1 5</code>或者<code>vmstat 1</code>，前一条命令表示每隔1秒输出一次状态，共输出5次；后一条命令表示每隔1秒输出一次状态且一直输出。</p>
+<h3 id="top显示进程占有的系统资源"><a href="#top显示进程占有的系统资源" class="headerlink" title="top显示进程占有的系统资源"></a>top显示进程占有的系统资源</h3><h3 id="free查看内存使用的状态"><a href="#free查看内存使用的状态" class="headerlink" title="free查看内存使用的状态"></a>free查看内存使用的状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ free</div><div class="line">              total        used        free      shared  buff/cache   available</div><div class="line">Mem:         999936      574212       90404        4844      335320      224880</div><div class="line">Swap:       2097148        7244     2089904</div></pre></td></tr></table></figure>
+<h3 id="ps查看系统进程"><a href="#ps查看系统进程" class="headerlink" title="ps查看系统进程"></a>ps查看系统进程</h3><h2 id="网络相关"><a href="#网络相关" class="headerlink" title="网络相关"></a>网络相关</h2><ul>
+<li>ifconfig：查看网卡IP</li>
+<li>service network restart：重启网卡</li>
+<li>hostname：查看（修改）主机名<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ hostname</div><div class="line">localhost.localdomain</div><div class="line">[root@localhost jly]<span class="comment"># hostname jiangluya   //修改主机名</span></div><div class="line">[root@localhost jly]<span class="comment"># hostname</span></div><div class="line">jiangluya</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>下次登录时，命令提示符[root@localhost ~]中的localhost就会改为jiangluya。但是这样的修改只是保存在内存在，如果重启，主机名还会变成未改之前的名称。所以更改主机名的同时还需要更改相关配置文件/etc/sysconfig/network。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vim /etc/sysconfig/network</div><div class="line">NETWORKING=yes</div><div class="line">HOSTNAME=jiangluya.localdomain</div></pre></td></tr></table></figure></p>
+<ul>
+<li>设置DNS</li>
+</ul>
 ]]></content>
     
     <summary type="html">
