@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-29T15:25:58.338Z</updated>
+  <updated>2017-12-04T07:28:09.023Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,19 +20,29 @@
     <link href="http://yoursite.com/2017/11/29/%E3%80%8A%E6%8C%87%E5%B0%96%E4%B8%8A%E8%A1%8C%E3%80%8B%E7%A7%BB%E5%8A%A8%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
     <id>http://yoursite.com/2017/11/29/《指尖上行》移动前端开发之路/</id>
     <published>2017-11-29T12:50:43.000Z</published>
-    <updated>2017-11-29T15:25:58.338Z</updated>
+    <updated>2017-12-04T07:28:09.023Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="移动页面开发"><a href="#移动页面开发" class="headerlink" title="移动页面开发"></a>移动页面开发</h2><h3 id="设备像素"><a href="#设备像素" class="headerlink" title="设备像素"></a>设备像素</h3><p>设备像素有两个：</p>
+    <content type="html"><![CDATA[<p>本书从基础的移动页面布局和常见前端框架，到进阶的移动页面动画技术、Web API及性能优化，再到各类实战案例剖析等，讲解了技术层面的各类知识和心得。另外，书中还介绍了常用的数据分析方法，以验证项目效果。<br><a id="more"></a></p>
+<h2 id="移动页面开发"><a href="#移动页面开发" class="headerlink" title="移动页面开发"></a>移动页面开发</h2><h3 id="设备像素"><a href="#设备像素" class="headerlink" title="设备像素"></a>设备像素</h3><p>设备像素有两个：</p>
 <ol>
-<li>物理像素：指设备显示屏中使用的最小显示单元，即屏幕分辨率（如：iphone5的屏幕分辨率是640像素*1136像素）</li>
-<li>独立像素：指Web编程中的逻辑像素，即CSS像素（如：iphone5的CSS像素是320像素*568像素）</li>
+<li>物理像素：指设备显示屏中使用的最小显示单元，即<strong>屏幕分辨率</strong>（如：iphone5的屏幕分辨率是640像素*1136像素）</li>
+<li>独立像素：指Web编程中的逻辑像素，即<strong>CSS像素</strong>（如：iphone5的CSS像素是320像素*568像素）</li>
 </ol>
-<h3 id="像素密度-PPI"><a href="#像素密度-PPI" class="headerlink" title="像素密度(PPI)"></a>像素密度(PPI)</h3><p>PPI(Pixels Per Inch)是用来表示设备每英寸所拥有的物理像素数目。这个数值越高，屏幕越清晰。公式如下：<br>$$ PPI = \sqrt{} $$</p>
+<h3 id="像素密度-PPI"><a href="#像素密度-PPI" class="headerlink" title="像素密度(PPI)"></a>像素密度(PPI)</h3><p>PPI(Pixels Per Inch)是用来表示设备每英寸所拥有的物理像素数目。这个数值越高，屏幕越清晰。公式如下：<br>PPI = (sqrt(屏幕分辨率宽^2+屏幕分辨率高^2))/4;</p>
+<p>当显示屏的PPI超过了某一数值时，人的肉眼就无法分辨其中的单独像素，这就是<strong>Retina显示屏</strong>。</p>
+<h3 id="设备像素比-DPR"><a href="#设备像素比-DPR" class="headerlink" title="设备像素比(DPR)"></a>设备像素比(DPR)</h3><p>DPR(Device Pixel Ratio)是指物理像素和CSS像素的比例。</p>
+<p>对于常规屏来说，物理像素和CSS像素的比值是1:1，但是在Retina屏幕设备中，一个CSS像素可能等于多个物理像素。（iphone从4代开始DPR基本为2，plus除外）</p>
+<h3 id="设置Viewport"><a href="#设置Viewport" class="headerlink" title="设置Viewport"></a>设置Viewport</h3><p>Viewport有三种：Layout Viewport, Visual Viewport, Ideal Viewport(理想的).</p>
+<p>为了将浏览器默认的Layout Viewport宽度设置为Ideal Viewport的宽度，在开发移动页面时一般都会在head标签中写入以下代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>总结：</p>
+<ul>
+<li><a href="http://screensiz.es" target="_blank" rel="external">关于设备像素、设备密度及设备像素比</a></li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;移动页面开发&quot;&gt;&lt;a href=&quot;#移动页面开发&quot; class=&quot;headerlink&quot; title=&quot;移动页面开发&quot;&gt;&lt;/a&gt;移动页面开发&lt;/h2&gt;&lt;h3 id=&quot;设备像素&quot;&gt;&lt;a href=&quot;#设备像素&quot; class=&quot;headerlink&quot; title=&quot;设
+      &lt;p&gt;本书从基础的移动页面布局和常见前端框架，到进阶的移动页面动画技术、Web API及性能优化，再到各类实战案例剖析等，讲解了技术层面的各类知识和心得。另外，书中还介绍了常用的数据分析方法，以验证项目效果。&lt;br&gt;
     
     </summary>
     
