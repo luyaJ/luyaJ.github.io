@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-04T07:28:09.023Z</updated>
+  <updated>2017-12-08T02:27:05.628Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习linux之Docker</title>
+    <link href="http://yoursite.com/2017/12/07/%E5%AD%A6%E4%B9%A0linux%E4%B9%8BDocker/"/>
+    <id>http://yoursite.com/2017/12/07/学习linux之Docker/</id>
+    <published>2017-12-07T06:43:19.000Z</published>
+    <updated>2017-12-08T02:27:05.628Z</updated>
+    
+    <content type="html"><![CDATA[<p>Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现虚拟化，容器是完全使用沙箱机制，相互之间不会有任何接口。<br><a id="more"></a></p>
+<h1 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我这里学习的docker，是在ubuntu下使用的，对于ubuntu安装中的一些问题记录在这里。</p>
+<p><a href="https://www.ubuntu.com/download/desktop" target="_blank" rel="external">ubuntu镜像文件下载地址</a></p>
+<p>安装时，选择其他选项（即可以自己创建、调整分区）；继而出现安装类型，自己进行分区：</p>
+<p><img src="http://oxv4lmd01.bkt.clouddn.com/ubuntu-install.png" alt="分区1"></p>
+<p><img src="http://oxv4lmd01.bkt.clouddn.com/ubuntu-install2.png" alt="分区2"></p>
+<p><img src="http://oxv4lmd01.bkt.clouddn.com/ubuntu-install3.png" alt="安装类型"></p>
+<p>在这个过程中，我发现自己的界面不能完全显示（有一部分挡在下面，怎么拉都看不到），解决办法很简单：按键<code>Alt+F7</code>就可以拖动看到下面的内容。</p>
+<h2 id="自适应客户机"><a href="#自适应客户机" class="headerlink" title="自适应客户机"></a>自适应客户机</h2><p>操作方法见网址：<a href="https://jingyan.baidu.com/article/fc07f98977b60f12ffe5199b.html" target="_blank" rel="external">解决屏幕太小问题</a></p>
+<p>安装好后，点击最上方– 查看 –&gt; 立即适应客户机</p>
+<h1 id="在容器中部署静态网站"><a href="#在容器中部署静态网站" class="headerlink" title="在容器中部署静态网站"></a>在容器中部署静态网站</h1><p>Nginx部署流程如下：</p>
+<h3 id="创建映射80端口的交互式容器"><a href="#创建映射80端口的交互式容器" class="headerlink" title="创建映射80端口的交互式容器"></a>创建映射80端口的交互式容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost jly]<span class="comment"># docker run -p 80 --name web -i -t centos /bin/bash</span></div><div class="line">[root@f711b712010f /]<span class="comment">#</span></div></pre></td></tr></table></figure>
+<p>创建如上带端口映射的交互容器，命名为”web”，使用centos为系统。</p>
+<h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><h3 id="安装文本编辑器vim"><a href="#安装文本编辑器vim" class="headerlink" title="安装文本编辑器vim"></a>安装文本编辑器vim</h3><h3 id="创建静态页面"><a href="#创建静态页面" class="headerlink" title="创建静态页面"></a>创建静态页面</h3><h3 id="修改Nginx配置文件"><a href="#修改Nginx配置文件" class="headerlink" title="修改Nginx配置文件"></a>修改Nginx配置文件</h3><h3 id="运行Nginx"><a href="#运行Nginx" class="headerlink" title="运行Nginx"></a>运行Nginx</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现虚拟化，容器是完全使用沙箱机制，相互之间不会有任何接口。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>《指尖上行》移动前端开发之路</title>
@@ -50,32 +85,6 @@
     
     
       <category term="书籍" scheme="http://yoursite.com/tags/%E4%B9%A6%E7%B1%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学习linux之Docker</title>
-    <link href="http://yoursite.com/2017/11/19/%E5%AD%A6%E4%B9%A0linux%E4%B9%8BDocker/"/>
-    <id>http://yoursite.com/2017/11/19/学习linux之Docker/</id>
-    <published>2017-11-19T12:26:19.000Z</published>
-    <updated>2017-11-19T13:16:03.783Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="在容器中部署静态网站"><a href="#在容器中部署静态网站" class="headerlink" title="在容器中部署静态网站"></a>在容器中部署静态网站</h1><p>Nginx部署流程如下：</p>
-<h3 id="创建映射80端口的交互式容器"><a href="#创建映射80端口的交互式容器" class="headerlink" title="创建映射80端口的交互式容器"></a>创建映射80端口的交互式容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost jly]<span class="comment"># docker run -p 80 --name web -i -t centos /bin/bash</span></div><div class="line">[root@f711b712010f /]<span class="comment">#</span></div></pre></td></tr></table></figure>
-<p>创建如上带端口映射的交互容器，命名为”web”，使用centos为系统。</p>
-<h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><h3 id="安装文本编辑器vim"><a href="#安装文本编辑器vim" class="headerlink" title="安装文本编辑器vim"></a>安装文本编辑器vim</h3><h3 id="创建静态页面"><a href="#创建静态页面" class="headerlink" title="创建静态页面"></a>创建静态页面</h3><h3 id="修改Nginx配置文件"><a href="#修改Nginx配置文件" class="headerlink" title="修改Nginx配置文件"></a>修改Nginx配置文件</h3><h3 id="运行Nginx"><a href="#运行Nginx" class="headerlink" title="运行Nginx"></a>运行Nginx</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;在容器中部署静态网站&quot;&gt;&lt;a href=&quot;#在容器中部署静态网站&quot; class=&quot;headerlink&quot; title=&quot;在容器中部署静态网站&quot;&gt;&lt;/a&gt;在容器中部署静态网站&lt;/h1&gt;&lt;p&gt;Nginx部署流程如下：&lt;/p&gt;
-&lt;h3 id=&quot;创建映射80端口的交互式容
-    
-    </summary>
-    
-      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
     
   </entry>
   
