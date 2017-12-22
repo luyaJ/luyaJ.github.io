@@ -279,7 +279,7 @@
     <link href="http://yoursite.com/2017/10/27/%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2017/10/27/一些工具使用/</id>
     <published>2017-10-27T14:32:16.000Z</published>
-    <updated>2017-10-27T14:59:50.645Z</updated>
+    <updated>2017-12-22T10:59:14.759Z</updated>
     
     <content type="html"><![CDATA[<p>兴致来了，记录下自己喜欢的小工具，不定期更新。</p>
 <a id="more"></a>
@@ -289,6 +289,11 @@
 <ul>
 <li><a href="https://github.com/luyaJ/gitmoji" target="_blank" rel="external">github上的源码–gitmoji</a></li>
 <li><a href="https://gitmoji.carloscuesta.me/" target="_blank" rel="external">An emoji guide for your commit messages</a>在这里看图标的名称。</li>
+</ul>
+<h2 id="webstorm"><a href="#webstorm" class="headerlink" title="webstorm"></a>webstorm</h2><p>本人常用快捷键记录:</p>
+<ul>
+<li>Alt: 选择多处</li>
+<li>Ctrl+d: 复制并粘贴一行</li>
 </ul>
 ]]></content>
     
