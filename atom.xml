@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-15T08:35:31.077Z</updated>
+  <updated>2018-01-18T15:15:59.051Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,76 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>学习Mongoose</title>
+    <link href="http://yoursite.com/2018/01/18/%E5%AD%A6%E4%B9%A0Mongoose/"/>
+    <id>http://yoursite.com/2018/01/18/学习Mongoose/</id>
+    <published>2018-01-18T15:09:13.000Z</published>
+    <updated>2018-01-18T15:15:59.051Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<h2 id="mongoose入门"><a href="#mongoose入门" class="headerlink" title="mongoose入门"></a>mongoose入门</h2><h3 id="安装与连接"><a href="#安装与连接" class="headerlink" title="安装与连接"></a>安装与连接</h3><p>安装mongoose:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install mongoose --save</div></pre></td></tr></table></figure></p>
+<p>创建一个db.js:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">const mongoose = require(<span class="string">'mongoose'</span>);</div><div class="line">const dbUrl = <span class="string">'mongodb://101.132.128.72:27017/blog'</span>;</div><div class="line">mongoose.connect(dbUrl,&#123;</div><div class="line">  useMongoClient: <span class="literal">true</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 连接成功</div><div class="line">mongoose.connection.on(<span class="string">'connected'</span>, <span class="function"><span class="title">function</span></span> () &#123;    </div><div class="line">  console.log(<span class="string">'Mongoose connection open to '</span> + dbUrl);  </div><div class="line">&#125;);    </div><div class="line"></div><div class="line">// 连接异常</div><div class="line">mongoose.connection.on(<span class="string">'error'</span>,<span class="keyword">function</span> (err) &#123;    </div><div class="line">  console.log(<span class="string">'Mongoose connection error: '</span> + err);  </div><div class="line">&#125;);    </div><div class="line"> </div><div class="line">// 连接断开</div><div class="line">mongoose.connection.on(<span class="string">'disconnected'</span>, <span class="function"><span class="title">function</span></span> () &#123;    </div><div class="line">  console.log(<span class="string">'Mongoose connection disconnected'</span>);  </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="Schema"><a href="#Schema" class="headerlink" title="Schema"></a>Schema</h3><p>Schema是mongoose里会用到的一种数据模式，可以理解为表结构的定义。每个Schema会映射到mongodb中的一个Connection，他不具备操作数据库的能力。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在db.js中增加以下代码：</span></div><div class="line">module.exports = mongoose;</div></pre></td></tr></table></figure>
+<p>下面定义一个user的Schema，命名user.js:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var mongoose = require(<span class="string">'./db.js'</span>);</div><div class="line">var Schema = mongoose.Schema;</div><div class="line"></div><div class="line">var UserSchema = new Schema(&#123;</div><div class="line">  username: &#123; <span class="built_in">type</span>: String &#125;,</div><div class="line">  password: &#123; <span class="built_in">type</span>: String &#125;,</div><div class="line">  age: &#123; <span class="built_in">type</span>: Number &#125;,</div><div class="line">  logindata: &#123; <span class="built_in">type</span>: Date &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>定义好了Schema，接下来就是生成Model。model是由Schema生成的模型，可以对数据库进行操作。</p>
+<p>我们对上面的定义的user的schema生成一个User的model并导出，在user.js中增加以下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">module.exports = mongoose.model(<span class="string">'User'</span>, UserSchema);</div></pre></td></tr></table></figure></p>
+<h3 id="常用数据库操作"><a href="#常用数据库操作" class="headerlink" title="常用数据库操作"></a>常用数据库操作</h3><h4 id="插入-save"><a href="#插入-save" class="headerlink" title="插入(save)"></a>插入(save)</h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;mongoose入门&quot;&gt;&lt;a href=&quot;#mongoose入门&quot; class=&quot;headerlink&quot; title=&quot;mongoose入门&quot;&gt;&lt;/a&gt;mongoose入门&lt;/h2&gt;&lt;h3 id=&quot;安装与连接&quot;&gt;&lt;a href=
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下MongoDB的安装和启动</title>
+    <link href="http://yoursite.com/2018/01/05/Linux%E4%B8%8BMongoDB%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E5%90%AF%E5%8A%A8/"/>
+    <id>http://yoursite.com/2018/01/05/Linux下MongoDB的安装和启动/</id>
+    <published>2018-01-05T02:01:27.000Z</published>
+    <updated>2018-01-05T02:36:31.855Z</updated>
+    
+    <content type="html"><![CDATA[<p>MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。</p>
+<a id="more"></a>
+<h2 id="MongoDB的安装"><a href="#MongoDB的安装" class="headerlink" title="MongoDB的安装"></a>MongoDB的安装</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 下载</span></div><div class="line">curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.2.9.tgz</div><div class="line"><span class="comment"># 解压缩</span></div><div class="line">tar zxvf mongodb-linux-x86_64-3.2.9.tgz</div></pre></td></tr></table></figure>
+<h3 id="创建数据库文件夹、日志文件和配置文件"><a href="#创建数据库文件夹、日志文件和配置文件" class="headerlink" title="创建数据库文件夹、日志文件和配置文件"></a>创建数据库文件夹、日志文件和配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir -p  /usr/<span class="built_in">local</span>/server/mongodb/data</div><div class="line">touch /usr/<span class="built_in">local</span>/server/mongodb/mongod.log</div><div class="line">touch /usr/<span class="built_in">local</span>/server/mongodb/mongodb.conf</div></pre></td></tr></table></figure>
+<p>将下载好的mongodb移动到新建的文件夹下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv mongodb-linux-x86_64-3.2.9/* /usr/<span class="built_in">local</span>/server/mongodb/</div></pre></td></tr></table></figure></p>
+<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[root@izuf6alst6rugagpxl8wizz /]<span class="comment"># cd /usr/local/server/mongodb</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz mongodb]<span class="comment"># ls</span></div><div class="line">bin   GNU-AGPL-3.0  mongodb.conf  mongod.log  README</div><div class="line">data  mongod        mongodb.log   MPL-2       THIRD-PARTY-NOTICES</div><div class="line"></div><div class="line">[root@izuf6alst6rugagpxl8wizz mongodb]<span class="comment"># cd  bin</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz bin]<span class="comment"># ls</span></div><div class="line">bsondump  mongod     mongoexport  mongoimport  mongoperf     mongos     mongotop</div><div class="line">mongo     mongodump  mongofiles   mongooplog   mongorestore  mongostat</div></pre></td></tr></table></figure>
+<p>bin下的mongod就是MongoDB的服务进程，mongo就是其客户端。</p>
+<h3 id="启动MongoDB"><a href="#启动MongoDB" class="headerlink" title="启动MongoDB"></a>启动MongoDB</h3><p>在MongoDB安装目录下的bin下使用mongod启动MongoDB:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@izuf6alst6rugagpxl8wizz bin]<span class="comment"># ./mongod --dbpath=/usr/local/server/mongodb/data --logpath=/usrerver/mongodb/mongod.log --logappend&amp;</span></div><div class="line">[1] 1090</div></pre></td></tr></table></figure></p>
+<p>之后，我们通过查看端口号看MongoDB是否启动了(下面这样就说明启动成功)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@izuf6alst6rugagpxl8wizz bin]<span class="comment"># cd ../data</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz data]<span class="comment"># netstat -lanp | grep "27017"</span></div><div class="line">tcp        0      0 0.0.0.0:27017           0.0.0.0:*               LISTEN      1090/./mongod      </div><div class="line">unix  2      [ ACC ]     STREAM     LISTENING     15433    1090/./mongod        /tmp/mongodb-27017</div></pre></td></tr></table></figure></p>
+<p>成功之后，我们使用mongo客户端访问一下该数据库:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@izuf6alst6rugagpxl8wizz bin]<span class="comment"># ./mongo</span></div><div class="line">MongoDB shell version: 3.2.9</div><div class="line">connecting to: <span class="built_in">test</span></div><div class="line">........</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+<p>这样就说明我已经安装成功了！</p>
+<h3 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h3><p>上面的操作是我们手动启动MongoDB，为了让他每次开机自启，我们需要编辑<code>/etc/rc.local</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@izuf6alst6rugagpxl8wizz bin]<span class="comment"># vim /etc/rc.local</span></div><div class="line"><span class="comment">#add mongonDB service   </span></div><div class="line">rm -rf /usr/<span class="built_in">local</span>/server/mongodb/data/* &amp;&amp; /usr/<span class="built_in">local</span>/server/mongodb/bin/mongod --dbpath=/usr/<span class="built_in">local</span>/server/mongodb/data/ --logpath=/usr/<span class="built_in">local</span>/server/mongodb/mongod.log --logappend&amp;</div></pre></td></tr></table></figure></p>
+<p>到这里之后我们重启计算机，再次使用mongo命令，发现他是可以成功的。</p>
+<p>但是每次使用mongo命令登录MongDB还要转到目录<code>/usr/local/server/mongodb/bin</code>下再执行<code>./mongo</code>实在是太麻烦了，所以执行以下命令，在任何目录下都可以使用命令mongo了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[root@izuf6alst6rugagpxl8wizz bin]<span class="comment"># cp mongo /usr/bin/</span></div><div class="line">cp: overwrite ‘/usr/bin/mongo’? yes</div><div class="line">[root@izuf6alst6rugagpxl8wizz bin]<span class="comment"># cd /</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz /]<span class="comment"># mongo</span></div><div class="line">MongoDB shell version: 3.2.9</div><div class="line">connecting to: <span class="built_in">test</span></div><div class="line">........</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<p>帮助：</p>
+<ul>
+<li>(linux公社)[<a href="http://www.linuxidc.com/Linux/2011-05/36309.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2011-05/36309.htm</a>]</li>
+<li>(CSDN)[<a href="http://blog.csdn.net/wlzx120/article/details/52301799" target="_blank" rel="external">http://blog.csdn.net/wlzx120/article/details/52301799</a>]</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>学习linux之Docker</title>
     <link href="http://yoursite.com/2017/12/07/%E5%AD%A6%E4%B9%A0linux%E4%B9%8BDocker/"/>
     <id>http://yoursite.com/2017/12/07/学习linux之Docker/</id>
     <published>2017-12-07T06:43:19.000Z</published>
-    <updated>2017-12-15T08:35:31.077Z</updated>
+    <updated>2017-12-23T13:30:24.345Z</updated>
     
     <content type="html"><![CDATA[<p>Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现虚拟化，容器是完全使用沙箱机制，相互之间不会有任何接口。<br><a id="more"></a></p>
 <h1 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我这里学习的docker，是在ubuntu下使用的，对于ubuntu安装中的一些问题记录在这里。</p>
@@ -70,7 +135,7 @@
 <p>到这里我们就完成了一个静态页面！下面来看看怎么运行nginx。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 停用容器</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># docker stop web1</span></div><div class="line">web1</div><div class="line"></div><div class="line"><span class="comment"># 开启容器</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># docker start -i web1</span></div><div class="line"></div><div class="line"><span class="comment"># 可以看到nginx没有开启</span></div><div class="line">root@f3cfa277a97e:/<span class="comment"># ps -ef</span></div><div class="line">UID        PID  PPID  C STIME TTY          TIME CMD</div><div class="line">root         1     0  0 14:19 ?        00:00:00 bash</div><div class="line">root         9     1  0 14:20 ?        00:00:00 ps -ef</div><div class="line"></div><div class="line"><span class="comment"># exec命令启动nginx，查看</span></div><div class="line">root@f3cfa277a97e:/<span class="comment"># [root@izuf6alst6rugagpxl8wizz ~]# </span></div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># docker exec web1 nginx</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># docker top web1</span></div><div class="line">UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD</div><div class="line">root                12250               12227               0                   22:19               pts/2               00:00:00            bash</div><div class="line">root                12370               1                   0                   22:20               ?                   00:00:00            nginx: master process nginx</div><div class="line">33                  12371               12370               0                   22:20               ?                   00:00:00            nginx: worker process</div><div class="line"></div><div class="line"><span class="comment"># 运行网站（会发现有问题），使用inspect查看容器，重新输入地址，就成功了。</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># http://172.17.0.3</span></div><div class="line">-bash: http://172.17.0.3: No such file or directory</div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># docker inspect</span></div><div class="line">/usr/bin/docker-current: <span class="string">"inspect"</span> requires a minimum of 1 argument.</div><div class="line">See <span class="string">'/usr/bin/docker-current inspect --help'</span>.</div><div class="line"></div><div class="line">Usage:  docker inspect [OPTIONS] CONTAINER|IMAGE|TASK [CONTAINER|IMAGE|TASK...]</div><div class="line"></div><div class="line">Return low-level information on a container, image or task</div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># docker inspect web1</span></div></pre></td></tr></table></figure>
 <p>友情链接：<a href="https://segmentfault.com/a/1190000012161773" target="_blank" rel="external">docker上手并部署Ngnix</a></p>
-]]></content>
+<h1 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h1>]]></content>
     
     <summary type="html">
     
@@ -128,7 +193,7 @@
     <link href="http://yoursite.com/2017/11/02/%E5%AD%A6%E4%B9%A0linux%E4%B9%8B%E7%AC%AC%E4%BA%8C%E7%AF%87/"/>
     <id>http://yoursite.com/2017/11/02/学习linux之第二篇/</id>
     <published>2017-11-02T10:35:28.000Z</published>
-    <updated>2017-12-23T09:32:09.771Z</updated>
+    <updated>2017-12-23T11:10:36.066Z</updated>
     
     <content type="html"><![CDATA[<p>这是linux后半部分的学习，记录RPM包以及shell，正则表达式等内容。</p>
 <a id="more"></a>
@@ -169,10 +234,7 @@
 </li>
 </ul>
 <h3 id="重定向符号"><a href="#重定向符号" class="headerlink" title="重定向符号"></a>重定向符号</h3><ul>
-<li><blockquote>
-<p>和 &gt;&gt;:分别表示取代和追加。</p>
-</blockquote>
-</li>
+<li>‘&gt;’ 和 ‘&gt;&gt;’:分别表示取代和追加。</li>
 <li>当我们运行一个命令报错时，报错信息会输出到当前屏幕，如果想重定向到一个文本里，则要用重定向符号“2&gt;”或者“2&gt;&gt;”,分别表示错误重定向和错误追加重定向。</li>
 </ul>
 <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="grep工具的使用"><a href="#grep工具的使用" class="headerlink" title="grep工具的使用"></a>grep工具的使用</h2><p>命令格式：<code>grep [-cinvABC] &#39;word&#39; filename</code>。</p>
@@ -357,7 +419,7 @@
     <link href="http://yoursite.com/2017/10/15/%E5%AD%A6%E4%B9%A0linux/"/>
     <id>http://yoursite.com/2017/10/15/学习linux/</id>
     <published>2017-10-15T12:02:49.000Z</published>
-    <updated>2017-11-17T15:02:07.739Z</updated>
+    <updated>2017-12-23T11:24:09.309Z</updated>
     
     <content type="html"><![CDATA[<p>简介：使用虚拟机安装linux以及linux学习。</p>
 <a id="more"></a>
@@ -714,13 +776,19 @@
 <h2 id="使用zip压缩"><a href="#使用zip压缩" class="headerlink" title="使用zip压缩"></a>使用zip压缩</h2><p>zip后面先跟目录文件名（即要压缩后的自定义压缩包名），然后跟要压缩的文件或者目录。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ touch 1.txt</div><div class="line">[jly@localhost ~]$ zip 1.txt.zip 1.txt</div><div class="line">  adding: 1.txt (stored 0%)</div></pre></td></tr></table></figure></p>
 <p>当一个目录下还有二级目录甚至更多级目录时，如果想一并压缩所有文件，必须加上-r选项，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ zip -r dir1.zip dir1/</div></pre></td></tr></table></figure></p>
 <p>解压方法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[jly@localhost ~]$ unzip 1.txt.zip</div></pre></td></tr></table></figure></p>
+<h3 id="安装更新VMware-Tools"><a href="#安装更新VMware-Tools" class="headerlink" title="安装更新VMware Tools"></a>安装更新VMware Tools</h3><ul>
+<li>拷贝压缩包到一个地方;</li>
+<li>解压：<code>tar zxf vmware-linux-tools.tar.gz</code>;</li>
+<li>会解压出一个名为“vmware-tools-distrib”的目录;</li>
+<li>进入上一个目录，在超级用户下使用命令<code>./vmware-install.pl</code>开始安装。</li>
+</ul>
 <h1 id="文本编辑工具Vim"><a href="#文本编辑工具Vim" class="headerlink" title="文本编辑工具Vim"></a>文本编辑工具Vim</h1><p>vim有三种模式：一般模式、编辑模式和命令模式。</p>
 <ul>
 <li>在<strong>一般模式</strong>下不可以修改某个字符，想要修改字符，就要进入<strong>编辑模式</strong>。从一般模式进入编辑模式，你只需要按i/I/a/A/o/O/r/R中的某一个键即可。当进入编辑模式时，就会显示“插入/INSERT/REPLACE”的其中一个。</li>
 <li>如果想从编辑模式回到一般模式，直接按esc键即可。</li>
 <li>在一般模式下，输入“：”或者“/”即可进入<strong>命令模式</strong>。在该模式下，可以搜索某个字符或者字符串，也可以实现保存、替换、退出、显示行号等操作。</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//vim test.txt文本内容显示如下</div><div class="line">qwqeqwqeqwqwrqrwwrw</div><div class="line">dvfvgbg</div><div class="line">//在一般模式下，先输入<span class="string">"："</span>，再输入<span class="string">"/qw"</span>，就会匹配出所有符合条件的qw。</div><div class="line">//或者在一般模式下，先输入<span class="string">"/"</span>，再直接输入qw，同样匹配所有qw。</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># vim test.txt文本内容显示如下</span></div><div class="line">qwqeqwqeqwqwrqrwwrw</div><div class="line">dvfvgbg</div><div class="line"><span class="comment"># 在一般模式下，先输入"："，再输入"/qw"，就会匹配出所有符合条件的qw。</span></div><div class="line"><span class="comment"># 或者在一般模式下，先输入"/"，再直接输入qw，同样匹配所有qw。</span></div></pre></td></tr></table></figure>
 <p>命令模式的其他功能：</p>
 <ul>
 <li><code>:w</code> : 保存文本</li>
@@ -731,7 +799,6 @@
 <li><code>:set nu</code> : 显示行号</li>
 <li><code>:set nonu</code> : 不显示行号</li>
 </ul>
-<p>到这里为止就是学习《跟阿铭学linux》的前8章内容，有需要会再更新。</p>
 ]]></content>
     
     <summary type="html">
@@ -2378,267 +2445,6 @@ $(document).ready(function(){
     
     
       <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学习Sass</title>
-    <link href="http://yoursite.com/2017/07/25/%E5%AD%A6%E4%B9%A0Sass/"/>
-    <id>http://yoursite.com/2017/07/25/学习Sass/</id>
-    <published>2017-07-25T13:03:33.000Z</published>
-    <updated>2017-09-17T13:37:28.213Z</updated>
-    
-    <content type="html"><![CDATA[<p>CSS 预处理器的主要目标：提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。这不是锦上添花，而恰恰是雪中送炭。</p>
-<a id="more"></a>
-<p>目前主流的三个<strong>预处理器</strong>：</p>
-<ul>
-<li>Less</li>
-<li>Sass</li>
-<li>Stylus</li>
-</ul>
-<h1 id="安装Sass"><a href="#安装Sass" class="headerlink" title="安装Sass"></a>安装Sass</h1><p><a href="http://rubyinstaller.org/downloads" target="_blank" rel="external">Ruby下载链接http://rubyinstaller.org/downloads</a></p>
-<p>安装过程中请注意勾选 <code>Add Ruby executables to your PATH</code></p>
-<p>安装完成后运行cmd输入<code>ruby -v</code>测试有没有安装成功。</p>
-<p>若安装成功，使用<code>Ruby</code>自带的<code>RubyGems</code>系统安装Sass和Compass</p>
-<pre><code>gem install sass
-gem install compass
-</code></pre><p>这样就安装好了！</p>
-<p>如下sass常用更新、查看版本、sass命令帮助等命令：</p>
-<pre><code>gem update sass
-sass -v
-sass -h
-</code></pre><h1 id="编译Sass"><a href="#编译Sass" class="headerlink" title="编译Sass"></a>编译Sass</h1><p>Sass编译有很多种方式，如命令行编译模式、sublime插件<code>SASS-Build</code> 、编译软件<code>koala</code> 、前端自动化软件<code>codekit</code> 、Grunt打造前端自动化工作流<code>grunt-sass</code> 、Gulp打造前端自动化工作流<code>gulp-ruby-sass</code>等。</p>
-<h2 id="命令行编译："><a href="#命令行编译：" class="headerlink" title="命令行编译："></a>命令行编译：</h2><pre><code>//单文件转换命令
-sass input.scss output.css
-//单文件监听命令
-sass --watch input.scss:output.css
-//如果你有很多的sass文件的目录，你也可以告诉sass监听整个目录：
-sass --watch app/sass:public/stylesheets
-</code></pre><h2 id="四种编译排版"><a href="#四种编译排版" class="headerlink" title="四种编译排版"></a>四种编译排版</h2><pre><code>//未编译样式
-.box {
-    width: 300px;
-    height: 400px;
-    &amp;-title {
-        height: 30px;
-        line-height: 30px;
-    }
-}
-</code></pre><h3 id="nested-编译排版格式："><a href="#nested-编译排版格式：" class="headerlink" title="nested 编译排版格式："></a>nested 编译排版格式：</h3><pre><code>/*命令行内容*/
-sass style.scss:style.css --style nested
-
-/*编译过后样式*/
-.box {
-    width: 300px;
-    height: 400px; }
-    .box-title {
-        height: 30px;
-        line-height: 30px; }
-</code></pre><h3 id="expanded-编译排版格式"><a href="#expanded-编译排版格式" class="headerlink" title="expanded 编译排版格式"></a>expanded 编译排版格式</h3><pre><code>/*命令行内容*/
-sass style.scss:style.css --style expanded
-
-/*编译过后样式*/
-.box {
-    width: 300px;
-    height: 400px;
-}   
-.box-title {
-    height: 30px;
-    line-height: 30px;
-}
-</code></pre><h3 id="compact-编译排版格式"><a href="#compact-编译排版格式" class="headerlink" title="compact 编译排版格式"></a>compact 编译排版格式</h3><pre><code>/*命令行内容*/
-sass style.scss:style.css --style compact
-
-/*编译过后样式*/
-.box { width: 300px; height: 400px; }
-.box-title { height: 30px; line-height: 30px; }
-</code></pre><h3 id="compressed-编译排版格式"><a href="#compressed-编译排版格式" class="headerlink" title="compressed 编译排版格式"></a>compressed 编译排版格式</h3><pre><code>/*命令行内容*/
-sass style.scss:style.css --style compressed
-
-/*编译过后样式*/
-.box{width:300px;height:400px}.box-title{height:30px;line-height:30px}
-</code></pre><h1 id="在webstrom中使用sass"><a href="#在webstrom中使用sass" class="headerlink" title="在webstrom中使用sass"></a>在webstrom中使用sass</h1><p>file ☛ settings  ☞ Tools  ☞ File Watchers  双击配置Sass</p>
-<h1 id="嵌套CSS规则"><a href="#嵌套CSS规则" class="headerlink" title="嵌套CSS规则"></a>嵌套CSS规则</h1><p>sass文件:</p>
-<pre><code>#content {
-    article {
-        h1 { color: #333 }
-        p { margin-bottom: 1.4em }
-    }
-    aside { background-color: #EEE }
-}
-</code></pre><p>编译成css后：</p>
-<pre><code>#content article h1 { color: #333 }
-#content article p { margin-bottom: 1.4em }
-#content aside { background-color: #EEE }
-</code></pre><h2 id="父选择器的标识符-amp"><a href="#父选择器的标识符-amp" class="headerlink" title="父选择器的标识符&amp;"></a>父选择器的标识符&amp;</h2><pre><code>article a {
-    color: blue;
-    &amp;:hover { color: red }
-}
-</code></pre><p>当包含父选择器标识符的嵌套规则被打开时，他不会像后代选择器那样进行拼接，而是 &amp; 被父选择器直接替换：</p>
-<pre><code>article a { color: blue; }
-article a:hover { color: red }
-</code></pre><h2 id="子组合选择器和同层组合选择器：-gt-、-和"><a href="#子组合选择器和同层组合选择器：-gt-、-和" class="headerlink" title="子组合选择器和同层组合选择器： &gt; 、 + 和 ~"></a>子组合选择器和同层组合选择器： &gt; 、 + 和 ~</h2><pre><code>article section { margin: 5px }
-article &gt; section { border: 1px solid #ccc }
-</code></pre><p>第一个选择器会选择article下的<strong>所有</strong>命中section选择器的元素。第二个选择器只会选择article下<strong>紧跟着的子元素</strong>中命中section选择器的元素。</p>
-<pre><code>header + p { font-size: 1.1em }
-</code></pre><p>在上例中，你可以用<strong>同层相邻组合选择器</strong> + 选择header元素后紧跟的p元素。</p>
-<pre><code>article ~ article { border-top: 1px dashed #ccc }
-</code></pre><p>你也可以用<strong>同层全体组合选择器</strong> ~ ，选择所有跟在article后的同层article元素，不管它们之间隔了多少其他元素。</p>
-<p>例子：</p>
-<pre><code>article {
-    ~ article { border-top: 1px dashed #ccc }
-    &gt; section { background: #eee }
-    dl &gt; {
-    dt { color: #333 }
-    dd { color: #555 }
-    }
-    nav + &amp; { margin-top: 0 }
-}    
-</code></pre><p>sass解开组合之后：</p>
-<pre><code>article ~ article { border-top: 1px dashed #ccc }
-article &gt; footer { background: #eee }
-article dl &gt; dt { color: #333 }
-article dl &gt; dd { color: #555 }
-nav + article { margin-top: 0 }
-</code></pre><h2 id="嵌套属性"><a href="#嵌套属性" class="headerlink" title="嵌套属性"></a>嵌套属性</h2><p>重复编写<code>border-style</code>  <code>border-width</code>  <code>border-color</code>等非常烦人，所以在sass中，只要像以下这样书写就行：</p>
-<pre><code>nav{
-    border: {
-    style: solid;
-    width: 1px;
-    color: #ccc;
-    }
-}
-</code></pre><p><strong><em>规则：</em></strong> 把属性名从中划线-的地方断开，在根属性后边添加一个冒号:，紧跟一个{ }块，把子属性部分写在这个{ }块中。</p>
-<p><strong><em>优点：</em></strong> 属性和选择器嵌套是非常伟大的特性，因为它们不仅大大减少了你的编写量，而且通过视觉上的缩进使你编写的样式结构更加清晰，更易于阅读和开发。</p>
-<h1 id="导入Sass文件"><a href="#导入Sass文件" class="headerlink" title="导入Sass文件"></a>导入Sass文件</h1><p>随着你的样式表越来越多，我们要把大量样式分拆到多个文件中，使用 <strong>@import</strong> 规则。</p>
-<h2 id="使用sass部分文件"><a href="#使用sass部分文件" class="headerlink" title="使用sass部分文件"></a>使用sass部分文件</h2><p>举例来说，你想导入 <code>themes/_night-sky.scss</code> 这个局部文件里的变量，你只需在样式表中写 <code>@import &quot;themes/night-sky&quot;;</code></p>
-<h2 id="默认变量值"><a href="#默认变量值" class="headerlink" title="默认变量值;"></a>默认变量值;</h2><p>一般情况下，你反复声明一个变量，只有最后一处声明有效且它会覆盖前边的值。举例说明：</p>
-<pre><code>$link-color: blue;
-$link-color: red;
-a {
-    color: $link-color;
-}
-</code></pre><p>在上边的例子中，超链接的<code>color</code>会被设置为<code>red</code>。这可能并不是你想要的结果，假如你写了一个可被他人通过<code>@import</code>导入的sass库文件，你可能希望导入者可以定制修改sass库文件中的某些值。使用sass的<code>!default</code>标签可以实现这个目的。它很像css属性中<code>!important</code>标签的对立面，不同的是<code>!default</code>用于变量，含义是：如果这个变量被声明赋值了，那就用它声明的值，否则就用这个默认值。</p>
-<pre><code>$fancybox-width: 400px !default;
-.fancybox {
-    width: $fancybox-width;
-}
-</code></pre><p>在上例中，如果用户在导入你的sass局部文件之前声明了一个<code>$fancybox-width</code>变量，那么你的局部文件中对<code>$fancybox-width</code>赋值<code>400px</code>的操作就无效。如果用户没有做这样的声明，则<code>$fancybox-width</code>将默认为<code>400px</code>。</p>
-<h2 id="静默注释"><a href="#静默注释" class="headerlink" title="静默注释"></a>静默注释</h2><pre><code>body {
-    color: #333;  // 这种注释内容不会出现在生成的css文件中
-    padding: 0;  /* 这种注释内容会出现在生成的css文件中 */
-}
-</code></pre><h1 id="混合器"><a href="#混合器" class="headerlink" title="混合器"></a>混合器</h1><p>混合器使用 <code>@mixin</code> 标识符定义。</p>
-<pre><code>@mixin rounded-corners {
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-        border-radius: 5px;
-}
-</code></pre><p>然后就可以在样式表中通过 <code>@include</code> 来使用这个混合器。</p>
-<pre><code>notice {
-    background-color: green;
-    border: 2px solid #00aa00;
-    @include rounded-corners;
-}
-</code></pre><p>sass最终生成：</p>
-<pre><code>.notice {
-    background-color: green;
-    border: 2px solid #00aa00;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;CSS 预处理器的主要目标：提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。这不是锦上添花，而恰恰是雪中送炭。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Web前端" scheme="http://yoursite.com/categories/Web%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML5 Web存储</title>
-    <link href="http://yoursite.com/2017/07/24/HTML5-Web%E5%AD%98%E5%82%A8/"/>
-    <id>http://yoursite.com/2017/07/24/HTML5-Web存储/</id>
-    <published>2017-07-24T06:02:21.000Z</published>
-    <updated>2017-09-17T13:37:10.807Z</updated>
-    
-    <content type="html"><![CDATA[<p>HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：</p>
-<a id="more"></a>
-<ul>
-<li>localStorage –没有时间限制的数据存储。第二天、第二周或下一年之后，数据依然可用。</li>
-<li>sessionStorage –针对一个session的数据存储。当用户关闭浏览器窗口后，数据会被删除。</li>
-</ul>
-<h2 id="localStorage方法"><a href="#localStorage方法" class="headerlink" title="localStorage方法"></a>localStorage方法</h2><p>对用户访问页面的次数进行计数：</p>
-<pre><code>&lt;script&gt;
-    if (localStorage.pagecount) {
-        localStorage.pagecount=Number(localStorage.pagecount) +1;
-    } else {
-        localStorage.pagecount=1;
-    }
-    document.write(&quot;Visits &quot;+ localStorage.pagecount + &quot; time(s).&quot;);
-&lt;/script&gt;
-</code></pre><h2 id="sessionStorage方法"><a href="#sessionStorage方法" class="headerlink" title="sessionStorage方法"></a>sessionStorage方法</h2><p>用户在当前 session 中访问页面的次数进行计数：</p>
-<pre><code>&lt;script&gt;
-    if(sessionStorage.pageCount){
-        sessionStorage.pageCount = Number(sessionStorage.pageCount) +1;
-     } else {
-        sessionStorage.pageCount = 1;
-    }
-     document.write(&quot;visits: &quot; + sessionStorage.pageCount + &quot; 次&quot;);
-&lt;/script&gt;
-</code></pre><h2 id="如何工作"><a href="#如何工作" class="headerlink" title="如何工作?"></a>如何工作?</h2><p>早在1995,2010年，浏览器存储是利用cookie在浏览器上存储信息，但cookie仅限4k数据。</p>
-<p>现如今的浏览器都很慷慨，都会提供5~10M（每个域）的存储空间。创建HTML5的本地存储时还充分考虑了Web应用（和移动应用）。所谓<strong>本地存储</strong>，就是指你的应用可以把数据存储在浏览器上，从而减少与服务器之间所需的通信。</p>
-<h3 id="如何做到的？"><a href="#如何做到的？" class="headerlink" title="如何做到的？"></a>如何做到的？</h3><ol>
-<li>使用这个API，页面可以在浏览器的本地存储中存储一个或多个键/值对；</li>
-<li>然后用键来获取相应的值；</li>
-</ol>
-<p>键/值对，就是<code>key: &quot;pet&quot;</code>, <code>key</code>就是键，<code>pet</code>就是对。</p>
-<h4 id="获取方法和设置方法-getItem和setItem"><a href="#获取方法和设置方法-getItem和setItem" class="headerlink" title="获取方法和设置方法(getItem和setItem)"></a>获取方法和设置方法(getItem和setItem)</h4><p><code>setItem</code>方法，用于存储某个数据，只能是string类型的数据项。</p>
-<pre><code>localStorage.setItem(&quot;name&quot;,&quot;luya&quot;);
-localStorage.setItem(&quot;age&quot;,21);
-alert(localStorage.getItem(&quot;name&quot;));
-//alert(parseInt(localStorage.getItem(&quot;age&quot;)));
-//输出：luya
-</code></pre><h4 id="看成一个关联数组"><a href="#看成一个关联数组" class="headerlink" title="看成一个关联数组"></a>看成一个关联数组</h4><pre><code>//为键赋值
-localStorage[&quot;name&quot;] = &quot;luya&quot;;
-//获取一个键存储的值,相当于getItem方法
-var name = localStorage[&quot;name&quot;];
-</code></pre><h3 id="另外两个特性"><a href="#另外两个特性" class="headerlink" title="另外两个特性"></a>另外两个特性</h3><p><code>length</code>属性，localStorage中有多少数据项；<code>key</code>方法，给出localStorage中各个数据项的键。</p>
-<pre><code>for(var i=0;i&lt;localStorage.length;i++){
-    var key = localStorage.key(i);
-    var value = localStorage[key];
-    alert(value);
-}
-</code></pre><h2 id="可以怎样使用？"><a href="#可以怎样使用？" class="headerlink" title="可以怎样使用？"></a>可以怎样使用？</h2><ul>
-<li>在我的新Twitter客户端，为了提高效率，我要用localStorage把Twitter搜索结果缓存起来。用户搜索时，会先搜索本地结果。这对移动用户很有帮助。</li>
-<li>用户存储播放列表（影片、音乐等）</li>
-<li>使用sessionStorage实现购物车</li>
-<li>有一个非常酷的游戏，他可以在两个不同的浏览器窗口同时工作，使用localStorage完成状态同步</li>
-</ul>
-<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ul>
-<li>JavaScript对象表示法（JavaScript Object Notation）</li>
-<li>JSON是存储和交换文本信息的语法，类似XML；JSON比XML更小、更快、更易解析。</li>
-</ul>
-<p>JSON API只有两个方法：<code>stringify</code> 和 <code>parse</code></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;HTML5使用JavaScript来存储和访问数据，提供了两种在客户端存储数据的新方法：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Web前端" scheme="http://yoursite.com/categories/Web%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="HTML5" scheme="http://yoursite.com/tags/HTML5/"/>
     
   </entry>
   

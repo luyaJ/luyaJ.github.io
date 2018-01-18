@@ -7,20 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <link rel="shortcut icon" href="http://otnbkrzno.bkt.clouddn.com/myPic.ico">
-  <title>学习Sass | luyaJ的小博客</title>
+  <title>Archives: 2018/1 | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CSS 预处理器的主要目标：提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。这不是锦上添花，而恰恰是雪中送炭。">
-<meta name="keywords" content="CSS">
-<meta property="og:type" content="article">
-<meta property="og:title" content="学习Sass">
-<meta property="og:url" content="http://yoursite.com/2017/07/25/学习Sass/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="luyaJ的小博客">
+<meta property="og:url" content="http://yoursite.com/archives/2018/01/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
-<meta property="og:description" content="CSS 预处理器的主要目标：提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。这不是锦上添花，而恰恰是雪中送炭。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-17T13:37:28.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习Sass">
-<meta name="twitter:description" content="CSS 预处理器的主要目标：提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。这不是锦上添花，而恰恰是雪中送炭。">
+<meta name="twitter:title" content="luyaJ的小博客">
   
   
     <link rel="icon" href="/favicon.png">
@@ -160,337 +155,76 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-学习Sass" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      学习Sass
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/01/18/学习Mongoose/" class="archive-article-date">
+  	<time datetime="2018-01-18T15:09:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/18/学习Mongoose/">学习Mongoose</a>
     </h1>
   
 
-        
-        <a href="/2017/07/25/学习Sass/" class="archive-article-date">
-  	<time datetime="2017-07-25T13:03:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-25</time>
-</a>
-        
-      </header>
-    
+        <div class="article-info info-on-right">
+          
+          
 
-    <!-- 目录内容 -->
-    
-    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
-      <span class="btn-bg"></span>
-      <span class="btn-text">文章导航</span>
-    </p>
-    <div id="toc-article" class="toc-article">
-      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
-      <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装Sass"><span class="toc-number">1.</span> <span class="toc-text">安装Sass</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#编译Sass"><span class="toc-number">2.</span> <span class="toc-text">编译Sass</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令行编译："><span class="toc-number">2.1.</span> <span class="toc-text">命令行编译：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四种编译排版"><span class="toc-number">2.2.</span> <span class="toc-text">四种编译排版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nested-编译排版格式："><span class="toc-number">2.2.1.</span> <span class="toc-text">nested 编译排版格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#expanded-编译排版格式"><span class="toc-number">2.2.2.</span> <span class="toc-text">expanded 编译排版格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compact-编译排版格式"><span class="toc-number">2.2.3.</span> <span class="toc-text">compact 编译排版格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compressed-编译排版格式"><span class="toc-number">2.2.4.</span> <span class="toc-text">compressed 编译排版格式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在webstrom中使用sass"><span class="toc-number">3.</span> <span class="toc-text">在webstrom中使用sass</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#嵌套CSS规则"><span class="toc-number">4.</span> <span class="toc-text">嵌套CSS规则</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#父选择器的标识符-amp"><span class="toc-number">4.1.</span> <span class="toc-text">父选择器的标识符&</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子组合选择器和同层组合选择器：-gt-、-和"><span class="toc-number">4.2.</span> <span class="toc-text">子组合选择器和同层组合选择器： > 、 + 和 ~</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#嵌套属性"><span class="toc-number">4.3.</span> <span class="toc-text">嵌套属性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#导入Sass文件"><span class="toc-number">5.</span> <span class="toc-text">导入Sass文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用sass部分文件"><span class="toc-number">5.1.</span> <span class="toc-text">使用sass部分文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#默认变量值"><span class="toc-number">5.2.</span> <span class="toc-text">默认变量值;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#静默注释"><span class="toc-number">5.3.</span> <span class="toc-text">静默注释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#混合器"><span class="toc-number">6.</span> <span class="toc-text">混合器</span></a></li></ol>
-    </div>
-    <script type="text/javascript">
-      function showToc(){
-        var toc_article = document.getElementById("toc-article");
-        var show_toc_btn = document.getElementById("show-toc-btn");
-        toc_article.setAttribute("style","display:block");
-        show_toc_btn.setAttribute("style","display:none");
-      };
-      function showBtn(){
-        var toc_article = document.getElementById("toc-article");
-        var show_toc_btn = document.getElementById("show-toc-btn");
-        toc_article.setAttribute("style","display:none");
-        show_toc_btn.setAttribute("style","display:block");
-      };
-    </script>
-    
-    <!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>CSS 预处理器的主要目标：提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。这不是锦上添花，而恰恰是雪中送炭。</p>
-<a id="more"></a>
-<p>目前主流的三个<strong>预处理器</strong>：</p>
-<ul>
-<li>Less</li>
-<li>Sass</li>
-<li>Stylus</li>
-</ul>
-<h1 id="安装Sass"><a href="#安装Sass" class="headerlink" title="安装Sass"></a>安装Sass</h1><p><a href="http://rubyinstaller.org/downloads" target="_blank" rel="external">Ruby下载链接http://rubyinstaller.org/downloads</a></p>
-<p>安装过程中请注意勾选 <code>Add Ruby executables to your PATH</code></p>
-<p>安装完成后运行cmd输入<code>ruby -v</code>测试有没有安装成功。</p>
-<p>若安装成功，使用<code>Ruby</code>自带的<code>RubyGems</code>系统安装Sass和Compass</p>
-<pre><code>gem install sass
-gem install compass
-</code></pre><p>这样就安装好了！</p>
-<p>如下sass常用更新、查看版本、sass命令帮助等命令：</p>
-<pre><code>gem update sass
-sass -v
-sass -h
-</code></pre><h1 id="编译Sass"><a href="#编译Sass" class="headerlink" title="编译Sass"></a>编译Sass</h1><p>Sass编译有很多种方式，如命令行编译模式、sublime插件<code>SASS-Build</code> 、编译软件<code>koala</code> 、前端自动化软件<code>codekit</code> 、Grunt打造前端自动化工作流<code>grunt-sass</code> 、Gulp打造前端自动化工作流<code>gulp-ruby-sass</code>等。</p>
-<h2 id="命令行编译："><a href="#命令行编译：" class="headerlink" title="命令行编译："></a>命令行编译：</h2><pre><code>//单文件转换命令
-sass input.scss output.css
-//单文件监听命令
-sass --watch input.scss:output.css
-//如果你有很多的sass文件的目录，你也可以告诉sass监听整个目录：
-sass --watch app/sass:public/stylesheets
-</code></pre><h2 id="四种编译排版"><a href="#四种编译排版" class="headerlink" title="四种编译排版"></a>四种编译排版</h2><pre><code>//未编译样式
-.box {
-    width: 300px;
-    height: 400px;
-    &amp;-title {
-        height: 30px;
-        line-height: 30px;
-    }
-}
-</code></pre><h3 id="nested-编译排版格式："><a href="#nested-编译排版格式：" class="headerlink" title="nested 编译排版格式："></a>nested 编译排版格式：</h3><pre><code>/*命令行内容*/
-sass style.scss:style.css --style nested
-
-/*编译过后样式*/
-.box {
-    width: 300px;
-    height: 400px; }
-    .box-title {
-        height: 30px;
-        line-height: 30px; }
-</code></pre><h3 id="expanded-编译排版格式"><a href="#expanded-编译排版格式" class="headerlink" title="expanded 编译排版格式"></a>expanded 编译排版格式</h3><pre><code>/*命令行内容*/
-sass style.scss:style.css --style expanded
-
-/*编译过后样式*/
-.box {
-    width: 300px;
-    height: 400px;
-}   
-.box-title {
-    height: 30px;
-    line-height: 30px;
-}
-</code></pre><h3 id="compact-编译排版格式"><a href="#compact-编译排版格式" class="headerlink" title="compact 编译排版格式"></a>compact 编译排版格式</h3><pre><code>/*命令行内容*/
-sass style.scss:style.css --style compact
-
-/*编译过后样式*/
-.box { width: 300px; height: 400px; }
-.box-title { height: 30px; line-height: 30px; }
-</code></pre><h3 id="compressed-编译排版格式"><a href="#compressed-编译排版格式" class="headerlink" title="compressed 编译排版格式"></a>compressed 编译排版格式</h3><pre><code>/*命令行内容*/
-sass style.scss:style.css --style compressed
-
-/*编译过后样式*/
-.box{width:300px;height:400px}.box-title{height:30px;line-height:30px}
-</code></pre><h1 id="在webstrom中使用sass"><a href="#在webstrom中使用sass" class="headerlink" title="在webstrom中使用sass"></a>在webstrom中使用sass</h1><p>file ☛ settings  ☞ Tools  ☞ File Watchers  双击配置Sass</p>
-<h1 id="嵌套CSS规则"><a href="#嵌套CSS规则" class="headerlink" title="嵌套CSS规则"></a>嵌套CSS规则</h1><p>sass文件:</p>
-<pre><code>#content {
-    article {
-        h1 { color: #333 }
-        p { margin-bottom: 1.4em }
-    }
-    aside { background-color: #EEE }
-}
-</code></pre><p>编译成css后：</p>
-<pre><code>#content article h1 { color: #333 }
-#content article p { margin-bottom: 1.4em }
-#content aside { background-color: #EEE }
-</code></pre><h2 id="父选择器的标识符-amp"><a href="#父选择器的标识符-amp" class="headerlink" title="父选择器的标识符&amp;"></a>父选择器的标识符&amp;</h2><pre><code>article a {
-    color: blue;
-    &amp;:hover { color: red }
-}
-</code></pre><p>当包含父选择器标识符的嵌套规则被打开时，他不会像后代选择器那样进行拼接，而是 &amp; 被父选择器直接替换：</p>
-<pre><code>article a { color: blue; }
-article a:hover { color: red }
-</code></pre><h2 id="子组合选择器和同层组合选择器：-gt-、-和"><a href="#子组合选择器和同层组合选择器：-gt-、-和" class="headerlink" title="子组合选择器和同层组合选择器： &gt; 、 + 和 ~"></a>子组合选择器和同层组合选择器： &gt; 、 + 和 ~</h2><pre><code>article section { margin: 5px }
-article &gt; section { border: 1px solid #ccc }
-</code></pre><p>第一个选择器会选择article下的<strong>所有</strong>命中section选择器的元素。第二个选择器只会选择article下<strong>紧跟着的子元素</strong>中命中section选择器的元素。</p>
-<pre><code>header + p { font-size: 1.1em }
-</code></pre><p>在上例中，你可以用<strong>同层相邻组合选择器</strong> + 选择header元素后紧跟的p元素。</p>
-<pre><code>article ~ article { border-top: 1px dashed #ccc }
-</code></pre><p>你也可以用<strong>同层全体组合选择器</strong> ~ ，选择所有跟在article后的同层article元素，不管它们之间隔了多少其他元素。</p>
-<p>例子：</p>
-<pre><code>article {
-    ~ article { border-top: 1px dashed #ccc }
-    &gt; section { background: #eee }
-    dl &gt; {
-    dt { color: #333 }
-    dd { color: #555 }
-    }
-    nav + &amp; { margin-top: 0 }
-}    
-</code></pre><p>sass解开组合之后：</p>
-<pre><code>article ~ article { border-top: 1px dashed #ccc }
-article &gt; footer { background: #eee }
-article dl &gt; dt { color: #333 }
-article dl &gt; dd { color: #555 }
-nav + article { margin-top: 0 }
-</code></pre><h2 id="嵌套属性"><a href="#嵌套属性" class="headerlink" title="嵌套属性"></a>嵌套属性</h2><p>重复编写<code>border-style</code>  <code>border-width</code>  <code>border-color</code>等非常烦人，所以在sass中，只要像以下这样书写就行：</p>
-<pre><code>nav{
-    border: {
-    style: solid;
-    width: 1px;
-    color: #ccc;
-    }
-}
-</code></pre><p><strong><em>规则：</em></strong> 把属性名从中划线-的地方断开，在根属性后边添加一个冒号:，紧跟一个{ }块，把子属性部分写在这个{ }块中。</p>
-<p><strong><em>优点：</em></strong> 属性和选择器嵌套是非常伟大的特性，因为它们不仅大大减少了你的编写量，而且通过视觉上的缩进使你编写的样式结构更加清晰，更易于阅读和开发。</p>
-<h1 id="导入Sass文件"><a href="#导入Sass文件" class="headerlink" title="导入Sass文件"></a>导入Sass文件</h1><p>随着你的样式表越来越多，我们要把大量样式分拆到多个文件中，使用 <strong>@import</strong> 规则。</p>
-<h2 id="使用sass部分文件"><a href="#使用sass部分文件" class="headerlink" title="使用sass部分文件"></a>使用sass部分文件</h2><p>举例来说，你想导入 <code>themes/_night-sky.scss</code> 这个局部文件里的变量，你只需在样式表中写 <code>@import &quot;themes/night-sky&quot;;</code></p>
-<h2 id="默认变量值"><a href="#默认变量值" class="headerlink" title="默认变量值;"></a>默认变量值;</h2><p>一般情况下，你反复声明一个变量，只有最后一处声明有效且它会覆盖前边的值。举例说明：</p>
-<pre><code>$link-color: blue;
-$link-color: red;
-a {
-    color: $link-color;
-}
-</code></pre><p>在上边的例子中，超链接的<code>color</code>会被设置为<code>red</code>。这可能并不是你想要的结果，假如你写了一个可被他人通过<code>@import</code>导入的sass库文件，你可能希望导入者可以定制修改sass库文件中的某些值。使用sass的<code>!default</code>标签可以实现这个目的。它很像css属性中<code>!important</code>标签的对立面，不同的是<code>!default</code>用于变量，含义是：如果这个变量被声明赋值了，那就用它声明的值，否则就用这个默认值。</p>
-<pre><code>$fancybox-width: 400px !default;
-.fancybox {
-    width: $fancybox-width;
-}
-</code></pre><p>在上例中，如果用户在导入你的sass局部文件之前声明了一个<code>$fancybox-width</code>变量，那么你的局部文件中对<code>$fancybox-width</code>赋值<code>400px</code>的操作就无效。如果用户没有做这样的声明，则<code>$fancybox-width</code>将默认为<code>400px</code>。</p>
-<h2 id="静默注释"><a href="#静默注释" class="headerlink" title="静默注释"></a>静默注释</h2><pre><code>body {
-    color: #333;  // 这种注释内容不会出现在生成的css文件中
-    padding: 0;  /* 这种注释内容会出现在生成的css文件中 */
-}
-</code></pre><h1 id="混合器"><a href="#混合器" class="headerlink" title="混合器"></a>混合器</h1><p>混合器使用 <code>@mixin</code> 标识符定义。</p>
-<pre><code>@mixin rounded-corners {
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-        border-radius: 5px;
-}
-</code></pre><p>然后就可以在样式表中通过 <code>@include</code> 来使用这个混合器。</p>
-<pre><code>notice {
-    background-color: green;
-    border: 2px solid #00aa00;
-    @include rounded-corners;
-}
-</code></pre><p>sass最终生成：</p>
-<pre><code>.notice {
-    background-color: green;
-    border: 2px solid #00aa00;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Web前端/" class="article-tag-list-link color1">Web前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/25/学习Sass/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/01/05/Linux下MongoDB的安装和启动/" class="archive-article-date">
+  	<time datetime="2018-01-05T02:01:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
+</a>
+        </div>
+    	 
   
-    <a href="/2017/07/26/使用HBuilder/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          使用HBuilder
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/07/24/HTML5-Web存储/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HTML5 Web存储</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-    <div class="duoshuo"></div>
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/05/Linux下MongoDB的安装和启动/">Linux下MongoDB的安装和启动</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+          
 
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
-
+    
 
 
           </div>
@@ -521,8 +255,8 @@ a {
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

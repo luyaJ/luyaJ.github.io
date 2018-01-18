@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://oxv4lmd01.bkt.clouddn.com/ubuntu-install3.png">
 <meta property="og:image" content="http://oxv4lmd01.bkt.clouddn.com/docker_default_root.png">
 <meta property="og:image" content="http://oxv4lmd01.bkt.clouddn.com/docker_curl.png">
-<meta property="og:updated_time" content="2017-12-15T08:35:31.077Z">
+<meta property="og:updated_time" content="2017-12-23T13:30:24.345Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习linux之Docker">
 <meta name="twitter:description" content="Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现虚拟化，容器是完全使用沙箱机制，相互之间不会有任何接口。">
@@ -194,7 +194,7 @@
     <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ubuntu"><span class="toc-number">1.</span> <span class="toc-text">ubuntu</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自适应客户机"><span class="toc-number">1.2.</span> <span class="toc-text">自适应客户机</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装和使用docker"><span class="toc-number">2.</span> <span class="toc-text">安装和使用docker</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#交互式容器"><span class="toc-number">2.1.</span> <span class="toc-text">交互式容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查看容器"><span class="toc-number">2.1.1.</span> <span class="toc-text">查看容器:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义容器名"><span class="toc-number">2.1.2.</span> <span class="toc-text">自定义容器名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重新启动停止的容器"><span class="toc-number">2.1.3.</span> <span class="toc-text">重新启动停止的容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除停止的容器"><span class="toc-number">2.1.4.</span> <span class="toc-text">删除停止的容器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#守护式容器"><span class="toc-number">2.2.</span> <span class="toc-text">守护式容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#以守护形式运行容器"><span class="toc-number">2.2.1.</span> <span class="toc-text">以守护形式运行容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#附加到运行中的容器"><span class="toc-number">2.2.2.</span> <span class="toc-text">附加到运行中的容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#停止守护式容器"><span class="toc-number">2.2.3.</span> <span class="toc-text">停止守护式容器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在容器中使用Nginx部署静态网站"><span class="toc-number">3.</span> <span class="toc-text">在容器中使用Nginx部署静态网站</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ubuntu"><span class="toc-number">1.</span> <span class="toc-text">ubuntu</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自适应客户机"><span class="toc-number">1.2.</span> <span class="toc-text">自适应客户机</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装和使用docker"><span class="toc-number">2.</span> <span class="toc-text">安装和使用docker</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#交互式容器"><span class="toc-number">2.1.</span> <span class="toc-text">交互式容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查看容器"><span class="toc-number">2.1.1.</span> <span class="toc-text">查看容器:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义容器名"><span class="toc-number">2.1.2.</span> <span class="toc-text">自定义容器名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重新启动停止的容器"><span class="toc-number">2.1.3.</span> <span class="toc-text">重新启动停止的容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除停止的容器"><span class="toc-number">2.1.4.</span> <span class="toc-text">删除停止的容器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#守护式容器"><span class="toc-number">2.2.</span> <span class="toc-text">守护式容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#以守护形式运行容器"><span class="toc-number">2.2.1.</span> <span class="toc-text">以守护形式运行容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#附加到运行中的容器"><span class="toc-number">2.2.2.</span> <span class="toc-text">附加到运行中的容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#停止守护式容器"><span class="toc-number">2.2.3.</span> <span class="toc-text">停止守护式容器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在容器中使用Nginx部署静态网站"><span class="toc-number">3.</span> <span class="toc-text">在容器中使用Nginx部署静态网站</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#构建镜像"><span class="toc-number">4.</span> <span class="toc-text">构建镜像</span></a></li></ol>
     </div>
     <script type="text/javascript">
       function showToc(){
@@ -263,7 +263,7 @@
 <p>到这里我们就完成了一个静态页面！下面来看看怎么运行nginx。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 停用容器</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># docker stop web1</span></div><div class="line">web1</div><div class="line"></div><div class="line"><span class="comment"># 开启容器</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># docker start -i web1</span></div><div class="line"></div><div class="line"><span class="comment"># 可以看到nginx没有开启</span></div><div class="line">root@f3cfa277a97e:/<span class="comment"># ps -ef</span></div><div class="line">UID        PID  PPID  C STIME TTY          TIME CMD</div><div class="line">root         1     0  0 14:19 ?        00:00:00 bash</div><div class="line">root         9     1  0 14:20 ?        00:00:00 ps -ef</div><div class="line"></div><div class="line"><span class="comment"># exec命令启动nginx，查看</span></div><div class="line">root@f3cfa277a97e:/<span class="comment"># [root@izuf6alst6rugagpxl8wizz ~]# </span></div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># docker exec web1 nginx</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># docker top web1</span></div><div class="line">UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD</div><div class="line">root                12250               12227               0                   22:19               pts/2               00:00:00            bash</div><div class="line">root                12370               1                   0                   22:20               ?                   00:00:00            nginx: master process nginx</div><div class="line">33                  12371               12370               0                   22:20               ?                   00:00:00            nginx: worker process</div><div class="line"></div><div class="line"><span class="comment"># 运行网站（会发现有问题），使用inspect查看容器，重新输入地址，就成功了。</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># http://172.17.0.3</span></div><div class="line">-bash: http://172.17.0.3: No such file or directory</div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># docker inspect</span></div><div class="line">/usr/bin/docker-current: <span class="string">"inspect"</span> requires a minimum of 1 argument.</div><div class="line">See <span class="string">'/usr/bin/docker-current inspect --help'</span>.</div><div class="line"></div><div class="line">Usage:  docker inspect [OPTIONS] CONTAINER|IMAGE|TASK [CONTAINER|IMAGE|TASK...]</div><div class="line"></div><div class="line">Return low-level information on a container, image or task</div><div class="line">[root@izuf6alst6rugagpxl8wizz ~]<span class="comment"># docker inspect web1</span></div></pre></td></tr></table></figure>
 <p>友情链接：<a href="https://segmentfault.com/a/1190000012161773" target="_blank" rel="external">docker上手并部署Ngnix</a></p>
-
+<h1 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h1>
       
 
       
@@ -357,6 +357,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/01/05/Linux下MongoDB的安装和启动/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Linux下MongoDB的安装和启动
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/11/29/《指尖上行》移动前端开发之路/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">《指尖上行》移动前端开发之路</div>
@@ -386,7 +395,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 luyaJ
+    		&copy; 2018 luyaJ
     	</div>
       	<div class="footer-right">
       		<!--<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten-->
@@ -477,15 +486,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">WechatApp</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -493,11 +498,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color5">WechatApp</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,10 +519,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
