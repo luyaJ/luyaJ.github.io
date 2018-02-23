@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-22T13:28:10.068Z</updated>
+  <updated>2018-02-23T04:00:25.471Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,253 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式（二）</title>
+    <link href="http://yoursite.com/2018/02/22/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>http://yoursite.com/2018/02/22/正则表达式（二）/</id>
+    <published>2018-02-22T13:31:34.000Z</published>
+    <updated>2018-02-23T04:00:25.471Z</updated>
+    
+    <content type="html"><![CDATA[<p>学习正则表达式三十分钟入门~</p>
+<a id="more"></a>
+<h2 id="常用元字符"><a href="#常用元字符" class="headerlink" title="常用元字符"></a>常用元字符</h2><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td>匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配单词的开始或结束</td>
+<td>匹配一个位置</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配一位数字</td>
+<td>代表数量</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母或数字或下划线或汉字</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任意的空白符</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配字符串的开始</td>
+<td>匹配一个位置</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>\bhi\b : 精确查找hi这个单词</li>
+<li>\bhi\b.*\bLucy\b : 先是一个单词hi，然后是任意个任意字符(但不能是换行)，最后是Lucy这个单词</li>
+<li>0\d\d-\d\d\d\d\d\d\d\d = 0\d{2}-\d{8} : 以0开头，然后是两个数字，然后是一个连字号“-”，最后是8个数字</li>
+<li>\ba\w<em>\b : 以字母a开头的单词（先是某个单词开始处(\b)，然后是字母a,然后是任意数量的字母或数字(\w</em>)，最后是单词结束处(\b)）</li>
+<li>\d+ : 匹配1个或更多连续的数字</li>
+<li>\b\w{6}\b : 匹配刚好6个字符的单词</li>
+<li>^\d{5,12}$ : 必须是5到12个数字（网站如果要求你填写的QQ号必须为5位到12位数字时）</li>
+</ul>
+<h2 id="常用限定符"><a href="#常用限定符" class="headerlink" title="常用限定符"></a>常用限定符</h2><table>
+<thead>
+<tr>
+<th>代码/语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>重复0次或更多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>重复1次或更多次</td>
+</tr>
+<tr>
+<td>?</td>
+<td>重复0次或1次</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>重复n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>重复n次或更多次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>重复n到m次</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Windows\d+ : 匹配Windows后面跟1个或更多数字</li>
+<li>^\w+ : 匹配一行的第一个单词(或整个字符串的第一个单词，具体匹配哪个意思得看选项设置)</li>
+<li>[aeiou] : 匹配任意一个英文元音字母</li>
+<li>[.?!] : 匹配标点符号（.或?或!）</li>
+<li>[0-9] == \d : 一位数字</li>
+<li>[a-z0-9A-Z] == \w : （如果只考虑英文的话）</li>
+</ul>
+<h2 id="常用的反义代码"><a href="#常用的反义代码" class="headerlink" title="常用的反义代码"></a>常用的反义代码</h2><table>
+<thead>
+<tr>
+<th>代码/语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\W</td>
+<td>匹配任意不是字母,数字,下划线,汉字的字符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任意不是空白符的字符</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配任意非数字的字符</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配不是单词开头或结束的位置</td>
+</tr>
+<tr>
+<td>[^x]</td>
+<td>匹配除了x以外的任意字符</td>
+</tr>
+<tr>
+<td>[^aeiou]</td>
+<td>匹配除了aeiou这几个字母以外的任意字符</td>
+</tr>
+</tbody>
+</table>
+<h2 id="常用分组语法"><a href="#常用分组语法" class="headerlink" title="常用分组语法"></a>常用分组语法</h2><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>代码/语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>捕获</td>
+<td>(exp)</td>
+<td>匹配exp,并捕获文本到自动命名的组里</td>
+</tr>
+<tr>
+<td></td>
+<td>(?\<name\>exp)</name\></td>
+<td>匹配exp,并捕获文本到名称为name的组里,也可以写成(?’name’exp)</td>
+</tr>
+<tr>
+<td></td>
+<td>(?:exp)</td>
+<td>匹配exp,不捕获匹配的文本,也不给此分组分配组号</td>
+</tr>
+<tr>
+<td>零宽断言</td>
+<td>(?=exp)</td>
+<td>匹配exp前面的位置</td>
+</tr>
+<tr>
+<td></td>
+<td>(?&lt;=exp)</td>
+<td>匹配exp后面的位置</td>
+</tr>
+<tr>
+<td></td>
+<td>(?!exp)</td>
+<td>匹配后面跟的不是exp的位置</td>
+</tr>
+<tr>
+<td></td>
+<td>(?&lt;!exp)</td>
+<td>匹配前面不是exp的位置</td>
+</tr>
+<tr>
+<td>注释</td>
+<td>(?#comment)</td>
+<td>提供注释让人阅读</td>
+</tr>
+</tbody>
+</table>
+<h3 id="零宽断言"><a href="#零宽断言" class="headerlink" title="零宽断言"></a>零宽断言</h3><p><code>(?=exp)</code> 也叫做<strong>零宽度正预测先行断言</strong>：<br>比如<code>\b\w+(?=ing\b)</code>，匹配以ing结尾的单词的<strong>前面</strong>部分(除了ing以外的部分)，如查找I’m singing while you’re dancing.时，它会匹配sing和danc。</p>
+<p><code>(?&lt;=exp)</code> 也叫做<strong>零宽度正回顾后发断言</strong>：<br>比如<code>(?&lt;=\bre)\w+\b</code>会匹配以re开头的单词的<strong>后半</strong>部分(除了re以外的部分)，例如在查找reading a book时，它匹配ading。</p>
+<h3 id="负向零宽断言"><a href="#负向零宽断言" class="headerlink" title="负向零宽断言"></a>负向零宽断言</h3><p><code>(?!exp)</code> 也叫做<strong>零宽度负预测先行断言</strong>：<br><code>\d{3}(?!\d)</code>匹配三位数字，而且这三位数字的后面不能是数字；<code>\b((?!abc)\w)+\b</code>匹配不包含连续字符串abc的单词。</p>
+<p><code>(?&lt;!exp)</code> 也叫做<strong>零宽度负回顾后发断言</strong>：<br><code>(?&lt;![a-z])\d{7}</code>匹配前面不是小写字母的七位数字</p>
+<h2 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h2><table>
+<thead>
+<tr>
+<th>代码/语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*?</td>
+<td>重复任意次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>+?</td>
+<td>重复1次或更多次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>??</td>
+<td>重复0次或1次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>{n,m}?</td>
+<td>重复n到m次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>{n,}?</td>
+<td>重复n次以上，但尽可能少重复</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>贪婪匹配：<code>a.*b</code>，它将会匹配最长的以a开始，以b结束的字符串。如果用它来搜索aabab的话，它会匹配整个字符串aabab。</li>
+<li>懒惰匹配：<code>a.*?b</code>，匹配最短的，以a开始，以b结束的字符串。如果把它应用于aabab的话，它会匹配aab（第一到第三个字符）和ab（第四到第五个字符）。</li>
+</ul>
+<h2 id="字符转义"><a href="#字符转义" class="headerlink" title="字符转义"></a>字符转义</h2><ul>
+<li>deerchao\.net<ul>
+<li>匹配deerchao.net</li>
+</ul>
+</li>
+<li>C:\\Windows<ul>
+<li>匹配C:\Windows</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="external">正则表达式三十分钟入门教程</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;学习正则表达式三十分钟入门~&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Web前端" scheme="http://yoursite.com/categories/Web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="正则表达式" scheme="http://yoursite.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>学习Mongoose</title>
@@ -2399,56 +2646,6 @@ $(document).ready(function(){
     
     
       <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用HBuilder</title>
-    <link href="http://yoursite.com/2017/07/26/%E4%BD%BF%E7%94%A8HBuilder/"/>
-    <id>http://yoursite.com/2017/07/26/使用HBuilder/</id>
-    <published>2017-07-25T16:03:21.000Z</published>
-    <updated>2017-09-17T14:04:45.823Z</updated>
-    
-    <content type="html"><![CDATA[<p>HBuilder下载地址：<a href="http://www.dcloud.io/" target="_blank" rel="external">HBuilder官网</a></p>
-<a id="more"></a>
-<p>HBuilder是DCloud（数字天堂）推出的一款支持HTML5的Web开发IDE。HBuilder的编写用到了Java、C、Web和Ruby。HBuilder本身主体是由Java编写，它基于Eclipse，所以顺其自然地兼容了Eclipse的插件。</p>
-<h2 id="HBuilder设置外部web服务器测试移动Web"><a href="#HBuilder设置外部web服务器测试移动Web" class="headerlink" title="HBuilder设置外部web服务器测试移动Web"></a>HBuilder设置外部web服务器测试移动Web</h2><h3 id="1-打开开发工具"><a href="#1-打开开发工具" class="headerlink" title="1.打开开发工具"></a>1.打开开发工具</h3><ol>
-<li><p>工具右上角更改开发视图模式为“<strong>边改边看模式</strong>” </p>
-</li>
-<li><p>打开设置web服务器</p>
-</li>
-</ol>
-<p><img src="http://ot4r4qnml.bkt.clouddn.com/web%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="web服务器"></p>
-<h3 id="2-设置外置服务器"><a href="#2-设置外置服务器" class="headerlink" title="2.设置外置服务器"></a>2.设置外置服务器</h3><ol>
-<li><p>选择“外置Web服务器” ☞ 右边“新建”</p>
-</li>
-<li><p>编辑服务配置界面，“名称”随意，“浏览器运行URL”填写本机ip地址</p>
-</li>
-</ol>
-<h3 id="3-查看IP地址并配置web服务器"><a href="#3-查看IP地址并配置web服务器" class="headerlink" title="3.查看IP地址并配置web服务器"></a>3.查看IP地址并配置web服务器</h3><p>1.地址查看方式：在命令行中输入<code>ipconfig</code>，找到<code>IPv4</code>的地址</p>
-<p><img src="http://ot4r4qnml.bkt.clouddn.com/ipconfig.png" alt="ipconfig"></p>
-<p>2.填写在URL中，如图所示（要在IP地址后面加上HBuilder使用的<strong>端口8020</strong>）：</p>
-<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="web服务器配置"></p>
-<p>3.使用新建的myWeb外部服务器</p>
-<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="使用服务器"></p>
-<h3 id="4-扫码测试"><a href="#4-扫码测试" class="headerlink" title="4.扫码测试"></a>4.扫码测试</h3><p>在“web浏览器”网址右边有一个<strong>二维码</strong>标志，点击，使用手机扫描测试</p>
-<p><strong><em>注意：</em></strong> 扫码测试需要电脑和手机在同一个局域网下！！！</p>
-<p>电脑运行：</p>
-<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E8%BF%90%E8%A1%8C1.png" alt="电脑运行结果"></p>
-<p>手机扫码运行：</p>
-<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E6%89%8B%E6%9C%BA%E8%BF%90%E8%A1%8C.png" alt="手机运行结果"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;HBuilder下载地址：&lt;a href=&quot;http://www.dcloud.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HBuilder官网&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   

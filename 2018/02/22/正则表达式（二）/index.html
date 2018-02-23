@@ -7,15 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <link rel="shortcut icon" href="http://otnbkrzno.bkt.clouddn.com/myPic.ico">
-  <title>Category: 数据结构 | luyaJ的小博客</title>
+  <title>正则表达式（二） | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="luyaJ的小博客">
-<meta property="og:url" content="http://yoursite.com/categories/数据结构/index.html">
+  <meta name="description" content="学习正则表达式三十分钟入门~">
+<meta name="keywords" content="正则表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式（二）">
+<meta property="og:url" content="http://yoursite.com/2018/02/22/正则表达式（二）/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
+<meta property="og:description" content="学习正则表达式三十分钟入门~">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-23T04:00:25.471Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luyaJ的小博客">
+<meta name="twitter:title" content="正则表达式（二）">
+<meta name="twitter:description" content="学习正则表达式三十分钟入门~">
   
   
     <link rel="icon" href="/favicon.png">
@@ -155,71 +160,394 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-正则表达式（二）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/03/二叉树/" class="archive-article-date">
-  	<time datetime="2017-08-03T10:48:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/03/二叉树/">二叉树</a>
+    <h1 class="article-title" itemprop="name">
+      正则表达式（二）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/02/22/正则表达式（二）/" class="archive-article-date">
+  	<time datetime="2018-02-22T13:31:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-22</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用元字符"><span class="toc-number">1.</span> <span class="toc-text">常用元字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用限定符"><span class="toc-number">2.</span> <span class="toc-text">常用限定符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用的反义代码"><span class="toc-number">3.</span> <span class="toc-text">常用的反义代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用分组语法"><span class="toc-number">4.</span> <span class="toc-text">常用分组语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#零宽断言"><span class="toc-number">4.1.</span> <span class="toc-text">零宽断言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#负向零宽断言"><span class="toc-number">4.2.</span> <span class="toc-text">负向零宽断言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#懒惰限定符"><span class="toc-number">5.</span> <span class="toc-text">懒惰限定符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符转义"><span class="toc-number">6.</span> <span class="toc-text">字符转义</span></a></li></ol>
+    </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+      };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+      };
+    </script>
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>学习正则表达式三十分钟入门~</p>
+<a id="more"></a>
+<h2 id="常用元字符"><a href="#常用元字符" class="headerlink" title="常用元字符"></a>常用元字符</h2><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td>匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配单词的开始或结束</td>
+<td>匹配一个位置</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配一位数字</td>
+<td>代表数量</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母或数字或下划线或汉字</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任意的空白符</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配字符串的开始</td>
+<td>匹配一个位置</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>\bhi\b : 精确查找hi这个单词</li>
+<li>\bhi\b.*\bLucy\b : 先是一个单词hi，然后是任意个任意字符(但不能是换行)，最后是Lucy这个单词</li>
+<li>0\d\d-\d\d\d\d\d\d\d\d = 0\d{2}-\d{8} : 以0开头，然后是两个数字，然后是一个连字号“-”，最后是8个数字</li>
+<li>\ba\w<em>\b : 以字母a开头的单词（先是某个单词开始处(\b)，然后是字母a,然后是任意数量的字母或数字(\w</em>)，最后是单词结束处(\b)）</li>
+<li>\d+ : 匹配1个或更多连续的数字</li>
+<li>\b\w{6}\b : 匹配刚好6个字符的单词</li>
+<li>^\d{5,12}$ : 必须是5到12个数字（网站如果要求你填写的QQ号必须为5位到12位数字时）</li>
+</ul>
+<h2 id="常用限定符"><a href="#常用限定符" class="headerlink" title="常用限定符"></a>常用限定符</h2><table>
+<thead>
+<tr>
+<th>代码/语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>重复0次或更多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>重复1次或更多次</td>
+</tr>
+<tr>
+<td>?</td>
+<td>重复0次或1次</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>重复n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>重复n次或更多次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>重复n到m次</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Windows\d+ : 匹配Windows后面跟1个或更多数字</li>
+<li>^\w+ : 匹配一行的第一个单词(或整个字符串的第一个单词，具体匹配哪个意思得看选项设置)</li>
+<li>[aeiou] : 匹配任意一个英文元音字母</li>
+<li>[.?!] : 匹配标点符号（.或?或!）</li>
+<li>[0-9] == \d : 一位数字</li>
+<li>[a-z0-9A-Z] == \w : （如果只考虑英文的话）</li>
+</ul>
+<h2 id="常用的反义代码"><a href="#常用的反义代码" class="headerlink" title="常用的反义代码"></a>常用的反义代码</h2><table>
+<thead>
+<tr>
+<th>代码/语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\W</td>
+<td>匹配任意不是字母,数字,下划线,汉字的字符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任意不是空白符的字符</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配任意非数字的字符</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配不是单词开头或结束的位置</td>
+</tr>
+<tr>
+<td>[^x]</td>
+<td>匹配除了x以外的任意字符</td>
+</tr>
+<tr>
+<td>[^aeiou]</td>
+<td>匹配除了aeiou这几个字母以外的任意字符</td>
+</tr>
+</tbody>
+</table>
+<h2 id="常用分组语法"><a href="#常用分组语法" class="headerlink" title="常用分组语法"></a>常用分组语法</h2><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>代码/语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>捕获</td>
+<td>(exp)</td>
+<td>匹配exp,并捕获文本到自动命名的组里</td>
+</tr>
+<tr>
+<td></td>
+<td>(?\<name\>exp)</name\></td>
+<td>匹配exp,并捕获文本到名称为name的组里,也可以写成(?’name’exp)</td>
+</tr>
+<tr>
+<td></td>
+<td>(?:exp)</td>
+<td>匹配exp,不捕获匹配的文本,也不给此分组分配组号</td>
+</tr>
+<tr>
+<td>零宽断言</td>
+<td>(?=exp)</td>
+<td>匹配exp前面的位置</td>
+</tr>
+<tr>
+<td></td>
+<td>(?&lt;=exp)</td>
+<td>匹配exp后面的位置</td>
+</tr>
+<tr>
+<td></td>
+<td>(?!exp)</td>
+<td>匹配后面跟的不是exp的位置</td>
+</tr>
+<tr>
+<td></td>
+<td>(?&lt;!exp)</td>
+<td>匹配前面不是exp的位置</td>
+</tr>
+<tr>
+<td>注释</td>
+<td>(?#comment)</td>
+<td>提供注释让人阅读</td>
+</tr>
+</tbody>
+</table>
+<h3 id="零宽断言"><a href="#零宽断言" class="headerlink" title="零宽断言"></a>零宽断言</h3><p><code>(?=exp)</code> 也叫做<strong>零宽度正预测先行断言</strong>：<br>比如<code>\b\w+(?=ing\b)</code>，匹配以ing结尾的单词的<strong>前面</strong>部分(除了ing以外的部分)，如查找I’m singing while you’re dancing.时，它会匹配sing和danc。</p>
+<p><code>(?&lt;=exp)</code> 也叫做<strong>零宽度正回顾后发断言</strong>：<br>比如<code>(?&lt;=\bre)\w+\b</code>会匹配以re开头的单词的<strong>后半</strong>部分(除了re以外的部分)，例如在查找reading a book时，它匹配ading。</p>
+<h3 id="负向零宽断言"><a href="#负向零宽断言" class="headerlink" title="负向零宽断言"></a>负向零宽断言</h3><p><code>(?!exp)</code> 也叫做<strong>零宽度负预测先行断言</strong>：<br><code>\d{3}(?!\d)</code>匹配三位数字，而且这三位数字的后面不能是数字；<code>\b((?!abc)\w)+\b</code>匹配不包含连续字符串abc的单词。</p>
+<p><code>(?&lt;!exp)</code> 也叫做<strong>零宽度负回顾后发断言</strong>：<br><code>(?&lt;![a-z])\d{7}</code>匹配前面不是小写字母的七位数字</p>
+<h2 id="懒惰限定符"><a href="#懒惰限定符" class="headerlink" title="懒惰限定符"></a>懒惰限定符</h2><table>
+<thead>
+<tr>
+<th>代码/语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*?</td>
+<td>重复任意次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>+?</td>
+<td>重复1次或更多次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>??</td>
+<td>重复0次或1次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>{n,m}?</td>
+<td>重复n到m次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>{n,}?</td>
+<td>重复n次以上，但尽可能少重复</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>贪婪匹配：<code>a.*b</code>，它将会匹配最长的以a开始，以b结束的字符串。如果用它来搜索aabab的话，它会匹配整个字符串aabab。</li>
+<li>懒惰匹配：<code>a.*?b</code>，匹配最短的，以a开始，以b结束的字符串。如果把它应用于aabab的话，它会匹配aab（第一到第三个字符）和ab（第四到第五个字符）。</li>
+</ul>
+<h2 id="字符转义"><a href="#字符转义" class="headerlink" title="字符转义"></a>字符转义</h2><ul>
+<li>deerchao\.net<ul>
+<li>匹配deerchao.net</li>
+</ul>
+</li>
+<li>C:\\Windows<ul>
+<li>匹配C:\Windows</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="external">正则表达式三十分钟入门教程</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">正则表达式</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构/" class="article-tag-list-link color5">数据结构</a>
+        			<a href="/categories/Web前端/" class="article-tag-list-link color1">Web前端</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/02/22/正则表达式（二）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/01/18/学习Mongoose/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习Mongoose</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
+
+
 
 
           </div>
@@ -250,10 +578,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
