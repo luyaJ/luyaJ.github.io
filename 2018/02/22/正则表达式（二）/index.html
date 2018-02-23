@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="luyaJ的小博客">
 <meta property="og:description" content="学习正则表达式三十分钟入门~">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-23T04:00:25.471Z">
+<meta property="og:updated_time" content="2018-02-23T04:42:45.958Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式（二）">
 <meta name="twitter:description" content="学习正则表达式三十分钟入门~">
@@ -223,6 +223,7 @@
 <tr>
 <td>.</td>
 <td>匹配除换行符以外的任意字符</td>
+<td>/</td>
 </tr>
 <tr>
 <td>\b</td>
@@ -237,10 +238,12 @@
 <tr>
 <td>\w</td>
 <td>匹配字母或数字或下划线或汉字</td>
+<td>/</td>
 </tr>
 <tr>
 <td>\s</td>
 <td>匹配任意的空白符</td>
+<td>/</td>
 </tr>
 <tr>
 <td>^</td>
@@ -349,12 +352,12 @@
 <td>匹配exp,并捕获文本到自动命名的组里</td>
 </tr>
 <tr>
-<td></td>
+<td>/</td>
 <td>(?\<name\>exp)</name\></td>
 <td>匹配exp,并捕获文本到名称为name的组里,也可以写成(?’name’exp)</td>
 </tr>
 <tr>
-<td></td>
+<td>/</td>
 <td>(?:exp)</td>
 <td>匹配exp,不捕获匹配的文本,也不给此分组分配组号</td>
 </tr>
@@ -364,17 +367,17 @@
 <td>匹配exp前面的位置</td>
 </tr>
 <tr>
-<td></td>
+<td>/</td>
 <td>(?&lt;=exp)</td>
 <td>匹配exp后面的位置</td>
 </tr>
 <tr>
-<td></td>
+<td>/</td>
 <td>(?!exp)</td>
 <td>匹配后面跟的不是exp的位置</td>
 </tr>
 <tr>
-<td></td>
+<td>/</td>
 <td>(?&lt;!exp)</td>
 <td>匹配前面不是exp的位置</td>
 </tr>
