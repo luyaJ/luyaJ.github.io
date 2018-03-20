@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-04T12:20:09.409Z</updated>
+  <updated>2018-03-20T07:33:42.122Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nuxt.js-Vue的通用应用框架</title>
+    <link href="http://yoursite.com/2018/03/19/nuxt-js-Vue%E7%9A%84%E9%80%9A%E7%94%A8%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6/"/>
+    <id>http://yoursite.com/2018/03/19/nuxt-js-Vue的通用应用框架/</id>
+    <published>2018-03-19T07:38:02.000Z</published>
+    <updated>2018-03-20T07:33:42.122Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>Nuxt.js</code>是一个基于<code>Vue.js</code>的通用应用框架，主要关注的是应用的<strong>UI渲染</strong>。</p>
+<a id="more"></a>
+<h2 id="安装nuxt-js"><a href="#安装nuxt-js" class="headerlink" title="安装nuxt.js"></a>安装nuxt.js</h2><p>这里我们使用github上的 <a href="https://github.com/nuxt-community/create-nuxt-app" target="_blank" rel="external">create-nuxt-app</a> 来搭建我们的第一个项目，因为他它易于我们的操作。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm i -g create-nuxt-app</div><div class="line">create-nuxt-app first-nuxt-app</div></pre></td></tr></table></figure>
+<p>这样我们就创建好了我们的第一个项目。</p>
+<p>如果你想从头开始新建项目，可以看官网<a href="https://zh.nuxtjs.org/guide/installation" target="_blank" rel="external">nuxt 安装</a></p>
+<h2 id="关于路由"><a href="#关于路由" class="headerlink" title="关于路由"></a>关于路由</h2><h3 id="基础路由"><a href="#基础路由" class="headerlink" title="基础路由"></a>基础路由</h3><p>如果<code>pages</code>目录结构如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pages/</div><div class="line">  --| users/</div><div class="line">  -----| index.vue</div><div class="line">  --| index.vue</div></pre></td></tr></table></figure></p>
+<p>使用<code>localhost:3000</code>是会显示<code>index.vue</code>的内容的；<code>localhost:3000/users/user</code>会显示我们在<code>users/index.vue</code>中写的内容。</p>
+<h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h3><p>我们新增一个<code>_id.vue</code>文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">pages/</div><div class="line">  --| users/</div><div class="line">  -----| _id.vue</div><div class="line">  -----| index.vue</div><div class="line">  --| index.vue</div></pre></td></tr></table></figure></p>
+<p>在<code>_id.vue</code>中写入以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;h1&gt;这个页面是:&#123;&#123;<span class="variable">$route</span>.params.id&#125;&#125;&lt;/h1&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure></p>
+<p>在这里，我们的文件名要以<code>下划线_</code>作为前缀，<code>$route.params.x</code>,<code>x</code>就是文件名<code>_</code>之后的内容。</p>
+<p>假如我们写的地址是<code>localhost:3000/users/luyaj</code>，那么在页面中显示的内容就会是<code>这个页面是：luyaj</code>。</p>
+<p>其实，<code>Nuxt.js</code> 会生成对应的路由配置表如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">router: &#123;</div><div class="line">  routes: [</div><div class="line">    &#123;</div><div class="line">      name: <span class="string">'index'</span>,</div><div class="line">      path: <span class="string">'/'</span>,</div><div class="line">      component: <span class="string">'pages/index.vue'</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      name: <span class="string">'users-id'</span>,</div><div class="line">      path: <span class="string">'/users/:id?'</span></div><div class="line">      component: <span class="string">'pages/users/_id.vue'</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      name: <span class="string">'users-index'</span>,</div><div class="line">      path: <span class="string">'/users/index'</span>,</div><div class="line">      compontent: <span class="string">'pages/users/index.vue'</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;Nuxt.js&lt;/code&gt;是一个基于&lt;code&gt;Vue.js&lt;/code&gt;的通用应用框架，主要关注的是应用的&lt;strong&gt;UI渲染&lt;/strong&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Vuejs" scheme="http://yoursite.com/categories/Vuejs/"/>
+    
+    
+      <category term="nuxt.js" scheme="http://yoursite.com/tags/nuxt-js/"/>
+    
+  </entry>
   
   <entry>
     <title>Grid布局</title>
@@ -2207,112 +2242,6 @@
     
     
       <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二叉树</title>
-    <link href="http://yoursite.com/2017/08/03/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    <id>http://yoursite.com/2017/08/03/二叉树/</id>
-    <published>2017-08-03T10:48:00.000Z</published>
-    <updated>2017-08-10T09:42:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>二叉树（Binary Tree）是n（n&gt;=0）个结点的有限集合，该集合或者为空集（空二叉树），或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。</p>
-<a id="more"></a>
-<h2 id="二叉树特点"><a href="#二叉树特点" class="headerlink" title="二叉树特点"></a>二叉树特点</h2><p>每个结点最多有两棵子树，所以二叉树中不存在度大于2的结点。二叉树中每一个节点都是一个对象，每一个数据节点都有三个指针，分别是指向父母、左孩子和右孩子的指针。每一个节点都是通过指针相互连接的。相连指针的关系都是父子关系。</p>
-<h2 id="二叉树节点的定义"><a href="#二叉树节点的定义" class="headerlink" title="二叉树节点的定义"></a>二叉树节点的定义</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">struct binaryTreeNode&#123;</div><div class="line">    int m_nValue;</div><div class="line">    binaryTreeNode* m_pLeft;</div><div class="line">    binaryTreeNode* m_pRight;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h2 id="五种基本形态"><a href="#五种基本形态" class="headerlink" title="五种基本形态"></a>五种基本形态</h2><ul>
-<li>空二叉树</li>
-<li>只有一个根节点</li>
-<li>根节点只有左子树</li>
-<li>根节点只有右子树</li>
-<li>根节点既有左子树又有右子树</li>
-</ul>
-<p><strong>又：</strong> 拥有三个节点的普通树只有两种情况：2层或3层。但由于二叉树要分左右，于是就有了如图5种情况：</p>
-<p><img src="http://ot4r4qnml.bkt.clouddn.com/binaryTree.png" alt="二叉树节点"></p>
-<h2 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h2><ol>
-<li>斜树</li>
-</ol>
-<p>上图的第二、三个小树。</p>
-<ol>
-<li>满二叉树</li>
-</ol>
-<p>在一棵二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树称为满二叉树。</p>
-<ol>
-<li>完全二叉树</li>
-</ol>
-<p>完全二叉树是指最后一层左边是满的，右边可能满也可能不满，然后其余层都是满的。一个深度为k，节点个数为 2^k - 1 的二叉树为满二叉树（完全二叉树）。就是一棵树，深度为k，并且没有空位。</p>
-<p><strong>特点：</strong></p>
-<ul>
-<li>叶子结点只能出现在最下两层。</li>
-<li>最下层的叶子一定集中在左部连续位置。</li>
-<li>倒数第二层，若有叶子结点，一定都在右部连续位置。</li>
-<li>如果结点度为1，则该结点只有左孩子。</li>
-<li>同样结点树的二叉树，完全二叉树的深度最小。</li>
-</ul>
-<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><ol>
-<li>在二叉树的第i层上至多有2^(i-1)个结点(i&gt;=1)</li>
-<li>深度为k的二叉树至多有2^k-1个结点(k&gt;=1)</li>
-</ol>
-<h2 id="各遍历特性"><a href="#各遍历特性" class="headerlink" title="各遍历特性"></a>各遍历特性</h2><ul>
-<li>前序遍历<ol>
-<li>访问根节点</li>
-<li>前序遍历左子树</li>
-<li>前序遍历右子树</li>
-</ol>
-</li>
-<li>中序遍历<ol>
-<li>中序遍历左子树</li>
-<li>访问根节点</li>
-<li>中序遍历右子树</li>
-</ol>
-</li>
-<li>后序遍历<ol>
-<li>后序遍历左子树</li>
-<li>后序遍历右子树</li>
-<li>访问根节点</li>
-</ol>
-</li>
-</ul>
-<h3 id="由二叉树得各遍历"><a href="#由二叉树得各遍历" class="headerlink" title="由二叉树得各遍历"></a>由二叉树得各遍历</h3><p><img src="http://ot4r4qnml.bkt.clouddn.com/erchashu1.png" alt="二叉树1"></p>
-<p>先序遍历: <code>ABDGCEF</code> ;</p>
-<p>中序遍历: <code>DGBAECF</code> ;</p>
-<p>后序遍历: <code>GDBEFCA</code> ;</p>
-<h3 id="已知前序、中序遍历，求后序遍历"><a href="#已知前序、中序遍历，求后序遍历" class="headerlink" title="已知前序、中序遍历，求后序遍历"></a>已知前序、中序遍历，求后序遍历</h3><blockquote>
-<p>例：</p>
-<p>前序遍历： GDAFEMHZ</p>
-<p>中序遍历： ADEFGHMZ</p>
-</blockquote>
-<p><strong>解析:</strong></p>
-<p>1.根据前序遍历的特点，得到根节点是 <code>G</code> ;</p>
-<p>2.观察中序遍历，知：<code>ADEF</code>是根节点的左子树，<code>HMZ</code>是根节点的右子树;</p>
-<p>3.接下来，知道左子树的根节点为 <code>D</code> ;</p>
-<p>4.同理，<code>A</code> 为 <code>D</code> 的左子树，<code>EF</code> 为右子树</p>
-<p>5.右子树的根节点是 <code>M</code> ，依次，画出的结果如图：</p>
-<p><img src="http://ot4r4qnml.bkt.clouddn.com/%E4%BA%8C%E5%8F%89%E6%A0%912.png" alt="二叉树2"></p>
-<p>那么，可以得到后序遍历顺序为：<code>AEFDHZMG</code></p>
-<h3 id="已知中序、后序遍历，求前序遍历"><a href="#已知中序、后序遍历，求前序遍历" class="headerlink" title="已知中序、后序遍历，求前序遍历"></a>已知中序、后序遍历，求前序遍历</h3><blockquote>
-<p>例：</p>
-<p>中序遍历: ADEFGHMZ</p>
-<p>后序遍历: AEFDHZMG</p>
-</blockquote>
-<p><strong>解析：</strong></p>
-<p>1.由后序遍历知 <code>G</code> 为根节点,结合中序遍历知 <code>ADEF</code> 为左子树，<code>HMZ</code> 为右子树;</p>
-<p>2.再观察后序遍历，知道 <code>D</code> 为左子树根节点， <code>M</code> 为右子树根节点;</p>
-<p>3.分析结果如图：</p>
-<p><img src="http://ot4r4qnml.bkt.clouddn.com/erchashu3.png" alt="二叉树3"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;二叉树（Binary Tree）是n（n&amp;gt;=0）个结点的有限集合，该集合或者为空集（空二叉树），或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据结构" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
