@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-20T07:33:42.122Z</updated>
+  <updated>2018-03-24T08:23:35.680Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面试题(html+css)</title>
+    <link href="http://yoursite.com/2018/03/22/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/"/>
+    <id>http://yoursite.com/2018/03/22/面试题整理/</id>
+    <published>2018-03-22T14:44:19.000Z</published>
+    <updated>2018-03-24T08:23:35.680Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近准备面试，整理下笔记，让自己记得更牢。</p>
+<a id="more"></a>
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><p>DOM描绘了一个层次化的节点树。</p>
+<h3 id="如何修改页面内容"><a href="#如何修改页面内容" class="headerlink" title="如何修改页面内容"></a>如何修改页面内容</h3><blockquote>
+<p>在掘金上看到了这样一道题：页面上有个空的无序列表节点，用<code>&lt;ul&gt;&lt;/ul&gt;</code>表示，要往列表中插入3个<code>&lt;li&gt;</code>，每个列表项的文本内容是列表项的插入顺序，取值1,2,3，怎么用原生的JS实现这个需求？同时约定，为方便获取节点引用，可以根据需要为<code>&lt;ul&gt;</code>节点加上<code>id</code>或者<code>class</code>属性。以及添加点击事件。</p>
+</blockquote>
+<p>我的解决方法是这样的：<a href="https://github.com/luyaJ/booket/blob/master/DOM%20operator/Node%E7%B1%BB%E5%9E%8B.html" target="_blank" rel="external">DOM操纵–Node类型</a></p>
+<h3 id="当数据量变大了之后？"><a href="#当数据量变大了之后？" class="headerlink" title="当数据量变大了之后？"></a>当数据量变大了之后？</h3><p>当我们需要插入的<code>&lt;li&gt;</code>加到几百个时，显然我们用上面方法效果就不那么好了，那么我们可以使用<strong>事件委托</strong>更好的解决问题。</p>
+<p>使用事件委托能有效的减少事件注册的数量，并且在子节点动态增减是无需修改代码，使用事件委托的代码如下：</p>
+<p><a href="https://github.com/luyaJ/booket/blob/master/DOM%20operator/event%20delegation.html" target="_blank" rel="external">事件委托处理本题</a></p>
+<h3 id="DOM树的遍历"><a href="#DOM树的遍历" class="headerlink" title="DOM树的遍历"></a>DOM树的遍历</h3><p>我们希望给出一段HTML片段你能使用<strong>广度优先遍历(BFS)</strong>代码实现，遍历到每个节点时，打印出当前节点的类型及类名。</p>
+<p><a href="">广度优先遍历 Dom Tree Traversal</a></p>
+<h3 id="标准DOM事件的发生流程"><a href="#标准DOM事件的发生流程" class="headerlink" title="标准DOM事件的发生流程"></a>标准DOM事件的发生流程</h3><p>“DOM2级事件”规定的事件流包括三个阶段：<strong>事件捕获阶段</strong>, <strong>处于目标阶段</strong>, <strong>事件冒泡阶段</strong>。</p>
+<blockquote>
+<p>事件冒泡:从事件开始的具体元素，一级一级往上传播到较为不具体的节点。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>事件冒泡<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>你点击我了！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>当我们点击<code>p</code>元素时，事件是这样传播的：</p>
+<ol>
+<li>p</li>
+<li>div</li>
+<li>body</li>
+<li>html</li>
+<li>document</li>
+</ol>
+<blockquote>
+<p>事件捕获:原理与事件冒泡相反，它的用意在于在事件到达预定目标之前捕获它，而最具体的节点应该是最后才接收到的事件的。</p>
+</blockquote>
+<p>所以，当点击<code>p</code>元素时，事件的传播方向就是这样的了：</p>
+<ol>
+<li>document</li>
+<li>html</li>
+<li>body</li>
+<li>div</li>
+<li>p</li>
+</ol>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://juejin.im/post/58f558efac502e006c3e5c97" target="_blank" rel="external">破解前端面试（80% 应聘者不及格系列）：从 DOM 说起</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近准备面试，整理下笔记，让自己记得更牢。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="面试" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>nuxt.js-Vue的通用应用框架</title>
@@ -1870,378 +1932,6 @@
     
     
       <category term="正则表达式" scheme="http://yoursite.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript手册</title>
-    <link href="http://yoursite.com/2017/08/05/JavaScript%E6%89%8B%E5%86%8C/"/>
-    <id>http://yoursite.com/2017/08/05/JavaScript手册/</id>
-    <published>2017-08-05T14:51:43.000Z</published>
-    <updated>2017-09-17T13:33:07.628Z</updated>
-    
-    <content type="html"><![CDATA[<p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。</p>
-<a id="more"></a>
-<h2 id="Event对象之事件句柄-Event-Handlers"><a href="#Event对象之事件句柄-Event-Handlers" class="headerlink" title="Event对象之事件句柄(Event Handlers)"></a>Event对象之事件句柄(Event Handlers)</h2><h3 id="onload-amp-onunload事件"><a href="#onload-amp-onunload事件" class="headerlink" title="onload &amp; onunload事件"></a>onload &amp; onunload事件</h3><p>是在用户进入或者离开页面的时候被触发。onload事件可用于检测访问者的浏览器类型和浏览器版本;onload和onunload事件可用于处理cookie。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;body onload=<span class="string">"checkCookies()"</span>&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkCookies</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(navigator.cookieEnabled = <span class="literal">true</span>)&#123;</div><div class="line">        alert(<span class="string">"Cookies可用"</span>);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        alert(<span class="string">"不可用"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/body&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="onchange事件"><a href="#onchange事件" class="headerlink" title="onchange事件"></a>onchange事件</h3><p>在域的内容改变时发生。常结合对输入字段的验证来使用。</p>
-<p>支持该事件的HTML标签：<code>&lt;input type=&quot;text&quot;&gt;</code> , <code>&lt;select&gt;</code> , <code>&lt;textarea&gt;</code> ;</p>
-<p>支持该事件的JavaScript对象：<code>fileUpload</code> , <code>select</code> , <code>text</code> , <code>textarea</code>;</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">输入你的名字：&lt;input type=<span class="string">"text"</span> id=<span class="string">"name"</span> onchange=<span class="string">"myFunction()"</span>&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>当你离开输入框后，函数将被触发，将小写字母转为大写字母。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> name = <span class="built_in">document</span>.getElementById(<span class="string">"name"</span>);</div><div class="line">    name.value = name.value.toUpperCase();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="onmouseover-amp-onmouseout事件"><a href="#onmouseover-amp-onmouseout事件" class="headerlink" title="onmouseover &amp; onmouseout事件"></a>onmouseover &amp; onmouseout事件</h3><p>用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div onmouseover=<span class="string">"mOver(this)"</span> onmouseout=<span class="string">"mOut(this)"</span> style=<span class="string">"background: red;width: 120px;height: 120px;"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mOut</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    obj.innerHTML = <span class="string">"Move Over Me"</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mOver</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    obj.innerHTML = <span class="string">"Thank you!"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="onmousedown-amp-onmouseup-amp-onclick事件"><a href="#onmousedown-amp-onmouseup-amp-onclick事件" class="headerlink" title="onmousedown &amp; onmouseup &amp; onclick事件"></a>onmousedown &amp; onmouseup &amp; onclick事件</h3><p>onmousedown, onmouseup 以及 onclick 构成了鼠标点击事件的所有部分。首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;img id=<span class="string">"img"</span> onmousedown=<span class="string">"lighton()"</span> onmouseup=<span class="string">"lightoff()"</span> src=<span class="string">"http://www.runoob.com/try/demo_source/bulboff.gif"</span> width=<span class="string">"100px"</span> height=<span class="string">"180px"</span>&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">lightoff</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'img'</span>).src=<span class="string">"http://www.runoob.com/try/demo_source/bulboff.gif"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="button事件"><a href="#button事件" class="headerlink" title="button事件"></a>button事件</h3><p>指示当事件被触发时哪个鼠标按键被点击。语法：<code>event.button = 0|1|2</code> 。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">参数</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">规定鼠标左键</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">规定鼠标中键</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">规定鼠标右键</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onmousedown</span>=<span class="string">"whichbutton(event)"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>click in the document!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">whichbutton</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span>(event.button == <span class="number">2</span>)&#123;</div><div class="line">            alert(<span class="string">"you click the right mouse button!"</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            alert(<span class="string">"you click the left mouse button!"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="clientX-amp-clientY事件"><a href="#clientX-amp-clientY事件" class="headerlink" title="clientX &amp; clientY事件"></a>clientX &amp; clientY事件</h3><p>返回当事件被触发时鼠标指针向对于浏览器页面（或客户区：当前窗口）的<strong>水平坐标</strong>或者是<strong>垂直坐标</strong>。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onmousedown</span>=<span class="string">"showCoords(event)"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>click in the document!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">showCoords</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        x = event.clientX;</div><div class="line">        y = event.clientY;</div><div class="line">        alert(<span class="string">"X coords: "</span> + x + <span class="string">",Y coords: "</span> + y);</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="screenX-amp-screenY事件"><a href="#screenX-amp-screenY事件" class="headerlink" title="screenX &amp; screenY事件"></a>screenX &amp; screenY事件</h3><p>返回事件发生时鼠标指针相对于屏幕的<strong>水平坐标</strong>或者是<strong>垂直坐标</strong>。</p>
-<h2 id="DOM-Element对象"><a href="#DOM-Element对象" class="headerlink" title="DOM Element对象"></a>DOM Element对象</h2><h3 id="node-appendChild-node"><a href="#node-appendChild-node" class="headerlink" title="node.appendChild(node)"></a>node.appendChild(node)</h3><p>向节点添加最后一个子节点:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=<span class="string">"myList"</span>&gt;&lt;li&gt;coffee&lt;/li&gt;&lt;li&gt;tea&lt;/li&gt;&lt;/ul&gt;</div><div class="line">&lt;button onclick=<span class="string">"myfunction()"</span>&gt;点击&lt;/button&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">function</span> <span class="function"><span class="title">myfunction</span></span>() &#123;</div><div class="line">        var node = document.createElement(<span class="string">"li"</span>);</div><div class="line">        var textnode = document.createTextNode(<span class="string">"water"</span>);</div><div class="line">        node.appendChild(textnode);</div><div class="line">        document.getElementById(<span class="string">"myList"</span>).appendChild(node);</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>从一个列表向另一个列表中移动列表项：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=<span class="string">"myList1"</span>&gt;&lt;li&gt;coffee&lt;/li&gt;&lt;li&gt;tea&lt;/li&gt;&lt;/ul&gt;</div><div class="line">&lt;ul id=<span class="string">"myList2"</span>&gt;&lt;li&gt;water&lt;/li&gt;&lt;li&gt;milk&lt;/li&gt;&lt;/ul&gt;</div><div class="line">&lt;button onclick=<span class="string">"myfunction()"</span>&gt;点击&lt;/button&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">function</span> <span class="function"><span class="title">myfunction</span></span>() &#123;</div><div class="line">        var node = document.getElementById(<span class="string">"myList2"</span>).firstChild;</div><div class="line">        document.getElementById(<span class="string">"myList1"</span>).appendChild(node);</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h3 id="node-attributes"><a href="#node-attributes" class="headerlink" title="node.attributes"></a>node.attributes</h3><p>返回指定节点的属性集合，即NamedNodeMap:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;button id=<span class="string">"btn"</span> onclick=<span class="string">"myFunction()"</span> class=<span class="string">"btn"</span>&gt;点击&lt;/button&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    <span class="keyword">function</span> <span class="function"><span class="title">myFunction</span></span>() &#123;</div><div class="line">        var x = document.getElementById(<span class="string">"btn"</span>).attributes.length;</div><div class="line">        document.write(x);</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;  //输出结果：3</div></pre></td></tr></table></figure>
-<h3 id="element-childNodes"><a href="#element-childNodes" class="headerlink" title="element.childNodes"></a>element.childNodes</h3><p>返回元素子节点的NodeList。</p>
-<h3 id="node-cloneNode-deep"><a href="#node-cloneNode-deep" class="headerlink" title="node.cloneNode(deep)"></a>node.cloneNode(deep)</h3><p>创建节点的拷贝，并返回该副本。克隆所有属性以及它们的值。如果您需要克隆所有后代，请把deep参数设置true，否则设置为false。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=<span class="string">"myList1"</span>&gt;&lt;li&gt;coffee&lt;/li&gt;&lt;li&gt;tea&lt;/li&gt;&lt;/ul&gt;</div><div class="line">&lt;ul id=<span class="string">"myList2"</span>&gt;&lt;li&gt;water&lt;/li&gt;&lt;li&gt;milk&lt;/li&gt;&lt;/ul&gt;</div><div class="line">&lt;button onclick=<span class="string">"myFunction()"</span>&gt;点击&lt;/button&gt;</div><div class="line">&lt;script&gt;</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">myFunction</span></span>() &#123;</div><div class="line">    var <span class="built_in">clone</span> = document.getElementById(<span class="string">"myList2"</span>).lastChild.cloneNode(<span class="literal">true</span>);</div><div class="line">    document.getElementById(<span class="string">"myList1"</span>).appendChild(<span class="built_in">clone</span>);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h3 id="node-insertBefore-newnode-existingnode"><a href="#node-insertBefore-newnode-existingnode" class="headerlink" title="node.insertBefore(newnode,existingnode)"></a>node.insertBefore(newnode,existingnode)</h3><p>在已有子节点之前插入新的子节点:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=<span class="string">"myList"</span>&gt;&lt;li&gt;coffee&lt;/li&gt;&lt;li&gt;tea&lt;/li&gt;&lt;/ul&gt;</div><div class="line">&lt;button onclick=<span class="string">"myFunction()"</span>&gt;点击&lt;/button&gt;</div><div class="line">&lt;script&gt;</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">myFunction</span></span>() &#123;</div><div class="line">    var newItem = document.createElement(<span class="string">'li'</span>);</div><div class="line">    var textnode = document.createTextNode(<span class="string">'water'</span>);</div><div class="line">    newItem.appendChild(textnode);</div><div class="line"></div><div class="line">    var list = document.getElementById(<span class="string">'myList'</span>);</div><div class="line">    list.insertBefore(newItem,list.childNodes[0]);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h3 id="node-nextSibling"><a href="#node-nextSibling" class="headerlink" title="node.nextSibling"></a>node.nextSibling</h3><p>返回指定节点之后紧跟的节点，在相同的树层级中:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=<span class="string">'myList'</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">'item1'</span>&gt;</span>coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">'item2'</span>&gt;</span>tea<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></div><div class="line">x = <span class="built_in">document</span>.getElementById(<span class="string">'item1'</span>).nextSibling.id;</div><div class="line"><span class="built_in">document</span>.write(x);  <span class="comment">//输出：item2</span></div></pre></td></tr></table></figure>
-<h3 id="node-parentNode"><a href="#node-parentNode" class="headerlink" title="node.parentNode"></a>node.parentNode</h3><p>以Node对象的形式返回指定节点的父节点:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;<span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>tea<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></div><div class="line">x = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>)[<span class="number">0</span>];</div><div class="line"><span class="built_in">document</span>.write(x.parentNode.nodeName);  <span class="comment">//输出：UL</span></div></pre></td></tr></table></figure>
-<h2 id="Array对象"><a href="#Array对象" class="headerlink" title="Array对象"></a>Array对象</h2><h3 id="concat-–连接"><a href="#concat-–连接" class="headerlink" title="concat() –连接"></a>concat() –连接</h3><p><strong>连接</strong>两个或更多的数组，并返回结果。如果要进行<code>concat()</code>操作的参数是数组，那么添加的是数组中的元素，而不是数组。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = [<span class="string">"Red"</span>,<span class="string">"Green"</span>,<span class="string">"Blue"</span>];</div><div class="line"><span class="keyword">var</span> name = [<span class="string">"Luya"</span>,<span class="string">"Awebone"</span>];</div><div class="line"><span class="keyword">var</span> kei = [<span class="string">"Robin"</span>];</div><div class="line"><span class="built_in">document</span>.write(color.concat(name,kei));</div><div class="line"><span class="comment">//输出：Red,Green,Blue,Luya,Awebone,Robin</span></div></pre></td></tr></table></figure>
-<h3 id="shift-amp-pop-–删除"><a href="#shift-amp-pop-–删除" class="headerlink" title="shift() &amp; pop() –删除"></a>shift() &amp; pop() –删除</h3><p><code>shift()</code>方法用于把数组的<strong>第一个元素</strong>从其中<strong>删除</strong>，并返回第一个元素的值。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = [<span class="string">"Red"</span>,<span class="string">"Green"</span>,<span class="string">"Blue"</span>];</div><div class="line"><span class="built_in">document</span>.write(color+<span class="string">"&lt;br&gt;"</span>);  <span class="comment">//输出：Red,Green,Blue</span></div><div class="line"><span class="built_in">document</span>.write(color.shift()+<span class="string">"&lt;br&gt;"</span>);  <span class="comment">//输出：Red</span></div><div class="line"><span class="built_in">document</span>.write(color);  <span class="comment">//输出：Green,Blue</span></div></pre></td></tr></table></figure>
-<p><code>pop()</code>方法用于删除数组的<strong>最后一个元素</strong>并返回<strong>删除</strong>的元素。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = [<span class="string">"Red"</span>,<span class="string">"Green"</span>,<span class="string">"Blue"</span>];</div><div class="line"><span class="built_in">document</span>.write(color+<span class="string">"&lt;br&gt;"</span>);  <span class="comment">//输出：Red,Green,Blue</span></div><div class="line"><span class="built_in">document</span>.write(color.pop()+<span class="string">"&lt;br&gt;"</span>);  <span class="comment">//输出：Blue</span></div><div class="line"><span class="built_in">document</span>.write(color);  <span class="comment">//输出：Red,Green</span></div></pre></td></tr></table></figure>
-<h3 id="unshift-amp-push-–增加"><a href="#unshift-amp-push-–增加" class="headerlink" title="unshift() &amp; push() –增加"></a>unshift() &amp; push() –增加</h3><p><code>unshift()</code>方法可向数组的<strong>开头添加</strong>一个或更多元素，并返回新的长度。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = [<span class="string">"Red"</span>,<span class="string">"Green"</span>,<span class="string">"Blue"</span>];</div><div class="line">color.unshift(<span class="string">"hello"</span>,<span class="string">"world"</span>);</div><div class="line"><span class="built_in">document</span>.write(color);  <span class="comment">//输出：hello,world,Red,Green,Blue</span></div></pre></td></tr></table></figure>
-<p><code>push()</code>方法可向数组的末尾添加一个或多个元素，并返回新的长度。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = [<span class="string">"Red"</span>,<span class="string">"Green"</span>,<span class="string">"Blue"</span>];</div><div class="line">color.push(<span class="string">"hello"</span>,<span class="string">"world"</span>);</div><div class="line"><span class="built_in">document</span>.write(color);  <span class="comment">//输出：Red,Green,Blue,hello,world</span></div></pre></td></tr></table></figure>
-<h3 id="splice-–插入-删除-替换"><a href="#splice-–插入-删除-替换" class="headerlink" title="splice() –插入,删除,替换"></a>splice() –插入,删除,替换</h3><p>语法：<code>array.splice(index,howmany,item1,...,itemX)</code></p>
-<p><code>index</code>必须，规定从何处添加或删除元素；<code>howmany</code>必须，规定应该删除多少元素，必须为数字，可以为“0”，若为规定此参数，则删除从index开始到原数组结尾的所有元素；<code>item</code>可选，要添加到数组的新元素。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = [<span class="string">"Red"</span>,<span class="string">"Green"</span>,<span class="string">"Blue"</span>,<span class="string">"pink"</span>];</div><div class="line">color.splice(<span class="number">2</span>,<span class="number">0</span>,<span class="string">"luya"</span>,<span class="string">"awebone"</span>);</div><div class="line"><span class="built_in">document</span>.write(color);  <span class="comment">//输出：Red,Green,luya,awebone,Blue,pink</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = [<span class="string">"Red"</span>,<span class="string">"Green"</span>,<span class="string">"Blue"</span>,<span class="string">"pink"</span>];</div><div class="line">color.splice(<span class="number">2</span>,<span class="number">1</span>,<span class="string">"luya"</span>);</div><div class="line"><span class="built_in">document</span>.write(color);  <span class="comment">//输出：Red,Green,luya,pink</span></div></pre></td></tr></table></figure>
-<h3 id="reverse-–颠倒"><a href="#reverse-–颠倒" class="headerlink" title="reverse() –颠倒"></a>reverse() –颠倒</h3><p><code>reverse()</code>方法用于<strong>颠倒</strong>数组中元素的顺序。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = [<span class="string">"Red"</span>,<span class="string">"Green"</span>,<span class="string">"Blue"</span>];</div><div class="line"><span class="built_in">document</span>.write(color.reverse());</div><div class="line"><span class="comment">//输出：Blue,Green,Red</span></div></pre></td></tr></table></figure>
-<h3 id="copyWithin-–拷贝"><a href="#copyWithin-–拷贝" class="headerlink" title="copyWithin() –拷贝"></a>copyWithin() –拷贝</h3><p><code>copyWithin()</code>方法用于从数组的指定位置<strong>拷贝</strong>元素到数组的另一个指定位置中。</p>
-<p>语法：<code>array.copyWithin(target,start,end)</code></p>
-<p><code>target</code>必须，从该位置开始替换数据；<code>start</code>必须，从该位置开始读取数据，默认为 0 。如果为负值，表示倒数；<code>end</code>可选，停止复制的索引位置(默认为array.length)。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = [<span class="string">"Red"</span>,<span class="string">"Green"</span>,<span class="string">"Blue"</span>,<span class="string">"pink"</span>];</div><div class="line"><span class="built_in">document</span>.write(color.copyWithin(<span class="number">0</span>,<span class="number">1</span>)+<span class="string">"&lt;br&gt;"</span>); <span class="comment">//Green,Blue,pink,pink</span></div><div class="line"><span class="built_in">document</span>.write(color.copyWithin(<span class="number">1</span>,<span class="number">1</span>)+<span class="string">"&lt;br&gt;"</span>); <span class="comment">//Red,Green,Blue,pink</span></div><div class="line"><span class="built_in">document</span>.write(color.copyWithin(<span class="number">2</span>,<span class="number">1</span>)+<span class="string">"&lt;br&gt;"</span>); <span class="comment">//Red,Green,Green,Blue</span></div><div class="line"><span class="built_in">document</span>.write(color.copyWithin(<span class="number">3</span>,<span class="number">1</span>)+<span class="string">"&lt;br&gt;"</span>); <span class="comment">//Red,Green,Blue,Green</span></div><div class="line"><span class="built_in">document</span>.write(color.copyWithin(<span class="number">2</span>,<span class="number">3</span>)+<span class="string">"&lt;br&gt;"</span>); <span class="comment">//Red,Green,pink,pink</span></div><div class="line"><span class="comment">//上边的document要一条一条的输出，一起输出结果会变</span></div></pre></td></tr></table></figure>
-<h3 id="sort-–排序"><a href="#sort-–排序" class="headerlink" title="sort() –排序"></a>sort() –排序</h3><p><code>sort()</code>方法用于对数组的元素进行<strong>排序</strong>。排序顺序可以是字母或数字，并按升序或降序。默认排序顺序为按字母升序。</p>
-<p><strong><em>注意：</em></strong> 当数字是按字母顺序排列时”40”将排在”5”前面；使用数字排序，你必须通过一个函数作为参数来调用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = [<span class="string">"Red"</span>,<span class="string">"Green"</span>,<span class="string">"Blue"</span>,<span class="string">"pink"</span>];</div><div class="line"><span class="built_in">document</span>.write(color.sort());  <span class="comment">//输出：Blue,Green,Red,pink</span></div></pre></td></tr></table></figure>
-<p>数字排序(升序):</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> points = [<span class="number">40</span>,<span class="number">20</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">12</span>,<span class="number">23</span>];</div><div class="line">points.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>)</span>&#123; <span class="keyword">return</span> a-b; &#125;);</div><div class="line"><span class="built_in">document</span>.write(points);  <span class="comment">//输出：1,5,12,20,23,40</span></div></pre></td></tr></table></figure>
-<p>若要实现数字降序则改为：<code>return b-a</code> 。</p>
-<h3 id="some-–检测"><a href="#some-–检测" class="headerlink" title="some() –检测"></a>some() –检测</h3><p><code>some()</code>方法用于检测数组中的元素是否<strong>满足指定条件</strong>(函数提供)。会依次执行数组的每个元素，如果有一个元素满足条件，就返回<code>true</code>,剩下的元素不会在执行检测；如果没有满足条件的元素，则返回<code>false</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ages = [<span class="number">3</span>,<span class="number">10</span>,<span class="number">18</span>,<span class="number">20</span>];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params">age</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> age &gt;= <span class="number">18</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">document</span>.write(ages.some(check));  <span class="comment">//输出：true</span></div></pre></td></tr></table></figure>
-<h3 id="map-–处理"><a href="#map-–处理" class="headerlink" title="map() –处理"></a>map() –处理</h3><p><code>map()</code>方法返回一个新数组，数组中的元素为原始数组元素调用函数<strong>处理</strong>后的值。</p>
-<p><strong><em>注意：</em></strong> <code>some()</code>和<code>map()</code>都不会对空数组进行检测。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">16</span>,<span class="number">100</span>];</div><div class="line"><span class="built_in">document</span>.write(num.map(<span class="built_in">Math</span>.sqrt));  <span class="comment">//输出：1,2,4,10</span></div></pre></td></tr></table></figure>
-<h3 id="join-–转换"><a href="#join-–转换" class="headerlink" title="join() –转换"></a>join() –转换</h3><p><code>join()</code>方法用于把数组中的所有元素<strong>转换</strong>一个字符串，元素是通过指定的分隔符进行分隔的。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = [<span class="string">"Red"</span>,<span class="string">"Green"</span>,<span class="string">"Blue"</span>];</div><div class="line"><span class="built_in">document</span>.write(color.join(<span class="string">" and "</span>));  <span class="comment">//输出：Red and Green and Blue</span></div></pre></td></tr></table></figure>
-<h3 id="fill-–填充"><a href="#fill-–填充" class="headerlink" title="fill() –填充"></a>fill() –填充</h3><p><code>fill()</code>方法用于将一个固定值替换数组的元素。</p>
-<p>语法：<code>array.fill(value,start,end)</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = [<span class="string">"Red"</span>,<span class="string">"Green"</span>,<span class="string">"Blue"</span>];</div><div class="line"><span class="built_in">document</span>.write(color.fill(<span class="string">"and"</span>));  <span class="comment">//输出：and,and,and</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = [<span class="string">"Red"</span>,<span class="string">"Green"</span>,<span class="string">"Blue"</span>,<span class="string">"pink"</span>];</div><div class="line"><span class="built_in">document</span>.write(color.fill(<span class="string">"and"</span>,<span class="number">1</span>,<span class="number">3</span>)); <span class="comment">//输出：Red,and,and,pink</span></div></pre></td></tr></table></figure>
-<h3 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h3><p><code>filter()</code>方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ages = [<span class="number">32</span>,<span class="number">15</span>,<span class="number">18</span>,<span class="number">7</span>,<span class="number">39</span>];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params">age</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> age &gt;= <span class="number">18</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">document</span>.write(ages.filter(check));  <span class="comment">//输出：32,18,39</span></div></pre></td></tr></table></figure>
-<p><a href="http://www.runoob.com/jsref/jsref-obj-array.html" target="_blank" rel="external">菜鸟教程JavaScript Array对象</a></p>
-<h2 id="Date对象"><a href="#Date对象" class="headerlink" title="Date对象"></a>Date对象</h2><p>所有浏览器都支持date的各种方法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="comment">//var d = new Date(year,month);</span></div><div class="line"><span class="built_in">document</span>.write(d.getDate());</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">方法</th>
-<th style="text-align:center">描述</th>
-<th style="text-align:center">备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">getDate()</td>
-<td style="text-align:center">返回一个月中的某一天 (1~31)</td>
-<td style="text-align:center">/</td>
-</tr>
-<tr>
-<td style="text-align:center">getDay()</td>
-<td style="text-align:center">返回一周中的某一天 (0~6)</td>
-<td style="text-align:center">周日是0，周一是1，依次类推</td>
-</tr>
-<tr>
-<td style="text-align:center">getFullYear()</td>
-<td style="text-align:center">返回一个表示年份的4位数字</td>
-<td style="text-align:center">/</td>
-</tr>
-<tr>
-<td style="text-align:center">getMonth()</td>
-<td style="text-align:center">返回月份(0~11)</td>
-<td style="text-align:center">0(一月)到11(十二月)</td>
-</tr>
-<tr>
-<td style="text-align:center">getHours()</td>
-<td style="text-align:center">返回Date对象的小时(0~23)</td>
-<td style="text-align:center">0表示(午夜)</td>
-</tr>
-<tr>
-<td style="text-align:center">getMinutes()</td>
-<td style="text-align:center">返回Date对象的分钟(0~59)</td>
-<td style="text-align:center">/</td>
-</tr>
-<tr>
-<td style="text-align:center">getSeconds()</td>
-<td style="text-align:center">返回Date对象的秒数(0~59)</td>
-<td style="text-align:center">/</td>
-</tr>
-<tr>
-<td style="text-align:center">getMilliseconds()</td>
-<td style="text-align:center">返回Date对象的毫秒(0~999)</td>
-<td style="text-align:center">/</td>
-</tr>
-<tr>
-<td style="text-align:center">getTime()</td>
-<td style="text-align:center">返回1970年1月1日至今的毫秒数</td>
-<td style="text-align:center">/</td>
-</tr>
-<tr>
-<td style="text-align:center">parse()</td>
-<td style="text-align:center">返回1970年1月1日午夜到指定日期（字符串）的毫秒数</td>
-<td style="text-align:center">/</td>
-</tr>
-<tr>
-<td style="text-align:center">setDate()</td>
-<td style="text-align:center">设置一个月的某一天</td>
-<td style="text-align:center">其他的方法类似，这里就不一一列举</td>
-</tr>
-<tr>
-<td style="text-align:center">toDateString()</td>
-<td style="text-align:center">把Date对象的日期部分转换为字符串</td>
-<td style="text-align:center">输出：Fri Aug 04 2017</td>
-</tr>
-<tr>
-<td style="text-align:center">toLocaleDateString()</td>
-<td style="text-align:center">根据本地时间格式，把Date对象的日期部分转换为字符串</td>
-<td style="text-align:center">输出：2017/8/4</td>
-</tr>
-<tr>
-<td style="text-align:center">toLocaleTimeString()</td>
-<td style="text-align:center">根据本地时间格式，把Date对象的时间部分转换为字符串</td>
-<td style="text-align:center">输出：上午10:59:41</td>
-</tr>
-<tr>
-<td style="text-align:center">toLocaleString()</td>
-<td style="text-align:center">据本地时间格式，把Date对象转换为字符串</td>
-<td style="text-align:center">输出：2017/8/4 上午11:00:36</td>
-</tr>
-</tbody>
-</table>
-<p>setDate()方法:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">d.setDate(<span class="number">15</span>);</div><div class="line"><span class="built_in">document</span>.write(d); <span class="comment">//今天真是的是4号，输出：Tue Aug 15 2017 10:54:13 GMT+0800 (中国标准时间)</span></div></pre></td></tr></table></figure>
-<p>getFullYear()方法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">document</span>.write(d.getFullYear());  <span class="comment">//输出：2017</span></div></pre></td></tr></table></figure>
-<p>getHours()方法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"July 21,2017 21:00:00"</span>);</div><div class="line"><span class="built_in">document</span>.write(d.getHours());  <span class="comment">//输出：21</span></div></pre></td></tr></table></figure>
-<p><a href="http://www.runoob.com/jsref/jsref-obj-date.html" target="_blank" rel="external">菜鸟教程JavaScipt Date对象</a></p>
-<h2 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h2><h3 id="floor-x"><a href="#floor-x" class="headerlink" title="floor(x)"></a>floor(x)</h3><p>对x进行下舍入，返回小于等于x的最大整数：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.write(<span class="built_in">Math</span>.floor(<span class="number">1.6</span>));  <span class="comment">//输出：1</span></div></pre></td></tr></table></figure>
-<h3 id="ceil-x"><a href="#ceil-x" class="headerlink" title="ceil(x)"></a>ceil(x)</h3><p>对x进行上舍入，返回大于等于x的最大整数：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.write(<span class="built_in">Math</span>.ceil(<span class="number">1.4</span>));  <span class="comment">//输出：2</span></div></pre></td></tr></table></figure>
-<h3 id="round-x"><a href="#round-x" class="headerlink" title="round(x)"></a>round(x)</h3><p>对x进行四舍五入：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.write(<span class="built_in">Math</span>.round(<span class="number">1.4</span>));  <span class="comment">//输出：1</span></div></pre></td></tr></table></figure>
-<h3 id="random"><a href="#random" class="headerlink" title="random()"></a>random()</h3><p>返回介于 0(包含) ~ 1(不包含) 之间的一个随机数：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;p id=<span class="string">"demo"</span>&gt;点击按钮随机显示1到10之间的随机数：&lt;/p&gt;</div><div class="line">&lt;button onclick=<span class="string">"myFunction()"</span>&gt;点击&lt;/button&gt;</div><div class="line">&lt;script&gt;</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">myFunction</span></span>() &#123;</div><div class="line">    var demo = document.getElementById(<span class="string">"demo"</span>);</div><div class="line">    demo.innerHTML = Math.floor(Math.random() * 10 + 1);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h3 id="max-x-y-…-n-amp-min"><a href="#max-x-y-…-n-amp-min" class="headerlink" title="max(x,y,…,n) &amp; min()"></a>max(x,y,…,n) &amp; min()</h3><p>max()返回两个指定的数中带有较大的值的那个数:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.write(<span class="built_in">Math</span>.max(<span class="number">1</span>,<span class="number">56</span>,<span class="number">4</span>,<span class="number">22</span>,<span class="number">-8</span>));  <span class="comment">//输出：56</span></div></pre></td></tr></table></figure>
-<p><a href="http://www.runoob.com/jsref/jsref-obj-math.html" target="_blank" rel="external">菜鸟教程JavaScipt Math对象</a></p>
-<h2 id="String对象"><a href="#String对象" class="headerlink" title="String对象"></a>String对象</h2><h3 id="substring-amp-slice-amp-substr-–提取"><a href="#substring-amp-slice-amp-substr-–提取" class="headerlink" title="substring() &amp; slice() &amp; substr() –提取"></a>substring() &amp; slice() &amp; substr() –提取</h3><p><code>substring()</code>用于提取字符串中介于两个指定下标之间的字符:</p>
-<p>语法：<code>stringObject.substring(start,stop)</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">"Hello world!"</span></div><div class="line"><span class="built_in">document</span>.write(str.substring(<span class="number">3</span>));  <span class="comment">//输出：lo world!</span></div><div class="line"><span class="built_in">document</span>.write(str.substring(<span class="number">3</span>,<span class="number">7</span>));  <span class="comment">//输出：lo w</span></div></pre></td></tr></table></figure>
-<p><code>slice()</code>可提取字符串的某个部分，并以新的字符串返回被提取的部分:</p>
-<p>语法：<code>stringObject.slice(start,end)</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">"Hello happy world!"</span></div><div class="line"><span class="built_in">document</span>.write(str.slice(<span class="number">6</span>));  <span class="comment">//输出：happy world!</span></div><div class="line"><span class="built_in">document</span>.write(str.slice(<span class="number">6</span>,<span class="number">11</span>));  <span class="comment">//输出：happy</span></div></pre></td></tr></table></figure>
-<p><code>substr()</code>可在字符串中抽取从 start 下标开始的指定数目的字符:</p>
-<p>语法：<code>stringObject.substr(start,length)</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">"Hello world!"</span></div><div class="line"><span class="built_in">document</span>.write(str.substr(<span class="number">3</span>));  <span class="comment">//输出：lo world!</span></div><div class="line"><span class="built_in">document</span>.write(str.substr(<span class="number">3</span>,<span class="number">7</span>));  <span class="comment">//输出：lo worl</span></div></pre></td></tr></table></figure>
-<h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3><p>返回某个指定的字符串值在字符串中首次出现的位置。对大小写敏感；如果要检索的字符串值没有出现，则该方法返回-1。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">"Hello world!"</span></div><div class="line"><span class="built_in">document</span>.write(str.indexOf(<span class="string">"Hello"</span>) + <span class="string">" "</span>);</div><div class="line"><span class="built_in">document</span>.write(str.indexOf(<span class="string">"World"</span>) + <span class="string">" "</span>);</div><div class="line"><span class="built_in">document</span>.write(str.indexOf(<span class="string">"world"</span>));</div><div class="line"><span class="comment">//输出： 0 -1 6</span></div></pre></td></tr></table></figure>
-<h2 id="RegExp对象"><a href="#RegExp对象" class="headerlink" title="RegExp对象"></a>RegExp对象</h2><p><code>RegExp</code>对象表示正则表达式，它是对字符串执行模式匹配的强大工具。</p>
-<p>直接量语法：<code>/pattern/attributes</code></p>
-<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">修饰符</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">i</td>
-<td style="text-align:left">执行对大小写不敏感的匹配</td>
-</tr>
-<tr>
-<td style="text-align:center">g</td>
-<td style="text-align:left">执行全局匹配(查找所有匹配而非在找到第一个匹配后停止)</td>
-</tr>
-<tr>
-<td style="text-align:center">m</td>
-<td style="text-align:left">执行多行匹配</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"Visit W3School"</span>;</div><div class="line"><span class="keyword">var</span> patt1 = <span class="regexp">/w3school/i</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(patt1));  <span class="comment">//输出：W3School</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">"Is this all there is?"</span>;</div><div class="line"><span class="keyword">var</span> patt1=<span class="regexp">/is/gi</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(patt1));  <span class="comment">//输出：Is,is,is</span></div></pre></td></tr></table></figure>
-<h3 id="方括号"><a href="#方括号" class="headerlink" title="方括号"></a>方括号</h3><ul>
-<li><code>[abc]</code>表达式：用于查找方括号之间的任何字符,方括号内的字符可以是任何字符或字符范围。</li>
-</ul>
-<p>直接量语法：<code>/[abc]/</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"Is this all there is?"</span>;</div><div class="line"><span class="keyword">var</span> patt1 = <span class="regexp">/[a-h]/g</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(patt1));  <span class="comment">//输出：h,a,h,e,e</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>[^abc]</code>：用于查找任何不在方括号之间的字符。</li>
-<li><code>[0-9]</code>：查找任何从0至9的数字。</li>
-<li><code>[a-z]</code>：查找任何从小写a到小写z的字符。</li>
-<li><code>(red|blue|green)</code>：查找任何指定的选项。</li>
-</ul>
-<h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><ul>
-<li><code>.</code> : 查找单个字符，除了换行和行结束符。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"That's hot!"</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(<span class="regexp">/h.t/g</span>));  <span class="comment">//输出：hat,hot</span></div></pre></td></tr></table></figure>
-<ul>
-<li><p><code>\w</code> : 查找单词字符。<strong>单词字符包括：a-z、A-Z、0-9，以及下划线。</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'Give 100%!'</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(<span class="regexp">/\w/g</span>));  <span class="comment">//输出：G,i,v,e,1,0,0</span></div></pre></td></tr></table></figure>
-</li>
-<li><p><code>\W</code> : 查找非单词字符。（上面的代码输出：<code>%</code>）</p>
-</li>
-<li><p><code>\d</code> &amp; <code>\D</code> : 查找数字/查找非数字字符。</p>
-</li>
-<li><p><code>\s</code> &amp; <code>\S</code> : 查找空白字符/查找非空白字符。空白字符可以是：</p>
-<ul>
-<li>空格符 (space character)</li>
-<li>制表符 (tab character)</li>
-<li>回车符 (carriage return character)</li>
-<li>换行符 (new line character)</li>
-<li>垂直换行符 (vertical tab character)</li>
-<li>换页符 (form feed character)</li>
-</ul>
-</li>
-<li><p><code>\b</code> : 匹配单词边界。在单词边界匹配的位置，单词字符后面或前面不与另一个单词字符直接相邻。请注意，匹配的单词边界并不包含在匹配中。换句话说，匹配的单词边界的长度为零。（不要与<code>[\b]</code>混淆。）如果未找到匹配，则返回<code>null</code>。</p>
-</li>
-</ul>
-<p><em>注意</em>：<code>\b</code>元字符通常用于查找位于单词的开头或结尾的匹配。</p>
-<p><strong><em>例子：</em></strong></p>
-<p>1.<code>/\bm/</code> 匹配 “moon” 中的 ‘m’,返回<code>m</code>；</p>
-<p>2.<code>/oo\b/</code> 不匹配 “moon” 中的 ‘oo’，因为 ‘oo’ 后面的 ‘n’ 是一个单词字符，返回<code>null</code>；</p>
-<p>3.<code>/oon\b/</code> 匹配 “moon” 中的 ‘oon’，因为 ‘oon’ 位于字符串的末端，后面没有单词字符，返回<code>oon</code>；</p>
-<p>4.<code>/\w\b\w/</code> 不匹配任何字符，因为单词字符之后绝不会同时紧跟着非单词字符和单词字符，返回<code>null</code>。</p>
-<ul>
-<li><code>\B</code> : 匹配非单词边界。匹配位置的上一个和下一个字符的类型是相同的：即必须同时是单词，或必须同时是非单词字符。字符串的开头和结尾处被视为非单词字符。如果未找到匹配，则返回<code>null</code></li>
-</ul>
-<p><em>注意</em>：<code>\B</code>元字符通常用于查找不处在单词的开头或结尾的匹配。</p>
-<ul>
-<li><code>\n</code> : 查找换行符。返回换行符被找到的位置。如果未找到匹配，则返回-1。</li>
-</ul>
-<h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><ul>
-<li><code>n+</code> : 匹配包含<strong>至少一个</strong><code>n</code>的任何字符串。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'Hellooo World! Hello W3School!'</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(<span class="regexp">/o+/g</span>));  <span class="comment">//输出：ooo,o,o,oo</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>n*</code> : 匹配包含<strong>零个</strong>或<strong>多个</strong><code>n</code>的任何字符串。</li>
-</ul>
-<p><em>例：</em> 对<code>l</code>进行全局搜索，包括其后紧跟的一个或多个<code>o</code>：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'Hellooo World! Hello W3School!'</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(<span class="regexp">/lo*/g</span>));  <span class="comment">//输出：l,looo,l,l,lo,l</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>n?</code> : 匹配任何包含<strong>零个</strong>或<strong>一个</strong><code>n</code>的字符串。</li>
-</ul>
-<p><em>例：</em> 对<code>1</code>进行全局搜索，包括其后紧跟的零个或一个<code>0</code>：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'1,100 or 1000'</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(<span class="regexp">/10?/g</span>));  <span class="comment">//输出：1,10,10</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>n{x}</code> : 匹配包含X个<code>n</code>的序列的字符串。</li>
-</ul>
-<p><em>例：</em> 对包含四位数字序列的子串进行全局搜索：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'100,1000 or 10000'</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(<span class="regexp">/\d&#123;4&#125;/g</span>));  <span class="comment">//输出：1000,1000</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>n{x,Y}</code> : 匹配包含X至Y个<code>n</code>的序列的字符串。X和Y必须是数字。</li>
-</ul>
-<p><em>例：</em> 对包含三位至四位数字序列的子串进行全局搜索：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'100,1000 or 10000'</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(<span class="regexp">/\d&#123;3,4&#125;/g</span>));  <span class="comment">//输出：100,1000,1000</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>n{x,}</code> : 匹配包含至少X个<code>n</code>的序列的字符串。</li>
-</ul>
-<p><em>例：</em> 对包含至少三位数字序列的子串进行全局搜索：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'100,1000 or 10000'</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(<span class="regexp">/\d&#123;3,4&#125;/g</span>));  <span class="comment">//输出：100,1000,1000</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>n$</code> : 匹配任何结尾为<code>n</code>的字符串。</li>
-</ul>
-<p><em>例：</em> 对字符串结尾的 “is” 进行全局搜索：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'Is this his'</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(<span class="regexp">/is$/g</span>));  <span class="comment">//输出：is</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>^n</code> : 匹配任何开头为<code>n</code>的字符串。</li>
-</ul>
-<p><em>例：</em> 对字符串开头的 “is” 进行全局搜索：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'Is this his'</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(<span class="regexp">/^is/g</span>));  <span class="comment">//输出：Is</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>?=n</code> : 匹配任何其后紧接指定字符串<code>n</code>的字符串。</li>
-</ul>
-<p><em>例：</em> 对其后紧跟 “all” 的 “is” 进行全局搜索：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'Is this all there is'</span>;</div><div class="line">patt1 = <span class="regexp">/is(?=all)/</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(patt1));  <span class="comment">//输出：is</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>?!n</code> : 匹配其后没有紧接指定字符串<code>n</code>的任何字符串。</li>
-</ul>
-<p><em>例：</em> 对其后没有紧跟 “all” 的 “is” 进行全局搜索：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'Is this all there is'</span>;</div><div class="line">patt1 = <span class="regexp">/is(?! all)/gi</span>;</div><div class="line"><span class="built_in">document</span>.write(str.match(patt1));  <span class="comment">//输出：Is,is</span></div></pre></td></tr></table></figure>
-<h3 id="定位符"><a href="#定位符" class="headerlink" title="定位符"></a>定位符</h3><ul>
-<li><code>^</code> : 匹配输入字符串开始的位置。</li>
-<li><code>$</code> : 匹配输入字符串结尾的位置。</li>
-</ul>
-<h3 id="RegExp对象方法"><a href="#RegExp对象方法" class="headerlink" title="RegExp对象方法"></a>RegExp对象方法</h3><ul>
-<li><code>compile</code> : 编译正则表达式。</li>
-<li><code>exec</code> : 检索字符串中指定的值。返回找到的值，并确定其位置。</li>
-<li><code>test</code> : 检索字符串中指定的值。返回<code>true</code>或<code>false</code>。</li>
-</ul>
-<h3 id="支持正则表达式的String对象的方法"><a href="#支持正则表达式的String对象的方法" class="headerlink" title="支持正则表达式的String对象的方法"></a>支持正则表达式的String对象的方法</h3><ul>
-<li><code>search()</code>用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。</li>
-<li><code>match()</code>在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。</li>
-<li><code>replace()</code>在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</li>
-<li><code>split()</code>把一个字符串分割成字符串数组。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Web前端" scheme="http://yoursite.com/categories/Web%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
     
   </entry>
   
