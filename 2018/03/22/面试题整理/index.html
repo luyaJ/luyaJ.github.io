@@ -245,7 +245,7 @@
 <li>div</li>
 <li>p</li>
 </ol>
-<p>那么事件处理程序到底是怎样的呢? 我们看看下面的代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"parElement"</span>&gt;</span>我是父元素    </div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"sonElement"</span>&gt;</span>我是子元素<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  let sonElement = document.getElementById('sonElement');</div><div class="line">  let parElement = document.getElementById('parElement');</div><div class="line"></div><div class="line">  // true 为事件捕获阶段调用事件处理程序；</div><div class="line">  // false 为事件冒泡阶段调用事件处理程序</div><div class="line">  parElement.addEventListener('click', function () &#123;</div><div class="line">    alert('父级 冒泡');</div><div class="line">  &#125;, false);</div><div class="line">  parElement.addEventListener('click', function () &#123;</div><div class="line">    alert('父级 捕获');</div><div class="line">  &#125;, true);</div><div class="line"></div><div class="line">  sonElement.addEventListener('click', function () &#123;</div><div class="line">    alert('子级冒泡');</div><div class="line">  &#125;, false);</div><div class="line">  sonElement.addEventListener('click', function () &#123;</div><div class="line">    alert('子级捕获');</div><div class="line">  &#125;, true);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>那么事件处理程序到底是怎样的呢? 我们看看下面的代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"parElement"</span>&gt;</span>我是父元素    </div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"sonElement"</span>&gt;</span>我是子元素<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">let</span> sonElement = <span class="built_in">document</span>.getElementById(<span class="string">'sonElement'</span>);</div><div class="line">  <span class="keyword">let</span> parElement = <span class="built_in">document</span>.getElementById(<span class="string">'parElement'</span>);</div><div class="line"></div><div class="line">  <span class="comment">// true 为事件捕获阶段调用事件处理程序；</span></div><div class="line">  <span class="comment">// false 为事件冒泡阶段调用事件处理程序</span></div><div class="line">  parElement.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">'父级 冒泡'</span>);</div><div class="line">  &#125;, <span class="literal">false</span>);</div><div class="line">  parElement.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">'父级 捕获'</span>);</div><div class="line">  &#125;, <span class="literal">true</span>);</div><div class="line"></div><div class="line">  sonElement.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">'子级冒泡'</span>);</div><div class="line">  &#125;, <span class="literal">false</span>);</div><div class="line">  sonElement.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="string">'子级捕获'</span>);</div><div class="line">  &#125;, <span class="literal">true</span>);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>当点击”我是子元素”时，弹出的顺序是：父级捕获 –&gt; 子级冒泡 –&gt; 子级捕 –&gt; 父集冒泡；</p>
 <h4 id="addEventListener-amp-onclick"><a href="#addEventListener-amp-onclick" class="headerlink" title="addEventListener &amp; onclick"></a>addEventListener &amp; onclick</h4><p>写上面的代码过程中，发现了一个问题，就是使用<code>addEventListener</code>和<code>onclick</code>运行结果有所不同。</p>
 <p>当我使用<code>onclick</code>时，我发现第一次click事件会被第二次覆盖；而<code>addEventListener</code>却会先后运行，这说明，<strong>它允许一个事件注册多个监听器</strong></p>
@@ -348,6 +348,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/04/03/某图前端笔试题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          美图前端笔试题
+        
+      </div>
+    </a>
   
   
     <a href="/2018/03/19/nuxt-js-Vue的通用应用框架/" id="article-nav-older" class="article-nav-link-wrap">
@@ -461,6 +470,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
@@ -481,10 +494,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
@@ -493,27 +502,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">书籍</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mongoose</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,7 +510,27 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">书籍</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mongoose</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">
