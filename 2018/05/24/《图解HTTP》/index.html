@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/cookie.png">
 <meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/HTTP%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84.png">
 <meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87%E5%92%8C%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87.png">
-<meta property="og:updated_time" content="2018-05-28T09:07:00.916Z">
+<meta property="og:updated_time" content="2018-05-29T09:59:39.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《图解HTTP》">
 <meta name="twitter:description" content="学习《图解HTTP》笔记。">
@@ -198,7 +198,7 @@
     <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP-IP"><span class="toc-number">1.</span> <span class="toc-text">TCP/IP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#应用层"><span class="toc-number">1.1.</span> <span class="toc-text">应用层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传输层"><span class="toc-number">1.2.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络层（网络互连层）"><span class="toc-number">1.3.</span> <span class="toc-text">网络层（网络互连层）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链路层（又名数据链路层，网络接口层）"><span class="toc-number">1.4.</span> <span class="toc-text">链路层（又名数据链路层，网络接口层）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-IP-通信传输流"><span class="toc-number">1.5.</span> <span class="toc-text">TCP/IP 通信传输流</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#与HTTP关系密切的协议"><span class="toc-number">2.</span> <span class="toc-text">与HTTP关系密切的协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#负责传输的IP协议"><span class="toc-number">2.1.</span> <span class="toc-text">负责传输的IP协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#确保可靠性的TCP协议"><span class="toc-number">2.2.</span> <span class="toc-text">确保可靠性的TCP协议</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#负责域名解析的DNS服务"><span class="toc-number">3.</span> <span class="toc-text">负责域名解析的DNS服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#URI和URL"><span class="toc-number">4.</span> <span class="toc-text">URI和URL</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP协议"><span class="toc-number">5.</span> <span class="toc-text">HTTP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP协议用于客户端和服务器端之间的通信"><span class="toc-number">5.1.</span> <span class="toc-text">HTTP协议用于客户端和服务器端之间的通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP是不保存状态的协议"><span class="toc-number">5.2.</span> <span class="toc-text">HTTP是不保存状态的协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#持久连接节省通信量"><span class="toc-number">5.3.</span> <span class="toc-text">持久连接节省通信量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#持久连接"><span class="toc-number">5.3.1.</span> <span class="toc-text">持久连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管线化"><span class="toc-number">5.3.2.</span> <span class="toc-text">管线化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用cookie的状态管理"><span class="toc-number">5.4.</span> <span class="toc-text">使用cookie的状态管理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP报文内的HTTP信息"><span class="toc-number">6.</span> <span class="toc-text">HTTP报文内的HTTP信息</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP报文"><span class="toc-number">6.1.</span> <span class="toc-text">HTTP报文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编码提升传输速率"><span class="toc-number">6.2.</span> <span class="toc-text">编码提升传输速率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#报文主体和实体主体差异"><span class="toc-number">6.2.1.</span> <span class="toc-text">报文主体和实体主体差异</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩传输的内容编码"><span class="toc-number">6.2.2.</span> <span class="toc-text">压缩传输的内容编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分割发送的分块传输编码"><span class="toc-number">6.2.3.</span> <span class="toc-text">分割发送的分块传输编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发送多种数据的多部分对象集合"><span class="toc-number">6.2.4.</span> <span class="toc-text">发送多种数据的多部分对象集合</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP-IP"><span class="toc-number">1.</span> <span class="toc-text">TCP/IP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#应用层"><span class="toc-number">1.1.</span> <span class="toc-text">应用层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传输层"><span class="toc-number">1.2.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络层（网络互连层）"><span class="toc-number">1.3.</span> <span class="toc-text">网络层（网络互连层）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链路层（又名数据链路层，网络接口层）"><span class="toc-number">1.4.</span> <span class="toc-text">链路层（又名数据链路层，网络接口层）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-IP-通信传输流"><span class="toc-number">1.5.</span> <span class="toc-text">TCP/IP 通信传输流</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#与HTTP关系密切的协议"><span class="toc-number">2.</span> <span class="toc-text">与HTTP关系密切的协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#负责传输的IP协议"><span class="toc-number">2.1.</span> <span class="toc-text">负责传输的IP协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#确保可靠性的TCP协议"><span class="toc-number">2.2.</span> <span class="toc-text">确保可靠性的TCP协议</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#负责域名解析的DNS服务"><span class="toc-number">3.</span> <span class="toc-text">负责域名解析的DNS服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#URI和URL"><span class="toc-number">4.</span> <span class="toc-text">URI和URL</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP协议"><span class="toc-number">5.</span> <span class="toc-text">HTTP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP协议用于客户端和服务器端之间的通信"><span class="toc-number">5.1.</span> <span class="toc-text">HTTP协议用于客户端和服务器端之间的通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP是不保存状态的协议"><span class="toc-number">5.2.</span> <span class="toc-text">HTTP是不保存状态的协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#持久连接节省通信量"><span class="toc-number">5.3.</span> <span class="toc-text">持久连接节省通信量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#持久连接"><span class="toc-number">5.3.1.</span> <span class="toc-text">持久连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管线化"><span class="toc-number">5.3.2.</span> <span class="toc-text">管线化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用cookie的状态管理"><span class="toc-number">5.4.</span> <span class="toc-text">使用cookie的状态管理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP报文内的HTTP信息"><span class="toc-number">6.</span> <span class="toc-text">HTTP报文内的HTTP信息</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP报文"><span class="toc-number">6.1.</span> <span class="toc-text">HTTP报文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编码提升传输速率"><span class="toc-number">6.2.</span> <span class="toc-text">编码提升传输速率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#报文主体和实体主体差异"><span class="toc-number">6.2.1.</span> <span class="toc-text">报文主体和实体主体差异</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩传输的内容编码"><span class="toc-number">6.2.2.</span> <span class="toc-text">压缩传输的内容编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分割发送的分块传输编码"><span class="toc-number">6.2.3.</span> <span class="toc-text">分割发送的分块传输编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发送多种数据的多部分对象集合"><span class="toc-number">6.2.4.</span> <span class="toc-text">发送多种数据的多部分对象集合</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP状态码"><span class="toc-number">7.</span> <span class="toc-text">HTTP状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2xx-成功"><span class="toc-number">7.1.</span> <span class="toc-text">2xx 成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3xx-重定向"><span class="toc-number">7.2.</span> <span class="toc-text">3xx 重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4xx-客户端错误"><span class="toc-number">7.3.</span> <span class="toc-text">4xx 客户端错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5xx-服务器错误"><span class="toc-number">7.4.</span> <span class="toc-text">5xx 服务器错误</span></a></li></ol></li></ol>
     </div>
     <script type="text/javascript">
       function showToc(){
@@ -328,6 +328,64 @@
 <h3 id="分割发送的分块传输编码"><a href="#分割发送的分块传输编码" class="headerlink" title="分割发送的分块传输编码"></a>分割发送的分块传输编码</h3><p>在 HTTP 通信中，请求的编码实体资源尚未全部传输完成之前，浏览器无法显示请求页面。在传输大容量数据时，通过把数据分割成多块，能够让浏览器逐步显示页面。</p>
 <p>这种把实体主体分块的功能称为<strong>分块传输编码</strong>。</p>
 <h3 id="发送多种数据的多部分对象集合"><a href="#发送多种数据的多部分对象集合" class="headerlink" title="发送多种数据的多部分对象集合"></a>发送多种数据的多部分对象集合</h3><p>发送你邮件时，我们可以在邮件里写入文字并添加多份附件。这是因为采用了 MIME（Multipurpose Internet Mail Extensions，多用途因特网邮件扩展） 机制，它允许邮件处理文本、图片、视频等多个不同类型的数据。</p>
+<h1 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h1><p>HTTP 状态码负责表示客户端 HTTP 请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。</p>
+<p><strong>状态码的类别：</strong></p>
+<ul>
+<li>1xx：Information（信息性状态码），接收的请求正在处理</li>
+<li>2xx：Success（成功状态码），请求正常处理完毕</li>
+<li>3xx：Redirection（重定向状态码），需要进行附加操作以完成请求</li>
+<li>4xx：Client Error（客户端错误状态码），服务器无法处理请求（请求有语法错误或请求无法实现）</li>
+<li>5xx：Server Error（服务器错误状态码），服务器处理请求出错</li>
+</ul>
+<h2 id="2xx-成功"><a href="#2xx-成功" class="headerlink" title="2xx 成功"></a>2xx 成功</h2><blockquote>
+<p>200 OK：表示从客户端发来的请求在服务器端被正常处理了。</p>
+</blockquote>
+<p>在响应报文内，随状态码一起返回的信息会因方法的不同而发生改变。比如，使用GET方法，对应请求资源的实体会作为响应返回；而使用HEAD方法时，对应请求资源的实体首部不随报文主体作为响应返回（即在响应中只返回首部，不会返回实体的主体部分）。</p>
+<blockquote>
+<p>204 No Content：表示服务器接收的请求已成功处理，但是返回的响应报文中不含实体的主体部分。另外，也不允许返回任何实体的主体。</p>
+</blockquote>
+<p>比如，当浏览器发出请求处理后，返回204响应，那么浏览器显示的页面不发生更新。一般在只需要从客户端往服务器发送信息，而对客户端不需要发送新信息内容的情况下使用。</p>
+<blockquote>
+<p>206 Partial Content：表示客户端进行了范围请求，而服务器成功执行了这部分的GET请求。</p>
+</blockquote>
+<h2 id="3xx-重定向"><a href="#3xx-重定向" class="headerlink" title="3xx 重定向"></a>3xx 重定向</h2><blockquote>
+<p>301 Moved Permanently：永久重定向。</p>
+</blockquote>
+<p>表示请求的资源已被分配了新的URI，以后应使用资源现在所指的URI。也就是说，如果已经把资源对应的URI保存为书签，这时应该按Location首部字段提示的URI重新保存。</p>
+<blockquote>
+<p>302 Found：临时重定向</p>
+</blockquote>
+<p>比如，用户把URI保存成书签，但不会像301状态码出现时那样去更新书签，而是仍然保留返回302状态码的页面对应的URI。</p>
+<blockquote>
+<p>303 See Other：表示由于请求对应的资源存在着另一个URI，应使用GET方法定向获取请求的资源。</p>
+</blockquote>
+<p>303状态码和302状态码有着相同的功能，但303状态码明确表示客户端应当采用GET方法获取资源，这点与状态码有区别。</p>
+<p>当301、302、303响应状态码返回时，几乎所有的浏览器都会把 POST 改成 GET，并删除请求报文内的主体，之后请求会自动再次发送。</p>
+<p>301、302标准是禁止将 POST 方法改变成 GET 方法的，但实际使用时大家都会这么做。</p>
+<blockquote>
+<p>304 Not Modified：表示客户端发送附带条件的请求时，服务器端允许请求访问资源，但未满足条件的情况。</p>
+</blockquote>
+<p>304状态码返回时，不包含任何响应的主体部分。</p>
+<blockquote>
+<p>307 Temporary Redirect：临时重定向</p>
+</blockquote>
+<p>该状态码与302有着相同的含义，但307会遵守浏览器标准，不会从 POST 变成 GET。</p>
+<h2 id="4xx-客户端错误"><a href="#4xx-客户端错误" class="headerlink" title="4xx 客户端错误"></a>4xx 客户端错误</h2><blockquote>
+<p>400 Bad Request：表示请求报文中存在语法错误。</p>
+</blockquote>
+<p>当错误发生时，需修改请求的内容后再次发送请求。</p>
+<blockquote>
+<p>401 Unauthorized：表示发送的请求需要有通过 HTTP 认证（BASIC 认证、DIGEST认证）的认证信息。</p>
+</blockquote>
+<p>若之前已进行过1次请求，则表示用户认证失败。</p>
+<blockquote>
+<p>403 Forbidden：表示请求资源的访问被服务器拒绝了。</p>
+<p>404 Not Found：表示服务器上无法找到请求的资源。</p>
+</blockquote>
+<h2 id="5xx-服务器错误"><a href="#5xx-服务器错误" class="headerlink" title="5xx 服务器错误"></a>5xx 服务器错误</h2><blockquote>
+<p>500 Internal Server Error：表示服务器端在执行请求时发生了错误。也有可能是Web应用存在的bug或某些临时的故障。</p>
+<p>503 Service Unavailable：表示服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。</p>
+</blockquote>
 
       
 
