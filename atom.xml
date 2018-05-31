@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-31T07:49:43.713Z</updated>
+  <updated>2018-05-31T07:54:05.113Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,12 +20,23 @@
     <link href="http://yoursite.com/2018/05/31/%E3%80%8A%E5%9B%BE%E8%A7%A3HTTP%E3%80%8B2/"/>
     <id>http://yoursite.com/2018/05/31/《图解HTTP》2/</id>
     <published>2018-05-31T07:49:43.000Z</published>
-    <updated>2018-05-31T07:49:43.713Z</updated>
+    <updated>2018-05-31T07:54:05.113Z</updated>
+    
+    <content type="html"><![CDATA[<p>《图解HTTP》第6章及之后内容。感觉看了这本书后，又接收到了很多新的知识。</p>
+<a id="more"></a>
+<h1 id="HTTP首部"><a href="#HTTP首部" class="headerlink" title="HTTP首部"></a>HTTP首部</h1><p>HTTP 协议的请求和响应报文中必定包含 HTTP 首部。</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;p&gt;《图解HTTP》第6章及之后内容。感觉看了这本书后，又接收到了很多新的知识。&lt;/p&gt;
+    
     </summary>
     
+      <category term="书籍" scheme="http://yoursite.com/categories/%E4%B9%A6%E7%B1%8D/"/>
+    
+    
+      <category term="HTTP" scheme="http://yoursite.com/tags/HTTP/"/>
     
   </entry>
   
