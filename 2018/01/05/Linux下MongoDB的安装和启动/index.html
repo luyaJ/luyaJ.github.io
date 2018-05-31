@@ -10,13 +10,14 @@
   <title>Linux下MongoDB的安装和启动 | luyaJ的小博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。">
+<meta name="keywords" content="mongodb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux下MongoDB的安装和启动">
 <meta property="og:url" content="http://yoursite.com/2018/01/05/Linux下MongoDB的安装和启动/index.html">
 <meta property="og:site_name" content="luyaJ的小博客">
 <meta property="og:description" content="MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-05T02:36:31.855Z">
+<meta property="og:updated_time" content="2018-05-31T11:09:40.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下MongoDB的安装和启动">
 <meta name="twitter:description" content="MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。">
@@ -210,7 +211,7 @@
       
         <p>MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。</p>
 <a id="more"></a>
-<h2 id="MongoDB的安装"><a href="#MongoDB的安装" class="headerlink" title="MongoDB的安装"></a>MongoDB的安装</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 下载</span></div><div class="line">curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.2.9.tgz</div><div class="line"><span class="comment"># 解压缩</span></div><div class="line">tar zxvf mongodb-linux-x86_64-3.2.9.tgz</div></pre></td></tr></table></figure>
+<h2 id="MongoDB的安装"><a href="#MongoDB的安装" class="headerlink" title="MongoDB的安装"></a>MongoDB的安装</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 下载</span></div><div class="line">curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.2.9.tgz</div><div class="line"><span class="comment"># 解压缩</span></div><div class="line">tar -zxvf mongodb-linux-x86_64-3.2.9.tgz</div></pre></td></tr></table></figure>
 <h3 id="创建数据库文件夹、日志文件和配置文件"><a href="#创建数据库文件夹、日志文件和配置文件" class="headerlink" title="创建数据库文件夹、日志文件和配置文件"></a>创建数据库文件夹、日志文件和配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir -p  /usr/<span class="built_in">local</span>/server/mongodb/data</div><div class="line">touch /usr/<span class="built_in">local</span>/server/mongodb/mongod.log</div><div class="line">touch /usr/<span class="built_in">local</span>/server/mongodb/mongodb.conf</div></pre></td></tr></table></figure>
 <p>将下载好的mongodb移动到新建的文件夹下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv mongodb-linux-x86_64-3.2.9/* /usr/<span class="built_in">local</span>/server/mongodb/</div></pre></td></tr></table></figure></p>
 <h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[root@izuf6alst6rugagpxl8wizz /]<span class="comment"># cd /usr/local/server/mongodb</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz mongodb]<span class="comment"># ls</span></div><div class="line">bin   GNU-AGPL-3.0  mongodb.conf  mongod.log  README</div><div class="line">data  mongod        mongodb.log   MPL-2       THIRD-PARTY-NOTICES</div><div class="line"></div><div class="line">[root@izuf6alst6rugagpxl8wizz mongodb]<span class="comment"># cd  bin</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz bin]<span class="comment"># ls</span></div><div class="line">bsondump  mongod     mongoexport  mongoimport  mongoperf     mongos     mongotop</div><div class="line">mongo     mongodump  mongofiles   mongooplog   mongorestore  mongostat</div></pre></td></tr></table></figure>
@@ -236,7 +237,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Linux/" class="article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -490,6 +513,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
             
             <div class="clearfix"></div>

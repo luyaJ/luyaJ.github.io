@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-31T07:54:05.113Z</updated>
+  <updated>2018-05-31T08:34:50.400Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2018/05/31/%E3%80%8A%E5%9B%BE%E8%A7%A3HTTP%E3%80%8B2/"/>
     <id>http://yoursite.com/2018/05/31/《图解HTTP》2/</id>
     <published>2018-05-31T07:49:43.000Z</published>
-    <updated>2018-05-31T07:54:05.113Z</updated>
+    <updated>2018-05-31T08:34:50.400Z</updated>
     
     <content type="html"><![CDATA[<p>《图解HTTP》第6章及之后内容。感觉看了这本书后，又接收到了很多新的知识。</p>
 <a id="more"></a>
@@ -788,11 +788,11 @@
     <link href="http://yoursite.com/2018/01/05/Linux%E4%B8%8BMongoDB%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E5%90%AF%E5%8A%A8/"/>
     <id>http://yoursite.com/2018/01/05/Linux下MongoDB的安装和启动/</id>
     <published>2018-01-05T02:01:27.000Z</published>
-    <updated>2018-01-05T02:36:31.855Z</updated>
+    <updated>2018-05-31T11:09:40.575Z</updated>
     
     <content type="html"><![CDATA[<p>MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。</p>
 <a id="more"></a>
-<h2 id="MongoDB的安装"><a href="#MongoDB的安装" class="headerlink" title="MongoDB的安装"></a>MongoDB的安装</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 下载</span></div><div class="line">curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.2.9.tgz</div><div class="line"><span class="comment"># 解压缩</span></div><div class="line">tar zxvf mongodb-linux-x86_64-3.2.9.tgz</div></pre></td></tr></table></figure>
+<h2 id="MongoDB的安装"><a href="#MongoDB的安装" class="headerlink" title="MongoDB的安装"></a>MongoDB的安装</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 下载</span></div><div class="line">curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.2.9.tgz</div><div class="line"><span class="comment"># 解压缩</span></div><div class="line">tar -zxvf mongodb-linux-x86_64-3.2.9.tgz</div></pre></td></tr></table></figure>
 <h3 id="创建数据库文件夹、日志文件和配置文件"><a href="#创建数据库文件夹、日志文件和配置文件" class="headerlink" title="创建数据库文件夹、日志文件和配置文件"></a>创建数据库文件夹、日志文件和配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir -p  /usr/<span class="built_in">local</span>/server/mongodb/data</div><div class="line">touch /usr/<span class="built_in">local</span>/server/mongodb/mongod.log</div><div class="line">touch /usr/<span class="built_in">local</span>/server/mongodb/mongodb.conf</div></pre></td></tr></table></figure>
 <p>将下载好的mongodb移动到新建的文件夹下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv mongodb-linux-x86_64-3.2.9/* /usr/<span class="built_in">local</span>/server/mongodb/</div></pre></td></tr></table></figure></p>
 <h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[root@izuf6alst6rugagpxl8wizz /]<span class="comment"># cd /usr/local/server/mongodb</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz mongodb]<span class="comment"># ls</span></div><div class="line">bin   GNU-AGPL-3.0  mongodb.conf  mongod.log  README</div><div class="line">data  mongod        mongodb.log   MPL-2       THIRD-PARTY-NOTICES</div><div class="line"></div><div class="line">[root@izuf6alst6rugagpxl8wizz mongodb]<span class="comment"># cd  bin</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz bin]<span class="comment"># ls</span></div><div class="line">bsondump  mongod     mongoexport  mongoimport  mongoperf     mongos     mongotop</div><div class="line">mongo     mongodump  mongofiles   mongooplog   mongorestore  mongostat</div></pre></td></tr></table></figure>
@@ -818,6 +818,10 @@
     
     </summary>
     
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="mongodb" scheme="http://yoursite.com/tags/mongodb/"/>
     
   </entry>
   
