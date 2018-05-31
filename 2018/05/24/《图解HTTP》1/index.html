@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="shortcut icon" href="http://otnbkrzno.bkt.clouddn.com/myPic.ico">
+  <title>《图解HTTP》 | luyaJ的小博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="学习《图解HTTP》笔记。">
+<meta name="keywords" content="HTTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《图解HTTP》">
+<meta property="og:url" content="http://yoursite.com/2018/05/24/《图解HTTP》1/index.html">
+<meta property="og:site_name" content="luyaJ的小博客">
+<meta property="og:description" content="学习《图解HTTP》笔记。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/client-server.png">
+<meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/trans.png">
+<meta property="og:image" content="http://oy9sf0i32.bkt.clouddn.com/MAC.png">
+<meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/three-handshaking.png">
+<meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/dns.png">
+<meta property="og:image" content="http://oy9sf0i32.bkt.clouddn.com/%E5%8D%8F%E8%AE%AE%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8D%8F%E4%BD%9C.png">
+<meta property="og:image" content="http://oy9sf0i32.bkt.clouddn.com/URI.png">
+<meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/http%E9%80%9A%E4%BF%A1.png">
+<meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/URI%E5%AE%9A%E4%BD%8D.png">
+<meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/tcp.png">
+<meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/pipelining.png">
+<meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/cookie.png">
+<meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/HTTP%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://p983im8gr.bkt.clouddn.com/%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87%E5%92%8C%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87.png">
+<meta property="og:updated_time" content="2018-05-31T07:47:49.554Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《图解HTTP》">
+<meta name="twitter:description" content="学习《图解HTTP》笔记。">
+<meta name="twitter:image" content="http://p983im8gr.bkt.clouddn.com/client-server.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" type="text/css" href="/./main.2d7529.css">
+  <style type="text/css">
+  
+    #container.show {
+      background: linear-gradient(200deg,#D2BADE,#99BEBF);
+    }
+  </style>
+  
+
+  
+
+</head>
+
+<body>
+  <div id="container" q-class="show:isCtnShow">
+    <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="left-col" q-class="show:isShow">
+      
+<div class="overlay" style="background: #8292A9"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="http://otnbkrzno.bkt.clouddn.com/meng.png" class="js-avatar">
+		</a>
+		<hgroup>
+		  <h1 class="header-author"><a href="/">luyaJ</a></h1>
+		</hgroup>
+		
+		<p class="header-subtitle">talk is cheap,show me the code</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/about">关于</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+    		
+    			
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			
+            
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/luyaJ" title="github"><i class="icon-github"></i></a>
+		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jlya" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/3356caf56e13/timeline" title="jianshu"><i class="icon-jianshu"></i></a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/jiangluya1217" title="weibo"><i class="icon-weibo"></i></a>
+		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+      
+<nav id="mobile-nav">
+  	<div class="overlay js-overlay" style="background: #8292A9"></div>
+	<div class="btnctn js-mobile-btnctn">
+  		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
+	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="http://otnbkrzno.bkt.clouddn.com/meng.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author js-header-author">luyaJ</h1>
+			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>talk is cheap,show me the code<i class="icon icon-quo-right"></i></p>
+			
+			
+			
+				
+			
+				
+			
+			
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/luyaJ" title="github"><i class="icon-github"></i></a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/jlya" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/3356caf56e13/timeline" title="jianshu"><i class="icon-jianshu"></i></a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/jiangluya1217" title="weibo"><i class="icon-weibo"></i></a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+			        
+				</div>
+			</nav>
+
+			<nav class="header-menu js-header-menu">
+				<ul style="width: 50%">
+				
+				
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="/about">关于</a></li>
+		        
+				</ul>
+			</nav>
+		</header>				
+	</div>
+	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
+</nav>
+
+      <div id="wrapper" class="body-wrap">
+        <div class="menu-l">
+          <div class="canvas-wrap">
+            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+          </div>
+          <div id="js-content" class="content-ll">
+            <article id="post-《图解HTTP》1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      《图解HTTP》
+    </h1>
+  
+
+        
+        <a href="/2018/05/24/《图解HTTP》1/" class="archive-article-date">
+  	<time datetime="2018-05-24T07:41:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-24</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+    
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#网络基础"><span class="toc-number">1.</span> <span class="toc-text">网络基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-IP"><span class="toc-number">1.1.</span> <span class="toc-text">TCP/IP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#应用层"><span class="toc-number">1.1.1.</span> <span class="toc-text">应用层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传输层"><span class="toc-number">1.1.2.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络层（网络互连层）"><span class="toc-number">1.1.3.</span> <span class="toc-text">网络层（网络互连层）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链路层（又名数据链路层，网络接口层）"><span class="toc-number">1.1.4.</span> <span class="toc-text">链路层（又名数据链路层，网络接口层）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP-通信传输流"><span class="toc-number">1.1.5.</span> <span class="toc-text">TCP/IP 通信传输流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与HTTP关系密切的协议"><span class="toc-number">1.2.</span> <span class="toc-text">与HTTP关系密切的协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#负责传输的IP协议"><span class="toc-number">1.2.1.</span> <span class="toc-text">负责传输的IP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#确保可靠性的TCP协议"><span class="toc-number">1.2.2.</span> <span class="toc-text">确保可靠性的TCP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#负责域名解析的DNS服务"><span class="toc-number">1.2.3.</span> <span class="toc-text">负责域名解析的DNS服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#各种协议与HTTP协议的关系"><span class="toc-number">1.3.</span> <span class="toc-text">各种协议与HTTP协议的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#URI和URL"><span class="toc-number">1.4.</span> <span class="toc-text">URI和URL</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简单的HTTP协议"><span class="toc-number">2.</span> <span class="toc-text">简单的HTTP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP协议用于客户端和服务器端之间的通信"><span class="toc-number">2.1.</span> <span class="toc-text">HTTP协议用于客户端和服务器端之间的通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP是不保存状态的协议"><span class="toc-number">2.2.</span> <span class="toc-text">HTTP是不保存状态的协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#请求URI定位资源"><span class="toc-number">2.3.</span> <span class="toc-text">请求URI定位资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#告知服务器意图的HTTP方法"><span class="toc-number">2.4.</span> <span class="toc-text">告知服务器意图的HTTP方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GET-获取资源"><span class="toc-number">2.4.1.</span> <span class="toc-text">GET 获取资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#POST-传输实体主体"><span class="toc-number">2.4.2.</span> <span class="toc-text">POST 传输实体主体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PUT-传输文件"><span class="toc-number">2.4.3.</span> <span class="toc-text">PUT 传输文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HEAD-获得报文首部"><span class="toc-number">2.4.4.</span> <span class="toc-text">HEAD 获得报文首部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DELETE-删除文件"><span class="toc-number">2.4.5.</span> <span class="toc-text">DELETE 删除文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OPTIONS-查询支持的方法"><span class="toc-number">2.4.6.</span> <span class="toc-text">OPTIONS 查询支持的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TRACE-追踪路径"><span class="toc-number">2.4.7.</span> <span class="toc-text">TRACE 追踪路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CONNECT-要求用隧道协议连接代理"><span class="toc-number">2.4.8.</span> <span class="toc-text">CONNECT 要求用隧道协议连接代理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#持久连接节省通信量"><span class="toc-number">2.5.</span> <span class="toc-text">持久连接节省通信量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#持久连接"><span class="toc-number">2.5.1.</span> <span class="toc-text">持久连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管线化"><span class="toc-number">2.5.2.</span> <span class="toc-text">管线化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用cookie的状态管理"><span class="toc-number">2.6.</span> <span class="toc-text">使用cookie的状态管理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP报文内的HTTP信息"><span class="toc-number">3.</span> <span class="toc-text">HTTP报文内的HTTP信息</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP报文"><span class="toc-number">3.1.</span> <span class="toc-text">HTTP报文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编码提升传输速率"><span class="toc-number">3.2.</span> <span class="toc-text">编码提升传输速率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#报文主体和实体主体差异"><span class="toc-number">3.2.1.</span> <span class="toc-text">报文主体和实体主体差异</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩传输的内容编码"><span class="toc-number">3.2.2.</span> <span class="toc-text">压缩传输的内容编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分割发送的分块传输编码"><span class="toc-number">3.2.3.</span> <span class="toc-text">分割发送的分块传输编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发送多种数据的多部分对象集合"><span class="toc-number">3.2.4.</span> <span class="toc-text">发送多种数据的多部分对象集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内容协商返回最合适的内容"><span class="toc-number">3.2.5.</span> <span class="toc-text">内容协商返回最合适的内容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP状态码"><span class="toc-number">4.</span> <span class="toc-text">HTTP状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2xx-成功"><span class="toc-number">4.1.</span> <span class="toc-text">2xx 成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3xx-重定向"><span class="toc-number">4.2.</span> <span class="toc-text">3xx 重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4xx-客户端错误"><span class="toc-number">4.3.</span> <span class="toc-text">4xx 客户端错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5xx-服务器错误"><span class="toc-number">4.4.</span> <span class="toc-text">5xx 服务器错误</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#与HTTP协作的Web服务器"><span class="toc-number">5.</span> <span class="toc-text">与HTTP协作的Web服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#通信数据转发程序"><span class="toc-number">5.1.</span> <span class="toc-text">通信数据转发程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代理"><span class="toc-number">5.1.1.</span> <span class="toc-text">代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网关"><span class="toc-number">5.1.2.</span> <span class="toc-text">网关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隧道"><span class="toc-number">5.1.3.</span> <span class="toc-text">隧道</span></a></li></ol></li></ol></li></ol>
+    </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+      };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+      };
+    </script>
+    
+    <!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>学习《图解HTTP》笔记。</p>
+<a id="more"></a>
+<h1 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h1><p>通过发送请求获取服务器资源的Web浏览器等，称为<strong>客户端</strong>。</p>
+<p><img src="http://p983im8gr.bkt.clouddn.com/client-server.png" alt="client-server"></p>
+<h2 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h2><p>把互联网相关联的协议集合起来总称为 <code>TCP/IP</code>。</p>
+<p>TCP/IP 协议族里最重要的一点就是<strong>分层</strong>。按层次分为4层：<strong>应用层、传输层、网络层和数据链路层</strong>。</p>
+<p>而这样的分层是有好处的。如果一个互联网只由一个协议统筹，某个地方需要改变设计时，就必须把所有部分整体替换掉。而分层后，只需要把变动的层替换掉就好。</p>
+<h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p>应用层决定了向用户提供应用服务时通信的活动。</p>
+<p>TCP/IP 协议族内预存了各类通用的应用服务。比如，<code>FTP</code> (File Transfer Protocol，文件传输协议)和 <code>DNS</code> (Domain Name System，域名系统)服务就是其中的两类。<code>HTTP</code> 协议也处于该层。</p>
+<h3 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h3><p>传输层对上层应用层，提供处于网络连接中的两台计算机之间的数据传输。</p>
+<p>在传输层有两个性质不同的协议：<code>TCP</code> (Transmission Control Protocal, 传输控制协议)和 <code>UDP</code> (User Data Protocal, 用户数据报协议)。</p>
+<h3 id="网络层（网络互连层）"><a href="#网络层（网络互连层）" class="headerlink" title="网络层（网络互连层）"></a>网络层（网络互连层）</h3><p>网络层用来处理在网络上流动的数据包。数据包是网络传输的最小数据单位。</p>
+<p>该层规定了通过怎样的路径（所谓的传输路线）到达对方计算机，并把数据包传送给对方。</p>
+<p>与对象计算机之间通过多台计算机或网络设备进行传输时，网络层所起的作用就是在众多的选项内选择一条传输路线。</p>
+<h3 id="链路层（又名数据链路层，网络接口层）"><a href="#链路层（又名数据链路层，网络接口层）" class="headerlink" title="链路层（又名数据链路层，网络接口层）"></a>链路层（又名数据链路层，网络接口层）</h3><p>用来处理连接网络的硬件部分。包括控制操作系统、硬件的设备驱动、NIC（Network Interface Card，网络适配器，即网卡），及光纤等物理可见部分。</p>
+<h3 id="TCP-IP-通信传输流"><a href="#TCP-IP-通信传输流" class="headerlink" title="TCP/IP 通信传输流"></a>TCP/IP 通信传输流</h3><p><img src="http://p983im8gr.bkt.clouddn.com/trans.png" alt="通信传输过程"></p>
+<p>利用 <code>TCP/IP</code>协议族进行网络通信时，会通过分层顺序与对方进行通信。发送端从应用层往下走，接收端则往应用层方向走。</p>
+<p>我们使用 <code>HTTP</code> 举例来说明：</p>
+<ul>
+<li>首先作为发送端的客户端在应用层（HTTP协议）发出一个想看某个Web页面的 HTTP 请求。</li>
+<li>接着，为了传输方便，在传输层（TCP协议）把从应用层处收到的数据（HTTP请求报文）进行分割，并在各个报文上打上标记序号及端口号后转发给网络层。</li>
+<li>在网络层（IP协议），增加作为通信目的地的 MAC 地址后转发给链路层。这样网络的通信请求就准备齐全了。</li>
+<li>接收端的服务器在链路层接收到数据，按序往上层发送，一直到应用层。当传输到应用层，才能算真正接收到由客户端发送过来的 HTTP 请求。</li>
+</ul>
+<h2 id="与HTTP关系密切的协议"><a href="#与HTTP关系密切的协议" class="headerlink" title="与HTTP关系密切的协议"></a>与HTTP关系密切的协议</h2><h3 id="负责传输的IP协议"><a href="#负责传输的IP协议" class="headerlink" title="负责传输的IP协议"></a>负责传输的IP协议</h3><p>按层次分，IP（Internet Protocal）网络协议位于网络层。</p>
+<p>IP 协议的作用是把各种数据包传送给对方。而要保证确实传送到对方那里，就需要满足两个重要条件：IP 地址和 MAC（Media Access Control Address）地址。</p>
+<p>IP 地址指明了节点被分配到的地址，MAC 地址是指网卡所属的固定地址。IP地址和MAC地址进行配对，IP地址可变换，但MAC地址基本上不会更改。</p>
+<p><em>IP 之间的通信依赖 MAC 地址</em>。在网络上，通信的双方在同一局域网（LAN）内的情况是很少的，通常是经过多台计算机和网络设备中转才能连接到对方。而在进行中转时，会利用下一站中转设备的 MAC地址 来搜索下一个中转目标。这时，会采用 ARP（Address Resolution Protocal）。ARP 是一种解析地址的协议，根据通信方的 IP 地址就可以反查出对应的 MAC地址。</p>
+<p>在到达通信目标前的中转过程，那些计算机和路由器等网络设备只能获悉很粗略的传输路线。这种机制称为<strong>路由选择</strong>。（有点像快递公司的送货过程）</p>
+<p><img src="http://oy9sf0i32.bkt.clouddn.com/MAC.png" alt="ARP协议"></p>
+<h3 id="确保可靠性的TCP协议"><a href="#确保可靠性的TCP协议" class="headerlink" title="确保可靠性的TCP协议"></a>确保可靠性的TCP协议</h3><p>按层次分，TCP 位于传输层，提供可靠的字节流服务。</p>
+<p>所谓<strong>字节流服务</strong>（Byte Stream Service）是指，为了方便传输，将大块数据分割成以报文段（segment）为单位的数据包进行管理。而可靠的传输服务是指，能够把数据准确可靠地传给对方。</p>
+<p>为了准确无误地将数据送达目标处，TCP 协议采用<strong>三次握手</strong>（three-way handshaking）策略。用 TCP 协议把数据包送出后，它会向对方确认是否成功送达。握手过程中使用了 TCP 的标志—— SYN 和 ACK。</p>
+<p><img src="http://p983im8gr.bkt.clouddn.com/three-handshaking.png" alt="三次握手策略"></p>
+<p>解析上图：发送端首先发送一个带SYN标志的数据包给对方。接收端收到后，回传一个SYN/ACK标志的数据包以示传达确认信息。最后，发送端再传一个带有ACK标志的数据包，代表“握手”结束。</p>
+<h3 id="负责域名解析的DNS服务"><a href="#负责域名解析的DNS服务" class="headerlink" title="负责域名解析的DNS服务"></a>负责域名解析的DNS服务</h3><p>DNS 服务是和 HTTP 协议一样位于应用层的协议。它提供域名到 IP 地址之间的解析服务。</p>
+<p>用户名通常使用主机名或域名来访问对方的计算机，而不是直接通过IP地址访问。DNS 协议提供通过域名查找 IP 地址，或逆向从 IP 地址反查域名的服务。</p>
+<p><img src="http://p983im8gr.bkt.clouddn.com/dns.png" alt="DNS协议"></p>
+<h2 id="各种协议与HTTP协议的关系"><a href="#各种协议与HTTP协议的关系" class="headerlink" title="各种协议与HTTP协议的关系"></a>各种协议与HTTP协议的关系</h2><p><img src="http://oy9sf0i32.bkt.clouddn.com/%E5%8D%8F%E8%AE%AE%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8D%8F%E4%BD%9C.png" alt="协议关系"></p>
+<h2 id="URI和URL"><a href="#URI和URL" class="headerlink" title="URI和URL"></a>URI和URL</h2><p>URI（Uniform Resourse Identifier），统一资源标识符。</p>
+<p>URL（Uniform Resource Locator），统一资源定位符。（<a href="http://hackr.jp/）" target="_blank" rel="external">http://hackr.jp/）</a></p>
+<p><strong>Uniform</strong></p>
+<p>规定统一的格式可方便处理多种不同类型的资源，而不用根据上下文环境来识别资源指定的访问方式。另外，加入新增的协议方案（如http:或ftp:）也更容易。</p>
+<p>URI 就是由某个协议方案表示的资源的定位标识符。协议方案是指访问资源所使用的协议类型名称。</p>
+<p>采用 HTTP 协议时，协议方案就是 http 。除此之外还有ftp、mailto、telnet、file等。</p>
+<p>URI 用字符串标识某一互联网资源，而 URL 表示资源的地点（互联网上所处的位置）。可见URL是URI的子集。</p>
+<p>我们先来了解下绝对 URI 的格式：</p>
+<p><img src="http://oy9sf0i32.bkt.clouddn.com/URI.png" alt="绝对URL格式"></p>
+<ul>
+<li>使用 <code>http:</code> 或 <code>https:</code> 等协议方案名获取访问资源时指定协议类型。不区分字母大小写，最后附一个冒号（:）。也可以使用 <code>data:</code> 或 <code>javascript:</code> 这类指定数据或脚本程序的方案名。</li>
+<li><strong>登录信息（认证）</strong>：指定用户名和密码作为从服务器端获取资源时必要的登录信息（身份认证）。这项是可选项。</li>
+<li><strong>服务器地址</strong>：使用绝对 URI 必须指定待访问的服务器地址。地址可以是类似 <code>hackr.jp</code> 这种 DNS 可解析的名称，或是 <code>192.168.1.1</code> 这类IPv4 地址名，还可以是 <code>[0:0:0:0:0:0:0:1]</code> 这样用方括号括起来的 IPv6地址名。</li>
+<li><strong>服务器端口号</strong>：指定服务器连接的网络端口号。可选项</li>
+<li><strong>带层次的文件路径</strong>：指定服务器上的文件路径来定位特指的资源。</li>
+<li><strong>查询字符串</strong>：针对已指定的文件路径内的资源，可以使用查询字符串传入任意参数。可选项</li>
+<li><strong>片段标识符</strong>：可标记出已获取资源中的子资源（文档内的某个位置）。可选项</li>
+</ul>
+<h1 id="简单的HTTP协议"><a href="#简单的HTTP协议" class="headerlink" title="简单的HTTP协议"></a>简单的HTTP协议</h1><h2 id="HTTP协议用于客户端和服务器端之间的通信"><a href="#HTTP协议用于客户端和服务器端之间的通信" class="headerlink" title="HTTP协议用于客户端和服务器端之间的通信"></a>HTTP协议用于客户端和服务器端之间的通信</h2><p>请求访问文本或图像等资源的一端称为<strong>客户端</strong>，提供资源响应的一端称为<strong>服务端</strong>。</p>
+<p>在两台计算机之间使用HTTP协议通信时，在一条通信线路上必有一端是客户端，另一端是服务器端。</p>
+<p><img src="http://p983im8gr.bkt.clouddn.com/http%E9%80%9A%E4%BF%A1.png" alt="客户端和服务器端之间的通信"></p>
+<p>下面是客户端发送给某个HTTP服务器端的请求报文内容：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">GET /index.htm HTTP/<span class="number">1.1</span></div><div class="line">Host: hackr.jp</div></pre></td></tr></table></figure></p>
+<ul>
+<li><code>GET</code> 表示请求服务器的类型，称为<strong>方法</strong>。</li>
+<li>字符串<code>/index.htm</code> 指明了请求访问的资源对象，也叫做请求URI。</li>
+<li><code>HTTP/1.1</code>，是HTTP的版本号，用来提示客户端使用的HTTP协议功能。</li>
+</ul>
+<p>所以这段请求的意思就是：请求访问某台HTTP服务器上的<code>/index.htm</code> 页面资源。</p>
+<blockquote>
+<p>请求报文是由请求方法、请求URI、协议版本、可选的请求首部字段和内容实体构成的。</p>
+</blockquote>
+<p>接收到请求的服务器，会将请求内容的处理结果以响应的形式返回。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK</div><div class="line"><span class="built_in">Date</span>: Tue, <span class="number">10</span> Jul <span class="number">2012</span> <span class="number">06</span>:<span class="number">50</span>:<span class="number">15</span> GMT</div><div class="line">Content-Length: <span class="number">362</span></div><div class="line">Content-Type: text/html</div><div class="line"></div><div class="line">&lt;html&gt;</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<ul>
+<li><code>HTTP/1.1</code> 表示服务器对应的HTTP版本。</li>
+<li><code>200 OK</code> 表示请求的处理结果状态码和原因短语。</li>
+<li>下一行显示了创建响应的日期时间，是首部字段内的一个属性。</li>
+<li>接着以一空行分隔，之后的内容称为资源实体的主体。</li>
+</ul>
+<blockquote>
+<p>响应报文基本上由协议版本、状态码、用以解释状态码的原因短语、可选的响应首部字段以及实体主体构成。</p>
+</blockquote>
+<h2 id="HTTP是不保存状态的协议"><a href="#HTTP是不保存状态的协议" class="headerlink" title="HTTP是不保存状态的协议"></a>HTTP是不保存状态的协议</h2><p><strong>HTTP 是一种不保存状态，即无状态协议</strong>。HTTP协议自身不对请求和响应之间的通信状态进行保存。也就是说在 HTTP 这个级别，协议对于发送过的请求或响应都不做持久化处理。</p>
+<p>使用 HTTP 协议，每当有新的请求发送时，就会有对应的新响应产生。<strong>协议本身不保留之前一切的请求或响应报文的信息</strong>。这样做得好处是：为了更快地处理大量事务，确保协议的可伸缩性，而特意把 HTTP 协议设计成如此简单的。</p>
+<p><code>HTTP/1.1</code> 是无状态协议，为了实现期望的保持状态（登录状态）功能，引入了 <code>Cookie</code>技术，这样就可以管理状态了。</p>
+<h2 id="请求URI定位资源"><a href="#请求URI定位资源" class="headerlink" title="请求URI定位资源"></a>请求URI定位资源</h2><p>HTTP 协议使用 URI 定位互联网上的资源。正是因为 URI 的特定功能，在互联网上任意位置的资源都可以访问到。</p>
+<p><img src="http://p983im8gr.bkt.clouddn.com/URI%E5%AE%9A%E4%BD%8D.png" alt="URI定位"></p>
+<p>当客户端请求访问资源而发送请求时，URI 需要将作为请求报文中的请求 URI 包含在内。指示请求 URI 的方式有还很多种：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// URI为请求完整的URI</span></div><div class="line">GET http:<span class="comment">//hackr.jp/index.htm HTTP/1.1</span></div><div class="line">Host: hackr.jp</div><div class="line"></div><div class="line"><span class="comment">// 在首部字段Host中写明网络域名或IP地址</span></div><div class="line">GET /index.htm HTTP/<span class="number">1.1</span></div><div class="line">Host: hackr.jp</div></pre></td></tr></table></figure>
+<p>除此之外，如果不是访问特定资源而是对服务器本身发起请求，可以用一个 <code>*</code> 来代替 URI。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">OPTIONS * HTTP/<span class="number">1.1</span></div></pre></td></tr></table></figure>
+<h2 id="告知服务器意图的HTTP方法"><a href="#告知服务器意图的HTTP方法" class="headerlink" title="告知服务器意图的HTTP方法"></a>告知服务器意图的HTTP方法</h2><p>介绍下再HTTP/1.1 可使用的方法。</p>
+<h3 id="GET-获取资源"><a href="#GET-获取资源" class="headerlink" title="GET 获取资源"></a>GET 获取资源</h3><p>GET 方法用来请求访问已被 URI 识别的资源。指定的资源经服务器解析后返回响应内容。</p>
+<p>如果请求的资源时文本，那就保持原样返回；如果是像 CGI（Common Gateway Interface，通用网关接口）那样的程序，就返回经过执行后输出结果。</p>
+<h3 id="POST-传输实体主体"><a href="#POST-传输实体主体" class="headerlink" title="POST 传输实体主体"></a>POST 传输实体主体</h3><p>POST 方法用来传输实体的主体。</p>
+<p>虽然 GET 也可以传输实体主体，但是一般不使用 GET 方法进行传输，而是用 POST。虽然说这两者的功能很相似，但 POST 的主要目的并不是获取响应的主题内容。</p>
+<h3 id="PUT-传输文件"><a href="#PUT-传输文件" class="headerlink" title="PUT 传输文件"></a>PUT 传输文件</h3><p>PUT 方法用来传输文件。就像在 FTP 协议的文件上传一样，要求在请求报文的主体中包含文件内容，然后保存到请求 URI 的指定位置。</p>
+<p>但是由于安全问题，一般 Web 网站不会使用这个方法。</p>
+<h3 id="HEAD-获得报文首部"><a href="#HEAD-获得报文首部" class="headerlink" title="HEAD 获得报文首部"></a>HEAD 获得报文首部</h3><p>HEAD 方法和 GET 方法一样，只是不返回报文主体部分。用于确认 URI 的有效性及资源更新的日期时间等。</p>
+<h3 id="DELETE-删除文件"><a href="#DELETE-删除文件" class="headerlink" title="DELETE 删除文件"></a>DELETE 删除文件</h3><p>和 PUT 方法相反的方法，按请求 URI 删除指定的资源。</p>
+<p>但是 HTTP/1.1 的 DELETE 方法和 PUT 方法一样不带验证机制，所以一般不使用。当配合 Web 应用的验证机制，或遵守 REST 标准时还是有可能会开放使用的。</p>
+<h3 id="OPTIONS-查询支持的方法"><a href="#OPTIONS-查询支持的方法" class="headerlink" title="OPTIONS 查询支持的方法"></a>OPTIONS 查询支持的方法</h3><p>查询针对请求 URI 指定的资源支持的方法。</p>
+<h3 id="TRACE-追踪路径"><a href="#TRACE-追踪路径" class="headerlink" title="TRACE 追踪路径"></a>TRACE 追踪路径</h3><p>让 Web 服务器端将之前的请求通信环回给客户端的方法。</p>
+<h3 id="CONNECT-要求用隧道协议连接代理"><a href="#CONNECT-要求用隧道协议连接代理" class="headerlink" title="CONNECT 要求用隧道协议连接代理"></a>CONNECT 要求用隧道协议连接代理</h3><p>要求在与代理服务器通信时建立隧道，实现用隧道协议进行 TCP 通信。</p>
+<h2 id="持久连接节省通信量"><a href="#持久连接节省通信量" class="headerlink" title="持久连接节省通信量"></a>持久连接节省通信量</h2><p>早期的HTTP协议中，每进行一次 HTTP 通信就要断开一次 TCP 连接。当时都是些容量很小的文本传输，所以即使这样通信影响也不是很大。</p>
+<p>但是，现在页面拥有大量的图片，这样每次请求就会增加通信量的开销。所以为了解决 TCP 连接问题，我们使用<strong>持久连接</strong>。</p>
+<h3 id="持久连接"><a href="#持久连接" class="headerlink" title="持久连接"></a>持久连接</h3><p>持久连接（HTTP Persistent Connections），也称为 HTTP keep-alive 或 HTTP connection resue。<strong>持久连接的特点是：只要任意一端没有明确提出断开连接，则保持 TCP 连接状态</strong>。</p>
+<p><img src="http://p983im8gr.bkt.clouddn.com/tcp.png" alt="1次TCP连接"></p>
+<p><strong>持久连接的好处就是</strong>：减少了 TCP 连接的重复建立和断开所造成的额外开销，减轻了服务器端的负载。另外，减少开销的那部分时间，使 HTTP 请求和响应能够更早的结束，这样 web 页面的显示速度也就相应提高了。</p>
+<p>在 <code>HTTP/1.1</code> 中，所有的连接默认都是持久连接，但在 <code>HTTP/1.0</code>并未标准化。</p>
+<h3 id="管线化"><a href="#管线化" class="headerlink" title="管线化"></a>管线化</h3><p>持久连接使得多数请求以管线化（pipelining）方式发送成为可能。从前发送请求后需要等待并收到响应，才能发送下一个请求。管线化技术出现后，不用等待响应亦可直接发送下一个请求。</p>
+<p>这样就可以做到同时并行发送多个请求，而不需要一个接一个地等待响应。</p>
+<p><img src="http://p983im8gr.bkt.clouddn.com/pipelining.png" alt="pipelining"></p>
+<p>当请求一个包含10张图片的html页面时，用持久化连接可以让请求更快地结束，而管线化技术则比持久连接还更快。请求数越多，时间差就越明显。</p>
+<h2 id="使用cookie的状态管理"><a href="#使用cookie的状态管理" class="headerlink" title="使用cookie的状态管理"></a>使用cookie的状态管理</h2><p>HTTP 是无状态协议，它不对之前发生过的请求和响应的状态进行管理。也就是，无法根据之前的状态进行本次的请求处理。</p>
+<p>所以引入了Cookie技术，Cookie 技术通过在请求和响应报文中写入 Cookie 信息来控制客户端的状态。</p>
+<p>Cookie 会根据从服务器端发送的响应报文内的一个叫做 <code>Set-Cookie</code> 的首部字段信息，通知客户端保存 Cookie。当下次客户端再往该服务器发送请求时，客户端会自动在请求报文中加入 Cookie 值后发送出去。</p>
+<p>服务器端发现客户端发送过来的 Cookie 后，会去检查究竟是从哪一个客户端发来的连接请求，然后对比服务器上的记录，最后得到之前的状态信息。</p>
+<p><img src="http://p983im8gr.bkt.clouddn.com/cookie.png" alt="cookie"></p>
+<h1 id="HTTP报文内的HTTP信息"><a href="#HTTP报文内的HTTP信息" class="headerlink" title="HTTP报文内的HTTP信息"></a>HTTP报文内的HTTP信息</h1><p>HTTP 通信包括从客户端发往服务器端的请求及从服务器端返回客户端的响应。</p>
+<h2 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h2><p>用于 HTTP 协议交互的信息叫做<strong>HTTP报文</strong>。请求端（客户端）的 HTTP 报文称为请求报文，响应端（服务器端）的 HTTP 报文称为响应报文。</p>
+<p>HTTP 报文本身是由多行数据构成的字符串文本（用CR+LF作换行符）。HTTP 报文大致可分为报文首部和报文主体两部分。（通常，并不一定需要报文主体）</p>
+<p><img src="http://p983im8gr.bkt.clouddn.com/HTTP%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84.png" alt="HTTP报文结构"></p>
+<p><img src="http://p983im8gr.bkt.clouddn.com/%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87%E5%92%8C%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87.png" alt="请求报文和响应报文"></p>
+<ul>
+<li>请求行：包含用于请求的方法，请求 URI 和 HTTP版本</li>
+<li>状态行：包含表明响应结果的状态码，原因短语和 HTTP 版本</li>
+<li>首部字段：包含表示请求和响应的各种关系和属性的各类首部<ul>
+<li>一般有4种首部 – 通用首部、请求首部、响应首部和实体首部</li>
+</ul>
+</li>
+<li>其他：可能包含 HTTP 的 RFC 里未定义的首部（Cookie等）</li>
+</ul>
+<h2 id="编码提升传输速率"><a href="#编码提升传输速率" class="headerlink" title="编码提升传输速率"></a>编码提升传输速率</h2><p>HTTP 在传输数据时可以按照数据原貌直接传输，但也可以在传输过程中通过编码提升传输速率。（后者优点：能有效地处理大量的访问请求；缺点：编码操作需要计算机来完成，会消耗更多的 CPU 资源）</p>
+<h3 id="报文主体和实体主体差异"><a href="#报文主体和实体主体差异" class="headerlink" title="报文主体和实体主体差异"></a>报文主体和实体主体差异</h3><ol>
+<li>报文(message)</li>
+</ol>
+<p>是 HTTP 通信中的基本单位，由 8 位组字节流组成，通过 HTTP 通信传输。</p>
+<ol>
+<li>实体(entity)</li>
+</ol>
+<p>作为请求或响应的有效荷载数据（补充项）被传输，其内容由实体首部和实体主体组成。</p>
+<p>HTTP 报文的主体用于传输请求或响应的实体主体。</p>
+<p>通常，报文主体等于实体主体。只有当传输中进行编码操作时，实体主体的内容发生变化，才导致它的报文主体产生差异。</p>
+<h3 id="压缩传输的内容编码"><a href="#压缩传输的内容编码" class="headerlink" title="压缩传输的内容编码"></a>压缩传输的内容编码</h3><p>一般，我们向待发送的邮件内增加附件时，我们一般会先将文件压缩成 ZIP 后再发送。HTTP 协议中有一种被称为<strong>内容编码</strong>的功能也能进行类似的操作。</p>
+<p>内容编码指明应用在实体内容上的编码格式，并保持实体信息原样压缩。内容编码后的实体由客户端接收并负责解码。</p>
+<p>常见的内容编码有这几种：<code>gzip(GUN zip)</code>、<code>compress(UNIX 系统的标准压缩)</code>、<code>deflate(zlib)</code>、<code>identity(不进行编码)</code></p>
+<h3 id="分割发送的分块传输编码"><a href="#分割发送的分块传输编码" class="headerlink" title="分割发送的分块传输编码"></a>分割发送的分块传输编码</h3><p>在 HTTP 通信中，请求的编码实体资源尚未全部传输完成之前，浏览器无法显示请求页面。在传输大容量数据时，通过把数据分割成多块，能够让浏览器逐步显示页面。</p>
+<p>这种把实体主体分块的功能称为<strong>分块传输编码</strong>。</p>
+<h3 id="发送多种数据的多部分对象集合"><a href="#发送多种数据的多部分对象集合" class="headerlink" title="发送多种数据的多部分对象集合"></a>发送多种数据的多部分对象集合</h3><p>发送你邮件时，我们可以在邮件里写入文字并添加多份附件。这是因为采用了 MIME（Multipurpose Internet Mail Extensions，多用途因特网邮件扩展） 机制，它允许邮件处理文本、图片、视频等多个不同类型的数据。</p>
+<h3 id="内容协商返回最合适的内容"><a href="#内容协商返回最合适的内容" class="headerlink" title="内容协商返回最合适的内容"></a>内容协商返回最合适的内容</h3><p>同一个 Web 网站有可能存在着多份相同内容的页面。比如英文版和中文版的 Web 页面，它们内容上虽相同，但使用的语言却不同。</p>
+<p>当浏览器的默认语言为英语或中文，访问相同 URI 的 Web 页面时，则会显示对应的英文版或中文版的 Web 页面。这样的机制称为<strong>内容协商</strong>。</p>
+<p>内容协商机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户最为合适的资源。内容协商会以响应资源的语言、字符集、编码方式等作为判断的基准。</p>
+<h1 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h1><p>HTTP 状态码负责表示客户端 HTTP 请求的返回结果、标记服务器端的处理是否正常、通知出现的错误等工作。</p>
+<p><strong>状态码的类别：</strong></p>
+<ul>
+<li>1xx：Information（信息性状态码），接收的请求正在处理</li>
+<li>2xx：Success（成功状态码），请求正常处理完毕</li>
+<li>3xx：Redirection（重定向状态码），需要进行附加操作以完成请求</li>
+<li>4xx：Client Error（客户端错误状态码），服务器无法处理请求（请求有语法错误或请求无法实现）</li>
+<li>5xx：Server Error（服务器错误状态码），服务器处理请求出错</li>
+</ul>
+<h2 id="2xx-成功"><a href="#2xx-成功" class="headerlink" title="2xx 成功"></a>2xx 成功</h2><blockquote>
+<p>200 OK：表示从客户端发来的请求在服务器端被正常处理了。</p>
+</blockquote>
+<p>在响应报文内，随状态码一起返回的信息会因方法的不同而发生改变。比如，使用 GET 方法，对应请求资源的实体会作为响应返回；而使用 HEAD 方法时，对应请求资源的实体首部不随报文主体作为响应返回（即在响应中只返回首部，不会返回实体的主体部分）。</p>
+<blockquote>
+<p>204 No Content：表示服务器接收的请求已成功处理，但是返回的响应报文中不含实体的主体部分。另外，也不允许返回任何实体的主体。</p>
+</blockquote>
+<p>比如，当浏览器发出请求处理后，返回 204 响应，那么浏览器显示的页面不发生更新。一般在只需要从客户端往服务器发送信息，而对客户端不需要发送新信息内容的情况下使用。</p>
+<blockquote>
+<p>206 Partial Content：表示客户端进行了范围请求，而服务器成功执行了这部分的GET请求。</p>
+</blockquote>
+<h2 id="3xx-重定向"><a href="#3xx-重定向" class="headerlink" title="3xx 重定向"></a>3xx 重定向</h2><blockquote>
+<p>301 Moved Permanently：永久重定向。</p>
+</blockquote>
+<p>表示请求的资源已被分配了新的 URI，以后应使用资源现在所指的 URI。也就是说，如果已经把资源对应的 URI 保存为书签，这时应该按 Location 首部字段提示的 URI 重新保存。</p>
+<blockquote>
+<p>302 Found：临时重定向</p>
+</blockquote>
+<p>比如，用户把URI保存成书签，但不会像301状态码出现时那样去更新书签，而是仍然保留返回302状态码的页面对应的URI。</p>
+<blockquote>
+<p>303 See Other：表示由于请求对应的资源存在着另一个URI，应使用GET方法定向获取请求的资源。</p>
+</blockquote>
+<p>303状态码和302状态码有着相同的功能，但303状态码明确表示客户端应当采用GET方法获取资源，这点与状态码有区别。</p>
+<p>当301、302、303响应状态码返回时，几乎所有的浏览器都会把 POST 改成 GET，并删除请求报文内的主体，之后请求会自动再次发送。</p>
+<p>301、302标准是禁止将 POST 方法改变成 GET 方法的，但实际使用时大家都会这么做。</p>
+<blockquote>
+<p>304 Not Modified：表示客户端发送附带条件的请求时，服务器端允许请求访问资源，但未满足条件的情况。</p>
+</blockquote>
+<p>304状态码返回时，不包含任何响应的主体部分。</p>
+<blockquote>
+<p>307 Temporary Redirect：临时重定向</p>
+</blockquote>
+<p>该状态码与302有着相同的含义，但307会遵守浏览器标准，不会从 POST 变成 GET。</p>
+<h2 id="4xx-客户端错误"><a href="#4xx-客户端错误" class="headerlink" title="4xx 客户端错误"></a>4xx 客户端错误</h2><blockquote>
+<p>400 Bad Request：表示请求报文中存在语法错误。</p>
+</blockquote>
+<p>当错误发生时，需修改请求的内容后再次发送请求。</p>
+<blockquote>
+<p>401 Unauthorized：表示发送的请求需要有通过 HTTP 认证（BASIC 认证、DIGEST认证）的认证信息。</p>
+</blockquote>
+<p>若之前已进行过1次请求，则表示用户认证失败。</p>
+<blockquote>
+<p>403 Forbidden：表示请求资源的访问被服务器拒绝了。</p>
+</blockquote>
+<p>服务器端没有必要给出拒绝的详细理由，但如果想作说明的话，可以在实体的主体部分对原因进行描述，这样就可以让用户看到了。</p>
+<blockquote>
+<p>404 Not Found：表示服务器上无法找到请求的资源。</p>
+</blockquote>
+<h2 id="5xx-服务器错误"><a href="#5xx-服务器错误" class="headerlink" title="5xx 服务器错误"></a>5xx 服务器错误</h2><blockquote>
+<p>500 Internal Server Error：表示服务器端在执行请求时发生了错误。也有可能是Web应用存在的bug或某些临时的故障。</p>
+<p>503 Service Unavailable：表示服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。</p>
+</blockquote>
+<h1 id="与HTTP协作的Web服务器"><a href="#与HTTP协作的Web服务器" class="headerlink" title="与HTTP协作的Web服务器"></a>与HTTP协作的Web服务器</h1><p>一台 Web 服务器可搭建多个独立域名的 Web 网站，也可作为通信路径上的中转服务器提升传输速率。</p>
+<h2 id="通信数据转发程序"><a href="#通信数据转发程序" class="headerlink" title="通信数据转发程序"></a>通信数据转发程序</h2><p>HTTP 通信时，除客户端和服务器以外，还有一些用于通信数据转发的应用程序，例如代理、网关和隧道。它们可以配合服务器工作。</p>
+<p>这些应用程序和服务器可以将请求转发给通信线路上的下一站服务器，并且能接收从那台服务器发送的响应再转发给客户端。</p>
+<h3 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h3><p><strong>代理</strong>是一种有转发功能的应用程序，它扮演了位于服务器和客户端“中间人”的角色，接收由客户端发送的请求并转发给服务器，同时也接收服务器返回的响应并转发给客户端。</p>
+<h3 id="网关"><a href="#网关" class="headerlink" title="网关"></a>网关</h3><p>网关是转发其他服务器通信数据的服务器，接收从客户端发送来的请求时，它就像自己拥有资源的源服务器一样对请求进行处理。有时客户端可能都不会察觉，自己的通信目标是一个网关。</p>
+<h3 id="隧道"><a href="#隧道" class="headerlink" title="隧道"></a>隧道</h3><p>隧道是在相隔甚远的客户端和服务器两者之间进行中转的，并保持双方通信连接的应用程序。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/书籍/" class="article-tag-list-link color3">书籍</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/05/24/《图解HTTP》1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/05/31/《图解HTTP》2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          《图解HTTP》2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/04/03/美图前端笔试题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">美图前端笔试题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
+  
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 luyaJ
+    	</div>
+      	<div class="footer-right">
+      		<!--<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten-->
+
+          <span id="busuanzi_container_page_pv">
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+          </span>
+        </div>
+    </div>
+  </div>
+</footer>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+    </div>
+    <script>
+	var yiliaConfig = {
+		mathjax: false,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true,
+		showTags: false
+	}
+</script>
+
+<script>!function(t){function n(r){if(e[r])return e[r].exports;var o=e[r]={exports:{},id:r,loaded:!1};return t[r].call(o.exports,o,o.exports,n),o.loaded=!0,o.exports}var e={};return n.m=t,n.c=e,n.p="./",n(0)}([function(t,n,e){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}function o(t,n){var e=/\/|index.html/g;return t.replace(e,"")===n.replace(e,"")}function i(){for(var t=document.querySelectorAll(".js-header-menu li a"),n=window.location.pathname,e=0,r=t.length;e<r;e++){var i=t[e];o(n,i.getAttribute("href"))&&(0,d.default)(i,"active")}}function u(t){for(var n=t.offsetLeft,e=t.offsetParent;null!==e;)n+=e.offsetLeft,e=e.offsetParent;return n}function f(t){for(var n=t.offsetTop,e=t.offsetParent;null!==e;)n+=e.offsetTop,e=e.offsetParent;return n}function c(t,n,e,r,o){var i=u(t),c=f(t)-n;if(c-e<=o){var a=t.$newDom;a||(a=t.cloneNode(!0),(0,h.default)(t,a),t.$newDom=a,a.style.position="fixed",a.style.top=(e||c)+"px",a.style.left=i+"px",a.style.zIndex=r||2,a.style.width="100%",a.style.color="#fff"),a.style.visibility="visible",t.style.visibility="hidden"}else{t.style.visibility="visible";var s=t.$newDom;s&&(s.style.visibility="hidden")}}function a(){var t=document.querySelector(".js-overlay"),n=document.querySelector(".js-header-menu");c(t,document.body.scrollTop,-63,2,0),c(n,document.body.scrollTop,1,3,0)}function s(){document.querySelector("#container").addEventListener("scroll",function(t){a()}),window.addEventListener("scroll",function(t){a()}),a()}function l(){x.default.versions.mobile&&window.screen.width<800&&(i(),s())}var p=e(71),d=r(p),v=e(72),y=(r(v),e(84)),h=r(y),b=e(69),x=r(b),m=e(75),g=r(m),w=e(70);l(),(0,w.addLoadEvent)(function(){g.default.init()}),t.exports={}},function(t,n){var e=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=e)},function(t,n){var e={}.hasOwnProperty;t.exports=function(t,n){return e.call(t,n)}},function(t,n,e){var r=e(49),o=e(15);t.exports=function(t){return r(o(t))}},function(t,n,e){t.exports=!e(8)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,n,e){var r=e(6),o=e(12);t.exports=e(4)?function(t,n,e){return r.f(t,n,o(1,e))}:function(t,n,e){return t[n]=e,t}},function(t,n,e){var r=e(10),o=e(30),i=e(24),u=Object.defineProperty;n.f=e(4)?Object.defineProperty:function(t,n,e){if(r(t),n=i(n,!0),r(e),o)try{return u(t,n,e)}catch(t){}if("get"in e||"set"in e)throw TypeError("Accessors not supported!");return"value"in e&&(t[n]=e.value),t}},function(t,n,e){var r=e(22)("wks"),o=e(13),i=e(1).Symbol,u="function"==typeof i,f=t.exports=function(t){return r[t]||(r[t]=u&&i[t]||(u?i:o)("Symbol."+t))};f.store=r},function(t,n){t.exports=function(t){try{return!!t()}catch(t){return!0}}},function(t,n,e){var r=e(35),o=e(16);t.exports=Object.keys||function(t){return r(t,o)}},function(t,n,e){var r=e(11);t.exports=function(t){if(!r(t))throw TypeError(t+" is not an object!");return t}},function(t,n){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,n){t.exports=function(t,n){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:n}}},function(t,n){var e=0,r=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++e+r).toString(36))}},function(t,n){var e=t.exports={version:"2.4.0"};"number"==typeof __e&&(__e=e)},function(t,n){t.exports=function(t){if(void 0==t)throw TypeError("Can't call method on  "+t);return t}},function(t,n){t.exports="constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")},function(t,n){t.exports={}},function(t,n){t.exports=!0},function(t,n){n.f={}.propertyIsEnumerable},function(t,n,e){var r=e(6).f,o=e(2),i=e(7)("toStringTag");t.exports=function(t,n,e){t&&!o(t=e?t:t.prototype,i)&&r(t,i,{configurable:!0,value:n})}},function(t,n,e){var r=e(22)("keys"),o=e(13);t.exports=function(t){return r[t]||(r[t]=o(t))}},function(t,n,e){var r=e(1),o="__core-js_shared__",i=r[o]||(r[o]={});t.exports=function(t){return i[t]||(i[t]={})}},function(t,n){var e=Math.ceil,r=Math.floor;t.exports=function(t){return isNaN(t=+t)?0:(t>0?r:e)(t)}},function(t,n,e){var r=e(11);t.exports=function(t,n){if(!r(t))return t;var e,o;if(n&&"function"==typeof(e=t.toString)&&!r(o=e.call(t)))return o;if("function"==typeof(e=t.valueOf)&&!r(o=e.call(t)))return o;if(!n&&"function"==typeof(e=t.toString)&&!r(o=e.call(t)))return o;throw TypeError("Can't convert object to primitive value")}},function(t,n,e){var r=e(1),o=e(14),i=e(18),u=e(26),f=e(6).f;t.exports=function(t){var n=o.Symbol||(o.Symbol=i?{}:r.Symbol||{});"_"==t.charAt(0)||t in n||f(n,t,{value:u.f(t)})}},function(t,n,e){n.f=e(7)},function(t,n,e){var r=e(1),o=e(14),i=e(46),u=e(5),f="prototype",c=function(t,n,e){var a,s,l,p=t&c.F,d=t&c.G,v=t&c.S,y=t&c.P,h=t&c.B,b=t&c.W,x=d?o:o[n]||(o[n]={}),m=x[f],g=d?r:v?r[n]:(r[n]||{})[f];d&&(e=n);for(a in e)s=!p&&g&&void 0!==g[a],s&&a in x||(l=s?g[a]:e[a],x[a]=d&&"function"!=typeof g[a]?e[a]:h&&s?i(l,r):b&&g[a]==l?function(t){var n=function(n,e,r){if(this instanceof t){switch(arguments.length){case 0:return new t;case 1:return new t(n);case 2:return new t(n,e)}return new t(n,e,r)}return t.apply(this,arguments)};return n[f]=t[f],n}(l):y&&"function"==typeof l?i(Function.call,l):l,y&&((x.virtual||(x.virtual={}))[a]=l,t&c.R&&m&&!m[a]&&u(m,a,l)))};c.F=1,c.G=2,c.S=4,c.P=8,c.B=16,c.W=32,c.U=64,c.R=128,t.exports=c},function(t,n){var e={}.toString;t.exports=function(t){return e.call(t).slice(8,-1)}},function(t,n,e){var r=e(11),o=e(1).document,i=r(o)&&r(o.createElement);t.exports=function(t){return i?o.createElement(t):{}}},function(t,n,e){t.exports=!e(4)&&!e(8)(function(){return 7!=Object.defineProperty(e(29)("div"),"a",{get:function(){return 7}}).a})},function(t,n,e){"use strict";var r=e(18),o=e(27),i=e(36),u=e(5),f=e(2),c=e(17),a=e(51),s=e(20),l=e(58),p=e(7)("iterator"),d=!([].keys&&"next"in[].keys()),v="@@iterator",y="keys",h="values",b=function(){return this};t.exports=function(t,n,e,x,m,g,w){a(e,n,x);var O,S,_,j=function(t){if(!d&&t in A)return A[t];switch(t){case y:return function(){return new e(this,t)};case h:return function(){return new e(this,t)}}return function(){return new e(this,t)}},P=n+" Iterator",E=m==h,M=!1,A=t.prototype,T=A[p]||A[v]||m&&A[m],L=T||j(m),N=m?E?j("entries"):L:void 0,C="Array"==n?A.entries||T:T;if(C&&(_=l(C.call(new t)),_!==Object.prototype&&(s(_,P,!0),r||f(_,p)||u(_,p,b))),E&&T&&T.name!==h&&(M=!0,L=function(){return T.call(this)}),r&&!w||!d&&!M&&A[p]||u(A,p,L),c[n]=L,c[P]=b,m)if(O={values:E?L:j(h),keys:g?L:j(y),entries:N},w)for(S in O)S in A||i(A,S,O[S]);else o(o.P+o.F*(d||M),n,O);return O}},function(t,n,e){var r=e(10),o=e(55),i=e(16),u=e(21)("IE_PROTO"),f=function(){},c="prototype",a=function(){var t,n=e(29)("iframe"),r=i.length,o="<",u=">";for(n.style.display="none",e(48).appendChild(n),n.src="javascript:",t=n.contentWindow.document,t.open(),t.write(o+"script"+u+"document.F=Object"+o+"/script"+u),t.close(),a=t.F;r--;)delete a[c][i[r]];return a()};t.exports=Object.create||function(t,n){var e;return null!==t?(f[c]=r(t),e=new f,f[c]=null,e[u]=t):e=a(),void 0===n?e:o(e,n)}},function(t,n,e){var r=e(35),o=e(16).concat("length","prototype");n.f=Object.getOwnPropertyNames||function(t){return r(t,o)}},function(t,n){n.f=Object.getOwnPropertySymbols},function(t,n,e){var r=e(2),o=e(3),i=e(45)(!1),u=e(21)("IE_PROTO");t.exports=function(t,n){var e,f=o(t),c=0,a=[];for(e in f)e!=u&&r(f,e)&&a.push(e);for(;n.length>c;)r(f,e=n[c++])&&(~i(a,e)||a.push(e));return a}},function(t,n,e){t.exports=e(5)},function(t,n,e){var r=e(15);t.exports=function(t){return Object(r(t))}},function(t,n,e){t.exports={default:e(41),__esModule:!0}},function(t,n,e){t.exports={default:e(42),__esModule:!0}},function(t,n,e){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}n.__esModule=!0;var o=e(39),i=r(o),u=e(38),f=r(u),c="function"==typeof f.default&&"symbol"==typeof i.default?function(t){return typeof t}:function(t){return t&&"function"==typeof f.default&&t.constructor===f.default&&t!==f.default.prototype?"symbol":typeof t};n.default="function"==typeof f.default&&"symbol"===c(i.default)?function(t){return"undefined"==typeof t?"undefined":c(t)}:function(t){return t&&"function"==typeof f.default&&t.constructor===f.default&&t!==f.default.prototype?"symbol":"undefined"==typeof t?"undefined":c(t)}},function(t,n,e){e(65),e(63),e(66),e(67),t.exports=e(14).Symbol},function(t,n,e){e(64),e(68),t.exports=e(26).f("iterator")},function(t,n){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,n){t.exports=function(){}},function(t,n,e){var r=e(3),o=e(61),i=e(60);t.exports=function(t){return function(n,e,u){var f,c=r(n),a=o(c.length),s=i(u,a);if(t&&e!=e){for(;a>s;)if(f=c[s++],f!=f)return!0}else for(;a>s;s++)if((t||s in c)&&c[s]===e)return t||s||0;return!t&&-1}}},function(t,n,e){var r=e(43);t.exports=function(t,n,e){if(r(t),void 0===n)return t;switch(e){case 1:return function(e){return t.call(n,e)};case 2:return function(e,r){return t.call(n,e,r)};case 3:return function(e,r,o){return t.call(n,e,r,o)}}return function(){return t.apply(n,arguments)}}},function(t,n,e){var r=e(9),o=e(34),i=e(19);t.exports=function(t){var n=r(t),e=o.f;if(e)for(var u,f=e(t),c=i.f,a=0;f.length>a;)c.call(t,u=f[a++])&&n.push(u);return n}},function(t,n,e){t.exports=e(1).document&&document.documentElement},function(t,n,e){var r=e(28);t.exports=Object("z").propertyIsEnumerable(0)?Object:function(t){return"String"==r(t)?t.split(""):Object(t)}},function(t,n,e){var r=e(28);t.exports=Array.isArray||function(t){return"Array"==r(t)}},function(t,n,e){"use strict";var r=e(32),o=e(12),i=e(20),u={};e(5)(u,e(7)("iterator"),function(){return this}),t.exports=function(t,n,e){t.prototype=r(u,{next:o(1,e)}),i(t,n+" Iterator")}},function(t,n){t.exports=function(t,n){return{value:n,done:!!t}}},function(t,n,e){var r=e(9),o=e(3);t.exports=function(t,n){for(var e,i=o(t),u=r(i),f=u.length,c=0;f>c;)if(i[e=u[c++]]===n)return e}},function(t,n,e){var r=e(13)("meta"),o=e(11),i=e(2),u=e(6).f,f=0,c=Object.isExtensible||function(){return!0},a=!e(8)(function(){return c(Object.preventExtensions({}))}),s=function(t){u(t,r,{value:{i:"O"+ ++f,w:{}}})},l=function(t,n){if(!o(t))return"symbol"==typeof t?t:("string"==typeof t?"S":"P")+t;if(!i(t,r)){if(!c(t))return"F";if(!n)return"E";s(t)}return t[r].i},p=function(t,n){if(!i(t,r)){if(!c(t))return!0;if(!n)return!1;s(t)}return t[r].w},d=function(t){return a&&v.NEED&&c(t)&&!i(t,r)&&s(t),t},v=t.exports={KEY:r,NEED:!1,fastKey:l,getWeak:p,onFreeze:d}},function(t,n,e){var r=e(6),o=e(10),i=e(9);t.exports=e(4)?Object.defineProperties:function(t,n){o(t);for(var e,u=i(n),f=u.length,c=0;f>c;)r.f(t,e=u[c++],n[e]);return t}},function(t,n,e){var r=e(19),o=e(12),i=e(3),u=e(24),f=e(2),c=e(30),a=Object.getOwnPropertyDescriptor;n.f=e(4)?a:function(t,n){if(t=i(t),n=u(n,!0),c)try{return a(t,n)}catch(t){}if(f(t,n))return o(!r.f.call(t,n),t[n])}},function(t,n,e){var r=e(3),o=e(33).f,i={}.toString,u="object"==typeof window&&window&&Object.getOwnPropertyNames?Object.getOwnPropertyNames(window):[],f=function(t){try{return o(t)}catch(t){return u.slice()}};t.exports.f=function(t){return u&&"[object Window]"==i.call(t)?f(t):o(r(t))}},function(t,n,e){var r=e(2),o=e(37),i=e(21)("IE_PROTO"),u=Object.prototype;t.exports=Object.getPrototypeOf||function(t){return t=o(t),r(t,i)?t[i]:"function"==typeof t.constructor&&t instanceof t.constructor?t.constructor.prototype:t instanceof Object?u:null}},function(t,n,e){var r=e(23),o=e(15);t.exports=function(t){return function(n,e){var i,u,f=String(o(n)),c=r(e),a=f.length;return c<0||c>=a?t?"":void 0:(i=f.charCodeAt(c),i<55296||i>56319||c+1===a||(u=f.charCodeAt(c+1))<56320||u>57343?t?f.charAt(c):i:t?f.slice(c,c+2):(i-55296<<10)+(u-56320)+65536)}}},function(t,n,e){var r=e(23),o=Math.max,i=Math.min;t.exports=function(t,n){return t=r(t),t<0?o(t+n,0):i(t,n)}},function(t,n,e){var r=e(23),o=Math.min;t.exports=function(t){return t>0?o(r(t),9007199254740991):0}},function(t,n,e){"use strict";var r=e(44),o=e(52),i=e(17),u=e(3);t.exports=e(31)(Array,"Array",function(t,n){this._t=u(t),this._i=0,this._k=n},function(){var t=this._t,n=this._k,e=this._i++;return!t||e>=t.length?(this._t=void 0,o(1)):"keys"==n?o(0,e):"values"==n?o(0,t[e]):o(0,[e,t[e]])},"values"),i.Arguments=i.Array,r("keys"),r("values"),r("entries")},function(t,n){},function(t,n,e){"use strict";var r=e(59)(!0);e(31)(String,"String",function(t){this._t=String(t),this._i=0},function(){var t,n=this._t,e=this._i;return e>=n.length?{value:void 0,done:!0}:(t=r(n,e),this._i+=t.length,{value:t,done:!1})})},function(t,n,e){"use strict";var r=e(1),o=e(2),i=e(4),u=e(27),f=e(36),c=e(54).KEY,a=e(8),s=e(22),l=e(20),p=e(13),d=e(7),v=e(26),y=e(25),h=e(53),b=e(47),x=e(50),m=e(10),g=e(3),w=e(24),O=e(12),S=e(32),_=e(57),j=e(56),P=e(6),E=e(9),M=j.f,A=P.f,T=_.f,L=r.Symbol,N=r.JSON,C=N&&N.stringify,k="prototype",F=d("_hidden"),q=d("toPrimitive"),I={}.propertyIsEnumerable,B=s("symbol-registry"),D=s("symbols"),W=s("op-symbols"),H=Object[k],K="function"==typeof L,R=r.QObject,J=!R||!R[k]||!R[k].findChild,U=i&&a(function(){return 7!=S(A({},"a",{get:function(){return A(this,"a",{value:7}).a}})).a})?function(t,n,e){var r=M(H,n);r&&delete H[n],A(t,n,e),r&&t!==H&&A(H,n,r)}:A,G=function(t){var n=D[t]=S(L[k]);return n._k=t,n},$=K&&"symbol"==typeof L.iterator?function(t){return"symbol"==typeof t}:function(t){return t instanceof L},z=function(t,n,e){return t===H&&z(W,n,e),m(t),n=w(n,!0),m(e),o(D,n)?(e.enumerable?(o(t,F)&&t[F][n]&&(t[F][n]=!1),e=S(e,{enumerable:O(0,!1)})):(o(t,F)||A(t,F,O(1,{})),t[F][n]=!0),U(t,n,e)):A(t,n,e)},Y=function(t,n){m(t);for(var e,r=b(n=g(n)),o=0,i=r.length;i>o;)z(t,e=r[o++],n[e]);return t},Q=function(t,n){return void 0===n?S(t):Y(S(t),n)},X=function(t){var n=I.call(this,t=w(t,!0));return!(this===H&&o(D,t)&&!o(W,t))&&(!(n||!o(this,t)||!o(D,t)||o(this,F)&&this[F][t])||n)},V=function(t,n){if(t=g(t),n=w(n,!0),t!==H||!o(D,n)||o(W,n)){var e=M(t,n);return!e||!o(D,n)||o(t,F)&&t[F][n]||(e.enumerable=!0),e}},Z=function(t){for(var n,e=T(g(t)),r=[],i=0;e.length>i;)o(D,n=e[i++])||n==F||n==c||r.push(n);return r},tt=function(t){for(var n,e=t===H,r=T(e?W:g(t)),i=[],u=0;r.length>u;)!o(D,n=r[u++])||e&&!o(H,n)||i.push(D[n]);return i};K||(L=function(){if(this instanceof L)throw TypeError("Symbol is not a constructor!");var t=p(arguments.length>0?arguments[0]:void 0),n=function(e){this===H&&n.call(W,e),o(this,F)&&o(this[F],t)&&(this[F][t]=!1),U(this,t,O(1,e))};return i&&J&&U(H,t,{configurable:!0,set:n}),G(t)},f(L[k],"toString",function(){return this._k}),j.f=V,P.f=z,e(33).f=_.f=Z,e(19).f=X,e(34).f=tt,i&&!e(18)&&f(H,"propertyIsEnumerable",X,!0),v.f=function(t){return G(d(t))}),u(u.G+u.W+u.F*!K,{Symbol:L});for(var nt="hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables".split(","),et=0;nt.length>et;)d(nt[et++]);for(var nt=E(d.store),et=0;nt.length>et;)y(nt[et++]);u(u.S+u.F*!K,"Symbol",{for:function(t){return o(B,t+="")?B[t]:B[t]=L(t)},keyFor:function(t){if($(t))return h(B,t);throw TypeError(t+" is not a symbol!")},useSetter:function(){J=!0},useSimple:function(){J=!1}}),u(u.S+u.F*!K,"Object",{create:Q,defineProperty:z,defineProperties:Y,getOwnPropertyDescriptor:V,getOwnPropertyNames:Z,getOwnPropertySymbols:tt}),N&&u(u.S+u.F*(!K||a(function(){var t=L();return"[null]"!=C([t])||"{}"!=C({a:t})||"{}"!=C(Object(t))})),"JSON",{stringify:function(t){if(void 0!==t&&!$(t)){for(var n,e,r=[t],o=1;arguments.length>o;)r.push(arguments[o++]);return n=r[1],"function"==typeof n&&(e=n),!e&&x(n)||(n=function(t,n){if(e&&(n=e.call(this,t,n)),!$(n))return n}),r[1]=n,C.apply(N,r)}}}),L[k][q]||e(5)(L[k],q,L[k].valueOf),l(L,"Symbol"),l(Math,"Math",!0),l(r.JSON,"JSON",!0)},function(t,n,e){e(25)("asyncIterator")},function(t,n,e){e(25)("observable")},function(t,n,e){e(62);for(var r=e(1),o=e(5),i=e(17),u=e(7)("toStringTag"),f=["NodeList","DOMTokenList","MediaList","StyleSheetList","CSSRuleList"],c=0;c<5;c++){var a=f[c],s=r[a],l=s&&s.prototype;l&&!l[u]&&o(l,u,a),i[a]=i.Array}},function(t,n){"use strict";var e={versions:function(){var t=window.navigator.userAgent;return{trident:t.indexOf("Trident")>-1,presto:t.indexOf("Presto")>-1,webKit:t.indexOf("AppleWebKit")>-1,gecko:t.indexOf("Gecko")>-1&&t.indexOf("KHTML")==-1,mobile:!!t.match(/AppleWebKit.*Mobile.*/),ios:!!t.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),android:t.indexOf("Android")>-1||t.indexOf("Linux")>-1,iPhone:t.indexOf("iPhone")>-1||t.indexOf("Mac")>-1,iPad:t.indexOf("iPad")>-1,webApp:t.indexOf("Safari")==-1,weixin:t.indexOf("MicroMessenger")==-1}}()};t.exports=e},function(t,n,e){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}var o=e(40),i=r(o),u=function(){function t(t,n,e){return n||e?String.fromCharCode(n||e):o[t]||t}function n(t){return l[t]}var e=/&quot;|&lt;|&gt;|&amp;|&nbsp;|&apos;|&#(\d+);|&#(\d+)/g,r=/['<> "&]/g,o={"&quot;":'"',"&lt;":"<","&gt;":">","&amp;":"&","&nbsp;":" "},f=/\u00a0/g,c=/<br\s*\/?>/gi,a=/\r?\n/g,s=/\s/g,l={};for(var p in o)l[o[p]]=p;return o["&apos;"]="'",l["'"]="&#39;",{encode:function(t){return t?(""+t).replace(r,n).replace(a,"<br/>").replace(s,"&nbsp;"):""},decode:function(n){return n?(""+n).replace(c,"\n").replace(e,t).replace(f," "):""},encodeBase16:function(t){if(!t)return t;t+="";for(var n=[],e=0,r=t.length;r>e;e++)n.push(t.charCodeAt(e).toString(16).toUpperCase());return n.join("")},encodeBase16forJSON:function(t){if(!t)return t;t=t.replace(/[\u4E00-\u9FBF]/gi,function(t){return escape(t).replace("%u","\\u")});for(var n=[],e=0,r=t.length;r>e;e++)n.push(t.charCodeAt(e).toString(16).toUpperCase());return n.join("")},decodeBase16:function(t){if(!t)return t;t+="";for(var n=[],e=0,r=t.length;r>e;e+=2)n.push(String.fromCharCode("0x"+t.slice(e,e+2)));return n.join("")},encodeObject:function(t){if(t instanceof Array)for(var n=0,e=t.length;e>n;n++)t[n]=u.encodeObject(t[n]);else if("object"==("undefined"==typeof t?"undefined":(0,i.default)(t)))for(var r in t)t[r]=u.encodeObject(t[r]);else if("string"==typeof t)return u.encode(t);return t},loadScript:function(t){var n=document.createElement("script");document.getElementsByTagName("body")[0].appendChild(n),n.setAttribute("src",t)},addLoadEvent:function(t){var n=window.onload;"function"!=typeof window.onload?window.onload=t:window.onload=function(){n(),t()}}}}();t.exports=u},function(t,n){function e(t,n){t.classList?t.classList.add(n):t.className+=" "+n}t.exports=e},function(t,n){function e(t,n){if(t.classList)t.classList.remove(n);else{var e=new RegExp("(^|\\b)"+n.split(" ").join("|")+"(\\b|$)","gi");t.className=t.className.replace(e," ")}}t.exports=e},,,function(t,n){"use strict";function e(){var t=document.querySelector("#page-nav");if(t&&!document.querySelector("#page-nav .extend.prev")&&(t.innerHTML='<a class="extend prev disabled" rel="prev">&laquo; Prev</a>'+t.innerHTML),t&&!document.querySelector("#page-nav .extend.next")&&(t.innerHTML=t.innerHTML+'<a class="extend next disabled" rel="next">Next &raquo;</a>'),yiliaConfig&&yiliaConfig.open_in_new){var n=document.querySelectorAll(".article-entry a:not(.article-more-a)");n.forEach(function(t){t.setAttribute("target","_blank")})}var e=document.querySelector("#js-aboutme");e&&0!==e.length&&(e.innerHTML=e.innerText)}t.exports={init:e}},,,,,,,,,function(t,n){function e(t,n){if("string"==typeof n)return t.insertAdjacentHTML("afterend",n);var e=t.nextSibling;return e?t.parentNode.insertBefore(n,e):t.parentNode.appendChild(n)}t.exports=e}])</script><script src="/./main.2d7529.js"></script><script>!function(){var e=function(e){var t=document.createElement("script");document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)};e("/slider.885efe.js")}()</script>
+
+
+    
+<div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
+  <div class="tools-nav header-menu">
+    
+    
+      
+      
+      
+    
+      
+    
+      
+      
+      
+    
+    
+
+    <ul style="width: 70%">
+    
+    
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      
+        
+      
+        
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      
+        
+    </ul>
+  </div>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">WechatApp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">nuxt.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">书籍</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mongoose</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
+              </li>
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            2、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: true
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
+    
+
+    
+
+    
+    	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">spring,summer,autumn,winter</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
