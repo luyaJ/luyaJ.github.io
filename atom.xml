@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-31T08:34:50.400Z</updated>
+  <updated>2018-06-01T12:45:23.096Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,11 +20,72 @@
     <link href="http://yoursite.com/2018/05/31/%E3%80%8A%E5%9B%BE%E8%A7%A3HTTP%E3%80%8B2/"/>
     <id>http://yoursite.com/2018/05/31/《图解HTTP》2/</id>
     <published>2018-05-31T07:49:43.000Z</published>
-    <updated>2018-05-31T08:34:50.400Z</updated>
+    <updated>2018-06-01T12:45:23.096Z</updated>
     
     <content type="html"><![CDATA[<p>《图解HTTP》第6章及之后内容。感觉看了这本书后，又接收到了很多新的知识。</p>
 <a id="more"></a>
-<h1 id="HTTP首部"><a href="#HTTP首部" class="headerlink" title="HTTP首部"></a>HTTP首部</h1><p>HTTP 协议的请求和响应报文中必定包含 HTTP 首部。</p>
+<h1 id="HTTP首部"><a href="#HTTP首部" class="headerlink" title="HTTP首部"></a>HTTP首部</h1><p>HTTP 协议的请求和响应报文中必定包含 HTTP 首部。首部内容为客户端和服务器分贝处理请求和响应提供所需要的信息。对于客户端用户来说，这些信息中的大部分内容都无须亲自查看。</p>
+<p><img src="http://p983im8gr.bkt.clouddn.com/%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87%E5%92%8C%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87.png" alt="请求报文和响应报文"></p>
+<h2 id="HTTP-首部字段"><a href="#HTTP-首部字段" class="headerlink" title="HTTP 首部字段"></a>HTTP 首部字段</h2><p><strong>HTTP 首部字段结构</strong></p>
+<p>HTTP 首部字段是由首部字段名和字段值构成的，中间用冒号“:”分隔。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">首部字段名：字段值</div><div class="line"></div><div class="line">Content-Type: text/html</div><div class="line">Keep-Alive: timeout=15, max=100</div></pre></td></tr></table></figure>
+<p><strong>HTTP 首部字段类型</strong></p>
+<ul>
+<li>通用首部字段(General Header Fields)：请求报文和响应报文两方都会使用的首部</li>
+<li>请求首部字段(Request Header Fields)：从客户端向服务器端发送请求报文时使用的首部。补充了请求的附加内容、客户端信息、响应内容相关优先级等信息。</li>
+<li>响应首部字段(Response Header Fields)：从服务器端向客户端返回响应报文时使用的首部。</li>
+<li>实体首部字段(Entity Header Fields)：针对请求报文和响应报文的实体部分使用的首部。</li>
+</ul>
+<p><strong>End-to-end 首部和 Hop-by-hop 首部</strong></p>
+<p>HTTP 首部字段将定义成缓存代理和非缓存代理的行为，分为两种类型。</p>
+<ul>
+<li>端到端首部（End-to-end Header）<ul>
+<li>分在此类别中的首部会转发给请求/响应对应的最终接收目标，且必须保存在由缓存生成的响应中，另外规定她必须被转发。</li>
+</ul>
+</li>
+<li>逐跳首部（Hop-by-hop Header）<ul>
+<li>分在此类别中的首部只对单次转发有效，会因通过缓存或代理而不再转发。HTTP/1.1 和之后的版本，如果要使用 hop-by-hop 首部，需提供 Connection 首部字段。</li>
+</ul>
+</li>
+</ul>
+<p>以下是 HTTP/1.1 中的逐跳首部字段。除这 8 个首部字段之外，其他所有字段都属于端到端首部。</p>
+<ul>
+<li>Connection</li>
+<li>Keep-Alive</li>
+<li>Proxy-Authenticate</li>
+<li>Proxy-Authorization</li>
+<li>Trailer</li>
+<li>TE</li>
+<li>Transfer-Encoding</li>
+<li>Upgrade</li>
+</ul>
+<h1 id="确保-Web-安全的-HTTPS"><a href="#确保-Web-安全的-HTTPS" class="headerlink" title="确保 Web 安全的 HTTPS"></a>确保 Web 安全的 HTTPS</h1><h2 id="HTTP的缺点"><a href="#HTTP的缺点" class="headerlink" title="HTTP的缺点"></a>HTTP的缺点</h2><p>万事皆有两面性，前面我们讲的都是 HTTP 的优点，现在我们讲讲它的不足：</p>
+<ul>
+<li>通信使用明文（不加密），内容可能会被窃听</li>
+<li>不验证通信方的身份，因此有可能遭受伪装</li>
+<li>无法证明报文的完整性，所以有可能已遭篡改</li>
+</ul>
+<p>这些问题不仅在 HTTP 上出现，其他未加密的协议中也会存在这类问题。</p>
+<h3 id="通信使用明文可能会被窃听"><a href="#通信使用明文可能会被窃听" class="headerlink" title="通信使用明文可能会被窃听"></a>通信使用明文可能会被窃听</h3><p>HTTP 本身不具备加密功能，所以也无法做到对通信整体（使用 HTTP 协议通信的请求和响应的内容）进行加密。即 HTTP 报文使用明文（指未经过加密的报文）方式发送。</p>
+<p><strong>TCP/IP 是可能被窃听的网络</strong>。在网络中，即使是已经经过加密处理的通信，也会被窥视到通信内容，这点和未加密的通信是相同的。只是说如果通信经过加密，就有可能让人无法破解报文信息的含义，但加密处理后的报文信息本身还是会被看到的。</p>
+<p>窃听相同段上的通信并非难事，只需要收集在互联网上流动的数据包（帧）就行了。对于收集来的数据包的解析工作，可交给那些抓包或嗅探器工具。被广泛使用的抓包工具有 Wireshark。</p>
+<p>在目前大家正在研究的如何窃听保护信息的几种对策中，最为普及的就是加密技术。加密的对象可以有这么几个：</p>
+<p><strong>1.通信的加密：</strong></p>
+<p>HTTP 协议中没有加密机制，但可以通过和 SSL 或 TLS 的组合使用，加密 HTTP 的通信内容。</p>
+<p>用 SSL 建立安全通信线路之后，就可以在这条线路上进行 HTTP 通信了。与 SSL 组合使用的 HTTP 被称为 HTTPS（HTTP Secure，超文本传输安全协议）或 HTTP over SSL。</p>
+<p><strong>2.内容的加密：</strong></p>
+<p>由于 HTTP 协议中没有加密机制，那么就对 HTTP 协议传输的内容本身加密。即把 HTTP 报文里所含的内容进行加密处理。</p>
+<p>这种情况下，客户端需要对 HTTP 报文进行加密处理后再发送请求。</p>
+<h3 id="不验证通信方的身份就可能遭遇伪装"><a href="#不验证通信方的身份就可能遭遇伪装" class="headerlink" title="不验证通信方的身份就可能遭遇伪装"></a>不验证通信方的身份就可能遭遇伪装</h3><p>HTTP 协议中的请求和响应不会对通信方进行确认。也就说存在“服务器是否就是发送请求中 URI 真正指定的主机，返回的响应是否真的返回到实际提出请求的客户端”等问题。</p>
+<p>在 HTTP 协议通信时，由于不存在确认通信方的处理步骤，<strong>任何人都可以发起请求</strong>。另外，服务器只要接收到请求，不管对方是谁都会返回一个响应。所以存在以下隐患：</p>
+<ul>
+<li>无法确定请求发送至目标的 Web 服务器是否是按真实意图返回响应的那台服务器。有可能是已伪装的 Web 服务器。</li>
+<li>无法确定响应返回到的客户端是否是按真实意图接收响应的那个客户端。有可能是已伪装的客户端。</li>
+<li>无法确定正在通信的对方是否具备访问权限。因为某些 Web 服务器上保存着重要的信息，只想发给特定用户通信的权限。无法判定请求是来自何方、出自谁手。</li>
+<li>即使是无意义的请求也会照单全收。无法阻止海量请求下的 DoS 攻击（Denial of Service，拒绝服务攻击）。</li>
+</ul>
+<h3 id="无法证明报文完整性，可能已遭篡改"><a href="#无法证明报文完整性，可能已遭篡改" class="headerlink" title="无法证明报文完整性，可能已遭篡改"></a>无法证明报文完整性，可能已遭篡改</h3><p>由于 HTTP 协议无法证明通信的报文完整性，因此，在请求或响应送出之后直到对方接收之前的这段时间内，即使请求或响应的内容遭到篡改，也没有办法获悉。</p>
+<h2 id="http-加密-认证-完整性保护-https"><a href="#http-加密-认证-完整性保护-https" class="headerlink" title="http + 加密 + 认证 + 完整性保护 = https"></a>http + 加密 + 认证 + 完整性保护 = https</h2><p>https 是身披 ssl 外壳的 http。</p>
 ]]></content>
     
     <summary type="html">
@@ -788,7 +849,7 @@
     <link href="http://yoursite.com/2018/01/05/Linux%E4%B8%8BMongoDB%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E5%90%AF%E5%8A%A8/"/>
     <id>http://yoursite.com/2018/01/05/Linux下MongoDB的安装和启动/</id>
     <published>2018-01-05T02:01:27.000Z</published>
-    <updated>2018-05-31T11:09:40.575Z</updated>
+    <updated>2018-05-31T11:48:46.916Z</updated>
     
     <content type="html"><![CDATA[<p>MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。</p>
 <a id="more"></a>
@@ -805,6 +866,9 @@
 <p>到这里之后我们重启计算机，再次使用mongo命令，发现他是可以成功的。</p>
 <p>但是每次使用mongo命令登录MongDB还要转到目录<code>/usr/local/server/mongodb/bin</code>下再执行<code>./mongo</code>实在是太麻烦了，所以执行以下命令，在任何目录下都可以使用命令mongo了：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[root@izuf6alst6rugagpxl8wizz bin]<span class="comment"># cp mongo /usr/bin/</span></div><div class="line">cp: overwrite ‘/usr/bin/mongo’? yes</div><div class="line">[root@izuf6alst6rugagpxl8wizz bin]<span class="comment"># cd /</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz /]<span class="comment"># mongo</span></div><div class="line">MongoDB shell version: 3.2.9</div><div class="line">connecting to: <span class="built_in">test</span></div><div class="line">........</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<p><strong><strong>**</strong></strong> 这里是分割线 2018/5/31 <strong><strong><strong>*</strong></strong></strong></p>
+<p>当我今天再次想用 <code>Robo</code> 连接数据库时，出现了这样的错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Cannot connect to the MongoDB at 120.**.***.**:27017.</div><div class="line"></div><div class="line">Error:</div><div class="line">Network is unreachable.</div></pre></td></tr></table></figure>
 <p>帮助：</p>
 <ul>
 <li>(linux公社)[<a href="http://www.linuxidc.com/Linux/2011-05/36309.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2011-05/36309.htm</a>]</li>

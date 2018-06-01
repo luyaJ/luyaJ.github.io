@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="luyaJ的小博客">
 <meta property="og:description" content="MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-31T11:09:40.575Z">
+<meta property="og:updated_time" content="2018-05-31T11:48:46.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下MongoDB的安装和启动">
 <meta name="twitter:description" content="MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。">
@@ -224,6 +224,9 @@
 <p>到这里之后我们重启计算机，再次使用mongo命令，发现他是可以成功的。</p>
 <p>但是每次使用mongo命令登录MongDB还要转到目录<code>/usr/local/server/mongodb/bin</code>下再执行<code>./mongo</code>实在是太麻烦了，所以执行以下命令，在任何目录下都可以使用命令mongo了：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[root@izuf6alst6rugagpxl8wizz bin]<span class="comment"># cp mongo /usr/bin/</span></div><div class="line">cp: overwrite ‘/usr/bin/mongo’? yes</div><div class="line">[root@izuf6alst6rugagpxl8wizz bin]<span class="comment"># cd /</span></div><div class="line">[root@izuf6alst6rugagpxl8wizz /]<span class="comment"># mongo</span></div><div class="line">MongoDB shell version: 3.2.9</div><div class="line">connecting to: <span class="built_in">test</span></div><div class="line">........</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<p><strong><strong>**</strong></strong> 这里是分割线 2018/5/31 <strong><strong><strong>*</strong></strong></strong></p>
+<p>当我今天再次想用 <code>Robo</code> 连接数据库时，出现了这样的错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Cannot connect to the MongoDB at 120.**.***.**:27017.</div><div class="line"></div><div class="line">Error:</div><div class="line">Network is unreachable.</div></pre></td></tr></table></figure>
 <p>帮助：</p>
 <ul>
 <li>(linux公社)[<a href="http://www.linuxidc.com/Linux/2011-05/36309.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2011-05/36309.htm</a>]</li>
